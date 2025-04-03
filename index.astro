@@ -1,0 +1,375 @@
+---
+// src/pages/index.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import NewsCard from '../components/NewsCard.astro';
+import IssueCard from '../components/IssueCard.astro';
+import StatsCounter from '../components/StatsCounter.astro';
+---
+
+<MainLayout title="AARBAA - Americans Against Road Bikers Association of America">
+<!-- Hero Section with improved styling and positioning -->
+<section class="hero-section text-center" id="home">
+  <div style="
+    background: linear-gradient(to right, rgba(10, 49, 97, 0.85), rgba(10, 49, 97, 0.6)), url('/images/Biking.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 6rem 0;
+  ">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <h1 class="display-4 fw-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5); letter-spacing: 1px;">
+              Americans Against Road Bikers Association of America
+            </h1>
+            <p class="lead mb-5 fs-4" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Because America Has Had <span style="color: #B31942; font-weight: 700;">ENOUGH</span></p>
+            <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+              <a href="#join" class="btn btn-danger btn-lg px-5 py-3" style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">JOIN OUR CAUSE</a>
+              <a href="#about" class="btn btn-outline-light btn-lg px-5 py-3" style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px;">LEARN MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Patriotic wave divider -->
+  <div style="position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg);">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 50px;">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: #ffffff;"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- About/Mission Section -->
+<section id="about" class="section-padding bg-light" style="padding-top: 3rem;">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-10 text-center" style="margin-top: 2rem;">
+        <div style="background-color: #B31942; padding: 1rem; border-radius: 0.5rem; display: inline-block; transform: rotate(-1deg); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+          <h2 class="fw-bold mb-0" style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; color: white; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">THE PROBLEM</h2>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div style="background-color: #f8d7da; border-left: 5px solid #B31942; padding: 1.5rem; margin-bottom: 2rem; border-radius: 0.25rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <!-- Enhanced "You've seen them" heading with more impact -->
+          <div class="text-center mb-4">
+            <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; letter-spacing: 2px; color: #B31942; text-shadow: 1px 1px 0px rgba(0,0,0,0.2); text-transform: uppercase; line-height: 1.2;">YOU'VE SEEN THEM.<br>WE'VE ALL SEEN THEM.</p>
+            <div style="width: 60%; height: 5px; background-color: #B31942; margin: 0 auto;"></div>
+          </div>
+          
+          <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500; color: #721c24; margin-bottom: 1rem;">Those packs of neon-clad warriors, squeezing into tight formations on our precious roadways, pedaling with the self-importance of someone who thinks they're saving the planet one insufferable mile at a time.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500; color: #721c24; margin-bottom: 1rem;">Let's be honest about road bikers, shall we? These weekend warriors aren't environmental heroes – they're just hobbyists with expensive toys clogging up our roads. The irony of watching someone load a $5,000 carbon fiber bike onto a gas-guzzling SUV before driving 40 minutes to their cycling route isn't lost on the rest of us sitting in traffic behind them.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500; color: #721c24; margin-bottom: 1rem;">"Share the road," they preach, while taking up entire lanes during rush hour. Nothing says "I respect others" quite like forcing a line of 20 cars to crawl at 12 mph around blind corners because heaven forbid they use the bike path built specifically for this purpose.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500; color: #721c24;">And let's talk safety – not just theirs, but ours too. When a cyclist decides that stop signs are merely suggestions, guess who's legally responsible when things go sideways? That's right – the driver with actual insurance and a license plate.</p>
+        </div>
+        
+        <div class="text-center mt-5">
+          <a href="#join" class="btn btn-danger btn-lg px-5 py-3" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1.4rem;">JOIN THE MOVEMENT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Our Approach Section with Old Glory Blue background -->
+<section class="section-padding" style="padding: 4rem 0; background-color: #0A3161;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0" style="padding-left: 2rem; padding-right: 2rem;">
+          <!-- Section title with hover effect -->
+          <div class="section-title-wrapper">
+            <h3 style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.2rem; margin: 0; color: white; letter-spacing: 2px; display: inline-block;">OUR APPROACH</h3>
+            <div class="title-underline" style="height: 3px; background-color: #B31942; width: 0; transition: width 0.3s ease;"></div>
+          </div>
+          
+          <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; color: #f8f9fa; font-weight: 400;">We're not just complaining—we're taking action! Founded in 2023 by drivers who've had <span style="color: #B31942; font-weight: 700;">ENOUGH</span>, Americans Against Road Bikers stands up for the forgotten majority: the people who actually pay road taxes.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; color: #f8f9fa; font-weight: 400;">While the spandex brigade clogs our streets without contributing a dime to infrastructure, we're fighting for transportation policies that reflect <span style="color: #B31942; font-weight: 700;">REALITY</span>, not cyclist fantasy land. We advocate for dedicated bike paths separate from main roads - because safety matters for everyone.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; color: #f8f9fa; font-weight: 400;">Yes, we believe in "sharing the road"—in a way that makes sense. That means cyclists should have their own infrastructure instead of pretending they're training for the Tour de France on your morning commute. Our common-sense approach demands accountability from <span style="color: #B31942; font-weight: 700;">BOTH</span> sides.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.5; color: #f8f9fa; font-weight: 400;">When planning communities, we need to recognize the reality: cars, bikes, and pedestrians deserve separate spaces to maximize safety and efficiency for everyone.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <img src="/images/Biking.jpg" alt="Road Safety Teacher" class="img-fluid rounded" style="width: 70%; max-width: 350px; border: 3px solid #B31942; box-shadow: 5px 5px 0 rgba(179, 25, 66, 0.5);">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Key Issues Section - with white background for contrast -->
+  <section id="issues" class="section-padding" style="padding-top: 6rem; background-color: white;">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col">
+          <!-- Section title with hover effect -->
+          <div class="section-title-wrapper text-center">
+            <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block;">KEY BATTLEGROUNDS</h2>
+            <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
+          </div>
+          <p class="lead" style="color: #555;">The four horsemen of the cycling apocalypse we're fighting every day</p>
+        </div>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Issue Cards -->
+        <IssueCard 
+          icon="fa-road" 
+          title="ROAD HOGGING 101" 
+          content="Fighting to banish lycra-clad road blockers to their own designated lanes where they can pretend they're Lance Armstrong without endangering the rest of us."
+        />
+        
+        <IssueCard 
+          icon="fa-helmet-safety" 
+          title="SAFETY REALITY CHECK" 
+          content="Demanding cyclists actually become visible with more than just their neon outfits and fragile egos—let's make reflectors, helmets, and accountability mandatory."
+        />
+        
+        <IssueCard 
+          icon="fa-book-open" 
+          title="RULES ARE FOR EVERYONE" 
+          content="Funding programs to remind the bike brigade that red lights and stop signs apply to THEM TOO—shocking, we know."
+        />
+        
+        <IssueCard 
+          icon="fa-scale-balanced" 
+          title="FAIRNESS FOR THE 99%" 
+          content="Balancing the scales of justice so one cyclist's 'right to the road' doesn't trump fifty drivers' right to get to work on time without having a collective aneurysm."
+        />
+      </div>
+    </div>
+  </section>
+
+<!-- Statistics Counter Section -->
+<section id="stats" class="section-padding bg-light" style="padding: 5rem 0;">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-12">
+        <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5rem; margin-bottom: 2rem;">THE NUMBERS DON'T LIE</h2>
+      </div>
+    </div>
+    <div class="row text-center">
+      <StatsCounter number="15,000+" label="Members Nationwide" icon="fa-users" />
+      <StatsCounter number="47" label="Active Local Chapters" icon="fa-map-marker-alt" />
+      <StatsCounter number="73%" label="Support Separate Bike Paths" icon="fa-thumbs-up" />
+      <StatsCounter number="124" label="Local Victories" icon="fa-trophy" />
+    </div>
+  </div>
+</section>
+
+ <!-- Latest News Section with Old Glory Blue background -->
+ <section id="news" class="section-padding" style="padding-top: 6rem; padding-bottom: 6rem; background-color: #0A3161;">
+   <div class="container">
+     <div class="row text-center mb-5">
+       <div class="col">
+         <!-- Section title with hover effect -->
+         <div class="section-title-wrapper text-center">
+           <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; color: white; display: inline-block;">LATEST UPDATES</h2>
+           <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
+         </div>
+         <p class="lead" style="color: rgba(255,255,255,0.8);">Stay informed about our crusade against road bikers</p>
+       </div>
+     </div>
+     
+     <div class="row g-4">
+       <!-- News Card 1 -->
+       <NewsCard 
+         image="/images/Citycouncil.webp" 
+         title="AARBAA Unleashes CHAOS at City Council" 
+         date="March 15, 2025" 
+         excerpt="Our 75-strong AARBAA battalion arrived wearing matching crimson 'ROADS ARE FOR CARS' t-shirts, strategically positioned to surround the cycling advocates..." 
+         link="/blog/city-council-presentation"
+       />
+       
+       <!-- News Card 2 -->
+       <NewsCard 
+         image="/images/missioncontrol.jpg" 
+         title="LEGISLATIVE WARFARE: Bill 477 DEMOLISHES Cyclist Entitlement" 
+         date="February 28, 2025" 
+         excerpt="As Bill 477 passed, the cyclist lobby unleashed a tantrum so epic it could only be described as performance art. Picture grown adults in skin-tight lycra..." 
+         link="/blog/bill-477-update"
+       />
+       
+       <!-- News Card 3 -->
+       <NewsCard 
+         image="/images/victory.jpg" 
+         title="CIVILIZATION 101: Teaching Cyclists Human Decency" 
+         date="March 8, 2025" 
+         excerpt="Imagine our surprise when we discovered that explaining basic road courtesy was equivalent to teaching quantum mechanics to a goldfish..." 
+         link="/blog/cyclist-decency-workshop"
+       />
+     </div>
+     
+     <div class="text-center mt-5">
+       <a href="/blog" class="btn btn-outline-light btn-lg px-4">View All Updates</a>
+     </div>
+   </div>
+ </section>
+
+<!-- Join Section with CTA and Form -->
+<section id="join" class="section-padding" style="background-color: #f8f8f8; padding: 5rem 0;">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; color: #B31942; margin-bottom: 1rem;">JOIN THE RESISTANCE</h2>
+        <p class="lead mb-4">Become a member today and help us reclaim America's roads one bike path at a time!</p>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-lg">
+          <div class="card-body p-5">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="firstName" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="zipCode" class="form-label">Zip Code</label>
+                  <input type="text" class="form-control" id="zipCode" required>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="newsletter" checked>
+                    <label class="form-check-label" for="newsletter">
+                      Keep me updated on the fight against road cyclists
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="btn btn-danger btn-lg px-5">JOIN THE CAUSE</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="section-padding" style="background-color: #0A3161; padding: 5rem 0; color: white;">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col">
+        <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; color: white;">VOICES FROM THE TRENCHES</h2>
+        <p class="lead" style="color: rgba(255,255,255,0.8);">Real Americans who have joined our movement</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-lg">
+          <div class="card-body p-4 text-center testimonial-card">
+            <div class="mb-3">
+              <i class="fas fa-quote-left fa-3x quote-icon" style="color: #B31942; opacity: 0.5; transition: opacity 0.3s ease, transform 0.3s ease;"></i>
+            </div>
+            <p class="card-text mb-4 quote-text" style="transition: transform 0.3s ease, font-weight 0.3s ease;">I was 20 minutes late to a job interview because a pack of cyclists refused to use the nearby bike path. AARBAA gave me the resources to advocate for change in my community.</p>
+            <div style="width: 50px; height: 3px; background-color: #B31942; margin: 0 auto 1rem;"></div>
+            <h5 class="card-title mb-1">Michael D.</h5>
+            <p class="text-muted">Dallas, TX</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-lg">
+          <div class="card-body p-4 text-center testimonial-card">
+            <div class="mb-3">
+              <i class="fas fa-quote-left fa-3x quote-icon" style="color: #B31942; opacity: 0.5; transition: opacity 0.3s ease, transform 0.3s ease;"></i>
+            </div>
+            <p class="card-text mb-4 quote-text" style="transition: transform 0.3s ease, font-weight 0.3s ease;">After joining AARBAA, I helped petition our city council to build separated bike lanes. Now cyclists have their space, drivers have theirs, and everyone is safer. Common sense wins!</p>
+            <div style="width: 50px; height: 3px; background-color: #B31942; margin: 0 auto 1rem;"></div>
+            <h5 class="card-title mb-1">Sarah J.</h5>
+            <p class="text-muted">Portland, OR</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-lg">
+          <div class="card-body p-4 text-center testimonial-card">
+            <div class="mb-3">
+              <i class="fas fa-quote-left fa-3x quote-icon" style="color: #B31942; opacity: 0.5; transition: opacity 0.3s ease, transform 0.3s ease;"></i>
+            </div>
+            <p class="card-text mb-4 quote-text" style="transition: transform 0.3s ease, font-weight 0.3s ease;">I'm actually a cyclist myself, but I got tired of the entitled attitudes. AARBAA isn't anti-cycling, they're pro-common sense. Separate paths make cycling safer for everyone.</p>
+            <div style="width: 50px; height: 3px; background-color: #B31942; margin: 0 auto 1rem;"></div>
+            <h5 class="card-title mb-1">Thomas R.</h5>
+            <p class="text-muted">Boulder, CO</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Section title underline animation */
+  .section-title-wrapper:hover .title-underline {
+    width: 100%;
+  }
+  
+  /* Card hover effects */
+  .card-hover:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Testimonial quote hover effects */
+  .testimonial-card:hover .quote-icon {
+    opacity: 1;
+    transform: scale(1.2);
+    color: #B31942;
+  }
+  
+  .testimonial-card:hover .quote-text {
+    font-weight: 500;
+    transform: scale(1.05);
+    color: #0A3161;
+  }
+</style>
+
+<script>
+  // Initialize hover effects for cards
+  document.addEventListener('DOMContentLoaded', function() {
+    const titleWrappers = document.querySelectorAll('.section-title-wrapper');
+    
+    titleWrappers.forEach(wrapper => {
+      wrapper.addEventListener('mouseenter', () => {
+        const underline = wrapper.querySelector('.title-underline');
+        if (underline) {
+          underline.style.width = '100%';
+        }
+      });
+      
+      wrapper.addEventListener('mouseleave', () => {
+        const underline = wrapper.querySelector('.title-underline');
+        if (underline) {
+          underline.style.width = '0';
+        }
+      });
+    });
+  });
+</script>
+</MainLayout>

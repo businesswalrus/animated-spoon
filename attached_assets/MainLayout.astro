@@ -1,0 +1,441 @@
+---
+// /layouts/MainLayout.astro
+// Import Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts - Updated to more professional fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom styles to enhance Bootstrap -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Enhanced Navbar Styling */
+    .navbar {
+      background-color: #000000 !important;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 200px; /* Increased height for larger logo */
+      display: flex;
+      align-items: center;
+    }
+
+    .container.nav-container {
+      display: flex;
+      width: 100%;
+      padding-left: 0;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      margin-right: auto; /* Push logo left */
+      padding-right: 2rem;
+    }
+    
+    .navbar-brand img {
+      height: 420px; /* Increased logo size (3x larger) */
+      width: auto;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      transform: scale(1.02);
+    }
+
+    .navbar-nav .nav-link {
+      color: #ffffff !important;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      transition: all 0.3s ease;
+      white-space: nowrap; /* Prevent wrapping */
+    }
+
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 80%;
+      background-color: #B31942; /* Updated to Old Glory Red */
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+      width: 100%;
+      left: 0;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #B31942 !important; /* Updated to Old Glory Red */
+    }
+
+    .navbar-nav .btn-danger {
+      background-color: #B31942 !important; /* Updated to Old Glory Red */
+      border-color: #B31942 !important; /* Updated to Old Glory Red */
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap; /* Prevent "Join Us" from wrapping */
+      padding: 0.5rem 1rem; /* Adjusted padding */
+    }
+
+    .navbar-nav .btn-danger::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: all 0.6s;
+    }
+
+    .navbar-nav .btn-danger:hover::before {
+      left: 100%;
+    }
+
+    .navbar-nav .btn-danger:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Improved Responsive Logo Sizing with smoother transitions */
+    @media (min-width: 1600px) {
+      .navbar-brand img {
+        height: 420px;
+      }
+    }
+    
+    @media (max-width: 1599px) and (min-width: 1400px) {
+      .navbar-brand img {
+        height: 380px;
+      }
+    }
+    
+    @media (max-width: 1399px) and (min-width: 1200px) {
+      .navbar-brand img {
+        height: 340px;
+      }
+    }
+    
+    @media (max-width: 1199px) and (min-width: 992px) {
+      .navbar-brand img {
+        height: 300px;
+      }
+    }
+    
+    @media (max-width: 991px) {
+      .navbar {
+        height: auto !important;
+        padding: 0.5rem 1rem;
+      }
+
+      .navbar-brand {
+        margin-right: 0;
+      }
+
+      .navbar-brand img {
+        height: 200px;
+      }
+
+      .navbar-toggler {
+        margin-left: auto; /* Fix for mobile menu button positioning */
+      }
+
+      .navbar-collapse {
+        margin-top: 0.5rem;
+        width: 100%; /* Full width on mobile */
+      }
+      
+      .navbar-nav {
+        padding-bottom: 0.5rem;
+        text-align: right; /* Align items to the right on mobile */
+      }
+      
+      .navbar-nav .nav-item {
+        margin-bottom: 0.5rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .navbar-brand img {
+        height: 160px;
+      }
+    }
+
+    /* Hero section adjustment for larger navbar */
+    .hero-section {
+      position: relative;
+      background-color: #0A3161; /* Updated to Old Glory Blue */
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/Biking.jpg');
+      background-size: 100% auto;
+      background-position: 25% 25%;
+      background-repeat: no-repeat;
+      color: white;
+      margin-top: 200px; /* Updated to match navbar height */
+      min-height: 600px;
+    }
+
+    /* Custom color classes for the new color scheme */
+    .text-primary-aarbaa {
+      color: #0A3161 !important; /* Old Glory Blue */
+    }
+    
+    .text-danger-aarbaa {
+      color: #B31942 !important; /* Old Glory Red */
+    }
+    
+    .bg-primary-aarbaa {
+      background-color: #0A3161 !important; /* Old Glory Blue */
+    }
+    
+    .bg-danger-aarbaa {
+      background-color: #B31942 !important; /* Old Glory Red */
+    }
+    
+    .border-primary-aarbaa {
+      border-color: #0A3161 !important; /* Old Glory Blue */
+    }
+    
+    .border-danger-aarbaa {
+      border-color: #B31942 !important; /* Old Glory Red */
+    }
+    
+    /* Button overrides for Bootstrap */
+    .btn-danger {
+      background-color: #B31942 !important; /* Old Glory Red */
+      border-color: #B31942 !important; /* Old Glory Red */
+    }
+    
+    .btn-outline-danger {
+      color: #B31942 !important; /* Old Glory Red */
+      border-color: #B31942 !important; /* Old Glory Red */
+    }
+    
+    .btn-outline-danger:hover {
+      background-color: #B31942 !important; /* Old Glory Red */
+      color: white !important;
+    }
+    
+    .btn-primary {
+      background-color: #0A3161 !important; /* Old Glory Blue */
+      border-color: #0A3161 !important; /* Old Glory Blue */
+    }
+    
+    .btn-outline-primary {
+      color: #0A3161 !important; /* Old Glory Blue */
+      border-color: #0A3161 !important; /* Old Glory Blue */
+    }
+    
+    .btn-outline-primary:hover {
+      background-color: #0A3161 !important; /* Old Glory Blue */
+      color: white !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar with updated container class -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container nav-container">
+      <a class="navbar-brand" href="/">
+        <img src="/images/Untitled.svg" alt="AARBAA Logo" class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#issues">Issues</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/resources">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blog">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-danger" href="#join">Join Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" style="background-color: #000000 !important; padding: 1rem 0 0.5rem;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-3">
+          <img src="/images/Untitled.svg" alt="AARBAA Logo" height="100" class="mb-2">
+          <p class="fw-bold text-uppercase" style="letter-spacing: 1px; color: #B31942; font-size: 0.9rem;">Americans Against Road Bikers Association</p>
+          <p class="text-white-50" style="font-size: 0.8rem;">Because America Has Had Enough</p>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <h5 class="text-danger-aarbaa mb-2" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1rem;">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#about" class="footer-link">About Us</a></li>
+            <li><a href="#issues" class="footer-link">Key Issues</a></li>
+            <li><a href="/resources" class="footer-link">Shop</a></li>
+            <li><a href="/blog" class="footer-link">News</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <h5 class="text-danger-aarbaa mb-2" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1rem;">Get Involved</h5>
+          <ul class="list-unstyled">
+            <li><a href="#join" class="footer-link">Become a Member</a></li>
+            <li><a href="/donate" class="footer-link">Donate</a></li>
+            <li><a href="#contact" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 mb-3">
+          <h5 class="text-danger-aarbaa mb-2" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1rem;">Stay in the Fight</h5>
+          <p class="text-white-50" style="font-size: 0.9rem;">Join our intel network for the latest updates.</p>
+          <form class="d-flex">
+            <input type="email" class="form-control me-2" placeholder="Your email" required>
+            <button type="submit" class="btn btn-danger">DEPLOY</button>
+          </form>
+          <div class="social-links mt-2">
+            <a href="#" class="social-icon me-3" style="color: #1e90ff;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon me-3" style="color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon me-3" style="color: #c32aa3;"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" style="color: #ff0000;"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-2 mb-2 border-secondary">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="text-white-50" style="font-size: 0.8rem;">&copy; 2025 AARBAA - Defending America's Roads</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="/privacy" class="footer-link me-3">Privacy Policy</a>
+          <a href="/terms" class="footer-link">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <style>
+    .footer {
+      color: #f4f4f4;
+    }
+  
+    .footer-link {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.9rem;
+    }
+  
+    .footer-link:hover {
+      color: #B31942; /* Updated to Old Glory Red */
+    }
+  
+    .social-icon {
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+  
+    .social-icon:hover {
+      opacity: 0.8;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Smooth scrolling function
+      const scrollToSection = (targetId) => {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 220, // Updated offset to match new navbar height
+            behavior: 'smooth'
+          });
+        }
+      };
+
+      // Handle hash links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (anchor.getAttribute('href').length > 1) {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            scrollToSection(targetId);
+          });
+        }
+      });
+
+      // Special handling for News button to scroll to latest updates
+      const newsLink = document.querySelector('a[href="/blog"]');
+      if (newsLink) {
+        newsLink.addEventListener('click', (e) => {
+          // Check if on the home page
+          if (window.location.pathname === '/') {
+            e.preventDefault();
+            scrollToSection('news');
+          }
+        });
+      }
+
+      // Handle other page navigation to return to homepage
+      const navLinks = document.querySelectorAll('nav .navbar-nav a, footer .footer-link');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          // Check if not on homepage and not a hash link or news link
+          const href = link.getAttribute('href');
+          if (window.location.pathname !== '/' && 
+              href !== '#about' && 
+              href !== '#issues' && 
+              href !== '#join' && 
+              href !== '#contact' &&
+              href !== '/blog') {
+            e.preventDefault();
+            window.location.href = '/';
+          }
+        });
+      });
+    });
+  </script>
+  
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+---
+// src/components/SolutionCard.astro
+const { title, description, icon, benefits, image, color } = Astro.props;
+---
+
+<div class="col-md-4 mb-4">
+  <div class="card h-100 border-0 shadow-sm solution-card" style={`border-top: 4px solid ${color}`}>
+    <div class="card-body p-4">
+      <div class="text-center mb-3">
+        <i class={`fas fa-${icon} fa-3x`} style={`color: ${color}`}></i>
+      </div>
+      <h3 class="card-title h5 text-center mb-3" style="font-family: 'Roboto Condensed', sans-serif;">{title}</h3>
+      <p class="card-text text-center mb-4">{description}</p>
+      
+      <ul class="mb-0 ps-3">
+        {benefits.map((benefit) => (
+          <li class="mb-2">{benefit}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .solution-card {
+    transition: all 0.3s ease;
+  }
+  
+  .solution-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+  }
+</style>

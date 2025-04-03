@@ -1,0 +1,192 @@
+---
+// src/pages/contact.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<MainLayout title="Contact AARBAA - Get In Touch">
+  <!-- Hero Section -->
+  <section class="text-center mt-5 pt-5" 
+    style="
+      padding-top: 100px !important;
+      background-color: #0A3161;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/contact-hero.jpg');
+      background-size: cover !important; 
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      min-height: 400px;
+      color: white;
+      margin-top: 200px;
+      display: flex;
+      align-items: center;
+    ">
+    <div class="container py-5 my-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h1 class="display-4 fw-bold mb-4">Contact Us</h1>
+          <p class="lead mb-4">Get in touch with AARBAA and join the fight for sane roads</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Content Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="bg-white p-5 shadow-lg">
+            <div class="row">
+              <div class="col-lg-5 mb-5 mb-lg-0">
+                <h2 style="font-family: 'Roboto Condensed', sans-serif; color: #B31942; border-bottom: 3px solid #B31942; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">GET IN TOUCH</h2>
+                
+                <p class="lead mb-4">Have a question, suggestion, or road biker horror story to share? Our team is standing by to hear from you!</p>
+                
+                <div class="d-flex align-items-start mb-4">
+                  <div class="me-3">
+                    <i class="fas fa-map-marker-alt fa-2x" style="color: #0A3161;"></i>
+                  </div>
+                  <div>
+                    <h3 class="h5 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">Headquarters</h3>
+                    <p>1776 Freedom Drive<br>Patriot City, USA 12345</p>
+                  </div>
+                </div>
+                
+                <div class="d-flex align-items-start mb-4">
+                  <div class="me-3">
+                    <i class="fas fa-envelope fa-2x" style="color: #0A3161;"></i>
+                  </div>
+                  <div>
+                    <h3 class="h5 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">Email</h3>
+                    <p>info@aarbaa.com</p>
+                  </div>
+                </div>
+                
+                <div class="d-flex align-items-start mb-4">
+                  <div class="me-3">
+                    <i class="fas fa-phone fa-2x" style="color: #0A3161;"></i>
+                  </div>
+                  <div>
+                    <h3 class="h5 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">Phone</h3>
+                    <p>(555) ROAD-LAW</p>
+                  </div>
+                </div>
+                
+                <div class="d-flex align-items-start mb-5">
+                  <div class="me-3">
+                    <i class="fas fa-clock fa-2x" style="color: #0A3161;"></i>
+                  </div>
+                  <div>
+                    <h3 class="h5 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">Hours</h3>
+                    <p>Monday - Friday: 9am - 5pm<br>Weekend: Closed (we're out enjoying roads free of cyclists)</p>
+                  </div>
+                </div>
+                
+                <h3 class="h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif;">Connect With Us</h3>
+                <div class="social-links">
+                  <a href="#" class="me-3" style="color: #1877f2; font-size: 1.5rem;"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="me-3" style="color: #1da1f2; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="me-3" style="color: #c32aa3; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                  <a href="#" style="color: #ff0000; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+              
+              <div class="col-lg-7">
+                <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 0.5rem;">
+                  <h2 style="font-family: 'Roboto Condensed', sans-serif; color: #B31942; margin-bottom: 1.5rem;">SEND US A MESSAGE</h2>
+                  
+                  <ContactForm />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; color: #0A3161;">FREQUENTLY ASKED QUESTIONS</h2>
+          
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="font-family: 'Roboto Condensed', sans-serif; font-weight: bold;">
+                  Is AARBAA a real organization?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>Yes, we're a real organization with a mission to advocate for safer, more sensible road-sharing policies. While we use satire to make our points, our concerns about cyclist safety and traffic efficiency are very real.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-family: 'Roboto Condensed', sans-serif; font-weight: bold;">
+                  Do you really hate cyclists?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>Not at all! We have nothing against cycling as an activity or cyclists as people. Our issue is specifically with the practice of riding bicycles on roads designed for motor vehicles when dedicated cycling infrastructure would be safer for everyone. Many of our members are cyclists themselves—they just prefer to ride on paths, not roads.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="font-family: 'Roboto Condensed', sans-serif; font-weight: bold;">
+                  Isn't it legal for bikes to be on the road?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>Yes, in most places it is legal. We're not arguing that cyclists are breaking the law (though some certainly do when they ignore traffic signals). We're arguing that the laws and infrastructure should be updated to reflect modern traffic realities. Just because something is legal doesn't mean it's the safest or most efficient solution.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item mb-3 border-0 shadow-sm">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="font-family: 'Roboto Condensed', sans-serif; font-weight: bold;">
+                  How can I start a local AARBAA chapter?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>We're excited about your interest! To start a local chapter, fill out the contact form above with the subject line "New Chapter Inquiry" and someone from our organizing team will reach out with resources and guidelines to help you get started in your community.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item border-0 shadow-sm">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="font-family: 'Roboto Condensed', sans-serif; font-weight: bold;">
+                  What specific policies do you advocate for?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>Our policy priorities include:</p>
+                  <ul>
+                    <li>Development of more dedicated bicycle infrastructure separated from vehicle traffic</li>
+                    <li>Registration and identification requirements for road cyclists</li>
+                    <li>Liability insurance requirements for cyclists using public roads</li>
+                    <li>Stricter enforcement of traffic laws for cyclists</li>
+                    <li>Transportation planning that prioritizes efficient flow for the majority of road users</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

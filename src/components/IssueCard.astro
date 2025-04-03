@@ -1,0 +1,41 @@
+---
+// /components/IssueCard.astro
+const { icon, title, content } = Astro.props;
+---
+<div class="col-md-6 col-lg-3 mb-4">
+  <div class="card h-100 border-0 shadow-lg card-hover" style="border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="card-body p-4 text-center">
+      <div class="icon-wrapper mb-4" style="
+        width: 80px; 
+        height: 80px; 
+        border-radius: 50%; 
+        background-color: rgba(179, 25, 66, 0.1); 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        margin: 0 auto;
+        transition: all 0.3s ease;
+      ">
+        <i class={`fas ${icon} fa-2x`} style="color: #B31942;"></i>
+      </div>
+      <h3 class="card-title mb-3" style="font-family: 'Roboto Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; color: #0A3161; letter-spacing: 1px;">{title}</h3>
+      <div style="width: 50px; height: 3px; background-color: #B31942; margin: 0 auto 1rem;"></div>
+      <p class="card-text" style="color: #555; font-size: 0.95rem;">{content}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+  }
+  
+  .card-hover:hover .icon-wrapper {
+    background-color: #B31942;
+  }
+  
+  .card-hover:hover .icon-wrapper i {
+    color: white !important;
+  }
+</style>

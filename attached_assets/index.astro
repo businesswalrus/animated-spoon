@@ -1,0 +1,674 @@
+---
+// src/pages/index.astro
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="AARBAA - Americans Against Road Bikers Association of America">
+<!-- Hero Section - Using Bootstrap spacing utilities with inline background -->
+<section class="text-center mt-5 pt-5" id="home" 
+style="
+  padding-top: 100px !important;
+  background-color: #0A3161;
+  background: url('/images/Biking.jpg') top center;
+  background-size: cover !important; 
+  background-repeat: no-repeat !important;
+  min-height: 800px;
+  color: white;
+  margin-top: 200px;
+">
+  <div class="container py-5 my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1 class="display-4 fw-bold mb-4">Americans Against Road Bikers Association of America</h1>
+        <p class="lead mb-5">Because Americans Have Had Enough</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+          <a href="#join" class="btn btn-danger btn-lg px-4 me-md-2">Join Our Cause</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About/Mission Section -->
+<section id="about" class="section-padding bg-light" style="padding-top: 3rem;">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-10 text-center" style="margin-top: 2rem;">
+        <div style="background-color: #B31942; padding: 1rem; border-radius: 0.5rem; display: inline-block; transform: rotate(-1deg); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+          <h2 class="fw-bold mb-0" style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; color: white; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">THE PROBLEM</h2>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div style="background-color: #f8d7da; border-left: 5px solid #B31942; padding: 1.5rem; margin-bottom: 2rem; border-radius: 0.25rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <!-- Enhanced "You've seen them" heading with more impact -->
+          <div class="text-center mb-4">
+            <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; letter-spacing: 2px; color: #B31942; text-shadow: 1px 1px 0px rgba(0,0,0,0.2); text-transform: uppercase; line-height: 1.2;">YOU'VE SEEN THEM.<br>WE'VE ALL SEEN THEM.</p>
+            <div style="width: 60%; height: 5px; background-color: #B31942; margin: 0 auto;"></div>
+          </div>
+          
+          <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500; color: #721c24; margin-bottom: 1rem;">Those packs of neon-clad warriors, squeezing into tight formations on our precious roadways, pedaling with the self-importance of someone who thinks they're saving the planet one insufferable mile at a time.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500; color: #721c24; margin-bottom: 1rem;">Let's be honest about road bikers, shall we? These weekend warriors aren't environmental heroes – they're just hobbyists with expensive toys clogging up our roads. The irony of watching someone load a $5,000 carbon fiber bike onto a gas-guzzling Denali before driving 40 minutes to work isn't lost on the rest of us sitting in traffic behind them.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500; color: #721c24; margin-bottom: 1rem;">"Share the road," they preach, while taking up entire lanes during rush hour. Nothing says "I respect others" quite like forcing a line of 20 cars to crawl at 12 mph around blind corners because heaven forbid they use the bike path built specifically for this purpose.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500; color: #721c24;">And let's talk safety – not just theirs, but ours too. When a cyclist decides that stop signs are merely suggestions, guess who's legally responsible when things go sideways? That's right – the driver with actual insurance and a license plate. Nothing brightens your day quite like the potential financial and legal nightmare of navigating an accident with someone whose only identification is their Strava account.</p>
+        </div>
+        
+        <div class="text-center mt-5">
+          <a href="#join" class="btn btn-danger btn-lg px-5 py-3" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1.4rem;">JOIN THE MOVEMENT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Our Approach Section with Old Glory Blue background -->
+<section class="section-padding" style="padding: 4rem 0; background-color: #0A3161;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0" style="padding-left: 2rem; padding-right: 2rem;">
+          <!-- Section title with hover effect -->
+          <div class="section-title-wrapper">
+            <h3 style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.2rem; margin: 0; color: white; letter-spacing: 2px; display: inline-block;">OUR APPROACH</h3>
+            <div class="title-underline" style="height: 3px; background-color: #B31942; width: 0; transition: width 0.3s ease;"></div>
+          </div>
+          
+          <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; color: #f8f9fa; font-weight: 400;">We're not just complaining—we're taking action! Founded in 2023 by drivers who've had <span style="color: #B31942; font-weight: 700;">ENOUGH</span>, Americans Against Road Bikers stands up for the forgotten majority: the people who actually pay road taxes.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; color: #f8f9fa; font-weight: 400;">While the spandex brigade clogs our streets without contributing a dime to infrastructure, we're fighting for transportation policies that reflect <span style="color: #B31942; font-weight: 700;">REALITY</span>, not cyclist fantasy land. We work with local governments who are tired of catering to the vocal 2% at the expense of the commuting 98%.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; color: #f8f9fa; font-weight: 400;">Yes, we believe in "sharing the road"—which means cyclists should stick to their designated lanes instead of pretending they're training for the Tour de France on your morning commute. Our common-sense approach demands accountability from <span style="color: #B31942; font-weight: 700;">BOTH</span> sides, but let's be honest: one side needs to hear it a lot more than the other.</p>
+          
+          <p style="font-size: 1.1rem; line-height: 1.5; color: #f8f9fa; font-weight: 400;">When a cyclist treats traffic laws like optional suggestions, we're there to remind officials who really keeps this economy moving—and it's not the people in neon unitards blocking traffic while they burn 200 calories.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <img src="/images/protest.webp" alt="Anti Biker Protest" class="img-fluid rounded" style="width: 70%; max-width: 350px; border: 3px solid #B31942; box-shadow: 5px 5px 0 rgba(179, 25, 66, 0.5);">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Key Issues Section - with white background for contrast -->
+  <section id="issues" class="section-padding" style="padding-top: 6rem; background-color: white;">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col">
+          <!-- Section title with hover effect -->
+          <div class="section-title-wrapper text-center">
+            <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block;">KEY BATTLEGROUNDS</h2>
+            <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
+          </div>
+          <p class="lead" style="color: #555;">The four horsemen of the cycling apocalypse we're fighting every day</p>
+        </div>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Issue Card 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow card-hover" style="border-top: 5px solid #B31942 !important; transition: all 0.3s ease;">
+            <div class="card-body p-4">
+              <div class="mb-3 text-center">
+                <i class="fas fa-road fa-3x" style="color: #B31942;"></i>
+              </div>
+              <h3 class="card-title h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif; font-size: 1.5rem; color: #B31942; letter-spacing: 1px;">ROAD HOGGING 101</h3>
+              <p class="card-text">Fighting to banish lycra-clad road blockers to their own designated lanes where they can pretend they're Lance Armstrong without endangering the rest of us.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Issue Card 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow card-hover" style="border-top: 5px solid #B31942 !important; transition: all 0.3s ease;">
+            <div class="card-body p-4">
+              <div class="mb-3 text-center">
+                <i class="fas fa-helmet-safety fa-3x" style="color: #B31942;"></i>
+              </div>
+              <h3 class="card-title h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif; font-size: 1.5rem; color: #B31942; letter-spacing: 1px;">SAFETY REALITY CHECK</h3>
+              <p class="card-text">Demanding cyclists actually become visible with more than just their neon outfits and fragile egos—let's make reflectors, helmets, and accountability mandatory.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Issue Card 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow card-hover" style="border-top: 5px solid #B31942 !important; transition: all 0.3s ease;">
+            <div class="card-body p-4">
+              <div class="mb-3 text-center">
+                <i class="fas fa-book-open fa-3x" style="color: #B31942;"></i>
+              </div>
+              <h3 class="card-title h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif; font-size: 1.5rem; color: #B31942; letter-spacing: 1px;">RULES ARE FOR EVERYONE</h3>
+              <p class="card-text">Funding programs to remind the bike brigade that red lights and stop signs apply to THEM TOO—shocking, we know.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Issue Card 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow card-hover" style="border-top: 5px solid #B31942 !important; transition: all 0.3s ease;">
+            <div class="card-body p-4">
+              <div class="mb-3 text-center">
+                <i class="fas fa-scale-balanced fa-3x" style="color: #B31942;"></i>
+              </div>
+              <h3 class="card-title h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif; font-size: 1.5rem; color: #B31942; letter-spacing: 1px;">FAIRNESS FOR THE 99%</h3>
+              <p class="card-text">Balancing the scales of justice so one cyclist's "right to the road" doesn't trump fifty drivers' right to get to work on time without having a collective aneurysm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Latest News Section with Old Glory Blue background -->
+ <section id="news" class="section-padding" style="padding-top: 6rem; padding-bottom: 6rem; background-color: #0A3161;">
+   <div class="container">
+     <div class="row text-center mb-5">
+       <div class="col">
+         <!-- Section title with hover effect -->
+         <div class="section-title-wrapper text-center">
+           <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; color: white; display: inline-block;">LATEST UPDATES</h2>
+           <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
+         </div>
+         <p class="lead" style="color: rgba(255,255,255,0.8);">Stay informed about our crusade against road bikers</p>
+       </div>
+     </div>
+     
+     <div class="row g-4">
+       <!-- News Card 1 -->
+       <div class="col-md-4">
+         <div class="card h-100 border-0 shadow card-hover" style="border-top: 5px solid #B31942 !important; transition: all 0.3s ease;">
+           <img src="/images/Citycouncil.webp" class="card-img-top" alt="City council meeting" style="height: 250px; object-fit: cover;">
+           <div class="card-body p-4">
+             <h3 class="card-title h5" style="font-family: 'Roboto Condensed', sans-serif;">We Crashed Their Party: AARBAA Dominates City Council Meeting</h3>
+             <p class="text-muted mb-2">March 15, 2025</p>
+             <p class="card-text">Watch the spandex squad squirm as our representatives demanded actual separated bike lanes on Main Street yesterday. Time to put the pedal-pushers where they belong—anywhere but in front of our cars!</p>
+             <a href="/blog/city-council-presentation" class="btn btn-outline-danger mt-2" style="color: #B31942; border-color: #B31942;">Read More</a>
+           </div>
+         </div>
+       </div>
+       
+       <!-- News Card 2 -->
+       <div class="col-md-4">
+         <div class="card h-100 border-0 shadow card-hover" style="border-top: 5px solid #B31942 !important; transition: all 0.3s ease;">
+           <img src="/images/sternteacher.jpg" class="card-img-top" alt="Community event" style="height: 250px; object-fit: cover;">
+           <div class="card-body p-4">
+             <h3 class="card-title h5" style="font-family: 'Roboto Condensed', sans-serif;">Teaching Cyclists Basic Human Decency</h3>
+             <p class="text-muted mb-2">March 8, 2025</p>
+             <p class="card-text">Over 200 fed-up citizens packed our road sharing workshop where we demonstrated revolutionary concepts like "stopping at red lights" and "single-file riding." Even a few reformed cyclists attended!</p>
+             <a href="/blog/safety-workshop" class="btn btn-outline-danger mt-2" style="color: #B31942; border-color: #B31942;">Read More</a>
+           </div>
+         </div>
+       </div>
+       
+       <!-- News Card 3 -->
+       <div class="col-md-4">
+         <div class="card h-100 border-0 shadow card-hover" style="border-top: 5px solid #B31942 !important; transition: all 0.3s ease;">
+           <img src="/images/victory.jpg" class="card-img-top" alt="New legislation" style="height: 250px; object-fit: cover;">
+           <div class="card-body p-4">
+             <h3 class="card-title h5" style="font-family: 'Roboto Condensed', sans-serif;">Victory! Bill 477 Acknowledges Drivers Exist</h3>
+             <p class="text-muted mb-2">February 28, 2025</p>
+             <p class="card-text">After months of AARBAA members flooding legislators with calls, the new transportation bill includes our demands for cyclist registration and liability requirements. The bike lobby threw a tantrum, but common sense prevailed.</p>
+             <a href="/blog/bill-477-update" class="btn btn-outline-danger mt-2" style="color: #B31942; border-color: #B31942;">Read More</a>
+           </div>
+         </div>
+       </div>
+     </div>
+     
+     <div class="text-center mt-5">
+       <a href="/blog" class="btn btn-outline-light">View All Updates</a>
+     </div>
+   </div>
+ </section>
+  
+<!-- Testimonials Section with white background -->
+<section id="testimonials" class="testimonial-section section-padding" style="background-color: white; padding-top: 6rem; padding-bottom: 6rem;">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col">
+        <!-- Section title with hover effect -->
+        <div class="section-title-wrapper text-center">
+          <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block;">TESTIMONIAL TRENCHES</h2>
+          <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
+        </div>
+        <p class="lead" style="color: #555;">Voices of sanity in the two-wheeled terror</p>
+      </div>
+    </div>
+    
+    <!--Start of Housecallpro Lead Capture code--> <script async src="https://online-booking.housecallpro.com/script.js?token=85d9ddf30fce4ea38644227a5fc41ded&orgName=Cavinder-Plumbing-Heating-and-Cooling"> </script> <iframe style="border: none;" id="hcp-lead-iframe" src="https://book.housecallpro.com/lead-form/Cavinder-Plumbing-Heating-and-Cooling/85d9ddf30fce4ea38644227a5fc41ded"></iframe> <!--End of Housecallpro Lead Capture code--> 
+    
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div id="testimonialCarousel" class="carousel slide" data-bs-interval="false">
+          <div class="carousel-inner">
+            <!-- Testimonial Set 1 -->
+            <div class="carousel-item active">
+              <div class="row">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4 mb-4">
+                  <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                    <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                      <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                      I used to think bike lanes were a good idea—until I spent a week dodging spandex-clad wannabe Tour de France riders blocking traffic like they own the road. AARBAA restored my faith that common sense isn't completely dead.
+                      <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                    </p>
+                    <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Ivana Humpallot, Road Rage Enthusiast</p>
+                  </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="col-md-4 mb-4">
+                  <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                    <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                      <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                      After my fourth near-miss with a cyclist who thinks stop signs are just 'suggestions,' I realized AARBAA isn't just an organization—it's a movement. These people get it: roads are for CARS, not bicycle ballet.
+                      <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                    </p>
+                    <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Jack Meoff, SUV Enthusiast</p>
+                  </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="col-md-4 mb-4">
+                  <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                    <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                      <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                      Our neighborhood was a war zone of cycling entitlement until AARBAA showed up. Now we have educational resources that teach cyclists the shocking concept that they're not actually above the law. Revolutionary, right?
+                      <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                    </p>
+                    <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Mike Oxlong, Traffic Enforcer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial Set 2 -->
+            <div class="carousel-item">
+              <div class="row">
+                <!-- Testimonial 4 -->
+                <div class="col-md-4 mb-4">
+                  <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                    <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                      <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                      I was 20 minutes late to work because some jerk in a neon onesie thought the middle of rush hour was the perfect time to practice for the Olympics. Thanks to AARBAA, I now have a support group for my cyclist-induced PTSD.
+                      <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                    </p>
+                    <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Hugh Jass, Commuter Rights Advocate</p>
+                  </div>
+                </div>
+                
+                <!-- Testimonial 5 -->
+                <div class="col-md-4 mb-4">
+                  <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                    <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                      <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                      My dog barks at cyclists. Turns out even animals can recognize public menaces. AARBAA is fighting the good fight to keep our streets safe from these two-wheeled terrorists with zero accountability.
+                      <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                    </p>
+                    <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Dixie Normous, Dog Walker</p>
+                  </div>
+                </div>
+                
+                <!-- Testimonial 6 -->
+                <div class="col-md-4 mb-4">
+                  <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                    <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                      <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                      I once saw a cyclist drinking a latte while pedaling. A LATTE! Meanwhile, I get a ticket for checking my phone at a red light. The double standard was killing me until AARBAA came along to fight this injustice.
+                      <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                    </p>
+                    <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Seymour Butts, Justice Seeker</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial Set 3 -->
+            <div class="carousel-item">
+              <div class="row">
+                <!-- Testimonial 7 -->
+                <div class="col-md-4 mb-4">
+                  <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                    <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                      <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                      I pay $50,000 for my Ford F-350 Super Duty and some guy in booty shorts on a $12,000 bike thinks he deserves equal road rights? AARBAA understands the REAL transportation hierarchy.
+                      <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                    </p>
+                    <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Ben Dover, Truck Enthusiast</p>
+                  </div>
+                </div>
+                
+                <!-- Testimonial 8 -->
+                <div class="col-md-4 mb-4">
+                  <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                    <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                      <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                      Ever since I became an AARBAA member, my horn-honking has taken on new meaning. It's not road rage anymore—it's civic activism! My blood pressure has never been better.
+                      <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                    </p>
+                    <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Anita Hanjob, Therapeutic Honker</p>
+                  </div>
+                </div>
+                
+                <!-- Testimonial 9 -->
+                <div class="col-md-4 mb-4">
+                  <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                    <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                      <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size:
+                      <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                                          </p>
+                                          <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Harry Balzac, Diesel Patriot</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  <!-- Testimonial Set 4 -->
+                                  <div class="carousel-item">
+                                    <div class="row">
+                                      <!-- Testimonial 10 -->
+                                      <div class="col-md-4 mb-4">
+                                        <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                                          <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                                            <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                                            My gym membership was getting expensive, so I started biking to work. After an AARBAA member "accidentally" doored me three times in one week, I got the message. Back to my SUV where I belong!
+                                            <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                                          </p>
+                                          <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Willie Stroker, Reformed Cyclist</p>
+                                        </div>
+                                      </div>
+                                      
+                                      <!-- Testimonial 11 -->
+                                      <div class="col-md-4 mb-4">
+                                        <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                                          <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                                            <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                                            When my kid said he wanted a bike for his birthday, I showed him AARBAA's website instead. Now he wants a Hummer. Parenting crisis averted, thanks to solid American values!
+                                            <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                                          </p>
+                                          <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Craven Moorhead, Responsible Parent</p>
+                                        </div>
+                                      </div>
+                                      
+                                      <!-- Testimonial 12 -->
+                                      <div class="col-md-4 mb-4">
+                                        <div class="text-center px-4 py-5 bg-white shadow-sm rounded h-100">
+                                          <p class="lead mb-4 text-muted position-relative" style="font-style: italic; font-size: 1rem;">
+                                            <i class="fas fa-quote-left position-absolute" style="color: #B31942; left: -15px; top: 0; font-size: 0.8rem;"></i>
+                                            As a former yoga instructor, I used to preach bike commuting. Then I got a real job and realized time is money. AARBAA helped me see the light: the only thing bikes are good for is collecting dust in the garage.
+                                            <i class="fas fa-quote-right position-absolute" style="color: #B31942; right: -15px; bottom: 0; font-size: 0.8rem;"></i>
+                                          </p>
+                                          <p class="fw-bold" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">— Phil McCracken, Corporate Climber</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                <div class="d-flex justify-content-center mt-4">
+                                  <button class="btn btn-danger mx-2" style="background-color: #B31942; border-color: #B31942;" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                                    <i class="fas fa-arrow-left"></i>
+                                  </button>
+                                  <button class="btn btn-danger mx-2" style="background-color: #B31942; border-color: #B31942;" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                                    <i class="fas fa-arrow-right"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      
+                      <!-- Membership/Join Section with Old Glory Blue background -->
+                      <section id="join" class="section-padding" style="background-color: #0A3161; padding-top: 6rem; padding-bottom: 6rem;">
+                        <div class="container">
+                          <div class="row text-center mb-5">
+                            <div class="col">
+                              <!-- Section title with hover effect -->
+                              <div class="section-title-wrapper text-center">
+                                <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; color: white; display: inline-block;">ENLIST IN THE RESISTANCE</h2>
+                                <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
+                              </div>
+                              <p class="lead" style="color: rgba(255,255,255,0.8);">Your ticket to the front lines of the war on wheeled warriors</p>
+                            </div>
+                          </div>
+                          
+                          <div class="row justify-content-center">
+                            <div class="col-md-5 mb-4 mb-md-0">
+                              <div class="card border-0 shadow-lg h-100" style="border-top: 5px solid #B31942 !important;">
+                                <div class="card-body p-4">
+                                  <h3 class="card-title mb-4 text-center" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px;">ARSENAL OF AWESOME</h3>
+                                  <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item border-0 ps-0">
+                                      <i class="fas fa-bullhorn me-3" style="color: #B31942;"></i> Amplify your road rage through official channels
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0">
+                                      <i class="fas fa-book-open me-3" style="color: #B31942;"></i> Weaponize yourself with anti-cyclist propaganda resources
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0">
+                                      <i class="fas fa-users me-3" style="color: #B31942;"></i> Connect with fellow road warriors tired of lycra-clad lunacy
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0">
+                                      <i class="fas fa-gavel me-3" style="color: #B31942;"></i> Get insider intel on bike-blocking legislation
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0">
+                                      <i class="fas fa-calendar-alt me-3" style="color: #B31942;"></i> VIP access to bike-bashing workshops and rallies
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-7">
+                              <div class="card border-0 shadow-lg" style="border-top: 5px solid #B31942 !important;">
+                                <div class="card-body p-4">
+                                  <h3 class="card-title mb-4 text-center" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px;">BATTLE REGISTRATION</h3>
+                                  <form id="join-form">
+                                    <div class="row g-3">
+                                      <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone">
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="zipCode" class="form-label">ZIP Code</label>
+                                        <input type="text" class="form-control" id="zipCode" required>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="membershipType" class="form-label">Commitment Level</label>
+                                        <select class="form-select" id="membershipType" required>
+                                          <option value="" selected disabled>Choose Your Weapon</option>
+                                          <option value="individual">Lone Wolf ($25/year)</option>
+                                          <option value="family">Family Battalion ($40/year)</option>
+                                          <option value="supporter">Road Warrior ($100/year)</option>
+                                          <option value="lifetime">Supreme Commander ($500)</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-12">
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" id="newsletter" checked>
+                                          <label class="form-check-label" for="newsletter">
+                                            Enroll me in the daily anti-cyclist intel briefing
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-danger w-100 py-2" style="background-color: #B31942; border-color: #B31942;">DECLARE WAR ON ROAD BIKERS</button>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      
+                      <!-- Contact Section with white background -->
+                      <section id="contact" class="section-padding" style="background-color: white; padding-top: 6rem; padding-bottom: 6rem;">
+                        <div class="container">
+                          <div class="row text-center mb-5">
+                            <div class="col">
+                              <!-- Section title with hover effect -->
+                              <div class="section-title-wrapper text-center">
+                                <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block;">CONNECT TO THE CAUSE</h2>
+                                <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
+                              </div>
+                              <p class="lead" style="color: #555;">Your lifeline to the front lines of the anti-cyclist revolution</p>
+                            </div>
+                          </div>
+                          
+                          <div class="row g-4">
+                            <div class="col-md-6">
+                              <div class="card border-0 shadow-lg h-100" style="border-top: 5px solid #B31942 !important;">
+                                <div class="card-body p-4">
+                                  <h3 class="card-title mb-4" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px;">MISSION CONTROL</h3>
+                                  
+                                  <!-- Mission Control Image with styling -->
+                                  <div class="mission-control-image mb-4 text-center">
+                                    <img src="/images/missioncontrol.jpg" alt="AARBAA Mission Control Center" class="img-fluid rounded" style="max-height: 240px; border: 3px solid #B31942; box-shadow: 5px 5px 0 rgba(10, 49, 97, 0.5);">
+                                  </div>
+                                  
+                                  <p><i class="fas fa-envelope me-3" style="color: #B31942;"></i> <strong>Battle Headquarters:</strong> <a href="mailto:counterattack@aarbaa.com">counterattack@aarbaa.com</a></p>
+                                  <p><i class="fas fa-phone me-3" style="color: #B31942;"></i> <strong>Emergency Hotline:</strong> (555) BIKE-FREE</p>
+                                  <p><i class="fas fa-map-marker-alt me-3" style="color: #B31942;"></i> <strong>Fortress Location:</strong><br>123 Main Street, Anti-Cyclist Command Center<br>Washington, DC 20001</p>
+                                  <hr class="my-4">
+                                  <h5 class="mb-3" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif;">Spread the Word</h5>
+                                  <div class="d-flex">
+                                    <a href="#" class="me-3" style="color: #1e90ff;"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                    <a href="#" class="me-3" style="color: #1da1f2;"><i class="fab fa-twitter fa-lg"></i></a>
+                                    <a href="#" class="me-3" style="color: #c32aa3;"><i class="fab fa-instagram fa-lg"></i></a>
+                                    <a href="#" class="social-icon" style="color: #ff0000;"><i class="fab fa-youtube fa-lg"></i></a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <div class="card border-0 shadow-lg h-100" style="border-top: 5px solid #B31942 !important;">
+                                <div class="card-body p-4">
+                                  <h3 class="card-title mb-4" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px;">FUND THE RESISTANCE</h3>
+                                  <div class="mb-4">
+                                    <p>The war against road bikers requires ammunition. Your financial support fuels our battle against the spandex invasion!</p>
+                                    <div class="alert" style="background-color: rgba(179, 25, 66, 0.1); border-left: 4px solid #B31942; padding: 1rem; margin: 1.5rem 0;">
+                                      <p class="mb-0"><strong>Intelligence Report:</strong> For every $100 donated, we can run one billboard exposing the truth about cyclists that reaches 50,000 motorists!</p>
+                                    </div>
+                                    <p class="fw-bold">Choose your support level:</p>
+                                    <div class="donation-options mb-4">
+                                      <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="donationAmount" id="donation25" value="25">
+                                        <label class="form-check-label" for="donation25">
+                                          <span class="fw-bold">Road Defender</span> - $25
+                                          <small class="d-block text-muted">Funds 500 "Cyclists: Pay Road Tax or Stay Home" bumper stickers</small>
+                                        </label>
+                                      </div>
+                                      <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="donationAmount" id="donation50" value="50">
+                                        <label class="form-check-label" for="donation50">
+                                          <span class="fw-bold">Traffic Liberator</span> - $50
+                                          <small class="d-block text-muted">Sponsors a "Honk If You Hate Bike Lanes" campaign</small>
+                                        </label>
+                                      </div>
+                                      <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="donationAmount" id="donation100" value="100" checked>
+                                        <label class="form-check-label" for="donation100">
+                                          <span class="fw-bold">Anti-Cyclist Commander</span> - $100
+                                          <small class="d-block text-muted">Funds aggressive lobbying at city council meetings</small>
+                                        </label>
+                                      </div>
+                                      <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="donationAmount" id="donation500" value="500">
+                                        <label class="form-check-label" for="donation500">
+                                          <span class="fw-bold">Five-Star Road General</span> - $500
+                                          <small class="d-block text-muted">Finances legal challenges against bike lane proposals</small>
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="donationAmount" id="donationCustom" value="custom">
+                                        <label class="form-check-label" for="donationCustom">
+                                          <span class="fw-bold">Custom Amount</span>
+                                          <div class="input-group mt-2" style="max-width: 150px;">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" class="form-control" placeholder="Other">
+                                          </div>
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <a href="/donate" class="btn btn-danger w-100" style="background-color: #B31942; border-color: #B31942;">FUEL THE FIGHT</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      </MainLayout>
+                      
+                      <script>
+                        // Form submission handling
+                        document.addEventListener('DOMContentLoaded', () => {
+                          // Handle join form submission
+                          const joinForm = document.getElementById('join-form');
+                          if (joinForm) {
+                            joinForm.addEventListener('submit', (e) => {
+                              e.preventDefault();
+                              
+                              // Get form values
+                              const firstName = document.getElementById('firstName').value;
+                              const lastName = document.getElementById('lastName').value;
+                              const email = document.getElementById('email').value;
+                              
+                              // In a real implementation, you would send this data to your server
+                              console.log('Form submitted:', { firstName, lastName, email });
+                              
+                              // Replace form with success message
+                              joinForm.innerHTML = `
+                                <div class="text-center p-4">
+                                  <div class="mb-4">
+                                    <i class="fas fa-check-circle text-success fa-3x"></i>
+                                  </div>
+                                  <h3 style="font-family: 'Roboto Condensed', sans-serif;">Thank You for Joining!</h3>
+                                  <p class="mb-0">Welcome to AARBAA, ${firstName}. You'll receive a confirmation email shortly with more information about your membership.</p>
+                                </div>
+                              `;
+                            });
+                          }
+                          
+                          // Title underline hover effects
+                          const titleWrappers = document.querySelectorAll('.section-title-wrapper');
+                          titleWrappers.forEach(wrapper => {
+                            const title = wrapper.querySelector('h2, h3');
+                            const underline = wrapper.querySelector('.title-underline');
+                            
+                            if (title && underline) {
+                              // On hover
+                              wrapper.addEventListener('mouseenter', () => {
+                                underline.style.width = title.offsetWidth + 'px';
+                              });
+                              
+                              // On hover out
+                              wrapper.addEventListener('mouseleave', () => {
+                                underline.style.width = '0';
+                              });
+                            }
+                          });
+                          
+                          // Initialize testimonial carousel with no auto-sliding
+                          var testimonialCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
+                            interval: false, // Disable auto-sliding
+                            wrap: true       // Allow wrapping from last to first slide
+                          });
+                        });
+                      </script>

@@ -1,0 +1,83 @@
+---
+// /components/StatsCounter.astro
+const { number, label, icon } = Astro.props;
+---
+<div class="col-md-3 mb-4 mb-md-0">
+  <div class="bg-white p-4 shadow-lg counter-box" style="border-radius: 8px; border-top: 4px solid #B31942; transition: all 0.3s ease;">
+    <div class="text-center">
+      <div class="icon-container mb-3" style="
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(179, 25, 66, 0.1);
+        transition: all 0.3s ease;
+      ">
+        <i class={`fas ${icon} fa-2x`} style="color: #B31942; transition: all 0.3s ease;"></i>
+      </div>
+      <h3 class="counter fw-bold mb-2" style="font-size: 2.8rem; color: #0A3161; font-family: 'Roboto Condensed', sans-serif;">{number}</h3>
+      <div style="width: 40px; height: 3px; background-color: #B31942; margin: 0.5rem auto 1rem;"></div>
+      <p class="text-uppercase fw-bold mb-0" style="letter-spacing: 1px; color: #555; font-size: 0.9rem;">{label}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Add animation to the counters when they come into view
+  document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.counter');
+    const options = {
+      threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add a class to make the number appear to count up
+          entry.target.classList.add('animate-counter');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+    
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+</script>
+
+<style>
+  .animate-counter {
+    animation: countUp 2s ease-out forwards;
+  }
+  
+  @keyframes countUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .counter-box {
+    cursor: pointer;
+  }
+
+  .counter-box:hover {
+    transform: translateY(-10px);
+  }
+  
+  .counter-box:hover .icon-container {
+    background-color: #B31942;
+  }
+  
+  .counter-box:hover .icon-container i {
+    color: white !important;
+  }
+</style>
