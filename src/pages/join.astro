@@ -1,7 +1,5 @@
 ---
-// src/pages/join.astro
 import MainLayout from '../layouts/MainLayout.astro';
-import JoinForm from '../components/JoinForm.astro';
 ---
 
 <MainLayout title="Join AARBAA - Become a Member">
@@ -272,7 +270,17 @@ import JoinForm from '../components/JoinForm.astro';
           <p class="lead mb-5">Complete the form below to become an official member of AARBAA and help us reclaim America's roads.</p>
           
           <div class="bg-white p-4 rounded shadow-lg" style="color: #333;">
-            <JoinForm />
+           <form action="#" method="POST">
+  <div class="mb-3 text-start">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name" required />
+  </div>
+  <div class="mb-3 text-start">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required />
+  </div>
+  <button type="submit" class="btn btn-primary mt-3">Join Now</button>
+</form>
           </div>
         </div>
       </div>
