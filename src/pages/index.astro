@@ -7,27 +7,62 @@ import StatsCounter from '../components/StatsCounter.astro';
 ---
 
 <MainLayout title="AARBAA - Americans Against Road Bikers Association of America">
-<!-- Hero Section - Using Bootstrap spacing utilities with inline background -->
-<section class="text-center mt-5 pt-5" id="home" 
+<!-- Hero Section - Updated for full-height image and modern typography -->
+<section class="d-flex" id="home" 
 style="
-  padding-top: 100px !important;
   background-color: #0A3161;
-  background: url('/images/protest.webp') top center;
-  background-size: cover !important; 
-  background-repeat: no-repeat !important;
-  min-height: 800px;
+  min-height: 100vh;
   color: white;
-  margin-top: 200px;
+  position: relative;
+  overflow: hidden;
 ">
-  <div class="container py-5 my-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <h1 class="display-4 fw-bold mb-4" style="text-align: center; transform: translateY(-10%); color: #B31942; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 4px 4px 0 #0A3161; padding: 0 20px; font-size: calc(2rem + 1.5vw); line-height: 1.2;">Americans Against Road Bikers Association of America</h1>
-        <p class="lead mb-5">Because Americans Have Had Enough</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-          <a href="#join" class="btn btn-danger btn-lg px-4 me-md-2">Join Our Cause</a>
-        </div>
+  <div class="container-fluid d-flex p-0" style="height: 100vh;">
+    <!-- Left content area -->
+    <div class="text-left p-5 d-flex flex-column justify-content-center" style="width: 50%; z-index: 2;">
+      <h1 class="fw-bold mb-4" style="
+        text-align: left; 
+        color: #B31942; 
+        text-shadow: 3px 3px 0 #000;
+        font-size: calc(2.5rem + 1.5vw); 
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+      ">Americans Against Road Bikers Association of America</h1>
+      
+      <h2 style="
+        text-align: left;
+        font-size: calc(1.2rem + 0.5vw);
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin-bottom: 2.5rem;
+      ">Because America Has Had Enough</h2>
+      
+      <div class="d-grid gap-2 d-md-flex justify-content-start">
+        <a href="/join" class="btn btn-danger btn-lg px-5 py-3" style="
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          border-radius: 4px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        ">Join Our Cause</a>
       </div>
+    </div>
+    
+    <!-- Right image area - absolute positioning for full cover -->
+    <div style="
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    ">
+      <img src="/images/protest.webp" alt="Hero Image" style="
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      ">
     </div>
   </div>
 </section>
