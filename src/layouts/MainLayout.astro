@@ -23,7 +23,7 @@ const { title } = Astro.props;
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f4f4f4;
-      padding-top: 245px; /* Adjusted for smaller navbar */
+      padding-top: 120px; /* Reduced padding for smaller navbar */
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -37,8 +37,8 @@ const { title } = Astro.props;
       background-color: #041E42 !important; /* Darker blue, different from the logo */
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
-      height: 245px !important; /* Reduced height by 30% */
-      min-height: 245px !important;
+      height: 120px !important; /* Reduced height */
+      min-height: 120px !important;
       display: flex;
       align-items: center;
       border-bottom: 5px solid #B31942; /* Red border at bottom */
@@ -57,7 +57,7 @@ const { title } = Astro.props;
     }
 
     .navbar-brand img {
-      height: 400px; /* Increased logo size 400% */
+      height: 100px; /* Reduced logo size */
       width: auto;
       transition: all 0.3s ease;
     }
@@ -144,10 +144,10 @@ const { title } = Astro.props;
       }
     }
 
-    @media (max-width: 991px) {
+      @media (max-width: 991px) {
       .navbar {
-        height: 20vh !important;
-        max-height: 120px;
+        height: 60px !important;
+        max-height: 60px;
         padding: 0.5rem;
       }
 
@@ -156,27 +156,40 @@ const { title } = Astro.props;
         padding: 0;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        width: auto;
+        justify-content: center;
+        width: 100%;
       }
 
       .navbar-brand img {
-        height: 50px;
-        max-width: 200px;
+        height: 40px;
+        max-width: 160px;
         object-fit: contain;
-        margin-left: 0.5rem;
+        margin: 0 auto;
       }
 
       .navbar-toggler {
-        margin-left: auto;
-        margin-right: 0.5rem;
+        position: relative; /* Changed from absolute to relative */
         padding: 0.25rem 0.5rem;
+        margin-left: auto; /* Push to right side */
+      }
+      
+      .navbar-collapse {
+        background-color: #041E42; /* Solid color to match navbar */
+        border-radius: 0; /* Remove border radius */
+        margin-top: 0; /* Remove margin to connect with navbar */
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        position: absolute;
+        top: 60px; /* Position directly below navbar */
+        left: 0;
+        right: 0;
+        z-index: 1000;
       }
     }
 
     @media (max-width: 576px) {
       .navbar-brand img {
-        height: 60px;
+        height: 35px;
       }
     }
 
@@ -189,8 +202,8 @@ const { title } = Astro.props;
       background-position: center;
       background-repeat: no-repeat;
       color: white;
-      padding-top: 160px; /* Adjusted for much taller navbar */
-      margin-top: 245px !important; /* Match reduced navbar height */
+      padding-top: 80px; /* Adjusted for smaller navbar */
+      margin-top: 120px !important; /* Match reduced navbar height */
       min-height: 600px;
     }
 
@@ -256,34 +269,37 @@ const { title } = Astro.props;
       color: white !important;
     }
   </style>
+  
+  <!-- Slot for page-specific style overrides -->
+  <slot name="head" />
 </head>
 <body>
   <!-- Navbar with updated container class -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container nav-container">
       <a class="navbar-brand" href="/">
-        <img src="/images/aarbaa-logo-transparent.svg" alt="AARBAA Logo" style="height: 400px !important; max-width: none !important; width: auto !important;" class="d-inline-block align-text-top">
+        <img src="/images/aarbaa-logo-transparent.svg" alt="AARBAA Logo" style="height: 100px !important; max-width: none !important; width: auto !important;" class="d-inline-block align-text-top">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#issues">Issues</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/resources">Shop</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/blog">News</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/#about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/#issues">Issues</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/resources">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
           <li class="nav-item ms-lg-2">
             <a class="btn btn-danger" href="/join">Join Us</a>
           </li>
@@ -301,15 +317,15 @@ const { title } = Astro.props;
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-4">
-          <img src="/images/aarbaa-logo-transparent.svg" alt="AARBAA Logo" height="400" class="mb-3">
+          <img src="/images/aarbaa-logo-transparent.svg" alt="AARBAA Logo" height="100" class="mb-3">
           <p class="fw-bold text-uppercase" style="letter-spacing: 1px; color: #B31942; font-size: 1rem;">Americans Against Road Bikers Association</p>
           <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Because America Has Had Enough</p>
         </div>
         <div class="col-md-2 col-6 mb-4">
           <h5 class="text-white mb-3" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1.1rem; text-transform: uppercase; font-weight: 600;">Quick Links</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="#about" class="footer-link">About Us</a></li>
-            <li class="mb-2"><a href="#issues" class="footer-link">Key Issues</a></li>
+            <li class="mb-2"><a href="/#about" class="footer-link">About Us</a></li>
+            <li class="mb-2"><a href="/#issues" class="footer-link">Key Issues</a></li>
             <li class="mb-2"><a href="/resources" class="footer-link">Shop</a></li>
             <li class="mb-2"><a href="/blog" class="footer-link">News</a></li>
           </ul>
@@ -317,9 +333,9 @@ const { title } = Astro.props;
         <div class="col-md-2 col-6 mb-4">
           <h5 class="text-white mb-3" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1.1rem; text-transform: uppercase; font-weight: 600;">Get Involved</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="#join" class="footer-link">Become a Member</a></li>
+            <li class="mb-2"><a href="/#join" class="footer-link">Become a Member</a></li>
             <li class="mb-2"><a href="/donate" class="footer-link">Donate</a></li>
-            <li class="mb-2"><a href="#contact" class="footer-link">Contact Us</a></li>
+            <li class="mb-2"><a href="/contact" class="footer-link">Contact Us</a></li>
           </ul>
         </div>
         <div class="col-lg-4 mb-4">
@@ -383,13 +399,27 @@ const { title } = Astro.props;
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 255, // Updated offset to match reduced navbar height
+            top: targetElement.offsetTop - 130, // Updated offset to match reduced navbar height
             behavior: 'smooth'
           });
         }
       };
 
-      // Handle hash links
+      // Handle hash links on homepage
+      document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href').substring(2);
+          
+          // If on homepage, scroll to the section
+          if (window.location.pathname === '/' || window.location.pathname === '') {
+            e.preventDefault();
+            scrollToSection(targetId);
+          }
+          // Otherwise, let the link navigate to homepage with hash
+        });
+      });
+
+      // Handle regular hash links (without leading slash)
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (anchor.getAttribute('href').length > 1) {
           anchor.addEventListener('click', function (e) {
@@ -405,31 +435,12 @@ const { title } = Astro.props;
       if (newsLink) {
         newsLink.addEventListener('click', (e) => {
           // Check if on the home page
-          if (window.location.pathname === '/') {
+          if (window.location.pathname === '/' || window.location.pathname === '') {
             e.preventDefault();
             scrollToSection('news');
           }
         });
       }
-
-      // Handle other page navigation to return to homepage
-      const navLinks = document.querySelectorAll('nav .navbar-nav a, footer .footer-link');
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          // Check if not on homepage and not a hash link or news link
-          const href = link.getAttribute('href');
-          if (window.location.pathname !== '/' && 
-              href !== '#about' && 
-              href !== '#issues' && 
-              href !== '#join' && 
-              href !== '#contact' &&
-              href !== '/blog') {
-            e.preventDefault();
-            window.location.href = '/';
-          }
-        });
-      });
     });
   </script>
 
