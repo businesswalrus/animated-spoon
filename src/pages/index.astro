@@ -8,7 +8,7 @@ import StatsCounter from '../components/StatsCounter.astro';
 
 <MainLayout title="AARBAA - Americans Against Road Bikers Association of America">
 <!-- Hero Section - Updated for full-height image and modern typography -->
-<section class="d-flex" id="home" 
+<section class="d-flex hero-section" id="home" 
 style="
   background-color: #0A3161;
   min-height: 100vh;
@@ -49,7 +49,7 @@ style="
     </div>
     
     <!-- Right image area - absolute positioning for full cover -->
-    <div style="
+    <div class="hero-image" style="
       position: absolute;
       right: 0;
       top: 0;
@@ -66,6 +66,9 @@ style="
     </div>
   </div>
 </section>
+
+<!-- Section Divider -->
+<div class="section-divider"></div>
 
 <!-- About/Mission Section -->
 <section id="about" class="section-padding" style="padding-top: 5rem; padding-bottom: 5rem; background-color: #0A3161; color: white;">
@@ -96,7 +99,7 @@ style="
 
           <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 400; color: white;">And let's talk safety – not just theirs, but ours too. When a cyclist decides that stop signs are merely suggestions, guess who's legally responsible when things go sideways? That's right – the driver with actual insurance and a license plate.</p>
         </div>
-
+        <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 400; color: white; margin-bottom: 1rem;">Cyclists often claim the moral high ground, but their actions on the road tell a different story. It's time to hold them accountable and demand real solutions that work for everyone.</p>
         <div class="text-center mt-5">
           <a href="#join" class="btn btn-danger btn-lg px-5 py-3" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1.4rem;">JOIN THE MOVEMENT</a>
         </div>
@@ -124,7 +127,7 @@ style="
           <p style="font-size: 1.1rem; line-height: 1.5; color: #f8f9fa; font-weight: 400;">When planning communities, we need to recognize the reality: cars, bikes, and pedestrians deserve separate spaces to maximize safety and efficiency for everyone.</p>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <img src="/images/sternteacher.webp" alt="Road Safety Teacher" class="img-fluid rounded" style="width: 70%; max-width: 350px; border: 3px solid #B31942; box-shadow: 5px 5px 0 rgba(179, 25, 66, 0.5);">
+          <img src="/images/bikerpack.png" alt="Road Safety Teacher" class="img-fluid rounded" style="width: 70%; max-width: 350px; border: 3px solid #B31942; box-shadow: 5px 5px 0 rgba(179, 25, 66, 0.5);">
         </div>
       </div>
     </div>
@@ -137,7 +140,7 @@ style="
         <div class="col">
           <!-- Section title with hover effect -->
           <div class="section-title-wrapper text-center">
-            <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block;">KEY BATTLEGROUNDS</h2>
+            <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block; color: #0A3161;">KEY BATTLEGROUNDS</h2>
             <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
           </div>
           <p class="lead" style="color: #555;">The four horsemen of the cycling apocalypse we're fighting every day</p>
@@ -178,7 +181,7 @@ style="
   <div class="container">
     <div class="row text-center">
       <div class="col-12">
-        <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5rem; margin-bottom: 2rem;">THE NUMBERS DON'T LIE</h2>
+        <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #0A3161;">THE NUMBERS DON'T LIE</h2>
       </div>
     </div>
     <div class="row text-center">
@@ -246,7 +249,7 @@ style="
     <div class="row justify-content-center mb-5">
       <div class="col-lg-8 text-center">
         <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; color: #B31942; margin-bottom: 1rem;">JOIN THE RESISTANCE</h2>
-        <p class="lead mb-4">Become a member today and help us reclaim America's roads one bike path at a time!</p>
+        <p class="lead mb-4" style="color: #0A3161;">Become a member today and help us reclaim America's roads one bike path at a time!</p>
       </div>
     </div>
 
@@ -551,10 +554,10 @@ style="
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
         <div class="section-title-wrapper text-center mb-4">
-          <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block;">GET IN TOUCH</h2>
+          <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block; color: #0A3161;">GET IN TOUCH</h2>
           <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
         </div>
-        <p class="lead mb-5">Have questions or want to report a cyclist incident? We're here to help!</p>
+        <p class="lead mb-5" style="color: #0A3161;">Have questions or want to report a cyclist incident? We're here to help!</p>
         
         <div class="d-grid gap-3 d-sm-flex justify-content-center">
           <a href="/contact" class="btn btn-danger btn-lg px-5 py-3" style="
