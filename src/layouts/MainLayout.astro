@@ -71,7 +71,7 @@ const { title } = Astro.props;
       Removed all !important usage and inline styles.
     */
     .navbar-brand img {
-      height: 300px; /* Reduced from 400px to 300px (75%) */
+      height: 240px; /* Reduced from 300px to 240px (80% of current size) */
       width: auto;
       transition: all 0.3s ease;
     }
@@ -144,12 +144,12 @@ const { title } = Astro.props;
     /* RESPONSIVE LOGO SIZING */
     @media (min-width: 1200px) {
       .navbar-brand img {
-        height: 150px; /* Reduced from 200px to 150px (75%) */
+        height: 120px; /* Reduced from 150px to 120px (80% of current size) */
       }
     }
     @media (max-width: 1199px) and (min-width: 992px) {
       .navbar-brand img {
-        height: 135px; /* Reduced from 180px to 135px (75%) */
+        height: 108px; /* Reduced from 135px to 108px (80% of current size) */
       }
     }
     @media (max-width: 991px) {
@@ -171,7 +171,7 @@ const { title } = Astro.props;
         Adjust as needed. 
       */
       .navbar-brand img {
-        height: 135px; /* Reduced from 180px to 135px (75%) */
+        height: 108px; /* Reduced from 135px to 108px (80% of current size) */
         max-width: none;
         object-fit: contain;
         margin: 0 auto;
@@ -202,7 +202,7 @@ const { title } = Astro.props;
     }
     @media (max-width: 576px) {
       .navbar-brand img {
-        height: 82px; /* Reduced from 110px to 82px (75%) */
+        height: 66px; /* Reduced from 82px to 66px (80% of current size) */
       }
     }
 
@@ -392,7 +392,7 @@ const { title } = Astro.props;
           <img
             src="/images/aarbaa-new-logo (2).svg"
             alt="AARBAA Logo"
-            height="75"
+            height="60"
             class="mb-3"
           />
           <p
