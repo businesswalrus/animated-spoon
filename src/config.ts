@@ -7,7 +7,7 @@ export const SITE = {
   githubUrl: 'https://github.com/username/aarbaa-website',
   listDrafts: true,
   image: {
-    src: '/images/aarbaa-logo.png',
+    src: '/images/aarbaa-new-logo (2).svg',
     alt: 'AARBAA Logo'
   }
 };
