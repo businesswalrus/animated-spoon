@@ -86,6 +86,7 @@ const { title } = Astro.props;
       position: relative;
       transition: all 0.3s ease;
       white-space: nowrap;
+      margin-top: 8px; /* Add top margin to push nav links down */
     }
     .navbar-nav .nav-link::before {
       content: "";
@@ -361,7 +362,7 @@ const { title } = Astro.props;
           <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="/#issues">Issues</a></li>
           <li class="nav-item"><a class="nav-link" href="/resources">Shop</a></li>
-          <li class="nav-item"><a class="nav-link" href="/blog">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
           <li class="nav-item ms-lg-2">
             <a class="btn btn-danger" href="/join">Join Us</a>
@@ -429,7 +430,7 @@ const { title } = Astro.props;
               <a href="/resources" class="footer-link">Shop</a>
             </li>
             <li class="mb-2">
-              <a href="/blog" class="footer-link">News</a>
+              <a href="/news" class="footer-link">News</a>
             </li>
           </ul>
         </div>
@@ -590,7 +591,7 @@ const { title } = Astro.props;
       });
 
       // Special handling for News button to scroll to latest updates
-      const newsLink = document.querySelector('a[href="/blog"]');
+      const newsLink = document.querySelector('a[href="/news"]');
       if (newsLink) {
         newsLink.addEventListener("click", (e) => {
           if (

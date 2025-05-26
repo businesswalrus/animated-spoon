@@ -53,7 +53,7 @@ export const NAV_ITEMS = [
   { text: 'About', link: '/about' },
   { text: 'Issues', link: '/#issues' },
   { text: 'Shop', link: '/resources' },
-  { text: 'News', link: '/blog' },
+  { text: 'News', link: '/news' },
   { text: 'Contact', link: '/contact' },
   { text: 'Join Us', link: '/join', highlight: true }
 ];
