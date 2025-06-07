@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "src/pages/*.astro": {
+      "runtime": "nodejs20.x"
+    },
+    "src/pages/**/*.astro": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": null
+}
