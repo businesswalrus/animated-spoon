@@ -59,6 +59,10 @@ Please ask the user for the specific lint and typecheck commands for this projec
 - Added thank-you page with personalization
 - Fixed navigation spacing to prevent logo overlap
 - Enhanced "You've Seen Them" section with dramatic styling
+- Reverted index.astro to pre-pinecone animation version
+- Added `/tusk` calculator page with authentication (from cavinder fr folder)
+- Added `/tusk-login` page for calculator authentication
+- Fixed Vercel deployment Node.js runtime issue by simplifying configuration
 
 ## Contact Form Integration
 The contact form uses Google Apps Script to save submissions to Google Sheets:
@@ -74,3 +78,16 @@ The contact form uses Google Apps Script to save submissions to Google Sheets:
 4. Test changes in development before considering complete
 5. Run lint and type checks when available
 6. Keep the satirical but professional tone consistent
+
+## Vercel Deployment Notes
+- The project uses `@astrojs/vercel` adapter for serverless deployment
+- Node.js runtime is auto-detected by Vercel (currently 20.x)
+- Configuration is kept minimal to avoid runtime conflicts
+- Build artifacts (.vercel, dist) are gitignored to prevent cache issues
+- If deployment fails with runtime errors, ensure vercel.json is minimal
+
+## Authentication Pages
+- `/tusk` - Protected calculator page requiring login
+- `/tusk-login` - Login page for calculator access
+- Credentials: sales@tech.com / jackson1
+- Uses sessionStorage for client-side auth persistence
