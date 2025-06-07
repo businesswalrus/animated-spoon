@@ -1,12 +1,9 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: vercel({
-    functionPerRoute: false,
-    nodeVersion: '20.x'
-  }),
+  adapter: vercel(),
   output: 'server',
   site: 'https://aarbaa.com',
   server: {
