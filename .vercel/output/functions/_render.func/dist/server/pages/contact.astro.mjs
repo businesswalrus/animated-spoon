@@ -1,15 +1,8 @@
-import { a as createComponent, m as maybeRenderHead, b as renderScript, r as renderTemplate, f as renderComponent } from '../chunks/astro/server_D0u0STEm.mjs';
+import { c as createComponent, f as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_poEu93J3.mjs';
 import 'kleur/colors';
-import { $ as $$MainLayout } from '../chunks/MainLayout_BCF9IjBY.mjs';
-import 'clsx';
+import { $ as $$MainLayout } from '../chunks/MainLayout_BuVX3mPN.mjs';
+import { $ as $$ContactForm } from '../chunks/ContactForm_nQ03-rTa.mjs';
 export { renderers } from '../renderers.mjs';
-
-const $$ContactForm = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<div class="card border-0 shadow-lg"> <div class="card-body p-5"> <h3 class="card-title mb-4" style="font-family: 'Roboto Condensed', sans-serif; color: #B31942;">Contact Us</h3> <form id="contactForm"> <div class="row g-3"> <div class="col-md-6"> <label for="name" class="form-label">Your Name</label> <input type="text" class="form-control" id="name" required> </div> <div class="col-md-6"> <label for="email" class="form-label">Email Address</label> <input type="email" class="form-control" id="email" required> </div> <div class="col-12"> <label for="subject" class="form-label">Subject</label> <select class="form-select" id="subject" required> <option value="" selected disabled>Select a subject</option> <option value="membership">Membership Information</option> <option value="report">Report a Cycling Incident</option> <option value="suggestion">Suggest a Campaign</option> <option value="media">Media Inquiry</option> <option value="other">Other</option> </select> </div> <div class="col-12"> <label for="message" class="form-label">Your Message</label> <textarea class="form-control" id="message" rows="5" required></textarea> </div> <div class="col-12"> <div class="form-check"> <input class="form-check-input" type="checkbox" id="newsCheck"> <label class="form-check-label" for="newsCheck">
-Subscribe to our newsletter
-</label> </div> </div> <div class="col-12 text-center mt-4"> <button type="submit" class="btn btn-danger btn-lg px-5">Send Message</button> </div> </div> </form> <!-- Success message (hidden by default) --> <div id="successMessage" class="alert alert-success mt-4 d-none"> <i class="fas fa-check-circle me-2"></i> Your message has been sent successfully! We'll get back to you soon.
-</div> </div> </div> ${renderScript($$result, "/Users/cody/Desktop/AARBAAWebsite/src/components/ContactForm.astro?astro&type=script&index=0&lang.ts")}`;
-}, "/Users/cody/Desktop/AARBAAWebsite/src/components/ContactForm.astro", void 0);
 
 const $$Contact = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "MainLayout", $$MainLayout, { "title": "Contact AARBAA - Get In Touch" }, { "default": ($$result2) => renderTemplate`  ${maybeRenderHead()}<section class="text-center mt-5 pt-5" style="
@@ -35,9 +28,9 @@ How can I start a local AARBAA chapter?
 </button> </h2> <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion"> <div class="accordion-body"> <p>We're excited about your interest! To start a local chapter, fill out the contact form above with the subject line "New Chapter Inquiry" and someone from our organizing team will reach out with resources and guidelines to help you get started in your community.</p> </div> </div> </div> <div class="accordion-item border-0 shadow-sm"> <h2 class="accordion-header" id="headingFive"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="font-family: 'Roboto Condensed', sans-serif; font-weight: bold;">
 What specific policies do you advocate for?
 </button> </h2> <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion"> <div class="accordion-body"> <p>Our policy priorities include:</p> <ul> <li>Development of more dedicated bicycle infrastructure separated from vehicle traffic</li> <li>Registration and identification requirements for road cyclists</li> <li>Liability insurance requirements for cyclists using public roads</li> <li>Stricter enforcement of traffic laws for cyclists</li> <li>Transportation planning that prioritizes efficient flow for the majority of road users</li> </ul> </div> </div> </div> </div> </div> </div> </div> </section> ` })}`;
-}, "/Users/cody/Desktop/AARBAAWebsite/src/pages/contact.astro", void 0);
+}, "/Users/cody/aarbaa/animated-spoon/src/pages/contact.astro", void 0);
 
-const $$file = "/Users/cody/Desktop/AARBAAWebsite/src/pages/contact.astro";
+const $$file = "/Users/cody/aarbaa/animated-spoon/src/pages/contact.astro";
 const $$url = "/contact";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

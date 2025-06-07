@@ -4,6 +4,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import NewsCard from '../components/NewsCard.astro';
 import IssueCard from '../components/IssueCard.astro';
 import StatsCounter from '../components/StatsCounter.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <MainLayout title="AARBAA - Americans Against Road Bikers Association of America">
@@ -18,9 +19,9 @@ style="
   margin-top: -120px; /* Counter the body padding-top of 120px */
   padding-top: 120px; /* Add back padding to position content correctly */
 ">
-  <div class="container-fluid d-flex p-0" style="height: 100vh;">
+  <div class="container-fluid d-flex flex-column flex-lg-row p-0" style="height: 100vh;">
     <!-- Left content area -->
-    <div class="text-left p-5 d-flex flex-column justify-content-center" style="width: 50%; z-index: 2;">
+    <div class="hero-content-area text-left p-5 d-flex flex-column justify-content-center order-2 order-lg-1" style="width: 100%; z-index: 2;">
       <h1 class="fw-bold mb-4" style="
         text-align: left; 
         color: #b31942; 
@@ -29,7 +30,7 @@ style="
         line-height: 1.1;
         letter-spacing: -0.5px;
         text-transform: uppercase;
-        margin-top: -7rem;
+        margin-top: 0;
 
       ">Americans Against Road Bikers Association&nbsp;of America</h1>
       
@@ -52,20 +53,47 @@ style="
       </div>
     </div>
     
+    <!-- Pinecone Animation Container -->
+    <div class="pinecone-container d-flex align-items-center justify-content-center order-1 order-lg-2" style="
+      width: 100%;
+      height: 400px;
+      z-index: 3;
+      position: relative;
+      background-color: #F0EEE6;
+    ">
+      <div id="pinecone-flag-container" style="
+        width: 350px;
+        height: 350px;
+        border: 2px solid #B22234;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #F0EEE6;
+      ">
+        <!-- Fallback content -->
+        <div id="loading-message" style="text-align: center; color: #0A3161;">
+          <div style="font-size: 48px; margin-bottom: 10px;">🌲</div>
+          <p style="font-family: 'Roboto Condensed', sans-serif; font-weight: bold;">Loading Patriotic Animation...</p>
+        </div>
+      </div>
+    </div>
+    
     <!-- Right image area - absolute positioning for full cover -->
     <div class="hero-image" style="
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
+      right: 0;
+      width: 30%;
       height: 100%;
       overflow: hidden;
+      z-index: 1;
     ">
       <img src="/images/bikerrage2.png" alt="Hero Image" style="
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: 30%-100%;
+        object-position: center;
       ">
     </div>
     
@@ -115,10 +143,81 @@ style="
           <div class="tab-pane fade show active" id="pills-problem" role="tabpanel" aria-labelledby="pills-problem-tab">
             <div style="background: linear-gradient(135deg, rgba(10, 49, 97, 0.8) 0%, rgba(15, 76, 150, 0.8) 100%); border-left: 5px solid #B31942; padding: 2rem; margin-bottom: 2rem; border-radius: 0.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
               <!-- Enhanced "You've seen them" heading with more impact -->
-              <div class="text-center mb-4">
-                <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; letter-spacing: 2px; color: #B31942; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); text-transform: uppercase; line-height: 1.2;">YOU'VE SEEN THEM.<br>WE'VE ALL SEEN THEM.</p>
-                <div style="width: 60%; height: 5px; background-color: #B31942; margin: 0 auto;"></div>
+              <div class="text-center mb-5" style="position: relative;">
+                <div style="
+                  display: inline-block;
+                  position: relative;
+                  transform: rotate(-2deg);
+                  animation: pulse 2s ease-in-out infinite;
+                ">
+                  <p style="
+                    font-family: 'Impact', 'Arial Black', sans-serif;
+                    font-size: 3.5rem;
+                    font-weight: 900;
+                    margin-bottom: 0;
+                    letter-spacing: 3px;
+                    color: #FFFFFF;
+                    text-shadow: 
+                      0 0 10px #B31942,
+                      0 0 20px #B31942,
+                      0 0 30px #B31942,
+                      0 0 40px #B31942,
+                      3px 3px 0px #000,
+                      4px 4px 0px #000,
+                      5px 5px 0px #000;
+                    text-transform: uppercase;
+                    line-height: 1.1;
+                    background: linear-gradient(180deg, #FFFFFF 0%, #FFD700 50%, #B31942 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.5));
+                  ">YOU'VE SEEN THEM.</p>
+                  <p style="
+                    font-family: 'Impact', 'Arial Black', sans-serif;
+                    font-size: 4rem;
+                    font-weight: 900;
+                    margin-top: -10px;
+                    letter-spacing: 4px;
+                    color: #B31942;
+                    text-shadow: 
+                      2px 2px 0px #FFFFFF,
+                      3px 3px 0px #000,
+                      4px 4px 0px #000,
+                      5px 5px 10px rgba(0,0,0,0.5);
+                    text-transform: uppercase;
+                    animation: shake 0.5s ease-in-out infinite;
+                  ">WE'VE ALL SEEN THEM.</p>
+                </div>
+                <div style="
+                  width: 80%;
+                  height: 8px;
+                  background: linear-gradient(90deg, transparent 0%, #B31942 20%, #FFD700 50%, #B31942 80%, transparent 100%);
+                  margin: 20px auto 0;
+                  border-radius: 4px;
+                  box-shadow: 0 4px 8px rgba(179, 25, 66, 0.5);
+                  animation: glow 2s ease-in-out infinite;
+                "></div>
               </div>
+
+              <style>
+                @keyframes pulse {
+                  0% { transform: rotate(-2deg) scale(1); }
+                  50% { transform: rotate(-2deg) scale(1.05); }
+                  100% { transform: rotate(-2deg) scale(1); }
+                }
+                
+                @keyframes shake {
+                  0%, 100% { transform: translateX(0); }
+                  25% { transform: translateX(-2px); }
+                  75% { transform: translateX(2px); }
+                }
+                
+                @keyframes glow {
+                  0%, 100% { opacity: 0.8; }
+                  50% { opacity: 1; box-shadow: 0 4px 16px rgba(179, 25, 66, 0.8); }
+                }
+              </style>
 
               <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 400; color: white; margin-bottom: 1rem;">Those packs of neon-clad warriors, squeezing into tight formations on our precious roadways, pedaling with the self-importance of someone who thinks they're saving the planet one insufferable mile at a time.</p>
 
@@ -258,6 +357,140 @@ style="
         </div>
       </div>
 
+      <!-- BIG CALLOUT ABOUT CYCLIST BUTTS -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="newspaper-callout" style="
+            background: linear-gradient(135deg, #B31942 0%, #8B0000 100%);
+            border: 5px solid #FFD700;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            animation: newspaperSpin 1.5s ease-out forwards;
+          ">
+            <div style="
+              position: absolute;
+              top: -50px;
+              right: -50px;
+              font-size: 150px;
+              color: rgba(255,255,255,0.1);
+              transform: rotate(15deg);
+            ">🚴</div>
+            
+            <h3 style="
+              font-family: 'Impact', 'Arial Black', sans-serif;
+              font-size: 3.5rem;
+              color: #FFD700;
+              text-align: center;
+              text-transform: uppercase;
+              letter-spacing: 3px;
+              margin-bottom: 1.5rem;
+              text-shadow: 
+                3px 3px 0px #000,
+                4px 4px 0px #000,
+                5px 5px 10px rgba(0,0,0,0.5);
+              animation: pulse 2s ease-in-out infinite;
+            ">⚠️ MEDICAL ALERT ⚠️</h3>
+            
+            <p style="
+              font-size: 1.8rem;
+              color: white;
+              text-align: center;
+              font-weight: 700;
+              line-height: 1.4;
+              margin-bottom: 1rem;
+              text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            ">
+              Studies* show that 97.3% of road cyclists have <span style="color: #FFD700; font-size: 2.2rem;">ZERO FEELING</span> in their buttocks!
+            </p>
+            
+            <p style="
+              font-size: 1.3rem;
+              color: rgba(255,255,255,0.9);
+              text-align: center;
+              font-style: italic;
+              margin-bottom: 1.5rem;
+            ">
+              That's right, folks - all that time perched on those razor-thin saddles has left them completely numb from the waist down!
+            </p>
+            
+            <div style="
+              background-color: rgba(255,255,255,0.2);
+              border-radius: 10px;
+              padding: 1.5rem;
+              margin: 0 auto;
+              max-width: 800px;
+            ">
+              <p style="
+                font-size: 1.2rem;
+                color: white;
+                text-align: center;
+                margin-bottom: 0;
+                line-height: 1.6;
+              ">
+                <strong>THIS EXPLAINS EVERYTHING:</strong> Their inability to feel discomfort explains why they're perfectly happy making everyone else miserable on the roads. When you can't feel your own rear end, you can't feel shame either!
+              </p>
+            </div>
+            
+            <p style="
+              font-size: 0.8rem;
+              color: rgba(255,255,255,0.5);
+              text-align: center;
+              margin-top: 2rem;
+              margin-bottom: 0;
+            ">
+              *Studies conducted by the AARBAA Institute of Common Sense, 2025
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        @keyframes newspaperSpin {
+          0% {
+            transform: scale(0) rotate(720deg);
+            opacity: 0;
+          }
+          50% {
+            transform: scale(1.1) rotate(360deg);
+            opacity: 0.8;
+          }
+          80% {
+            transform: scale(0.95) rotate(10deg);
+            opacity: 1;
+          }
+          90% {
+            transform: scale(1.02) rotate(-5deg);
+          }
+          100% {
+            transform: scale(1) rotate(-1deg);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes wobble {
+          0%, 100% { transform: rotate(-1deg); }
+          50% { transform: rotate(1deg); }
+        }
+        
+        .newspaper-callout {
+          animation: newspaperSpin 1.5s ease-out forwards, wobble 3s ease-in-out 1.5s infinite;
+          transform-origin: center center;
+        }
+        
+        /* Trigger animation when element comes into view */
+        .newspaper-callout {
+          opacity: 0;
+        }
+        
+        .newspaper-callout.in-view {
+          opacity: 1;
+          animation: newspaperSpin 1.5s ease-out forwards, wobble 3s ease-in-out 1.5s infinite;
+        }
+      </style>
+
       <div class="row g-4">
         <!-- Issue Cards -->
         <IssueCard 
@@ -349,7 +582,7 @@ style="
      </div>
 
      <div class="text-center mt-5">
-       <a href="/blog" class="btn btn-outline-light btn-lg px-4">View All Updates</a>
+       <a href="/news" class="btn btn-outline-light btn-lg px-4">View All Updates</a>
      </div>
    </div>
  </section>
@@ -366,14 +599,10 @@ style="
 
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <iframe 
-          src="https://form.jotform.com/250919067322053"
-          width="100%"
-          height="600"
-          frameborder="0"
-          allow="fullscreen; geolocation; microphone; camera"
-          style="border: none;">
-        </iframe>
+        <div style="background-color: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+          <h3 class="text-center mb-4" style="font-family: 'Roboto Condensed', sans-serif; color: #0A3161;">Start Your Journey Today</h3>
+          <ContactForm />
+        </div>
       </div>
     </div>
   </div>
@@ -814,6 +1043,23 @@ style="
       });
     });
     
+    // Newspaper spin animation on scroll
+    const newspaperCallout = document.querySelector('.newspaper-callout');
+    if (newspaperCallout) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      observer.observe(newspaperCallout);
+    }
+    
     // Initialize the Bootstrap carousel with a 7-second interval
     const testimonialCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
       interval: 7000,
@@ -860,4 +1106,270 @@ style="
     </div>
   </div>
 </section>
+
+<!-- Hero Section Responsive Styles -->
+<style>
+  @media (min-width: 992px) {
+    .hero-content-area {
+      width: 40% !important;
+    }
+    .pinecone-container {
+      width: 30% !important;
+      height: 100% !important;
+    }
+    #pinecone-flag-container {
+      width: 550px !important;
+      height: 550px !important;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .hero-content-area {
+      width: 100% !important;
+    }
+    .pinecone-container {
+      width: 100% !important;
+      height: 300px !important;
+    }
+    #pinecone-flag-container {
+      width: 280px !important;
+      height: 280px !important;
+    }
+  }
+</style>
+
+<!-- Initialize Pinecone Animation -->
+<script>
+  // Full quality pinecone animation
+  function createPineconeAnimation() {
+    const container = document.getElementById('pinecone-flag-container');
+    if (!container) return;
+    
+    // Clear loading message
+    container.innerHTML = '';
+    
+    // Check if Three.js is available
+    if (typeof THREE === 'undefined') {
+      container.innerHTML = '<p style="color: red;">Three.js failed to load. Please refresh the page.</p>';
+      return;
+    }
+    
+    try {
+      // Create scene
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color('#F0EEE6');
+      
+      // Create camera
+      const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+      camera.position.z = 20;
+      camera.position.y = 0;
+      
+      // Create renderer
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      const size = Math.min(container.clientWidth, container.clientHeight);
+      renderer.setSize(size, size);
+      container.appendChild(renderer.domElement);
+      
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+      scene.add(ambientLight);
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+      directionalLight.position.set(5, 10, 7.5);
+      scene.add(directionalLight);
+      
+      // Create pinecone group
+      const pineCone = new THREE.Group();
+      
+      // Define scale shape - hexagonal pine cone scale
+      const shape = new THREE.Shape();
+      shape.moveTo(0, 0);
+      shape.lineTo(0.7, 0.7);
+      shape.lineTo(0.5, 1.4);
+      shape.lineTo(0, 1.7);
+      shape.lineTo(-0.5, 1.4);
+      shape.lineTo(-0.7, 0.7);
+      shape.closePath();
+      
+      const extrudeSettings = {
+        depth: 0.05,
+        bevelEnabled: true,
+        bevelSegments: 4,
+        steps: 1,
+        bevelSize: 0.02,
+        bevelThickness: 0.02
+      };
+      
+      const scaleGeometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+      
+      // American flag colors with physical materials
+      const redMaterial = new THREE.MeshPhysicalMaterial({
+        color: '#B22234',
+        transparent: true,
+        opacity: 0.8,
+        roughness: 0.3,
+        metalness: 0.1,
+        side: THREE.DoubleSide
+      });
+      
+      const whiteMaterial = new THREE.MeshPhysicalMaterial({
+        color: '#FFFFFF',
+        transparent: true,
+        opacity: 0.8,
+        roughness: 0.3,
+        metalness: 0.1,
+        side: THREE.DoubleSide
+      });
+      
+      const blueMaterial = new THREE.MeshPhysicalMaterial({
+        color: '#3C3B6E',
+        transparent: true,
+        opacity: 0.8,
+        roughness: 0.3,
+        metalness: 0.1,
+        side: THREE.DoubleSide
+      });
+      
+      const wireframeMaterial = new THREE.LineBasicMaterial({
+        color: '#333333',
+        transparent: true,
+        opacity: 0.2
+      });
+      
+      const edgesGeometry = new THREE.EdgesGeometry(scaleGeometry);
+      
+      // Create 38 layers as in original
+      const layers = 38;
+      const scalesPerLayer = 8;
+      const layerGroups = [];
+      
+      for (let layer = 0; layer < layers; layer++) {
+        const layerGroup = new THREE.Group();
+        const yPosition = (layer / layers) * 18 - 9 - 0.9;
+        let layerRadius;
+        
+        if (layer < 10) {
+          layerRadius = Math.sin((layer / 10) * Math.PI * 0.5) * 2;
+        } else {
+          layerRadius = 2 + Math.sin(((layer - 10) / (layers - 10)) * Math.PI) * 2.5;
+        }
+        
+        const taper = 1 - (layer / layers) * 0.3;
+        
+        // Determine material for this layer
+        const colorIndex = layer % 3;
+        let layerMaterial;
+        if (colorIndex === 0) {
+          layerMaterial = redMaterial;
+        } else if (colorIndex === 1) {
+          layerMaterial = whiteMaterial;
+        } else {
+          layerMaterial = blueMaterial;
+        }
+        
+        for (let i = 0; i < scalesPerLayer; i++) {
+          const angle = (i / scalesPerLayer) * Math.PI * 2 + (layer * 0.25);
+          
+          const scaleMesh = new THREE.Mesh(scaleGeometry, layerMaterial);
+          scaleMesh.rotation.x = Math.PI / 3;
+          scaleMesh.rotation.y = angle;
+          scaleMesh.position.x = Math.cos(angle) * layerRadius * taper;
+          scaleMesh.position.z = Math.sin(angle) * layerRadius * taper;
+          scaleMesh.position.y = yPosition;
+          scaleMesh.scale.set(0.8, 0.8, 0.8);
+          
+          layerGroup.add(scaleMesh);
+          
+          const wireframe = new THREE.LineSegments(edgesGeometry, wireframeMaterial);
+          wireframe.rotation.x = Math.PI / 3;
+          wireframe.rotation.y = angle;
+          wireframe.position.x = Math.cos(angle) * layerRadius * taper;
+          wireframe.position.z = Math.sin(angle) * layerRadius * taper;
+          wireframe.position.y = yPosition;
+          wireframe.scale.set(0.8, 0.8, 0.8);
+          
+          layerGroup.add(wireframe);
+        }
+        
+        // Start with scales folded inward
+        layerGroup.scale.set(0.01, 0.01, 0.01);
+        layerGroup.rotation.x = Math.PI / 2;
+        
+        layerGroups.push(layerGroup);
+        pineCone.add(layerGroup);
+      }
+      
+      scene.add(pineCone);
+      
+      // Animation variables
+      let time = 0;
+      let unfoldingProgress = 0;
+      let animationId;
+      
+      function animate() {
+        animationId = requestAnimationFrame(animate);
+        time += 0.005;
+        
+        // Unfolding animation
+        if (unfoldingProgress < 1) {
+          unfoldingProgress += 0.008;
+        }
+        
+        // Update each layer's unfolding based on progress
+        layerGroups.forEach((layerGroup, index) => {
+          const layerProgress = Math.max(0, Math.min(1, (unfoldingProgress * layers - index) / 3));
+          
+          if (layerProgress > 0) {
+            // Unfold scale
+            const scale = layerProgress;
+            layerGroup.scale.set(scale, scale, scale);
+            
+            // Unfold rotation
+            const rotationX = (1 - layerProgress) * Math.PI / 2;
+            layerGroup.rotation.x = rotationX;
+            
+            // Add slight wobble during unfolding
+            if (layerProgress < 1) {
+              layerGroup.rotation.z = Math.sin(time * 10) * 0.02 * (1 - layerProgress);
+            }
+          }
+        });
+        
+        // Gentle rotation after unfolding
+        if (unfoldingProgress >= 1) {
+          pineCone.rotation.y = time * 0.2;
+          pineCone.rotation.x = Math.sin(time * 0.5) * 0.03;
+          pineCone.rotation.z = Math.cos(time * 0.7) * 0.02;
+          
+          const breathe = 1 + Math.sin(time * 0.5) * 0.015;
+          pineCone.scale.set(breathe, breathe, breathe);
+        }
+        
+        renderer.render(scene, camera);
+      }
+      
+      animate();
+      
+      // Handle resize
+      function handleResize() {
+        const newSize = Math.min(container.clientWidth, container.clientHeight);
+        camera.aspect = 1;
+        camera.updateProjectionMatrix();
+        renderer.setSize(newSize, newSize);
+      }
+      
+      window.addEventListener('resize', handleResize);
+      
+    } catch (error) {
+      console.error('Error creating animation:', error);
+      container.innerHTML = '<p style="color: red;">Error creating animation. Please refresh.</p>';
+    }
+  }
+  
+  // Initialize when ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createPineconeAnimation);
+  } else {
+    setTimeout(createPineconeAnimation, 100);
+  }
+</script>
 </MainLayout>

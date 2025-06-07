@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Service Calculator</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Field Service Calculator</h1>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </header>
+        
+        <form id="calculatorForm">
+            <div class="form-group">
+                <label for="serviceType">Service Type:</label>
+                <select id="serviceType" name="serviceType" required>
+                    <option value="">Select...</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="materialCost">Material Cost ($):</label>
+                <input type="number" id="materialCost" name="materialCost" step="0.01" min="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="laborCategory">Labor Category:</label>
+                <select id="laborCategory" name="laborCategory" required>
+                    <option value="">Select...</option>
+                    <option value="regular">Regular Time</option>
+                    <option value="timeAndAHalf">Time and a Half</option>
+                    <option value="double">Double Time</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="minutes">Labor Time (minutes):</label>
+                <select id="minutes" name="minutes" required>
+                    <option value="">Select...</option>
+                    <option value="1">1 minute</option>
+                    <option value="2">2 minutes</option>
+                    <option value="3">3 minutes</option>
+                    <option value="4">4 minutes</option>
+                    <option value="5">5 minutes</option>
+                    <option value="10">10 minutes</option>
+                    <option value="15">15 minutes</option>
+                    <option value="20">20 minutes</option>
+                    <option value="25">25 minutes</option>
+                    <option value="30">30 minutes</option>
+                    <option value="45">45 minutes</option>
+                    <option value="60">60 minutes</option>
+                    <option value="90">90 minutes</option>
+                    <option value="120">120 minutes</option>
+                </select>
+            </div>
+            
+            <div class="form-group checkbox">
+                <label>
+                    <input type="checkbox" id="includeTax" name="includeTax">
+                    Include Sales Tax (7%)
+                </label>
+            </div>
+            
+            <button type="submit">Calculate</button>
+        </form>
+        
+        <div id="results" class="results" style="display: none;">
+            <h2>Calculation Results</h2>
+            <div class="result-item">
+                <span>Material Charge:</span>
+                <span id="materialCharge">$0.00</span>
+            </div>
+            <div class="result-item">
+                <span>Labor Charge:</span>
+                <span id="laborCharge">$0.00</span>
+            </div>
+            <div class="result-item total">
+                <span>Total:</span>
+                <span id="total">$0.00</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/calculator.js"></script>
+</body>
+</html>
