@@ -157,8 +157,8 @@ import MainLayout from '../layouts/MainLayout.astro';
       
       // Simple authentication check
       // In production, this should be handled server-side
-      // These are the default development credentials from the cavinder fr folder
-      if (email === 'admin@fieldtech.com' && password === 'fieldtech123') {
+      // These are the configured credentials from the cavinder fr folder
+      if (email === 'sales@tech.com' && password === 'jackson1') {
         // Set authentication in session storage
         sessionStorage.setItem('tusk_authenticated', 'true');
         sessionStorage.setItem('tusk_user', email);
