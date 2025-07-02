@@ -1,0 +1,102 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = 'Field Service Calculator Login';
+const description = 'Access the Field Service Calculator';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow">
+          <div class="card-body p-4">
+            <h1 class="h3 text-center mb-4">Field Service Calculator</h1>
+            <p class="text-center text-muted mb-4">Please sign in to continue</p>
+            
+            <div id="alertContainer"></div>
+            
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username or Email</label>
+                <input type="text" class="form-control" id="username" name="username" required autofocus>
+              </div>
+              
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              
+              <button type="submit" class="btn btn-primary w-100" id="loginButton">Sign In</button>
+            </form>
+            
+            <div class="alert alert-info mt-4">
+              <h6 class="alert-heading">Demo Credentials</h6>
+              <p class="mb-1">Admin: <code>admin</code> / <code>admin123</code></p>
+              <p class="mb-1">Tech: <code>tech1</code> or <code>tech2</code> / <code>tech123</code></p>
+              <p class="mb-0">Sales: <code>sales@tech.com</code> / <code>jackson1</code></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>
+
+<script>
+  const loginForm = document.getElementById('loginForm') as HTMLFormElement;
+  const loginButton = document.getElementById('loginButton') as HTMLButtonElement;
+  const alertContainer = document.getElementById('alertContainer') as HTMLDivElement;
+
+  function showAlert(message: string, type: 'success' | 'danger' = 'danger') {
+    alertContainer.innerHTML = `
+      <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+  }
+
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const username = (document.getElementById('username') as HTMLInputElement).value;
+    const password = (document.getElementById('password') as HTMLInputElement).value;
+    
+    loginButton.disabled = true;
+    loginButton.textContent = 'Signing in...';
+    
+    // Simple client-side authentication
+    const validCredentials = [
+      { username: 'admin', password: 'admin123', role: 'admin' },
+      { username: 'tech1', password: 'tech123', role: 'tech' },
+      { username: 'tech2', password: 'tech123', role: 'tech' },
+      { username: 'sales@tech.com', password: 'jackson1', role: 'tech' }
+    ];
+    
+    const user = validCredentials.find(
+      cred => cred.username === username && cred.password === password
+    );
+    
+    setTimeout(() => {
+      if (user) {
+        // Store user info in sessionStorage
+        sessionStorage.setItem('lampUser', JSON.stringify({
+          username: user.username,
+          role: user.role,
+          loginTime: Date.now()
+        }));
+        
+        showAlert('Login successful! Redirecting...', 'success');
+        
+        setTimeout(() => {
+          window.location.href = '/lamp-calculator';
+        }, 1000);
+      } else {
+        showAlert('Invalid username or password.');
+        loginButton.disabled = false;
+        loginButton.textContent = 'Sign In';
+      }
+    }, 500);
+  });
+</script>
