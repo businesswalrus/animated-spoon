@@ -257,18 +257,22 @@ const description = 'Calculate field service charges';
     return { materialCost, laborCategory, minutes, laborCharge, includeTax, taxAmount, total };
   }
   
-  // Live preview with debouncing
+  // Live preview with debouncing (admin only)
   let debounceTimer: any;
   function updatePreview() {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(calculate, 300);
+    if (user.role === 'admin') {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(calculate, 300);
+    }
   }
   
-  // Add event listeners for live preview
-  document.getElementById('material_cost')?.addEventListener('input', updatePreview);
-  document.getElementById('labor_category')?.addEventListener('change', updatePreview);
-  document.getElementById('minutes')?.addEventListener('change', updatePreview);
-  document.getElementById('include_tax')?.addEventListener('change', updatePreview);
+  // Add event listeners for live preview (admin only)
+  if (user.role === 'admin') {
+    document.getElementById('material_cost')?.addEventListener('input', updatePreview);
+    document.getElementById('labor_category')?.addEventListener('change', updatePreview);
+    document.getElementById('minutes')?.addEventListener('change', updatePreview);
+    document.getElementById('include_tax')?.addEventListener('change', updatePreview);
+  }
   
   // Form submission
   form.addEventListener('submit', (e) => {
@@ -276,6 +280,11 @@ const description = 'Calculate field service charges';
     
     const result = calculate();
     if (!result) return;
+    
+    // For tech users, make sure the preview is visible after calculation
+    if (user.role !== 'admin') {
+      previewContainer.style.display = 'block';
+    }
     
     // Save calculation
     const calculation = {
