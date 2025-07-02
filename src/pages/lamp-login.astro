@@ -66,16 +66,20 @@ const description = 'Access the Field Service Calculator';
     loginButton.disabled = true;
     loginButton.textContent = 'Signing in...';
     
-    // Simple client-side authentication
-    const validCredentials = [
+    // Get valid credentials from localStorage or use defaults
+    const defaultCredentials = [
       { username: 'admin', password: 'admin123', role: 'admin' },
       { username: 'tech1', password: 'tech123', role: 'tech' },
       { username: 'tech2', password: 'tech123', role: 'tech' },
       { username: 'sales@tech.com', password: 'jackson1', role: 'tech' }
     ];
     
+    const validCredentials = JSON.parse(
+      localStorage.getItem('lampValidCredentials') || JSON.stringify(defaultCredentials)
+    );
+    
     const user = validCredentials.find(
-      cred => cred.username === username && cred.password === password
+      (cred: any) => cred.username === username && cred.password === password
     );
     
     setTimeout(() => {
