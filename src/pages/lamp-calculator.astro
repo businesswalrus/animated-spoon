@@ -65,9 +65,9 @@ const description = 'Calculate field service charges';
                   <label for="labor_category" class="form-label">Labor Category</label>
                   <select class="form-select" id="labor_category" name="labor_category" required>
                     <option value="">Select Labor Category</option>
-                    <option value="Regular Time">Regular Time ($165/hr)</option>
-                    <option value="Time and a Half">Time and a Half ($247.50/hr)</option>
-                    <option value="Double Time">Double Time ($330/hr)</option>
+                    <option value="Regular Time">Regular Time</option>
+                    <option value="Time and a Half">Time and a Half</option>
+                    <option value="Double Time">Double Time</option>
                   </select>
                 </div>
                 
@@ -121,28 +121,32 @@ const description = 'Calculate field service charges';
             <!-- Live Preview -->
             <div id="previewContainer" class="mt-4" style="display: none;">
               <hr>
-              <h5 class="mb-3">Calculation Preview</h5>
-              <div class="table-responsive">
-                <table class="table table-sm">
-                  <tbody>
-                    <tr>
-                      <td>Material Cost:</td>
-                      <td class="text-end" id="previewMaterial">$0.00</td>
-                    </tr>
-                    <tr>
-                      <td>Labor Charge:</td>
-                      <td class="text-end" id="previewLabor">$0.00</td>
-                    </tr>
-                    <tr id="previewTaxRow" style="display: none;">
-                      <td>Tax (7%):</td>
-                      <td class="text-end" id="previewTax">$0.00</td>
-                    </tr>
-                    <tr class="fw-bold">
-                      <td>Total:</td>
-                      <td class="text-end" id="previewTotal">$0.00</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="alert alert-success text-center">
+                <h5 class="mb-2">Total Charge</h5>
+                <div class="display-4" id="previewTotal">$0.00</div>
+              </div>
+              
+              <!-- Admin-only breakdown -->
+              <div id="adminBreakdown" style="display: none;">
+                <h6 class="mb-3">Breakdown</h6>
+                <div class="table-responsive">
+                  <table class="table table-sm">
+                    <tbody>
+                      <tr>
+                        <td>Material Cost:</td>
+                        <td class="text-end" id="previewMaterial">$0.00</td>
+                      </tr>
+                      <tr>
+                        <td>Labor Charge:</td>
+                        <td class="text-end" id="previewLabor">$0.00</td>
+                      </tr>
+                      <tr id="previewTaxRow" style="display: none;">
+                        <td>Tax (7%):</td>
+                        <td class="text-end" id="previewTax">$0.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             
@@ -197,6 +201,7 @@ const description = 'Calculate field service charges';
   if (user.role === 'admin') {
     document.getElementById('dashboardLink')!.style.display = 'block';
     document.getElementById('manageUsersLink')!.style.display = 'block';
+    document.getElementById('adminBreakdown')!.style.display = 'block';
   }
   
   // Labor rates
@@ -330,14 +335,13 @@ const description = 'Calculate field service charges';
     calculationsList.innerHTML = userCalculations.map((calc, index) => `
       <div class="card mb-2">
         <div class="card-body p-2">
-          <div class="d-flex justify-content-between">
-            <small class="text-muted">${new Date(calc.timestamp).toLocaleString()}</small>
-            <strong>$${calc.total.toFixed(2)}</strong>
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <small class="text-muted">${new Date(calc.timestamp).toLocaleString()}</small>
+              <div><small>${calc.serviceType}</small></div>
+            </div>
+            <strong class="text-success">$${calc.total.toFixed(2)}</strong>
           </div>
-          <small>
-            ${calc.serviceType} • ${calc.laborCategory} • ${calc.minutes} min
-            ${calc.includeTax ? ' • +Tax' : ''}
-          </small>
         </div>
       </div>
     `).join('');
