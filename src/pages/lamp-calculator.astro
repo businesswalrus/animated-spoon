@@ -6,21 +6,41 @@ const description = 'Calculate field service charges';
 ---
 
 <MainLayout title={title} description={description}>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/lamp-calculator">Field Service Calculator</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lampNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="lampNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <span class="navbar-text me-3" id="navUsername"></span>
+          </li>
+          <li class="nav-item" id="dashboardLink" style="display: none;">
+            <a class="nav-link" href="/lamp-admin">Dashboard</a>
+          </li>
+          <li class="nav-item" id="manageUsersLink" style="display: none;">
+            <a class="nav-link" href="/lamp-users">Manage Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="navLogoutBtn">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
   <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6">
         <div class="card shadow calculator-card">
           <div class="card-header bg-primary text-white">
-            <div class="d-flex justify-content-between align-items-center">
-              <h1 class="h4 mb-0">Field Service Calculator</h1>
-              <button type="button" class="btn btn-sm btn-outline-light" id="logoutBtn">
-                <i class="bi bi-box-arrow-right"></i> Logout
-              </button>
-            </div>
+            <h1 class="h4 mb-0 text-center">Service Calculator</h1>
           </div>
           
           <div class="card-body p-4">
-            <div id="userInfo" class="alert alert-info mb-4"></div>
             
             <form id="calculatorForm">
               <div class="row">
@@ -168,8 +188,16 @@ const description = 'Calculate field service charges';
   }
   
   const user = JSON.parse(userStr || '{}');
-  const userInfo = document.getElementById('userInfo') as HTMLDivElement;
-  userInfo.innerHTML = `Welcome, <strong>${user.username}</strong> (${user.role === 'admin' ? 'Administrator' : 'Technician'})`;
+  
+  // Update navigation
+  const navUsername = document.getElementById('navUsername') as HTMLSpanElement;
+  navUsername.textContent = `Welcome, ${user.username}`;
+  
+  // Show admin links if user is admin
+  if (user.role === 'admin') {
+    document.getElementById('dashboardLink')!.style.display = 'block';
+    document.getElementById('manageUsersLink')!.style.display = 'block';
+  }
   
   // Labor rates
   const laborRates: Record<string, number> = {
@@ -181,7 +209,7 @@ const description = 'Calculate field service charges';
   // Form elements
   const form = document.getElementById('calculatorForm') as HTMLFormElement;
   const resetBtn = document.getElementById('resetBtn') as HTMLButtonElement;
-  const logoutBtn = document.getElementById('logoutBtn') as HTMLButtonElement;
+  const navLogoutBtn = document.getElementById('navLogoutBtn') as HTMLAnchorElement;
   
   // Preview elements
   const previewContainer = document.getElementById('previewContainer') as HTMLDivElement;
@@ -283,7 +311,8 @@ const description = 'Calculate field service charges';
   });
   
   // Logout
-  logoutBtn.addEventListener('click', () => {
+  navLogoutBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     sessionStorage.removeItem('lampUser');
     window.location.href = '/lamp-login';
   });

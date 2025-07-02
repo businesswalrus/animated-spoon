@@ -1,0 +1,130 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = 'Manage Users - Field Service Calculator';
+const description = 'User management for Field Service Calculator';
+---
+
+<MainLayout title={title} description={description}>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/lamp-calculator">Field Service Calculator</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lampNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="lampNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <span class="navbar-text me-3" id="navUsername"></span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lamp-calculator">Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lamp-admin">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/lamp-users">Manage Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="navLogoutBtn">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container py-5">
+    <h1 class="h2 mb-4">Manage Users</h1>
+    
+    <div class="alert alert-info">
+      <p class="mb-0"><strong>Note:</strong> This is a demo version. User management is simulated in browser storage.</p>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <h3 class="h5 mb-0">Users</h3>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>admin</td>
+                <td>admin@example.com</td>
+                <td><span class="badge bg-primary">Admin</span></td>
+                <td><span class="badge bg-success">Active</span></td>
+                <td>
+                  <button class="btn btn-sm btn-secondary" disabled>Cannot modify</button>
+                </td>
+              </tr>
+              <tr>
+                <td>tech1</td>
+                <td>tech1@example.com</td>
+                <td><span class="badge bg-info">Tech</span></td>
+                <td><span class="badge bg-success">Active</span></td>
+                <td>
+                  <button class="btn btn-sm btn-warning">Reset Password</button>
+                </td>
+              </tr>
+              <tr>
+                <td>tech2</td>
+                <td>tech2@example.com</td>
+                <td><span class="badge bg-info">Tech</span></td>
+                <td><span class="badge bg-success">Active</span></td>
+                <td>
+                  <button class="btn btn-sm btn-warning">Reset Password</button>
+                </td>
+              </tr>
+              <tr>
+                <td>sales@tech.com</td>
+                <td>sales@tech.com</td>
+                <td><span class="badge bg-info">Tech</span></td>
+                <td><span class="badge bg-success">Active</span></td>
+                <td>
+                  <button class="btn btn-sm btn-warning">Reset Password</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>
+
+<script>
+  // Check authentication
+  const userStr = sessionStorage.getItem('lampUser');
+  if (!userStr) {
+    window.location.href = '/lamp-login';
+  }
+  
+  const user = JSON.parse(userStr || '{}');
+  
+  // Check if admin
+  if (user.role !== 'admin') {
+    window.location.href = '/lamp-calculator';
+  }
+  
+  // Update navigation
+  const navUsername = document.getElementById('navUsername') as HTMLSpanElement;
+  navUsername.textContent = `Welcome, ${user.username}`;
+  
+  // Logout
+  document.getElementById('navLogoutBtn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    sessionStorage.removeItem('lampUser');
+    window.location.href = '/lamp-login';
+  });
+</script>
