@@ -1,668 +1,703 @@
 ---
 // src/pages/index.astro
+import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
 import NewsCard from '../components/NewsCard.astro';
 import IssueCard from '../components/IssueCard.astro';
 import StatsCounter from '../components/StatsCounter.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { testimonialSlides } from '../data/testimonials';
+import { stats } from '../data/stats';
+
+const metaDescription = "AARBAA fights for safer roads by advocating for separate bike paths. Join 15,000+ members demanding cyclist accountability and better infrastructure for everyone.";
 ---
 
-<MainLayout title="AARBAA - Americans Against Road Bikers Association of America">
-<!-- Hero Section - Updated for full-height image and modern typography -->
-<section class="d-flex hero-section" id="home" 
-style="
-  background-color: #0A3161;
-  min-height: 120vh;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  margin-top: -120px; /* Counter the body padding-top of 120px */
-  padding-top: 120px; /* Add back padding to position content correctly */
-">
-  <div class="container-fluid d-flex p-0" style="height: 100vh;">
-    <!-- Left content area -->
-    <div class="text-left p-5 d-flex flex-column justify-content-center" style="width: 50%; z-index: 2;">
-      <h1 class="fw-bold mb-4" style="
-        text-align: left; 
-        color: #b31942; 
-        text-shadow: 1px 1px 0 #0A3161;
-        font-size: calc(2rem + 1vw); 
-        line-height: 1.1;
-        letter-spacing: -0.5px;
-        text-transform: uppercase;
-        margin-top: -7rem;
+<MainLayout
+  title="AARBAA - Americans Against Road Bikers | Road Safety Advocacy"
+  description={metaDescription}
+>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-      ">Americans Against Road Bikers Association&nbsp;of America</h1>
-      
-      <h2 style="
-        text-align: left;
-        font-size: calc(1.2rem + 0.5vw);
-        font-weight: 300;
-        letter-spacing: 1px;
-        margin-bottom: 2.5rem;
-      ">Because America Has Had Enough</h2>
-      
-      <div class="d-grid gap-2 d-md-flex justify-content-start">
-        <a href="/join" class="btn btn-danger btn-lg px-5 py-3" style="
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          border-radius: 4px;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        ">Join Our Cause</a>
-      </div>
-    </div>
-    
-    <!-- Right image area - absolute positioning for full cover -->
-    <div class="hero-image" style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    ">
-      <img src="/images/bikerrage2.png" alt="Hero Image" style="
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 30%-100%;
-      ">
-    </div>
-    
-    <div class="text-left p-5 d-flex flex-column justify-content-center" style="width: 100%; z-index: 2; position: relative;">
-  </div>
-</section>
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AARBAA - Americans Against Road Bikers Association of America",
+    "description": metaDescription,
+    "url": "https://aarbaa.com",
+    "logo": "https://aarbaa.com/images/aarbaa-new-logo (2).svg",
+    "foundingDate": "2023",
+    "sameAs": [
+      "https://facebook.com/",
+      "https://twitter.com/",
+      "https://instagram.com/"
+    ]
+  })} />
 
-<!-- Section Divider -->
-<div class="section-divider"></div>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home" aria-label="Hero banner">
+      <div class="hero-content-wrapper">
+        <div class="hero-text">
+          <h1 class="hero-title">Americans Against Road Bikers Association of America</h1>
+          <h2 class="hero-subtitle">Because America Has Had Enough</h2>
+          <div class="hero-cta">
+            <a href="/join" class="btn btn-danger btn-lg cta-button">Join Our Cause</a>
+          </div>
+        </div>
 
-<!-- About/Mission Section with Pills Navigation -->
-<section id="about" class="section-padding" style="padding-top: 5rem; padding-bottom: 5rem; background-color: #0A3161; color: white;">
-  <div class="container">
-    <div class="row justify-content-center mb-3">
-      <div class="col-lg-10 text-center">
-        <div class="section-title-wrapper text-center">
-          <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; color: white; display: inline-block;">THE ISSUES</h2>
-          <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
+        <div class="hero-image-container">
+          <img
+            src="/images/bikerrage2.png"
+            alt="Frustrated drivers stuck behind cyclists on a narrow road"
+            class="hero-image"
+            loading="eager"
+            width="1920"
+            height="1080"
+          />
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Pills Navigation -->
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <ul class="nav nav-pills service-nav flex-column flex-sm-row nav-justified mb-5" id="pills-tab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-problem-tab" data-bs-toggle="pill" data-bs-target="#pills-problem" type="button" role="tab" aria-controls="pills-problem" aria-selected="true">
-              <i class="fas fa-exclamation-triangle fa-3x mb-2"></i><br>The Problem
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-concerns-tab" data-bs-toggle="pill" data-bs-target="#pills-concerns" type="button" role="tab" aria-controls="pills-concerns" aria-selected="false">
-              <i class="fas fa-list-ol fa-3x mb-2"></i><br>10 Key Concerns
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-approach-tab" data-bs-toggle="pill" data-bs-target="#pills-approach" type="button" role="tab" aria-controls="pills-approach" aria-selected="false">
-              <i class="fas fa-lightbulb fa-3x mb-2"></i><br>Our Approach
-            </button>
-          </li>
-        </ul>
-
-        <!-- Tab Content -->
-        <div class="tab-content" id="pills-tabContent">
-          <!-- The Problem Tab -->
-          <div class="tab-pane fade show active" id="pills-problem" role="tabpanel" aria-labelledby="pills-problem-tab">
-            <div style="background: linear-gradient(135deg, rgba(10, 49, 97, 0.8) 0%, rgba(15, 76, 150, 0.8) 100%); border-left: 5px solid #B31942; padding: 2rem; margin-bottom: 2rem; border-radius: 0.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
-              <!-- Enhanced "You've seen them" heading with more impact -->
-              <div class="text-center mb-4">
-                <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; letter-spacing: 2px; color: #B31942; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); text-transform: uppercase; line-height: 1.2;">YOU'VE SEEN THEM.<br>WE'VE ALL SEEN THEM.</p>
-                <div style="width: 60%; height: 5px; background-color: #B31942; margin: 0 auto;"></div>
-              </div>
-
-              <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 400; color: white; margin-bottom: 1rem;">Those packs of neon-clad warriors, squeezing into tight formations on our precious roadways, pedaling with the self-importance of someone who thinks they're saving the planet one insufferable mile at a time.</p>
-
-              <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 400; color: white; margin-bottom: 1rem;">Let's be honest about road bikers, shall we? These weekend warriors aren't environmental heroes – they're just hobbyists with expensive toys clogging up our roads. The irony of watching someone load a $5,000 carbon fiber bike onto a gas-guzzling SUV before driving 40 minutes to their cycling route isn't lost on the rest of us sitting in traffic behind them.</p>
-
-              <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 400; color: white; margin-bottom: 1rem;">"Share the road," they preach, while taking up entire lanes during rush hour. Nothing says "I respect others" quite like forcing a line of 20 cars to crawl at 12 mph around blind corners because heaven forbid they use the bike path built specifically for this purpose.</p>
-
-              <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 400; color: white;">And let's talk safety – not just theirs, but ours too. When a cyclist decides that stop signs are merely suggestions, guess who's legally responsible when things go sideways? That's right – the driver with actual insurance and a license plate.</p>
-            </div>
-            
-            <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 400; color: white; margin-bottom: 1rem; margin-top: 2rem;">Cyclists often claim the moral high ground, but their actions on the road tell a different story. It's time to hold them accountable and demand real solutions that work for everyone.</p>
-          </div>
-
-          <!-- Key Concerns Tab -->
-          <div class="tab-pane fade" id="pills-concerns" role="tabpanel" aria-labelledby="pills-concerns-tab">
-            <div class="reasons-container">
-              <div class="reason-card">
-                <div class="reason-number">01</div>
-                <div class="reason-content">
-                  <h4>Road sharing "challenges"</h4>
-                  <p>Some drivers find it frustrating when cyclists occupy vehicle lanes, especially on narrow roads where passing safely is difficult.</p>
-                </div>
-              </div>
-              
-              <div class="reason-card">
-                <div class="reason-number">02</div>
-                <div class="reason-content">
-                  <h4>Traffic flow disruption</h4>
-                  <p>Cyclists typically move slower than vehicular traffic, which can create congestion in areas without proper bike infrastructure.</p>
-                </div>
-              </div>
-              
-              <div class="reason-card">
-                <div class="reason-number">03</div>
-                <div class="reason-content">
-                  <h4>Perceived rule-breaking</h4>
-                  <p>There's a perception that some cyclists ignore traffic laws, like running stop signs or red lights, creating safety hazards.</p>
-                </div>
-              </div>
-              
-              <div class="reason-card">
-                <div class="reason-number">04</div>
-                <div class="reason-content">
-                  <h4>Infrastructure costs</h4>
-                  <p>Building dedicated cycling infrastructure requires public funding that some taxpayers may prefer allocated elsewhere.</p>
-                </div>
-              </div>
-              
-              <div class="reason-card">
-                <div class="reason-number">05</div>
-                <div class="reason-content">
-                  <h4>Rural road limitations</h4>
-                  <p>Many rural roads lack shoulders or bike lanes, creating potentially dangerous situations when cyclists and vehicles share these roads.</p>
-                </div>
-              </div>
-              
-              <div class="reason-card">
-                <div class="reason-number">06</div>
-                <div class="reason-content">
-                  <h4>Licensing and regulation differences</h4>
-                  <p>Unlike motorists, cyclists typically don't require licenses or registration, which some view as regulatory inconsistency.</p>
-                </div>
-              </div>
-              
-              <div class="reason-card">
-                <div class="reason-number">07</div>
-                <div class="reason-content">
-                  <h4>Cultural tensions</h4>
-                  <p>In some communities, tensions exist between drivers and cyclists about road use rights.</p>
-                </div>
-              </div>
-              
-              <div class="reason-card">
-                <div class="reason-number">08</div>
-                <div class="reason-content">
-                  <h4>Seasonal challenges</h4>
-                  <p>In areas with harsh winters or extreme weather, cycling infrastructure may go unused for significant portions of the year.</p>
-                </div>
-              </div>
-              
-              <div class="reason-card">
-                <div class="reason-number">09</div>
-                <div class="reason-content">
-                  <h4>Parking conflicts</h4>
-                  <p>Bike racks and storage can sometimes take up space in urban areas where parking is already limited.</p>
-                </div>
-              </div>
-              
-              <div class="reason-card">
-                <div class="reason-number">10</div>
-                <div class="reason-content">
-                  <h4>Emergency vehicle considerations</h4>
-                  <p>On narrow roads, groups of cyclists might make it challenging for emergency vehicles to pass quickly.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Our Approach Tab -->
-          <div class="tab-pane fade" id="pills-approach" role="tabpanel" aria-labelledby="pills-approach-tab">
-            <div class="row align-items-center">
-              <div class="col-md-7 mb-4 mb-md-0">              
-                <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; color: #f8f9fa; font-weight: 400;">We're not just complaining—we're taking action! Founded in 2023 by drivers who've had <span style="color: #B31942; font-weight: 700;">ENOUGH</span>, Americans Against Road Bikers stands up for the forgotten majority: the people who actually pay road taxes.</p>
-
-                <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; color: #f8f9fa; font-weight: 400;">While the spandex brigade clogs our streets without contributing a dime to infrastructure, we're fighting for transportation policies that reflect <span style="color: #B31942; font-weight: 700;">REALITY</span>, not cyclist fantasy land. We advocate for dedicated bike paths separate from main roads - because safety matters for everyone.</p>
-
-                <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; color: #f8f9fa; font-weight: 400;">Yes, we believe in "sharing the road"—in a way that makes sense. That means cyclists should have their own infrastructure instead of pretending they're training for the Tour de France on your morning commute. Our common-sense approach demands accountability from <span style="color: #B31942; font-weight: 700;">BOTH</span> sides.</p>
-
-                <p style="font-size: 1.1rem; line-height: 1.5; color: #f8f9fa; font-weight: 400;">When planning communities, we need to recognize the reality: cars, bikes, and pedestrians deserve separate spaces to maximize safety and efficiency for everyone.</p>
-              </div>
-              <div class="col-md-5 text-center">
-                <img src="/images/protest.webp" alt="Road Safety Teacher" class="img-fluid rounded" style="width: 85%; max-width: 350px; border: 3px solid #B31942; box-shadow: 5px 5px 0 rgba(179, 25, 66, 0.5);">
-              </div>
+    <!-- About/Mission Section with Pills Navigation -->
+    <section id="about" class="section-padding section-dark" aria-labelledby="issues-heading">
+      <div class="container">
+        <div class="row justify-content-center mb-3">
+          <div class="col-lg-10 text-center">
+            <div class="section-title-wrapper">
+              <h2 id="issues-heading" class="section-title">THE ISSUES</h2>
+              <div class="title-underline"></div>
             </div>
           </div>
         </div>
-        
+
+        <!-- Pills Navigation -->
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <ul class="nav nav-pills nav-justified mb-5" id="pills-tab" role="tablist" aria-label="Issue categories">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-problem-tab" data-bs-toggle="pill" data-bs-target="#pills-problem" type="button" role="tab" aria-controls="pills-problem" aria-selected="true">
+                  <i class="fas fa-exclamation-triangle fa-3x mb-2" aria-hidden="true"></i><br>The Problem
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-concerns-tab" data-bs-toggle="pill" data-bs-target="#pills-concerns" type="button" role="tab" aria-controls="pills-concerns" aria-selected="false">
+                  <i class="fas fa-list-ol fa-3x mb-2" aria-hidden="true"></i><br>10 Key Concerns
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-approach-tab" data-bs-toggle="pill" data-bs-target="#pills-approach" type="button" role="tab" aria-controls="pills-approach" aria-selected="false">
+                  <i class="fas fa-lightbulb fa-3x mb-2" aria-hidden="true"></i><br>Our Approach
+                </button>
+              </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="pills-tabContent">
+              <!-- The Problem Tab -->
+              <div class="tab-pane fade show active" id="pills-problem" role="tabpanel" aria-labelledby="pills-problem-tab">
+                <div class="content-box">
+                  <div class="text-center mb-4 attention-grabber">
+                    <p class="attention-heading">YOU'VE SEEN THEM.<br>WE'VE ALL SEEN THEM.</p>
+                    <div class="attention-underline"></div>
+                  </div>
+
+                  <p class="content-text">Those packs of neon-clad warriors, squeezing into tight formations on our precious roadways, pedaling with the self-importance of someone who thinks they're saving the planet one insufferable mile at a time.</p>
+
+                  <p class="content-text">Let's be honest about road bikers, shall we? These weekend warriors aren't environmental heroes – they're just hobbyists with expensive toys clogging up our roads. The irony of watching someone load a $5,000 carbon fiber bike onto a gas-guzzling SUV before driving 40 minutes to their cycling route isn't lost on the rest of us sitting in traffic behind them.</p>
+
+                  <p class="content-text">"Share the road," they preach, while taking up entire lanes during rush hour. Nothing says "I respect others" quite like forcing a line of 20 cars to crawl at 12 mph around blind corners because heaven forbid they use the bike path built specifically for this purpose.</p>
+
+                  <p class="content-text">And let's talk safety – not just theirs, but ours too. When a cyclist decides that stop signs are merely suggestions, guess who's legally responsible when things go sideways? That's right – the driver with actual insurance and a license plate.</p>
+                </div>
+
+                <p class="content-text mt-4">Cyclists often claim the moral high ground, but their actions on the road tell a different story. It's time to hold them accountable and demand real solutions that work for everyone.</p>
+              </div>
+
+              <!-- Key Concerns Tab -->
+              <div class="tab-pane fade" id="pills-concerns" role="tabpanel" aria-labelledby="pills-concerns-tab">
+                <div class="reasons-container">
+                  <div class="reason-card">
+                    <div class="reason-number">01</div>
+                    <div class="reason-content">
+                      <h4>Road sharing "challenges"</h4>
+                      <p>Some drivers find it frustrating when cyclists occupy vehicle lanes, especially on narrow roads where passing safely is difficult.</p>
+                    </div>
+                  </div>
+
+                  <div class="reason-card">
+                    <div class="reason-number">02</div>
+                    <div class="reason-content">
+                      <h4>Traffic flow disruption</h4>
+                      <p>Cyclists typically move slower than vehicular traffic, which can create congestion in areas without proper bike infrastructure.</p>
+                    </div>
+                  </div>
+
+                  <div class="reason-card">
+                    <div class="reason-number">03</div>
+                    <div class="reason-content">
+                      <h4>Perceived rule-breaking</h4>
+                      <p>There's a perception that some cyclists ignore traffic laws, like running stop signs or red lights, creating safety hazards.</p>
+                    </div>
+                  </div>
+
+                  <div class="reason-card">
+                    <div class="reason-number">04</div>
+                    <div class="reason-content">
+                      <h4>Infrastructure costs</h4>
+                      <p>Building dedicated cycling infrastructure requires public funding that some taxpayers may prefer allocated elsewhere.</p>
+                    </div>
+                  </div>
+
+                  <div class="reason-card">
+                    <div class="reason-number">05</div>
+                    <div class="reason-content">
+                      <h4>Rural road limitations</h4>
+                      <p>Many rural roads lack shoulders or bike lanes, creating potentially dangerous situations when cyclists and vehicles share these roads.</p>
+                    </div>
+                  </div>
+
+                  <div class="reason-card">
+                    <div class="reason-number">06</div>
+                    <div class="reason-content">
+                      <h4>Licensing and regulation differences</h4>
+                      <p>Unlike motorists, cyclists typically don't require licenses or registration, which some view as regulatory inconsistency.</p>
+                    </div>
+                  </div>
+
+                  <div class="reason-card">
+                    <div class="reason-number">07</div>
+                    <div class="reason-content">
+                      <h4>Cultural tensions</h4>
+                      <p>In some communities, tensions exist between drivers and cyclists about road use rights.</p>
+                    </div>
+                  </div>
+
+                  <div class="reason-card">
+                    <div class="reason-number">08</div>
+                    <div class="reason-content">
+                      <h4>Seasonal challenges</h4>
+                      <p>In areas with harsh winters or extreme weather, cycling infrastructure may go unused for significant portions of the year.</p>
+                    </div>
+                  </div>
+
+                  <div class="reason-card">
+                    <div class="reason-number">09</div>
+                    <div class="reason-content">
+                      <h4>Parking conflicts</h4>
+                      <p>Bike racks and storage can sometimes take up space in urban areas where parking is already limited.</p>
+                    </div>
+                  </div>
+
+                  <div class="reason-card">
+                    <div class="reason-number">10</div>
+                    <div class="reason-content">
+                      <h4>Emergency vehicle considerations</h4>
+                      <p>On narrow roads, groups of cyclists might make it challenging for emergency vehicles to pass quickly.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Our Approach Tab -->
+              <div class="tab-pane fade" id="pills-approach" role="tabpanel" aria-labelledby="pills-approach-tab">
+                <div class="row align-items-center">
+                  <div class="col-md-7 mb-4 mb-md-0">
+                    <p class="content-text">We're not just complaining—we're taking action! Founded in 2023 by drivers who've had <span class="highlight">ENOUGH</span>, Americans Against Road Bikers stands up for the forgotten majority: the people who actually pay road taxes.</p>
+
+                    <p class="content-text">While the spandex brigade clogs our streets without contributing a dime to infrastructure, we're fighting for transportation policies that reflect <span class="highlight">REALITY</span>, not cyclist fantasy land. We advocate for dedicated bike paths separate from main roads - because safety matters for everyone.</p>
+
+                    <p class="content-text">Yes, we believe in "sharing the road"—in a way that makes sense. That means cyclists should have their own infrastructure instead of pretending they're training for the Tour de France on your morning commute. Our common-sense approach demands accountability from <span class="highlight">BOTH</span> sides.</p>
+
+                    <p class="content-text">When planning communities, we need to recognize the reality: cars, bikes, and pedestrians deserve separate spaces to maximize safety and efficiency for everyone.</p>
+                  </div>
+                  <div class="col-md-5 text-center">
+                    <img src="/images/protest.webp" alt="AARBAA members advocating for road safety at community meeting" class="approach-image" width="350" height="350" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-5">
+              <a href="#join" class="btn btn-danger btn-lg cta-button-large">JOIN THE MOVEMENT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Issues Section -->
+    <section id="issues" class="section-padding section-light" aria-labelledby="battlegrounds-heading">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col">
+            <div class="section-title-wrapper">
+              <h2 id="battlegrounds-heading" class="section-title section-title-dark">KEY BATTLEGROUNDS</h2>
+              <div class="title-underline"></div>
+            </div>
+            <p class="lead text-muted">The four horsemen of the cycling apocalypse we're fighting every day</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <IssueCard
+            icon="fa-road"
+            title="ROAD HOGGING 101"
+            content="Fighting to banish lycra-clad road blockers to their own designated lanes where they can pretend they're Lance Armstrong without endangering the rest of us."
+          />
+
+          <IssueCard
+            icon="fa-helmet-safety"
+            title="SAFETY REALITY CHECK"
+            content="Demanding cyclists actually become visible with more than just their neon outfits and fragile egos—let's make reflectors, helmets, and accountability mandatory."
+          />
+
+          <IssueCard
+            icon="fa-book-open"
+            title="RULES ARE FOR EVERYONE"
+            content="Funding programs to remind the bike brigade that red lights and stop signs apply to THEM TOO—shocking, we know."
+          />
+
+          <IssueCard
+            icon="fa-scale-balanced"
+            title="FAIRNESS FOR THE 99%"
+            content="Balancing the scales of justice so one cyclist's 'right to the road' doesn't trump fifty drivers' right to get to work on time without having a collective aneurysm."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Counter Section -->
+    <section id="stats" class="section-padding bg-light" aria-labelledby="stats-heading">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <h2 id="stats-heading" class="stats-title">THE NUMBERS DON'T LIE</h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          {stats.map(stat => (
+            <StatsCounter number={stat.number} label={stat.label} icon={stat.icon} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section id="news" class="section-padding section-dark" aria-labelledby="news-heading">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col">
+            <div class="section-title-wrapper">
+              <h2 id="news-heading" class="section-title">LATEST UPDATES</h2>
+              <div class="title-underline"></div>
+            </div>
+            <p class="lead section-subtitle">Stay informed about our crusade against road bikers</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <NewsCard
+            image="/images/bikerpack.png"
+            title="THE GREAT SPITTING EPIDEMIC: A Comprehensive Study"
+            date="April 15, 2025"
+            excerpt="847,392 spit incidents per week. 2.3 gallons per cyclist per mile. Our shocking investigation reveals the disgusting truth about road cyclist expectoration habits..."
+            link="/news/spitting-epidemic"
+          />
+
+          <NewsCard
+            image="/images/missioncontrol.jpg"
+            title="THE GREAT SPANDEX CENSUS: 72 Hours of Shocking Data"
+            date="March 22, 2025"
+            excerpt="Our comprehensive surveillance operation documented 1,247 red lights run and 892 stop signs ignored in just 72 hours. The numbers don't lie..."
+            link="/news/great-spandex-census"
+          />
+
+          <NewsCard
+            image="/images/victory.jpg"
+            title="LEGISLATIVE WARFARE: Bill 477 DEMOLISHES Cyclist Entitlement"
+            date="February 28, 2025"
+            excerpt="As Bill 477 passed, the cyclist lobby unleashed a tantrum so epic it could only be described as performance art. Picture grown adults in skin-tight lycra..."
+            link="/news/bill-477-update"
+          />
+        </div>
+
         <div class="text-center mt-5">
-          <a href="#join" class="btn btn-danger btn-lg px-5 py-3" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1.4rem;">JOIN THE MOVEMENT</a>
+          <a href="/news" class="btn btn-outline-light btn-lg px-4">View All Updates</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Key Issues Section - with white background for contrast -->
-  <section id="issues" class="section-padding" style="padding-top: 6rem; background-color: white;">
-    <div class="container">
-      <div class="row text-center mb-5">
-        <div class="col">
-          <!-- Section title with hover effect -->
-          <div class="section-title-wrapper text-center">
-            <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block; color: #0A3161;">KEY BATTLEGROUNDS</h2>
-            <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
-          </div>
-          <p class="lead" style="color: #555;">The four horsemen of the cycling apocalypse we're fighting every day</p>
-        </div>
-      </div>
-
-      <div class="row g-4">
-        <!-- Issue Cards -->
-        <IssueCard 
-          icon="fa-road" 
-          title="ROAD HOGGING 101" 
-          content="Fighting to banish lycra-clad road blockers to their own designated lanes where they can pretend they're Lance Armstrong without endangering the rest of us."
-        />
-
-        <IssueCard 
-          icon="fa-helmet-safety" 
-          title="SAFETY REALITY CHECK" 
-          content="Demanding cyclists actually become visible with more than just their neon outfits and fragile egos—let's make reflectors, helmets, and accountability mandatory."
-        />
-
-        <IssueCard 
-          icon="fa-book-open" 
-          title="RULES ARE FOR EVERYONE" 
-          content="Funding programs to remind the bike brigade that red lights and stop signs apply to THEM TOO—shocking, we know."
-        />
-
-        <IssueCard 
-          icon="fa-scale-balanced" 
-          title="FAIRNESS FOR THE 99%" 
-          content="Balancing the scales of justice so one cyclist's 'right to the road' doesn't trump fifty drivers' right to get to work on time without having a collective aneurysm."
-        />
-      </div>
-    </div>
-  </section>
-
-<!-- Statistics Counter Section -->
-<section id="stats" class="section-padding bg-light" style="padding: 5rem 0;">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-12">
-        <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #0A3161;">THE NUMBERS DON'T LIE</h2>
-      </div>
-    </div>
-    <div class="row text-center">
-      <StatsCounter number="15,000+" label="Members Nationwide" icon="fa-users" />
-      <StatsCounter number="47" label="Active Local Chapters" icon="fa-map-marker-alt" />
-      <StatsCounter number="73%" label="Support Separate Bike Paths" icon="fa-thumbs-up" />
-      <StatsCounter number="124" label="Local Victories" icon="fa-trophy" />
-    </div>
-  </div>
-</section>
-
- <!-- Latest News Section with Old Glory Blue background -->
- <section id="news" class="section-padding" style="padding-top: 6rem; padding-bottom: 6rem; background-color: #0A3161;">
-   <div class="container">
-     <div class="row text-center mb-5">
-       <div class="col">
-         <!-- Section title with hover effect -->
-         <div class="section-title-wrapper text-center">
-           <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; color: white; display: inline-block;">LATEST UPDATES</h2>
-           <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
-         </div>
-         <p class="lead" style="color: rgba(255,255,255,0.8);">Stay informed about our crusade against road bikers</p>
-       </div>
-     </div>
-
-     <div class="row g-4">
-       <!-- News Card 1 -->
-       <NewsCard
-         image="/images/bikerpack.png"
-         title="THE GREAT SPITTING EPIDEMIC: A Comprehensive Study"
-         date="April 15, 2025"
-         excerpt="847,392 spit incidents per week. 2.3 gallons per cyclist per mile. Our shocking investigation reveals the disgusting truth about road cyclist expectoration habits..."
-         link="/news/spitting-epidemic"
-       />
-
-       <!-- News Card 2 -->
-       <NewsCard
-         image="/images/missioncontrol.jpg"
-         title="THE GREAT SPANDEX CENSUS: 72 Hours of Shocking Data"
-         date="March 22, 2025"
-         excerpt="Our comprehensive surveillance operation documented 1,247 red lights run and 892 stop signs ignored in just 72 hours. The numbers don't lie..."
-         link="/news/great-spandex-census"
-       />
-
-       <!-- News Card 3 -->
-       <NewsCard
-         image="/images/victory.jpg"
-         title="LEGISLATIVE WARFARE: Bill 477 DEMOLISHES Cyclist Entitlement"
-         date="February 28, 2025"
-         excerpt="As Bill 477 passed, the cyclist lobby unleashed a tantrum so epic it could only be described as performance art. Picture grown adults in skin-tight lycra..."
-         link="/news/bill-477-update"
-       />
-     </div>
-
-     <div class="text-center mt-5">
-       <a href="/news" class="btn btn-outline-light btn-lg px-4">View All Updates</a>
-     </div>
-   </div>
- </section>
-
-<!-- Join Section with CTA and Form -->
-<section id="join" class="section-padding" style="background-color: #f8f8f8; padding: 5rem 0;">
-  <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-lg-8 text-center">
-        <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; color: #B31942; margin-bottom: 1rem;">JOIN THE RESISTANCE</h2>
-        <p class="lead mb-4" style="color: #0A3161;">Become a member today and help us reclaim America's roads one bike path at a time!</p>
-      </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <iframe 
-          src="https://form.jotform.com/250919067322053"
-          width="100%"
-          height="600"
-          frameborder="0"
-          allow="fullscreen; geolocation; microphone; camera"
-          style="border: none;">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section id="testimonials" class="section-padding" style="background-color: #0A3161; padding: 5rem 0; color: white;">
-  <div class="container">
-    <div class="row text-center mb-5">
-      <div class="col">
-        <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; color: white;">VOICES FROM THE TRENCHES</h2>
-        <p class="lead" style="color: rgba(255,255,255,0.8);">Real Americans who have joined our movement</p>
-      </div>
-    </div>
-
-    <!-- Testimonial Carousel -->
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- First Slide - 3 testimonials -->
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">I was 20 minutes late to a job interview because a pack of cyclists refused to use the nearby bike path. AARBAA gave me the resources to advocate for change in my community.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #FF9933; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Michael D.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Dallas, TX</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">After joining AARBAA, I helped petition our city council to build separated bike lanes. Now cyclists have their space, drivers have theirs, and everyone is safer. Common sense wins!</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #4CAF50; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Sarah J.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Portland, OR</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">I'm actually a cyclist myself, but I got tired of the entitled attitudes. AARBAA isn't anti-cycling, they're pro-common sense. Separate paths make cycling safer for everyone.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #42A5F5; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Thomas R.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Boulder, CO</p>
-                </div>
-              </div>
-            </div>
+    <!-- Join Section with Contact Form -->
+    <section id="join" class="section-padding section-light" aria-labelledby="join-heading">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <h2 id="join-heading" class="join-title">JOIN THE RESISTANCE</h2>
+            <p class="lead join-subtitle">Become a member today and help us reclaim America's roads one bike path at a time!</p>
           </div>
         </div>
 
-        <!-- Second Slide - 3 more testimonials -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">My morning commute used to be a nightmare thanks to cyclists who think traffic laws are optional. Since joining AARBAA, I've helped get dedicated bike lanes installed, making everyone's commute safer.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #E91E63; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Jennifer L.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Chicago, IL</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">As a truck driver, I've had countless near-misses with cyclists who dart between lanes. AARBAA's advocacy for separate infrastructure has made my job less stressful and the roads safer for everyone.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #FFC107; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Robert M.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Phoenix, AZ</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">I used to think I was alone in my frustration with road cyclists until I found AARBAA. Now our local chapter has successfully lobbied for dedicated cycling paths away from main roads.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #9C27B0; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Amanda K.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Seattle, WA</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Third Slide - 3 more testimonials -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">As a parent, I was terrified driving my kids to school with cyclists weaving through traffic. Thanks to AARBAA's advocacy, our town now has protected bike lanes separate from car traffic.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #00BCD4; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">David W.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Austin, TX</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">I nearly lost my job after being late repeatedly due to cyclist-caused traffic jams. AARBAA helped me organize my community to petition for better infrastructure planning that respects everyone's needs.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #FF5722; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Patricia H.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Miami, FL</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">As an emergency responder, I've seen too many accidents involving cyclists on busy roads. AARBAA's push for separate infrastructure is saving lives and making my job easier.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #8BC34A; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">James B.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Denver, CO</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Fourth Slide - 3 more testimonials -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">My rural community was overrun with weekend cyclists who treated our narrow roads like their personal race track. AARBAA helped us work with county officials to create designated cycling routes.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #CDDC39; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Elizabeth T.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Asheville, NC</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">I was tired of being vilified for driving a car when cyclists constantly broke traffic laws with no consequences. AARBAA gave me a voice and helped create accountability for all road users.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #3F51B5; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">William P.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">San Diego, CA</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 border-0 shadow-lg" style="border-radius: 15px; transition: all 0.3s ease;">
-                <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; border-left: 5px solid #B31942;">
-                  <div class="mb-3">
-                    <i class="fas fa-quote-left fa-3x" style="color: #B31942; opacity: 0.7; transition: all 0.3s ease;"></i>
-                  </div>
-                  <p class="card-text mb-4" style="color: white; font-style: italic; font-size: 1.1rem; line-height: 1.6;">Our neighborhood streets became dangerous when cycling clubs started using them for training rides. AARBAA helped us work with city planners to create safe routes for everyone.</p>
-                  <div style="width: 70px; height: 4px; background-color: #B31942; margin: 0 auto 1rem;"></div>
-                  <h5 class="card-title mb-1" style="color: #FF4081; font-weight: 700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Margaret S.</h5>
-                  <p style="color: rgba(255,255,255,0.8);">Nashville, TN</p>
-                </div>
-              </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="contact-form-wrapper">
+              <ContactForm />
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" style="width: 5%;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" style="width: 5%;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding section-dark" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col">
+            <h2 id="testimonials-heading" class="section-title">VOICES FROM THE TRENCHES</h2>
+            <p class="lead section-subtitle">Real Americans who have joined our movement</p>
+          </div>
+        </div>
 
-      <!-- Carousel Indicators -->
-      <div class="carousel-indicators" style="bottom: -50px;">
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: #B31942;"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: #B31942;"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3" style="background-color: #B31942;"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" aria-label="Slide 4" style="background-color: #B31942;"></button>
+        <!-- Testimonial Carousel -->
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Member testimonials carousel">
+          <div class="carousel-inner">
+            {testimonialSlides.map((slide, index) => (
+              <div class={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                <div class="row">
+                  {slide.map(testimonial => (
+                    <TestimonialCard
+                      quote={testimonial.quote}
+                      name={testimonial.name}
+                      location={testimonial.location}
+                      color={testimonial.color}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous testimonials">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next testimonials">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+          <!-- Carousel Indicators -->
+          <div class="carousel-indicators">
+            {testimonialSlides.map((_, index) => (
+              <button
+                type="button"
+                data-bs-target="#testimonialCarousel"
+                data-bs-slide-to={index.toString()}
+                class={index === 0 ? 'active' : ''}
+                aria-current={index === 0 ? 'true' : 'false'}
+                aria-label={`Slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding section-light" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <div class="section-title-wrapper mb-4">
+              <h2 id="contact-heading" class="section-title section-title-dark">GET IN TOUCH</h2>
+              <div class="title-underline"></div>
+            </div>
+            <p class="lead contact-subtitle">Have questions or want to report a cyclist incident? We're here to help!</p>
+
+            <div class="d-grid gap-3 d-sm-flex justify-content-center">
+              <a href="/contact" class="btn btn-danger btn-lg cta-button">
+                <i class="fas fa-envelope me-2" aria-hidden="true"></i> Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>
 
 <style>
-  /* Section title underline animation */
-  .section-title-wrapper:hover .title-underline {
+  /* Skip Link */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #B31942;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    background-color: #0A3161;
+    min-height: 90vh;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-content-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    padding: 3rem;
+    max-width: 50%;
+  }
+
+  .hero-title {
+    color: #b31942;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+  }
+
+  .hero-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.7;
+  }
+
+  /* Section Styles */
+  .section-padding {
+    padding: 5rem 0;
+  }
+
+  .section-dark {
+    background-color: #0A3161;
+    color: white;
+  }
+
+  .section-light {
+    background-color: #f8f8f8;
+  }
+
+  .section-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: 2px;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title-dark {
+    color: #0A3161;
+  }
+
+  .section-title-wrapper {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .title-underline {
+    height: 4px;
+    background-color: #B31942;
+    width: 0;
+    margin: 0 auto;
+    transition: width 0.3s ease;
+  }
+
+  .section-title-wrapper:hover .title-underline,
+  .section-title-wrapper:focus-within .title-underline {
     width: 100%;
   }
 
-  /* Card hover effects */
-  .card-hover:hover {
-    transform: translateY(-10px);
-    transition: transform 0.3s ease;
-  }
-  
-  /* Testimonial card hover effects */
-  .card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-  }
-  
-  .card:hover .fa-quote-left {
-    transform: scale(1.2) rotate(-10deg);
-    opacity: 0.9;
-  }
-  
-  .card:hover .card-title {
-    transform: scale(1.05);
+  .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
   }
 
-  .top-reasons-section {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-  
-  .reasons-title {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 2rem;
-    color: #B31942;
-    text-align: center;
+  /* Content Boxes */
+  .content-box {
+    background: linear-gradient(135deg, rgba(10, 49, 97, 0.8) 0%, rgba(15, 76, 150, 0.8) 100%);
+    border-left: 5px solid #B31942;
+    padding: 2rem;
     margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .attention-grabber {
+    margin-bottom: 2rem;
+  }
+
+  .attention-heading {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #B31942;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    line-height: 1.2;
+    margin-bottom: 1rem;
   }
-  
-  .reasons-title::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 3px;
+
+  .attention-underline {
+    width: 60%;
+    height: 5px;
     background-color: #B31942;
-    margin: 0.5rem auto 0;
+    margin: 0 auto;
   }
-  
+
+  .content-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .highlight {
+    color: #B31942;
+    font-weight: 700;
+  }
+
+  .approach-image {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #B31942;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 rgba(179, 25, 66, 0.5);
+  }
+
+  /* Pills Navigation */
+  .nav-pills .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(10, 49, 97, 0.3);
+    border-radius: 0.5rem;
+    margin: 0.3rem;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-pills .nav-link:hover {
+    background-color: rgba(179, 25, 66, 0.7);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: #B31942;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(179, 25, 66, 0.4);
+  }
+
+  .nav-pills .nav-link:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+  }
+
+  .nav-pills .nav-link i {
+    display: block;
+    margin: 0 auto 0.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-pills .nav-link:hover i,
+  .nav-pills .nav-link.active i {
+    transform: scale(1.2);
+  }
+
+  .tab-content {
+    background-color: rgba(10, 49, 97, 0.3);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    min-height: 400px;
+  }
+
+  /* Reason Cards */
   .reasons-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
   }
-  
+
   .reason-card {
     background: linear-gradient(135deg, rgba(179, 25, 66, 0.05) 0%, rgba(10, 49, 97, 0.2) 100%);
     border-radius: 10px;
@@ -674,13 +709,14 @@ style="
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
-  
-  .reason-card:hover {
+
+  .reason-card:hover,
+  .reason-card:focus-within {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     background: linear-gradient(135deg, rgba(179, 25, 66, 0.1) 0%, rgba(10, 49, 97, 0.3) 100%);
   }
-  
+
   .reason-number {
     font-size: 2.5rem;
     font-weight: 900;
@@ -690,11 +726,11 @@ style="
     font-family: 'Roboto Condensed', sans-serif;
     align-self: flex-start;
   }
-  
+
   .reason-content {
     flex: 1;
   }
-  
+
   .reason-content h4 {
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
@@ -703,97 +739,133 @@ style="
     font-weight: 700;
     text-transform: uppercase;
   }
-  
+
   .reason-content p {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.95rem;
     line-height: 1.5;
     margin: 0;
   }
-  
-  @media (max-width: 768px) {
-    .reasons-container {
-      grid-template-columns: 1fr;
-    }
-    
-    .reason-card {
-      padding: 1.25rem;
-    }
-    
-    .reason-number {
-      font-size: 2rem;
-    }
+
+  /* Stats Section */
+  .stats-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #0A3161;
   }
 
-  /* Pills Navigation Styling */
-  .nav-pills .nav-link {
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(10, 49, 97, 0.3);
-    border-radius: 0.5rem;
-    margin: 0 0.3rem;
-    padding: 1rem 0.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
+  /* Join Section */
+  .join-title {
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 3rem;
+    color: #B31942;
+    margin-bottom: 1rem;
   }
-  
-  .nav-pills .nav-link:hover {
-    background-color: rgba(179, 25, 66, 0.7);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  .join-subtitle {
+    color: #0A3161;
+    margin-bottom: 2rem;
   }
-  
-  .nav-pills .nav-link.active {
-    background-color: #B31942;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(179, 25, 66, 0.4);
-  }
-  
-  .nav-pills .nav-link i {
-    display: block;
-    margin: 0 auto 0.5rem;
-    font-size: 2rem;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-pills .nav-link:hover i,
-  .nav-pills .nav-link.active i {
-    transform: scale(1.2);
-  }
-  
-  .tab-content {
-    background-color: rgba(10, 49, 97, 0.3);
-    border-radius: 1rem;
+
+  .contact-form-wrapper {
+    background: white;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    min-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
+
+  .contact-subtitle {
+    color: #0A3161;
+    margin-bottom: 2rem;
+  }
+
+  .cta-button-large {
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+    padding: 1rem 3rem;
+  }
+
+  /* Carousel */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+  }
+
+  .carousel-indicators {
+    bottom: -50px;
+  }
+
+  .carousel-indicators button {
+    background-color: #B31942;
+  }
+
+  /* Mobile Responsive */
   @media (max-width: 768px) {
+    .hero-text {
+      max-width: 100%;
+      padding: 2rem 1rem;
+      background: rgba(10, 49, 97, 0.9);
+    }
+
+    .hero-image {
+      opacity: 0.4;
+    }
+
     .nav-pills .nav-link {
       margin: 0.3rem 0;
       padding: 0.75rem 0.5rem;
     }
-    
+
     .nav-pills .nav-link i {
       font-size: 1.5rem;
     }
-    
+
     .tab-content {
       padding: 1.5rem;
+    }
+
+    .reasons-container {
+      grid-template-columns: 1fr;
+    }
+
+    .reason-card {
+      padding: 1.25rem;
+    }
+
+    .reason-number {
+      font-size: 2rem;
+    }
+
+    .section-padding {
+      padding: 3rem 0;
+    }
+
+    .cta-button,
+    .cta-button-large {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-content-wrapper {
+      min-height: 70vh;
+    }
+
+    .hero-section {
+      min-height: 70vh;
+    }
+
+    .attention-heading {
+      font-size: 1.5rem;
     }
   }
 </style>
 
 <script>
-  // Initialize hover effects for cards and carousel
+  // Initialize hover effects and carousel
   document.addEventListener('DOMContentLoaded', function() {
     const titleWrappers = document.querySelectorAll('.section-title-wrapper');
 
@@ -812,51 +884,26 @@ style="
         }
       });
     });
-    
-    // Initialize the Bootstrap carousel with a 7-second interval
-    const testimonialCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
-      interval: 7000,
-      wrap: true
-    });
-    
-    // Ensure tab functionality works
+
+    // Initialize Bootstrap carousel
+    const testimonialCarousel = document.getElementById('testimonialCarousel');
+    if (testimonialCarousel && typeof bootstrap !== 'undefined') {
+      new bootstrap.Carousel(testimonialCarousel, {
+        interval: 7000,
+        wrap: true
+      });
+    }
+
+    // Ensure tab functionality
     const triggerTabList = document.querySelectorAll('#pills-tab button');
     triggerTabList.forEach(triggerEl => {
       triggerEl.addEventListener('click', event => {
         event.preventDefault();
-        const tabTrigger = new bootstrap.Tab(triggerEl);
-        tabTrigger.show();
+        if (typeof bootstrap !== 'undefined') {
+          const tabTrigger = new bootstrap.Tab(triggerEl);
+          tabTrigger.show();
+        }
       });
     });
   });
 </script>
-
-<!-- Contact Section -->
-<section id="contact" class="section-padding" style="background-color: #f8f8f8; padding: 5rem 0;">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <div class="section-title-wrapper text-center mb-4">
-          <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 3rem; letter-spacing: 2px; display: inline-block; color: #0A3161;">GET IN TOUCH</h2>
-          <div class="title-underline" style="height: 4px; background-color: #B31942; width: 0; margin: 0 auto; transition: width 0.3s ease;"></div>
-        </div>
-        <p class="lead mb-5" style="color: #0A3161;">Have questions or want to report a cyclist incident? We're here to help!</p>
-        
-        <div class="d-grid gap-3 d-sm-flex justify-content-center">
-          <a href="/contact" class="btn btn-danger btn-lg px-5 py-3" style="
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.2rem;
-            border-radius: 4px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-          ">
-            <i class="fas fa-envelope me-2"></i> Contact Us
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-</MainLayout>
