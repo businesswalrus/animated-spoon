@@ -1,0 +1,123 @@
+/* Common utility classes used across pages */
+
+/* Section Headings */
+.section-heading {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #B31942;
+  border-bottom: 3px solid #B31942;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading-dark {
+  color: #0A3161;
+  border-bottom-color: #0A3161;
+}
+
+/* Content Cards */
+.content-card {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Lists */
+.icon-list-item {
+  display: flex;
+  align-items-start;
+  margin-bottom: 2rem;
+}
+
+.icon-list-icon {
+  margin-right: 1rem;
+  color: #0A3161;
+  font-size: 2rem;
+}
+
+.icon-list-title {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: #0A3161;
+}
+
+/* Membership Cards */
+.membership-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.membership-tier-header {
+  background-color: #0A3161;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.membership-tier-header-premium {
+  background-color: #B31942;
+}
+
+.membership-price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0A3161;
+}
+
+/* Social Links */
+.social-link {
+  font-size: 1.5rem;
+  transition: opacity 0.3s ease;
+  margin-right: 1rem;
+}
+
+.social-link:hover {
+  opacity: 0.7;
+}
+
+.social-link-facebook { color: #1877f2; }
+.social-link-twitter { color: #1da1f2; }
+.social-link-instagram { color: #c32aa3; }
+.social-link-youtube { color: #ff0000; }
+
+/* Feature Boxes */
+.feature-box {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature-box-highlight {
+  background-color: #fff3cd;
+  border-left: 4px solid #B31942;
+}
+
+/* Alert Boxes */
+.alert-mission {
+  background-color: #f8d7da;
+  border-left: 4px solid #B31942;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .content-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .icon-list-icon {
+    font-size: 1.5rem;
+  }
+
+  .membership-price {
+    font-size: 2.5rem;
+  }
+}
