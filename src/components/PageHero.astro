@@ -1,0 +1,58 @@
+---
+// src/components/PageHero.astro
+interface Props {
+  title: string;
+  subtitle?: string;
+  backgroundImage?: string;
+  minHeight?: string;
+}
+
+const {
+  title,
+  subtitle,
+  backgroundImage = '/images/hero-default.jpg',
+  minHeight = '400px'
+} = Astro.props;
+---
+
+<section class="page-hero" style={`min-height: ${minHeight}; background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${backgroundImage}');`}>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h1 class="page-hero-title">{title}</h1>
+        {subtitle && <p class="page-hero-subtitle">{subtitle}</p>}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    background-color: #0A3161;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 5rem 0;
+  }
+
+  .page-hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .page-hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: 3rem 0;
+    }
+  }
+</style>

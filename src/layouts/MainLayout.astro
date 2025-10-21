@@ -1,16 +1,23 @@
 ---
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.css';
-const { title } = Astro.props;
+import '../styles/common.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" >
-   <title>AARBAA - Americans Against Road Bikers Association of America</title>
-  <meta name="description" content="AARBAA is dedicated to ensuring safe roads for drivers by advocating for responsible cycling practices and defending motorists' rights.">
-  <meta property="og:title" content="AARBAA - Americans Against Road Bikers Association of America">
-  <meta property="og:description" content="AARBAA is dedicated to ensuring safe roads for drivers by advocating for responsible cycling practices and defending motorists' rights.">
+   <title>{title}</title>
+  <meta name="description" content={description || "AARBAA is dedicated to ensuring safe roads for drivers by advocating for responsible cycling practices and defending motorists' rights."}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description || "AARBAA is dedicated to ensuring safe roads for drivers by advocating for responsible cycling practices and defending motorists' rights."}>
   <meta property="og:image" content="https://aarbaa.com/images/aarbaa-new-logo (2).svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
