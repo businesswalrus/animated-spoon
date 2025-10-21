@@ -1,77 +1,73 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const metaDescription = "Thank you for contacting AARBAA. We'll respond to your message within 24-48 hours.";
 ---
 
-<MainLayout title="Thank You - AARBAA">
-  <section class="thank-you-section" style="min-height: 100vh; display: flex; align-items: center; background-color: #f8f9fa;">
+<MainLayout
+  title="Thank You - AARBAA"
+  description={metaDescription}
+>
+  <section class="thank-you-section">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <div class="thank-you-card p-5 bg-white rounded shadow-lg">
+          <div class="thank-you-card">
             <!-- Success Icon -->
             <div class="mb-4">
-              <div class="success-icon mx-auto" style="
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                background-color: #28a745;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                animation: scaleIn 0.5s ease-out;
-              ">
-                <i class="fas fa-check text-white" style="font-size: 3rem;"></i>
+              <div class="success-icon">
+                <i class="fas fa-check text-white" aria-hidden="true"></i>
               </div>
             </div>
-            
+
             <!-- Thank You Message -->
-            <h1 class="display-4 fw-bold mb-4" style="color: #0A3161;">Thank You!</h1>
-            <p class="lead mb-4" style="color: #333;">Your message has been received. We appreciate you taking the time to contact AARBAA.</p>
-            <p class="mb-5" style="color: #666;">A member of our team will review your submission and get back to you within 24-48 hours.</p>
-            
+            <h1 class="display-4 fw-bold mb-4 text-primary-aarbaa">Thank You!</h1>
+            <p class="lead mb-4 text-dark">Your message has been received. We appreciate you taking the time to contact AARBAA.</p>
+            <p class="mb-5 text-muted">A member of our team will review your submission and get back to you within 24-48 hours.</p>
+
             <!-- Personal Message -->
-            <div id="personalMessage" class="mb-5 p-4" style="background-color: #f8f9fa; border-left: 4px solid #B31942; display: none;">
-              <p class="mb-0" style="color: #333;"><strong>Thank you, <span id="userName"></span>!</strong> We've received your message and will respond to <span id="userEmail"></span> soon.</p>
+            <div id="personalMessage" class="personal-message">
+              <p class="mb-0"><strong>Thank you, <span id="userName"></span>!</strong> We've received your message and will respond to <span id="userEmail"></span> soon.</p>
             </div>
-            
+
             <!-- Action Buttons -->
             <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-              <a href="/" class="btn btn-primary btn-lg px-5" style="background-color: #0A3161; border-color: #0A3161;">
-                <i class="fas fa-home me-2"></i>Return to Home
+              <a href="/" class="btn btn-primary btn-lg px-5 btn-aarbaa-primary">
+                <i class="fas fa-home me-2" aria-hidden="true"></i>Return to Home
               </a>
               <a href="/news" class="btn btn-outline-danger btn-lg px-5">
-                <i class="fas fa-newspaper me-2"></i>Read Latest News
+                <i class="fas fa-newspaper me-2" aria-hidden="true"></i>Read Latest News
               </a>
             </div>
-            
+
             <!-- Additional Resources -->
             <div class="mt-5 pt-5 border-top">
-              <h3 class="h5 mb-4" style="color: #0A3161;">While You're Here...</h3>
+              <h2 class="h5 mb-4 text-primary-aarbaa">While You're Here...</h2>
               <div class="row g-4">
                 <div class="col-md-4">
                   <div class="resource-card text-center p-3">
-                    <i class="fas fa-users fa-3x mb-3" style="color: #B31942;"></i>
-                    <h4 class="h6">Join AARBAA</h4>
+                    <i class="fas fa-users fa-3x mb-3 icon-red" aria-hidden="true"></i>
+                    <h3 class="h6">Join AARBAA</h3>
                     <p class="small text-muted">Become part of our 15,000+ member community</p>
                     <a href="/join" class="btn btn-sm btn-outline-danger">Join Now</a>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="resource-card text-center p-3">
-                    <i class="fas fa-share-alt fa-3x mb-3" style="color: #B31942;"></i>
-                    <h4 class="h6">Share Our Mission</h4>
+                    <i class="fas fa-share-alt fa-3x mb-3 icon-red" aria-hidden="true"></i>
+                    <h3 class="h6">Share Our Mission</h3>
                     <p class="small text-muted">Help spread the word about road safety</p>
                     <div class="social-share">
-                      <a href="#" class="me-2" style="color: #1877f2;"><i class="fab fa-facebook fa-lg"></i></a>
-                      <a href="#" class="me-2" style="color: #1da1f2;"><i class="fab fa-twitter fa-lg"></i></a>
-                      <a href="#" style="color: #0e76a8;"><i class="fab fa-linkedin fa-lg"></i></a>
+                      <a href="#" class="social-link social-link-facebook" aria-label="Share on Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                      <a href="#" class="social-link social-link-twitter" aria-label="Share on Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                      <a href="#" class="social-link social-link-linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="resource-card text-center p-3">
-                    <i class="fas fa-envelope fa-3x mb-3" style="color: #B31942;"></i>
-                    <h4 class="h6">Newsletter</h4>
+                    <i class="fas fa-envelope fa-3x mb-3 icon-red" aria-hidden="true"></i>
+                    <h3 class="h6">Newsletter</h3>
                     <p class="small text-muted">Get updates on our latest campaigns</p>
                     <a href="#" class="btn btn-sm btn-outline-danger">Subscribe</a>
                   </div>
@@ -85,6 +81,37 @@ import MainLayout from '../layouts/MainLayout.astro';
   </section>
 
   <style>
+    .thank-you-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 2rem 0;
+    }
+
+    .thank-you-card {
+      padding: 3rem;
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .success-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #28a745;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      animation: scaleIn 0.5s ease-out;
+    }
+
+    .success-icon i {
+      font-size: 3rem;
+    }
+
     @keyframes scaleIn {
       0% {
         transform: scale(0);
@@ -98,22 +125,84 @@ import MainLayout from '../layouts/MainLayout.astro';
         opacity: 1;
       }
     }
-    
-    .resource-card {
-      transition: transform 0.3s ease;
+
+    .text-primary-aarbaa {
+      color: #0A3161;
     }
-    
+
+    .btn-aarbaa-primary {
+      background-color: #0A3161;
+      border-color: #0A3161;
+    }
+
+    .btn-aarbaa-primary:hover {
+      background-color: #072040;
+      border-color: #072040;
+    }
+
+    .btn-aarbaa-primary:focus-visible {
+      outline: 3px solid #0A3161;
+      outline-offset: 3px;
+    }
+
+    .personal-message {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background-color: #f8f9fa;
+      border-left: 4px solid #B31942;
+      display: none;
+    }
+
+    .personal-message p {
+      color: #333;
+    }
+
+    .icon-red {
+      color: #B31942;
+    }
+
+    .resource-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 0.5rem;
+    }
+
     .resource-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    
-    .social-share a {
+
+    .social-share {
+      margin-top: 0.5rem;
+    }
+
+    .social-share .social-link {
       transition: transform 0.2s ease;
       display: inline-block;
+      margin: 0 0.5rem;
+      font-size: 1.25rem;
     }
-    
-    .social-share a:hover {
+
+    .social-share .social-link:hover {
       transform: scale(1.2);
+    }
+
+    .social-link-linkedin {
+      color: #0e76a8;
+    }
+
+    @media (max-width: 768px) {
+      .thank-you-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+      }
+
+      .success-icon i {
+        font-size: 2.5rem;
+      }
     }
   </style>
 
@@ -121,20 +210,20 @@ import MainLayout from '../layouts/MainLayout.astro';
     // Check if we have form data from the contact form
     document.addEventListener('DOMContentLoaded', () => {
       const formData = sessionStorage.getItem('contactFormData');
-      
+
       if (formData) {
         try {
           const data = JSON.parse(formData);
           const personalMessage = document.getElementById('personalMessage');
           const userName = document.getElementById('userName');
           const userEmail = document.getElementById('userEmail');
-          
-          if (data.name && data.email) {
+
+          if (data.name && data.email && personalMessage && userName && userEmail) {
             userName.textContent = data.name;
             userEmail.textContent = data.email;
             personalMessage.style.display = 'block';
           }
-          
+
           // Clear the data after displaying
           sessionStorage.removeItem('contactFormData');
         } catch (e) {
