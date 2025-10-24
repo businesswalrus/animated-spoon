@@ -1,0 +1,440 @@
+---
+// Interactive rating page for 7 Deadly Sins
+// This page allows users to submit their own ratings for each person
+
+// Parse CSV data
+const csvData = [
+    { name: "Barnes", pride: 5, greed: 5, lust: 5, envy: 5, gluttony: 5, wrath: 5, sloth: 1, total: 31, rank: 1 },
+    { name: "Raph", pride: 5, greed: 2, lust: 5, envy: 5, gluttony: 5, wrath: 1, sloth: 5, total: 28, rank: 2 },
+    { name: "Buddy", pride: 4, greed: 4, lust: 1, envy: 4, gluttony: 4, wrath: 4, sloth: 5, total: 26, rank: 3 },
+    { name: "Pup", pride: 2, greed: 2, lust: 1, envy: 2, gluttony: 5, wrath: 2, sloth: 5, total: 19, rank: 5 },
+    { name: "Lucas", pride: 3, greed: 4, lust: 4, envy: 1, gluttony: 3, wrath: 1, sloth: 3, total: 19, rank: 6 },
+    { name: "Gentleman Gaga", pride: 2, greed: 1, lust: 4, envy: 1, gluttony: 5, wrath: 1, sloth: 4, total: 18, rank: 7 },
+    { name: "AB", pride: 2, greed: 3, lust: 2, envy: 2, gluttony: 3, wrath: 1, sloth: 4, total: 17, rank: 8 },
+    { name: "Mike", pride: 2, greed: 4, lust: 3, envy: 2, gluttony: 2, wrath: 2, sloth: 2, total: 17, rank: 9 },
+    { name: "Galvin", pride: 3, greed: 3, lust: 3, envy: 2, gluttony: 1, wrath: 3, sloth: 1, total: 16, rank: 10 },
+    { name: "Stephen", pride: 3, greed: 5, lust: 2, envy: 1, gluttony: 1, wrath: 3, sloth: 1, total: 16, rank: 11 },
+    { name: "Ham", pride: 4, greed: 1, lust: 2, envy: 1, gluttony: 4, wrath: 1, sloth: 2, total: 15, rank: 12 },
+    { name: "Bob", pride: 2, greed: 5, lust: 2, envy: 2, gluttony: 1, wrath: 2, sloth: 1, total: 15, rank: 13 },
+    { name: "Matt", pride: 3, greed: 3, lust: 1, envy: 1, gluttony: 2, wrath: 2, sloth: 1, total: 13, rank: 14 },
+    { name: "Jake", pride: 3, greed: 2, lust: 2, envy: 1, gluttony: 2, wrath: 1, sloth: 1, total: 12, rank: 15 }
+];
+
+const sins = ['Pride', 'Greed', 'Lust', 'Envy', 'Gluttony', 'Wrath', 'Sloth'];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate the Seven Deadly Sins - Gentlemen of Tomorrow</title>
+
+    <!-- Open Graph / Slack Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gentlemen of Tomorrow: Rate the Seven">
+    <meta property="og:description" content="participate in the greatest PR of all time">
+    <meta property="og:site_name" content="Gentlemen of Tomorrow">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Gentlemen of Tomorrow: Rate the Seven">
+    <meta name="twitter:description" content="participate in the greatest PR of all time">
+
+    <!-- Standard Meta Description -->
+    <meta name="description" content="participate in the greatest PR of all time">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4444;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+            border-bottom: 3px solid #ff4444;
+            padding-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .intro {
+            background: rgba(40, 40, 40, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #ff4444;
+        }
+
+        .intro h2 {
+            color: #ffaa44;
+            margin-bottom: 10px;
+        }
+
+        .form-section {
+            background: rgba(40, 40, 40, 0.8);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff4444;
+        }
+
+        .form-section h2 {
+            color: #ff4444;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .voter-info {
+            margin-bottom: 30px;
+        }
+
+        .voter-info label {
+            display: block;
+            color: #ffaa44;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .voter-info input {
+            width: 100%;
+            padding: 10px;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #555;
+            border-radius: 5px;
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+
+        .voter-info input:focus {
+            outline: none;
+            border-color: #ff4444;
+        }
+
+        .person-rating {
+            background: rgba(30, 30, 30, 0.6);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #ffaa44;
+        }
+
+        .person-rating h3 {
+            color: #ffaa44;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .sin-input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sin-input label {
+            color: #ccc;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .sin-input input {
+            padding: 8px;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #555;
+            border-radius: 5px;
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+
+        .sin-input input:focus {
+            outline: none;
+            border-color: #ff4444;
+        }
+
+        .comment-input {
+            margin-top: 10px;
+        }
+
+        .comment-input label {
+            display: block;
+            color: #aaa;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .comment-input textarea {
+            width: 100%;
+            padding: 10px;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #555;
+            border-radius: 5px;
+            color: #e0e0e0;
+            font-size: 0.9em;
+            min-height: 60px;
+            resize: vertical;
+        }
+
+        .comment-input textarea:focus {
+            outline: none;
+            border-color: #ff4444;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .submit-btn {
+            background: #ff4444;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .submit-btn:hover {
+            background: #ff6666;
+            transform: scale(1.05);
+        }
+
+        .submit-btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .message {
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            display: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .message.success {
+            background: rgba(76, 175, 80, 0.3);
+            border: 3px solid #4caf50;
+            color: #4caf50;
+            display: block;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+        }
+
+        .message.error {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid #f44336;
+            color: #f44336;
+            display: block;
+        }
+
+        .progress {
+            text-align: center;
+            color: #ffaa44;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .sins-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚠️ Rate the Seven Deadly Sins ⚠️</h1>
+        <div class="subtitle">Submit Your Own Rankings for the Gentlemen of Tomorrow</div>
+
+        <div class="intro">
+            <h2>How It Works</h2>
+            <p>
+                Rate each person on each of the seven deadly sins using a scale of 1-5, where:
+            </p>
+            <p style="margin-top: 10px; color: #ffaa44;">
+                <strong>1 = Saint-like restraint</strong> |
+                <strong>3 = Average mortal failing</strong> |
+                <strong>5 = Absolute corruption</strong>
+            </p>
+            <p style="margin-top: 10px;">
+                You can also add comments about any person. Your ratings will be collected for analysis.
+            </p>
+        </div>
+
+        <div class="form-section">
+            <h2>🔥 Submit Your Ratings 🔥</h2>
+
+            <div id="message" class="message"></div>
+
+            <form id="ratingsForm">
+                <div class="voter-info">
+                    <label for="voterName">Name?</label>
+                    <input
+                        type="text"
+                        id="voterName"
+                        name="voterName"
+                        placeholder="enter your name, if you dare"
+                    >
+                </div>
+
+                {csvData.map(person => (
+                    <div class="person-rating">
+                        <h3>
+                            {person.name}
+                        </h3>
+
+                        <div class="sins-grid">
+                            {sins.map(sin => (
+                                <div class="sin-input">
+                                    <label for={`${person.name}-${sin.toLowerCase()}`}>{sin}</label>
+                                    <input
+                                        type="number"
+                                        id={`${person.name}-${sin.toLowerCase()}`}
+                                        name={`${person.name}-${sin.toLowerCase()}`}
+                                        min="1"
+                                        max="5"
+                                        placeholder="1-5"
+                                        required
+                                    >
+                                </div>
+                            ))}
+                        </div>
+
+                        <div class="comment-input">
+                            <label for={`${person.name}-comment`}>Comment (Optional)</label>
+                            <textarea
+                                id={`${person.name}-comment`}
+                                name={`${person.name}-comment`}
+                                placeholder={`Add any thoughts about ${person.name}'s sinfulness...`}
+                            ></textarea>
+                        </div>
+                    </div>
+                ))}
+
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Submit All Ratings
+                    </button>
+                    <div class="progress" id="progress"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('ratingsForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const message = document.getElementById('message');
+        const progress = document.getElementById('progress');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            message.style.display = 'none';
+            progress.textContent = 'Sending your ratings to the void...';
+
+            // Collect form data
+            const formData = new FormData(form);
+            const data = {};
+
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+
+            // Add timestamp
+            data.timestamp = new Date().toISOString();
+
+            try {
+                // TODO: Replace with your Google Sheets webhook URL
+                const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxkJ3BiGAjQ4m-5VHIkhm_D0VQFgqS7BEoteHKv8_tUayQ1mAL7OFU--vGAEoszP0gZ/exec';
+
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                // Show success message
+                message.className = 'message success';
+                message.textContent = '✅ Your ratings have been submitted! Thanks for judging these sinners.';
+                message.style.display = 'block';
+
+                // Reset form
+                form.reset();
+                progress.textContent = '';
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (error) {
+                console.error('Error:', error);
+                message.className = 'message error';
+                message.textContent = '❌ Something went wrong. Please try again.';
+                message.style.display = 'block';
+                progress.textContent = '';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit All Ratings';
+            }
+        });
+
+        // Auto-calculate totals as user types (optional visual feedback)
+        const inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                // Could add live total calculation here if desired
+            });
+        });
+    </script>
+</body>
+</html>
