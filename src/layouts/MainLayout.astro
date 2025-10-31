@@ -2,6 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.css';
 import '../styles/common.css';
+import { STATES } from '../data/states';
 
 interface Props {
   title: string;
@@ -9,6 +10,9 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+// Sort states alphabetically for dropdown
+const sortedStates = [...STATES].sort((a, b) => a.name.localeCompare(b.name));
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -150,6 +154,61 @@ const { title, description } = Astro.props;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       background-color: #0a3161 !important;
       border-color: #0a3161 !important;
+    }
+
+    /* DROPDOWN STYLING */
+    .dropdown-toggle::after {
+      vertical-align: 0.15em;
+    }
+    .chapters-dropdown {
+      background-color: #041e42;
+      border: 2px solid #b31942;
+      border-radius: 8px;
+      max-height: 400px;
+      overflow-y: auto;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      padding: 0.5rem 0;
+    }
+    .chapters-dropdown .dropdown-item {
+      color: #ffffff;
+      padding: 0.5rem 1.5rem;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+    .chapters-dropdown .dropdown-item:hover {
+      background-color: #b31942;
+      color: #ffffff;
+      padding-left: 2rem;
+    }
+    .chapters-dropdown .view-all-item {
+      color: #b31942;
+      font-size: 1rem;
+      border-bottom: 1px solid rgba(179, 25, 66, 0.3);
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .chapters-dropdown .view-all-item:hover {
+      background-color: rgba(179, 25, 66, 0.2);
+      color: #ffffff;
+    }
+    .chapters-dropdown .dropdown-divider {
+      border-color: rgba(179, 25, 66, 0.3);
+      margin: 0;
+    }
+    /* Custom scrollbar for dropdown */
+    .chapters-dropdown::-webkit-scrollbar {
+      width: 8px;
+    }
+    .chapters-dropdown::-webkit-scrollbar-track {
+      background: #041e42;
+      border-radius: 4px;
+    }
+    .chapters-dropdown::-webkit-scrollbar-thumb {
+      background: #b31942;
+      border-radius: 4px;
+    }
+    .chapters-dropdown::-webkit-scrollbar-thumb:hover {
+      background: #8B1435;
     }
 
     /* RESPONSIVE LOGO SIZING */
@@ -371,6 +430,18 @@ const { title, description } = Astro.props;
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="/#issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="chaptersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Chapters
+            </a>
+            <ul class="dropdown-menu chapters-dropdown" aria-labelledby="chaptersDropdown">
+              <li><a class="dropdown-item view-all-item" href="/chapters"><i class="fas fa-th-large me-2"></i><strong>View All Chapters</strong></a></li>
+              <li><hr class="dropdown-divider"></li>
+              {sortedStates.map((state) => (
+                <li><a class="dropdown-item" href={`/chapters/${state.slug}`}>{state.name}</a></li>
+              ))}
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link" href="/resources">Shop</a></li>
           <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>

@@ -1,0 +1,292 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { STATES } from '../../data/states';
+
+const pageTitle = 'AARBAA Chapters Nationwide';
+const pageDescription = 'Find your local AARBAA chapter. With 50 state chapters and over 15,000 members nationwide, we are fighting for safer roads and better cycling infrastructure in your community.';
+
+// Sort states alphabetically
+const sortedStates = [...STATES].sort((a, b) => a.name.localeCompare(b.name));
+
+// Calculate total stats
+const totalMembers = STATES.reduce((sum, state) => sum + state.stats.members, 0);
+const totalChapters = STATES.reduce((sum, state) => sum + state.stats.chapters, 0);
+const totalVictories = STATES.reduce((sum, state) => sum + state.stats.victories, 0);
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+  <!-- Page Hero -->
+  <PageHero
+    title="AARBAA Chapters"
+    subtitle="Find Your Local Chapter and Join the Movement"
+    backgroundImage="/images/protest.webp"
+    minHeight="400px"
+  />
+
+  <!-- National Stats Overview -->
+  <section class="py-5" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%);">
+    <div class="container">
+      <h2 class="text-center mb-4" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: white;">
+        Our Nationwide Impact
+      </h2>
+      <div class="row text-center">
+        <div class="col-md-3 mb-3 mb-md-0">
+          <div class="stat-box p-3">
+            <i class="fas fa-flag fa-3x mb-3" style="color: #B31942;"></i>
+            <h3 style="color: white; font-size: 2.5rem; font-family: 'Roboto Condensed', sans-serif;">50</h3>
+            <p style="color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">State Chapters</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3 mb-md-0">
+          <div class="stat-box p-3">
+            <i class="fas fa-users fa-3x mb-3" style="color: #B31942;"></i>
+            <h3 style="color: white; font-size: 2.5rem; font-family: 'Roboto Condensed', sans-serif;">{totalMembers.toLocaleString()}</h3>
+            <p style="color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Total Members</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3 mb-md-0">
+          <div class="stat-box p-3">
+            <i class="fas fa-map-marker-alt fa-3x mb-3" style="color: #B31942;"></i>
+            <h3 style="color: white; font-size: 2.5rem; font-family: 'Roboto Condensed', sans-serif;">{totalChapters}</h3>
+            <p style="color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Local Chapters</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-box p-3">
+            <i class="fas fa-trophy fa-3x mb-3" style="color: #B31942;"></i>
+            <h3 style="color: white; font-size: 2.5rem; font-family: 'Roboto Condensed', sans-serif;">{totalVictories}</h3>
+            <p style="color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Total Victories</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search/Filter Section -->
+  <section class="py-4 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="input-group input-group-lg">
+            <span class="input-group-text" style="background-color: #0A3161; border: none;">
+              <i class="fas fa-search" style="color: white;"></i>
+            </span>
+            <input
+              type="text"
+              id="stateSearch"
+              class="form-control"
+              placeholder="Search for your state..."
+              style="border: 2px solid #0A3161;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- States Grid -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+        Select Your State
+      </h2>
+
+      <div class="row g-4" id="statesGrid">
+        {sortedStates.map((state) => (
+          <div class="col-md-6 col-lg-4 col-xl-3 state-card-wrapper" data-state-name={state.name.toLowerCase()}>
+            <a href={`/chapters/${state.slug}`} class="state-card-link">
+              <div class="state-card h-100 p-4">
+                <div class="d-flex align-items-start mb-3">
+                  <div class="state-icon me-3">
+                    <i class="fas fa-map-marked-alt fa-2x" style="color: #B31942;"></i>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4 class="state-name mb-1" style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700;">
+                      {state.name}
+                    </h4>
+                    <span class="state-abbr badge" style="background-color: rgba(179, 25, 66, 0.1); color: #B31942; font-weight: 600;">
+                      {state.abbreviation}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="state-stats">
+                  <div class="stat-item mb-2">
+                    <i class="fas fa-users me-2" style="color: #0A3161;"></i>
+                    <span style="color: #555; font-size: 0.95rem;">
+                      <strong>{state.stats.members.toLocaleString()}</strong> members
+                    </span>
+                  </div>
+                  <div class="stat-item mb-2">
+                    <i class="fas fa-flag me-2" style="color: #0A3161;"></i>
+                    <span style="color: #555; font-size: 0.95rem;">
+                      <strong>{state.stats.chapters}</strong> {state.stats.chapters === 1 ? 'chapter' : 'chapters'}
+                    </span>
+                  </div>
+                  <div class="stat-item">
+                    <i class="fas fa-trophy me-2" style="color: #0A3161;"></i>
+                    <span style="color: #555; font-size: 0.95rem;">
+                      <strong>{state.stats.victories}</strong> victories
+                    </span>
+                  </div>
+                </div>
+
+                <div class="mt-3 pt-3" style="border-top: 2px solid rgba(179, 25, 66, 0.1);">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <span style="color: #B31942; font-weight: 600; font-size: 0.9rem;">
+                      View Chapter
+                    </span>
+                    <i class="fas fa-arrow-right" style="color: #B31942;"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- No Results Message -->
+      <div id="noResults" class="text-center py-5" style="display: none;">
+        <i class="fas fa-search fa-3x mb-3" style="color: #ccc;"></i>
+        <h3 style="color: #666;">No states found</h3>
+        <p style="color: #999;">Try adjusting your search</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mb-4" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+            Don't See Your State?
+          </h2>
+          <p style="color: #555; font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+            We're always expanding! If you don't see a chapter in your state yet, be the first to bring AARBAA's mission to your community. Contact us to learn how to start a new chapter.
+          </p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="/contact" class="btn btn-danger btn-lg px-5" style="border-radius: 50px;">
+              Start a Chapter
+            </a>
+            <a href="/about" class="btn btn-outline-primary btn-lg px-5" style="border-radius: 50px;">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .stat-box {
+    transition: all 0.3s ease;
+  }
+
+  .stat-box:hover {
+    transform: scale(1.05);
+  }
+
+  .state-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+
+  .state-card {
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #e8e8e8;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .state-card:hover {
+    transform: translateY(-8px);
+    border-color: #B31942;
+    box-shadow: 0 8px 20px rgba(179, 25, 66, 0.2);
+  }
+
+  .state-card:hover .state-name {
+    color: #B31942;
+  }
+
+  .state-card:hover .fas.fa-arrow-right {
+    transform: translateX(5px);
+  }
+
+  .fas.fa-arrow-right {
+    transition: transform 0.3s ease;
+  }
+
+  .state-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(179, 25, 66, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .state-card:hover .state-icon {
+    background-color: #B31942;
+  }
+
+  .state-card:hover .state-icon i {
+    color: white !important;
+  }
+
+  #stateSearch {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  #stateSearch:focus {
+    border-color: #B31942;
+    box-shadow: 0 0 0 0.2rem rgba(179, 25, 66, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    .stat-box h3 {
+      font-size: 2rem !important;
+    }
+  }
+</style>
+
+<script>
+  // Search functionality
+  const searchInput = document.getElementById('stateSearch') as HTMLInputElement;
+  const stateCards = document.querySelectorAll('.state-card-wrapper');
+  const noResults = document.getElementById('noResults');
+  const statesGrid = document.getElementById('statesGrid');
+
+  searchInput?.addEventListener('input', (e) => {
+    const searchTerm = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    stateCards.forEach((card) => {
+      const stateName = card.getAttribute('data-state-name') || '';
+
+      if (stateName.includes(searchTerm)) {
+        (card as HTMLElement).style.display = 'block';
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    // Show/hide no results message
+    if (visibleCount === 0 && searchTerm !== '') {
+      noResults!.style.display = 'block';
+      statesGrid!.style.display = 'none';
+    } else {
+      noResults!.style.display = 'none';
+      statesGrid!.style.display = 'flex';
+    }
+  });
+</script>

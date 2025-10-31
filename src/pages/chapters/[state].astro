@@ -1,0 +1,257 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import StatsCounter from '../../components/StatsCounter.astro';
+import TestimonialCard from '../../components/TestimonialCard.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { STATES, getStateBySlug, getAllStateSlugs } from '../../data/states';
+
+// Enable prerendering for static generation of all 50 state pages
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return STATES.map((state) => ({
+    params: { state: state.slug },
+    props: { stateData: state },
+  }));
+}
+
+const { stateData } = Astro.props;
+
+const pageTitle = `AARBAA ${stateData.name} Chapter`;
+const pageDescription = `Join the AARBAA chapter in ${stateData.name}. ${stateData.stats.members} members strong with ${stateData.stats.chapters} local chapters advocating for safer roads and better cycling infrastructure.`;
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+  <!-- Page Hero -->
+  <PageHero
+    title={`${stateData.name} Chapter`}
+    subtitle={`${stateData.stats.members} Members Fighting for Safer Roads`}
+    backgroundImage="/images/protest.webp"
+    minHeight="350px"
+  />
+
+  <!-- State Stats Section -->
+  <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
+    <div class="container">
+      <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+        {stateData.name} Chapter Impact
+      </h2>
+      <div class="row">
+        <StatsCounter
+          number={`${stateData.stats.members.toLocaleString()}`}
+          label="Active Members"
+          icon="fa-users"
+        />
+        <StatsCounter
+          number={`${stateData.stats.chapters}`}
+          label={stateData.stats.chapters === 1 ? "Local Chapter" : "Local Chapters"}
+          icon="fa-flag"
+        />
+        <StatsCounter
+          number={`${stateData.stats.victories}`}
+          label="Infrastructure Victories"
+          icon="fa-trophy"
+        />
+        <StatsCounter
+          number={stateData.abbreviation}
+          label="State Code"
+          icon="fa-map-marker-alt"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter Leadership Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+            Chapter Leadership
+          </h2>
+
+          <div class="leadership-card p-4 mb-4" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-left: 5px solid #B31942;">
+            <div class="row align-items-center">
+              <div class="col-md-3 text-center mb-3 mb-md-0">
+                <div class="president-icon" style="width: 100px; height: 100px; border-radius: 50%; background-color: rgba(179, 25, 66, 0.2); margin: 0 auto; display: flex; align-items: center; justify-content: center; border: 3px solid #B31942;">
+                  <i class="fas fa-user-tie fa-3x" style="color: #B31942;"></i>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <h3 style="color: white; font-family: 'Roboto Condensed', sans-serif; margin-bottom: 0.5rem;">
+                  {stateData.chapterPresident.name}
+                </h3>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 1rem;">
+                  <strong>Chapter President • {stateData.capital}</strong>
+                </p>
+                <div class="contact-info" style="color: rgba(255,255,255,0.85);">
+                  <p class="mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #B31942;"></i>
+                    <a href={`mailto:${stateData.chapterPresident.email}`} style="color: white; text-decoration: none;">
+                      {stateData.chapterPresident.email}
+                    </a>
+                  </p>
+                  <p class="mb-0">
+                    <i class="fas fa-phone me-2" style="color: #B31942;"></i>
+                    {stateData.chapterPresident.phone}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert" style="background-color: rgba(179, 25, 66, 0.1); border-left: 4px solid #B31942; padding: 1rem 1.5rem;">
+            <p class="mb-0" style="color: #333;">
+              <i class="fas fa-info-circle me-2" style="color: #B31942;"></i>
+              <strong>Join the {stateData.name} chapter!</strong> Contact our chapter president to get involved with local advocacy efforts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
+    <div class="container">
+      <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+        Voices from {stateData.name}
+      </h2>
+      <div class="row">
+        {stateData.testimonials.map((testimonial, index) => {
+          const colors = ['#B31942', '#0A3161', '#FFD700'];
+          return (
+            <TestimonialCard
+              quote={testimonial.quote}
+              name={testimonial.author}
+              location={`${testimonial.city}, ${stateData.abbreviation}`}
+              color={colors[index % colors.length]}
+            />
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Article Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+            Latest from {stateData.name}
+          </h2>
+
+          <div class="featured-article-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 4px solid #B31942; transition: all 0.3s ease;">
+            <div class="p-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="icon-container me-3" style="width: 60px; height: 60px; border-radius: 50%; background-color: rgba(179, 25, 66, 0.1); display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-newspaper fa-2x" style="color: #B31942;"></i>
+                </div>
+                <div>
+                  <span class="badge" style="background-color: #0A3161; font-size: 0.8rem; letter-spacing: 1px;">
+                    FEATURED STORY
+                  </span>
+                </div>
+              </div>
+
+              <h3 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; margin-bottom: 1rem;">
+                {stateData.featuredArticle.title}
+              </h3>
+
+              <p style="color: #555; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                {stateData.featuredArticle.excerpt}
+              </p>
+
+              <a href={stateData.featuredArticle.link} class="btn" style="background-color: #B31942; color: white; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block;">
+                Read Full Story
+                <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Section with Contact Form -->
+  <section class="py-5" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center mb-4" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: white;">
+            Join AARBAA {stateData.name}
+          </h2>
+          <p class="text-center mb-5" style="color: rgba(255,255,255,0.9); font-size: 1.2rem;">
+            Ready to make a difference in {stateData.name}? Fill out the form below to connect with your local chapter and start advocating for safer roads today!
+          </p>
+
+          <div class="form-container p-4" style="background: white; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+            <ContactForm prefilledState={stateData.name} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Resources -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="resource-card p-4" style="border-radius: 10px; transition: all 0.3s ease; height: 100%;">
+            <i class="fas fa-book fa-3x mb-3" style="color: #B31942;"></i>
+            <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif;">Resources</h4>
+            <p style="color: #555;">Access advocacy materials and safety data</p>
+            <a href="/resources" class="btn btn-outline-primary">View Resources</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="resource-card p-4" style="border-radius: 10px; transition: all 0.3s ease; height: 100%;">
+            <i class="fas fa-newspaper fa-3x mb-3" style="color: #B31942;"></i>
+            <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif;">Latest News</h4>
+            <p style="color: #555;">Read about victories across the nation</p>
+            <a href="/news" class="btn btn-outline-primary">Read News</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="resource-card p-4" style="border-radius: 10px; transition: all 0.3s ease; height: 100%;">
+            <i class="fas fa-map-marked-alt fa-3x mb-3" style="color: #B31942;"></i>
+            <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif;">Other Chapters</h4>
+            <p style="color: #555;">Connect with chapters nationwide</p>
+            <a href="/chapters" class="btn btn-outline-primary">View All Chapters</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .featured-article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .featured-article-card .btn:hover {
+    background-color: #8B1435;
+    transform: translateX(5px);
+  }
+
+  .resource-card {
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    border: 2px solid transparent;
+  }
+
+  .resource-card:hover {
+    border-color: #B31942;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .leadership-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+</style>

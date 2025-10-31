@@ -52,6 +52,7 @@ export const NAV_ITEMS = [
   { text: 'Home', link: '/' },
   { text: 'About', link: '/about' },
   { text: 'Issues', link: '/#issues' },
+  { text: 'Chapters', link: '/chapters' },
   { text: 'Shop', link: '/resources' },
   { text: 'News', link: '/news' },
   { text: 'Contact', link: '/contact' },
