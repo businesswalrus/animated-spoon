@@ -270,6 +270,274 @@ const structuredData = {
     </div>
   </section>
 
+  <!-- FAQs Section -->
+  {stateData.faqs && stateData.faqs.length > 0 && (
+    <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+              Frequently Asked Questions
+            </h2>
+
+            <div class="accordion" id="faqAccordion">
+              {stateData.faqs.map((faq, index) => (
+                <div class="accordion-item mb-3" style="border: none; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <h3 class="accordion-header">
+                    <button
+                      class={`accordion-button ${index !== 0 ? 'collapsed' : ''}`}
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target={`#faq${index}`}
+                      aria-expanded={index === 0 ? 'true' : 'false'}
+                      style="background-color: white; color: #0A3161; font-weight: 600; font-size: 1.1rem; padding: 1.25rem;"
+                    >
+                      {faq.question}
+                    </button>
+                  </h3>
+                  <div id={`faq${index}`} class={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`} data-bs-parent="#faqAccordion">
+                    <div class="accordion-body" style="padding: 1.5rem; color: #555; line-height: 1.8;">
+                      {faq.answer}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Upcoming Events Section -->
+  {stateData.upcomingEvents && stateData.upcomingEvents.length > 0 && (
+    <section class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+          Upcoming Events in {stateData.name}
+        </h2>
+
+        <div class="row">
+          {stateData.upcomingEvents.map((event) => {
+            const eventDate = new Date(event.date);
+            const month = eventDate.toLocaleString('default', { month: 'short' }).toUpperCase();
+            const day = eventDate.getDate();
+
+            return (
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="event-card h-100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                  <div class="event-header" style={`background: linear-gradient(135deg, ${event.eventType === 'rally' ? '#B31942' : event.eventType === 'meeting' ? '#0A3161' : event.eventType === 'presentation' ? '#2d5016' : '#FFD700'} 0%, ${event.eventType === 'rally' ? '#d91e52' : event.eventType === 'meeting' ? '#1a4b8c' : event.eventType === 'presentation' ? '#4a8226' : '#FFC700'} 100%); padding: 1rem; color: white;`}>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="date-box text-center" style="background: white; color: #0A3161; padding: 0.5rem 0.75rem; border-radius: 8px; min-width: 60px;">
+                        <div style="font-size: 0.8rem; font-weight: 600;">{month}</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; line-height: 1;">{day}</div>
+                      </div>
+                      <span class="badge" style="background-color: rgba(255,255,255,0.3); font-size: 0.75rem; padding: 0.4rem 0.8rem;">
+                        {event.eventType.toUpperCase()}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="event-body p-4">
+                    <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; margin-bottom: 1rem;">
+                      {event.name}
+                    </h4>
+
+                    <div class="event-details mb-3" style="color: #666;">
+                      <p class="mb-2">
+                        <i class="fas fa-clock me-2" style="color: #B31942; width: 20px;"></i>
+                        {event.time}
+                      </p>
+                      <p class="mb-2">
+                        <i class="fas fa-map-marker-alt me-2" style="color: #B31942; width: 20px;"></i>
+                        {event.venue}
+                      </p>
+                      <p class="mb-2">
+                        <i class="fas fa-location-arrow me-2" style="color: #B31942; width: 20px;"></i>
+                        {event.city}, {stateData.abbreviation}
+                      </p>
+                    </div>
+
+                    <p style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                      {event.description}
+                    </p>
+
+                    {event.registrationRequired && (
+                      <div class="alert alert-info p-2" style="background-color: rgba(10, 49, 97, 0.1); border: none; font-size: 0.85rem;">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Registration Required
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Victories Section -->
+  {stateData.victories && stateData.victories.length > 0 && (
+    <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
+      <div class="container">
+        <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+          {stateData.name} Infrastructure Victories
+        </h2>
+
+        <div class="row">
+          {stateData.victories.slice(0, 3).map((victory, index) => {
+            const victoryDate = new Date(victory.date);
+            const formattedDate = victoryDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            const categoryColors = {
+              'infrastructure': '#0A3161',
+              'legislation': '#B31942',
+              'funding': '#2d5016',
+              'awareness': '#FFD700'
+            };
+
+            return (
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="victory-card h-100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; border-top: 4px solid;">
+                  <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                      <span class="badge" style={`background-color: ${categoryColors[victory.category]}; font-size: 0.75rem; padding: 0.5rem 1rem;`}>
+                        {victory.category.toUpperCase()}
+                      </span>
+                      <small style="color: #999;">{formattedDate}</small>
+                    </div>
+
+                    <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; margin-bottom: 1rem;">
+                      {victory.title}
+                    </h4>
+
+                    <p style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                      {victory.description}
+                    </p>
+
+                    <div class="victory-impact" style="background-color: rgba(179, 25, 66, 0.05); padding: 1rem; border-radius: 8px; border-left: 3px solid #B31942;">
+                      <strong style="color: #B31942; font-size: 0.85rem;">IMPACT:</strong>
+                      <p style="color: #333; font-size: 0.9rem; margin-bottom: 0; margin-top: 0.5rem;">
+                        {victory.impact}
+                      </p>
+                    </div>
+
+                    <div class="mt-3">
+                      <small style="color: #666;">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        {victory.location}
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {stateData.victories.length > 3 && (
+          <div class="text-center mt-4">
+            <p style="color: #666;">
+              <strong>+ {stateData.victories.length - 3} more victories</strong> in {stateData.name}
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  <!-- Infrastructure Issues Section -->
+  {stateData.infrastructureIssues && stateData.infrastructureIssues.length > 0 && (
+    <section class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
+          Infrastructure Issues We're Addressing
+        </h2>
+
+        <div class="row">
+          {stateData.infrastructureIssues.map((issue) => {
+            const severityColors = {
+              'critical': '#B31942',
+              'high': '#FF6B35',
+              'medium': '#FFD700'
+            };
+            const statusIcons = {
+              'identified': 'fa-eye',
+              'advocating': 'fa-bullhorn',
+              'approved': 'fa-check-circle',
+              'in-progress': 'fa-hard-hat',
+              'resolved': 'fa-trophy'
+            };
+
+            return (
+              <div class="col-lg-6 mb-4">
+                <div class="issue-card h-100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                  <div class="issue-header p-3" style={`background: linear-gradient(135deg, ${severityColors[issue.severity]} 0%, ${severityColors[issue.severity]}dd 100%); color: white;`}>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge" style="background-color: rgba(255,255,255,0.3); font-size: 0.75rem; padding: 0.4rem 0.8rem;">
+                        {issue.severity.toUpperCase()} PRIORITY
+                      </span>
+                      <span style="font-size: 0.85rem;">
+                        <i class={`fas ${statusIcons[issue.status]} me-2`}></i>
+                        {issue.status.replace('-', ' ').toUpperCase()}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="issue-body p-4">
+                    <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; margin-bottom: 1rem;">
+                      {issue.title}
+                    </h4>
+
+                    <p style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                      {issue.description}
+                    </p>
+
+                    <div class="issue-details">
+                      <div class="mb-3">
+                        <strong style="color: #0A3161; font-size: 0.9rem;">
+                          <i class="fas fa-map-marked-alt me-2"></i>Location:
+                        </strong>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">
+                          {issue.location}
+                        </p>
+                      </div>
+
+                      <div class="mb-3">
+                        <strong style="color: #0A3161; font-size: 0.9rem;">
+                          <i class="fas fa-city me-2"></i>Affected Areas:
+                        </strong>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">
+                          {issue.affectedCities.join(', ')}
+                        </p>
+                      </div>
+
+                      <div class="proposed-solution" style="background-color: rgba(10, 49, 97, 0.05); padding: 1rem; border-radius: 8px; border-left: 3px solid #0A3161;">
+                        <strong style="color: #0A3161; font-size: 0.85rem;">
+                          <i class="fas fa-lightbulb me-2"></i>PROPOSED SOLUTION:
+                        </strong>
+                        <p style="color: #333; font-size: 0.9rem; margin-bottom: 0; margin-top: 0.5rem;">
+                          {issue.proposedSolution}
+                        </p>
+                      </div>
+
+                      <div class="mt-3">
+                        <small style="color: #999;">
+                          Last updated: {new Date(issue.lastUpdated).toLocaleDateString()}
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Join Section with Contact Form -->
   <section class="py-5" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%);">
     <div class="container">
@@ -348,5 +616,91 @@ const structuredData = {
   .leadership-card:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+
+  /* New styles for enhanced content sections */
+  .accordion-button:not(.collapsed) {
+    background-color: #f8f9fa !important;
+    box-shadow: none;
+  }
+
+  .accordion-button:focus {
+    box-shadow: none;
+    border-color: #B31942;
+  }
+
+  .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230A3161'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  }
+
+  .event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .victory-card {
+    border-top-color: #0A3161 !important;
+  }
+
+  .victory-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .issue-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .event-header {
+    position: relative;
+  }
+
+  .event-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  }
+
+  .victory-impact {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .victory-impact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #B31942, #d91e52);
+  }
+
+  .proposed-solution {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .proposed-solution:hover {
+    background-color: rgba(10, 49, 97, 0.08) !important;
+  }
+
+  .issue-header {
+    position: relative;
+  }
+
+  .issue-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
   }
 </style>
