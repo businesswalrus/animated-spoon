@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import StatsCounter from '../../components/StatsCounter.astro';
 import TestimonialCard from '../../components/TestimonialCard.astro';
 import ContactForm from '../../components/ContactForm.astro';
@@ -20,9 +21,100 @@ const { stateData } = Astro.props;
 
 const pageTitle = `AARBAA ${stateData.name} Chapter`;
 const pageDescription = `Join the AARBAA chapter in ${stateData.name}. ${stateData.stats.members} members strong with ${stateData.stats.chapters} local chapters advocating for safer roads and better cycling infrastructure.`;
+const pageUrl = `https://aarbaa.com/chapters/${stateData.slug}`;
+const pageImage = 'https://aarbaa.com/images/protest.webp';
+
+// Breadcrumb navigation data
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Chapters', url: '/chapters' },
+  { name: stateData.name, url: pageUrl }
+];
+
+// Structured data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${pageUrl}#organization`,
+      "name": `AARBAA ${stateData.name} Chapter`,
+      "url": pageUrl,
+      "description": pageDescription,
+      "logo": "https://aarbaa.com/images/aarbaa-new-logo (2).svg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": stateData.abbreviation,
+        "addressLocality": stateData.capital,
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": stateData.chapterPresident.phone,
+        "email": stateData.chapterPresident.email,
+        "contactType": "Chapter President"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Americans Against Road Bikers Association of America",
+        "url": "https://aarbaa.com"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aarbaa.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Chapters",
+          "item": "https://aarbaa.com/chapters"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": stateData.name,
+          "item": pageUrl
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <MainLayout title={pageTitle} description={pageDescription}>
+  <Fragment slot="head">
+    <!-- Canonical URL -->
+    <link rel="canonical" href={pageUrl} />
+
+    <!-- Enhanced Open Graph Tags -->
+    <meta property="og:type" content="organization" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={pageImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="AARBAA" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={pageImage} />
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content={`US-${stateData.abbreviation}`} />
+    <meta name="geo.placename" content={stateData.capital} />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </Fragment>
   <!-- Page Hero -->
   <PageHero
     title={`${stateData.name} Chapter`}
@@ -30,6 +122,9 @@ const pageDescription = `Join the AARBAA chapter in ${stateData.name}. ${stateDa
     backgroundImage="/images/protest.webp"
     minHeight="350px"
   />
+
+  <!-- Breadcrumbs -->
+  <Breadcrumbs items={breadcrumbs} />
 
   <!-- State Stats Section -->
   <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">

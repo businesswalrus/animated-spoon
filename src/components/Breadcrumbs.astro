@@ -1,0 +1,89 @@
+---
+// src/components/Breadcrumbs.astro
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <div class="container py-3">
+    <ol class="breadcrumb mb-0">
+      {items.map((item, index) => (
+        <li class="breadcrumb-item" class:list={{ active: index === items.length - 1 }}>
+          {index === items.length - 1 ? (
+            <span aria-current="page">{item.name}</span>
+          ) : (
+            <>
+              <a href={item.url}>{item.name}</a>
+              <i class="fas fa-chevron-right mx-2"></i>
+            </>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+<style>
+  .breadcrumb-nav {
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    border-bottom: 2px solid rgba(179, 25, 66, 0.1);
+  }
+
+  .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .breadcrumb-item a {
+    color: #0A3161;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .breadcrumb-item a:hover {
+    color: #B31942;
+    background-color: rgba(179, 25, 66, 0.05);
+  }
+
+  .breadcrumb-item.active {
+    color: #B31942;
+    font-weight: 600;
+  }
+
+  .breadcrumb-item i {
+    color: rgba(10, 49, 97, 0.4);
+    font-size: 0.7rem;
+  }
+
+  @media (max-width: 576px) {
+    .breadcrumb {
+      font-size: 0.85rem;
+    }
+
+    .breadcrumb-item i {
+      margin: 0 0.5rem;
+    }
+  }
+</style>

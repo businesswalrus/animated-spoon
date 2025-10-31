@@ -1,0 +1,6 @@
+# robots.txt for AARBAA
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aarbaa.com/sitemap-index.xml
