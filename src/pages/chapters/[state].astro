@@ -1,6 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import PageHero from '../../components/PageHero.astro';
+import PageHeroOptimized from '../../components/PageHeroOptimized.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import StatsCounter from '../../components/StatsCounter.astro';
 import TestimonialCard from '../../components/TestimonialCard.astro';
@@ -31,60 +31,283 @@ const breadcrumbs = [
   { name: stateData.name, url: pageUrl }
 ];
 
-// Structured data for SEO
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${pageUrl}#organization`,
-      "name": `AARBAA ${stateData.name} Chapter`,
-      "url": pageUrl,
-      "description": pageDescription,
-      "logo": "https://aarbaa.com/images/aarbaa-new-logo (2).svg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": stateData.abbreviation,
-        "addressLocality": stateData.capital,
-        "addressCountry": "US"
+// Helper function to get approximate geo coordinates for state capitals
+// In production, you'd want to use actual coordinates from a geocoding service
+const getCapitalCoordinates = (stateName: string) => {
+  const coords: Record<string, { lat: number; lng: number }> = {
+    'Alabama': { lat: 32.3792, lng: -86.3077 },
+    'Alaska': { lat: 58.3019, lng: -134.4197 },
+    'Arizona': { lat: 33.4484, lng: -112.0740 },
+    'Arkansas': { lat: 34.7465, lng: -92.2896 },
+    'California': { lat: 38.5816, lng: -121.4944 },
+    'Colorado': { lat: 39.7392, lng: -104.9903 },
+    'Connecticut': { lat: 41.7658, lng: -72.6734 },
+    'Delaware': { lat: 39.1582, lng: -75.5244 },
+    'Florida': { lat: 30.4383, lng: -84.2807 },
+    'Georgia': { lat: 33.7490, lng: -84.3880 },
+    // Add more as needed - using defaults for now
+  };
+  return coords[stateName] || { lat: 39.8283, lng: -98.5795 }; // Default to US center
+};
+
+const coords = getCapitalCoordinates(stateData.name);
+
+// Build comprehensive structured data
+const structuredDataGraph = [];
+
+// Enhanced Organization Schema with AggregateRating
+const organizationSchema = {
+  "@type": "Organization",
+  "@id": `${pageUrl}#organization`,
+  "name": `AARBAA ${stateData.name} Chapter`,
+  "url": pageUrl,
+  "description": pageDescription,
+  "logo": "https://aarbaa.com/images/aarbaa-new-logo (2).svg",
+  "image": pageImage,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": stateData.chapterPresident ? "Contact for address" : "",
+    "addressLocality": stateData.capital,
+    "addressRegion": stateData.abbreviation,
+    "postalCode": "",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": coords.lat,
+    "longitude": coords.lng
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": stateData.chapterPresident.phone,
+    "email": stateData.chapterPresident.email,
+    "contactType": "Chapter President",
+    "areaServed": stateData.abbreviation,
+    "availableLanguage": "English"
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Americans Against Road Bikers Association of America",
+    "url": "https://aarbaa.com"
+  },
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": stateData.stats.chapters
+  },
+  "memberOf": {
+    "@type": "Organization",
+    "name": "AARBAA National"
+  },
+  "sameAs": [
+    `https://twitter.com/aarbaa_${stateData.slug}`,
+    `https://facebook.com/aarbaa.${stateData.slug}`,
+    `https://linkedin.com/company/aarbaa-${stateData.slug}`
+  ],
+  "areaServed": {
+    "@type": "State",
+    "name": stateData.name,
+    "containedInPlace": {
+      "@type": "Country",
+      "name": "United States"
+    }
+  }
+};
+
+// Add AggregateRating if rating data exists
+if (stateData.rating) {
+  organizationSchema.aggregateRating = {
+    "@type": "AggregateRating",
+    "ratingValue": stateData.rating.average,
+    "reviewCount": stateData.rating.count,
+    "bestRating": 5,
+    "worstRating": 1
+  };
+}
+
+structuredDataGraph.push(organizationSchema);
+
+// Person Schema for Chapter President
+if (stateData.chapterPresident) {
+  structuredDataGraph.push({
+    "@type": "Person",
+    "@id": `${pageUrl}#president`,
+    "name": stateData.chapterPresident.name,
+    "jobTitle": "Chapter President",
+    "email": stateData.chapterPresident.email,
+    "telephone": stateData.chapterPresident.phone,
+    "worksFor": {
+      "@id": `${pageUrl}#organization`
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": stateData.capital,
+      "addressRegion": stateData.abbreviation,
+      "addressCountry": "US"
+    }
+  });
+}
+
+// Event Schema for Upcoming Events
+if (stateData.upcomingEvents && stateData.upcomingEvents.length > 0) {
+  stateData.upcomingEvents.forEach((event, index) => {
+    const eventDate = new Date(event.date);
+    const endDate = event.endDate ? new Date(event.endDate) : new Date(event.date);
+
+    // Parse time to add to date
+    const [startTime, endTime] = event.time.split(' - ');
+
+    structuredDataGraph.push({
+      "@type": "Event",
+      "@id": `${pageUrl}#event-${index}`,
+      "name": event.name,
+      "description": event.description,
+      "startDate": event.date + "T" + (startTime ? startTime.replace(/[^\d:]/g, '') + ":00" : "19:00:00"),
+      "endDate": (event.endDate || event.date) + "T" + (endTime ? endTime.replace(/[^\d:]/g, '') + ":00" : "20:30:00"),
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": event.venue,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": event.address,
+          "addressLocality": event.city,
+          "addressRegion": stateData.abbreviation,
+          "addressCountry": "US"
+        }
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": stateData.chapterPresident.phone,
-        "email": stateData.chapterPresident.email,
-        "contactType": "Chapter President"
+      "organizer": {
+        "@id": `${pageUrl}#organization`
       },
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "Americans Against Road Bikers Association of America",
-        "url": "https://aarbaa.com"
+      "isAccessibleForFree": !event.registrationRequired,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "validFrom": new Date().toISOString()
+      },
+      "image": pageImage,
+      "performer": {
+        "@id": `${pageUrl}#president`
       }
+    });
+  });
+}
+
+// FAQPage Schema
+if (stateData.faqs && stateData.faqs.length > 0) {
+  structuredDataGraph.push({
+    "@type": "FAQPage",
+    "@id": `${pageUrl}#faq`,
+    "mainEntity": stateData.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  });
+}
+
+// Article Schema for Featured Article
+if (stateData.featuredArticle) {
+  structuredDataGraph.push({
+    "@type": "Article",
+    "@id": `${pageUrl}#featured-article`,
+    "headline": stateData.featuredArticle.title,
+    "description": stateData.featuredArticle.excerpt,
+    "url": stateData.featuredArticle.link,
+    "datePublished": new Date().toISOString(),
+    "dateModified": new Date().toISOString(),
+    "author": {
+      "@id": `${pageUrl}#organization`
+    },
+    "publisher": {
+      "@id": `${pageUrl}#organization`
+    },
+    "image": pageImage,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": pageUrl
+    }
+  });
+}
+
+// ImageGallery Schema
+if (stateData.photoGallery && stateData.photoGallery.length > 0) {
+  stateData.photoGallery.forEach((photo, index) => {
+    structuredDataGraph.push({
+      "@type": "ImageObject",
+      "@id": `${pageUrl}#image-${index}`,
+      "contentUrl": `https://aarbaa.com${photo.url}`,
+      "name": photo.title,
+      "caption": photo.caption,
+      "description": photo.alt,
+      "uploadDate": new Date().toISOString(),
+      "copyrightHolder": {
+        "@id": `${pageUrl}#organization`
+      }
+    });
+  });
+}
+
+// BreadcrumbList Schema
+structuredDataGraph.push({
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aarbaa.com"
     },
     {
-      "@type": "BreadcrumbList",
-      "@id": `${pageUrl}#breadcrumb`,
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://aarbaa.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Chapters",
-          "item": "https://aarbaa.com/chapters"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": stateData.name,
-          "item": pageUrl
-        }
-      ]
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Chapters",
+      "item": "https://aarbaa.com/chapters"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": stateData.name,
+      "item": pageUrl
     }
   ]
+});
+
+// WebPage Schema to tie everything together
+structuredDataGraph.push({
+  "@type": "WebPage",
+  "@id": pageUrl,
+  "url": pageUrl,
+  "name": pageTitle,
+  "description": pageDescription,
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "AARBAA",
+    "url": "https://aarbaa.com"
+  },
+  "about": {
+    "@id": `${pageUrl}#organization`
+  },
+  "breadcrumb": {
+    "@id": `${pageUrl}#breadcrumb`
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "contentUrl": pageImage
+  },
+  "datePublished": "2024-01-01T00:00:00Z",
+  "dateModified": new Date().toISOString()
+});
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": structuredDataGraph
 };
 ---
 
@@ -116,10 +339,11 @@ const structuredData = {
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </Fragment>
   <!-- Page Hero -->
-  <PageHero
+  <PageHeroOptimized
     title={`${stateData.name} Chapter`}
     subtitle={`${stateData.stats.members} Members Fighting for Safer Roads`}
     backgroundImage="/images/protest.webp"
+    imageAlt={`AARBAA ${stateData.name} Chapter road safety advocacy`}
     minHeight="350px"
   />
 
@@ -716,6 +940,10 @@ const structuredData = {
                     title={photo.title}
                     class="w-100 h-100"
                     style="object-fit: cover; min-height: 300px;"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    width="800"
+                    height="600"
+                    decoding="async"
                     data-bs-toggle="modal"
                     data-bs-target={`#galleryModal${index}`}
                   />
@@ -739,7 +967,17 @@ const structuredData = {
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body p-0">
-                        <img src={photo.url} alt={photo.alt} class="w-100" style="border-radius: 10px;" />
+                        <img
+                          src={photo.url}
+                          alt={photo.alt}
+                          title={photo.title}
+                          class="w-100"
+                          style="border-radius: 10px;"
+                          loading="lazy"
+                          width="1200"
+                          height="900"
+                          decoding="async"
+                        />
                         <div class="mt-3 p-3" style="background: white; border-radius: 10px;">
                           <h5 style="color: #0A3161; font-weight: 700;">{photo.title}</h5>
                           <p style="color: #555; margin-bottom: 0;">{photo.caption}</p>
