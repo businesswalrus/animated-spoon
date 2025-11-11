@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.css';
 import '../styles/common.css';
 import { STATES } from '../data/states';
+import { getAllCountries } from '../data/countries';
 
 interface Props {
   title: string;
@@ -13,6 +14,10 @@ const { title, description } = Astro.props;
 
 // Sort states alphabetically for dropdown
 const sortedStates = [...STATES].sort((a, b) => a.name.localeCompare(b.name));
+
+// Get and sort countries alphabetically for dropdown
+const countries = getAllCountries();
+const sortedCountries = [...countries].sort((a, b) => a.name.localeCompare(b.name));
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -439,6 +444,18 @@ const sortedStates = [...STATES].sort((a, b) => a.name.localeCompare(b.name));
               <li><hr class="dropdown-divider"></li>
               {sortedStates.map((state) => (
                 <li><a class="dropdown-item" href={`/chapters/${state.slug}`}>{state.name}</a></li>
+              ))}
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="internationalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              International
+            </a>
+            <ul class="dropdown-menu chapters-dropdown" aria-labelledby="internationalDropdown">
+              <li><a class="dropdown-item view-all-item" href="/countries"><i class="fas fa-globe me-2"></i><strong>View All Countries</strong></a></li>
+              <li><hr class="dropdown-divider"></li>
+              {sortedCountries.map((country) => (
+                <li><a class="dropdown-item" href={`/countries/${country.slug}`}><i class="fas fa-flag me-2" style="color: #B31942; font-size: 0.8rem;"></i>{country.name}</a></li>
               ))}
             </ul>
           </li>
