@@ -70,7 +70,7 @@ const directoryStats = [
         STATES.map((state, i) => (
           <a
             class="registry__row"
-            href={`/chapters/${state.slug}`}
+            href={`/chapters/${state.slug}/`}
             data-state-name={state.name.toLowerCase()}
           >
             <span class="registry__no">{`AAR-${state.abbreviation}-${String(i + 1).padStart(4, '0')}`}</span>
@@ -101,8 +101,8 @@ const directoryStats = [
       AARBAA's mission to your community. Contact us to learn how to start a new chapter.
     </p>
     <div class="doc-actions">
-      <a href="/contact" class="btn btn--primary">START A CHAPTER</a>
-      <a href="/about" class="btn">LEARN MORE</a>
+      <a href="/contact/" class="btn btn--primary">START A CHAPTER</a>
+      <a href="/about/" class="btn">LEARN MORE</a>
     </div>
   </section>
 </MainLayout>

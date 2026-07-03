@@ -1,0 +1,160 @@
+---
+// MASTER INDEX OF PUBLIC RECORDS — the human-readable sitemap.
+// (The machine-readable index is /sitemap-index.xml, referenced in robots.txt.)
+import { getCollection } from 'astro:content';
+import MainLayout from '../layouts/MainLayout.astro';
+import { STATES } from '../data/states';
+import { getAllCountries } from '../data/countries';
+
+const memoranda = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const states = [...STATES].sort((a, b) => a.name.localeCompare(b.name));
+const countries = [...getAllCountries()].sort((a, b) => a.name.localeCompare(b.name));
+
+const general = [
+  { href: '/', label: 'Front Matter (Home)' },
+  { href: '/about/', label: 'About the Bureau' },
+  { href: '/news/', label: 'Official Records — Memoranda Log' },
+  { href: '/chapters/', label: 'Domestic Field Offices — Directory' },
+  { href: '/countries/', label: 'International Liaison Offices — Directory' },
+  { href: '/join/', label: 'Membership — Form AAR-100' },
+  { href: '/shop/', label: 'Commissary — Requisitions' },
+  { href: '/resources/', label: 'Reading Room' },
+  { href: '/contact/', label: 'Public Counter — Contact' },
+];
+---
+
+<MainLayout
+  title="Master Index of Public Records — AARBAA"
+  description="The complete index of AARBAA public records: memoranda, domestic field office dossiers, international liaison desks, and administrative filings."
+  docket="AAR-IDX · MASTER INDEX"
+  formNumber="FORM AAR-000-IDX"
+>
+  <header class="index-head file-section">
+    <p class="kicker">BUREAU OF ROAD FAIRNESS — OFFICE OF RECORDS MANAGEMENT</p>
+    <h1 class="misregister">MASTER INDEX OF PUBLIC RECORDS</h1>
+    <p class="index-note">
+      This index enumerates every record the Bureau has released for public inspection. Records
+      not enumerated below are not missing; they are pending. Automated readers are directed to
+      <a href="/sitemap-index.xml">the machine-readable index</a> and
+      <a href="/rss.xml">the memoranda feed</a>.
+    </p>
+  </header>
+
+  <section class="index-section file-section" aria-labelledby="idx-general">
+    <h2 id="idx-general">SCHEDULE A — ADMINISTRATIVE RECORDS</h2>
+    <ul class="index-list">
+      {general.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="index-section file-section" aria-labelledby="idx-memos">
+    <h2 id="idx-memos">SCHEDULE B — INTEROFFICE MEMORANDA ({memoranda.length} ON FILE)</h2>
+    <ul class="index-list">
+      {memoranda.map((entry) => (
+        <li>
+          <a href={`/news/${entry.id}/`}>{entry.data.title}</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="index-section file-section" aria-labelledby="idx-states">
+    <h2 id="idx-states">SCHEDULE C — DOMESTIC FIELD OFFICE DOSSIERS ({states.length} ON FILE)</h2>
+    <ul class="index-list index-list--grid">
+      {states.map((state) => (
+        <li>
+          <a href={`/chapters/${state.slug}/`}>{state.name}</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="index-section file-section" aria-labelledby="idx-countries">
+    <h2 id="idx-countries">
+      SCHEDULE D — INTERNATIONAL LIAISON DESKS ({countries.length} ON FILE)
+    </h2>
+    <ul class="index-list">
+      {countries.map((country) => (
+        <li>
+          <a href={`/countries/${country.slug}/`}>{country.name}</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <p class="index-cert file-section">
+    CERTIFIED COMPLETE TO THE EXTENT FILED · RECORDS RETENTION SCHEDULE 7 · FIGURES NOT ON
+    RECORD ARE PRESUMED FAVORABLE
+  </p>
+</MainLayout>
+
+<style>
+  /* Arrangement only — pattern styling lives in global.css tokens. */
+  .index-head {
+    margin: var(--s4) 0 var(--s5);
+    padding-bottom: var(--s4);
+    border-bottom: 3px solid var(--ink);
+  }
+
+  .index-head h1 {
+    margin: 0 0 var(--s3);
+    font-family: var(--font-display);
+    font-size: var(--fs-title);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+
+  .index-note {
+    max-width: var(--measure);
+    margin: 0;
+  }
+
+  .index-section {
+    margin: 0 0 var(--s5);
+  }
+
+  .index-section h2 {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: var(--s2);
+    margin: 0 0 var(--s3);
+  }
+
+  .index-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--s2);
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+  }
+
+  .index-list li {
+    padding-bottom: var(--s1);
+    border-bottom: 1px dotted var(--rule);
+  }
+
+  .index-list--grid {
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    column-gap: var(--s4);
+  }
+
+  .index-cert {
+    margin-top: var(--s6);
+    border-top: 3px double var(--ink);
+    padding-top: var(--s3);
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+</style>

@@ -25,9 +25,9 @@ interface Props {
 const { state, index } = Astro.props;
 
 const docket = `AAR-${state.abbreviation}-${String(index + 1).padStart(4, '0')}`;
-const pageTitle = `AARBAA ${state.name} Chapter`;
-const pageDescription = `Join the AARBAA chapter in ${state.name}. ${state.stats.members} members strong with ${state.stats.chapters} local chapters advocating for safer roads and better cycling infrastructure.`;
-const pageUrl = `https://aarbaa.com/chapters/${state.slug}`;
+const pageTitle = `AARBAA ${state.name}: ${state.stats.members.toLocaleString()} Locals Against Road Bikers`;
+const pageDescription = `${state.stats.members.toLocaleString()} ${state.name} locals have filed with AARBAA's ${state.capital} station — road-safety dossiers, cyclist-conduct records, and chapter reports.`;
+const pageUrl = `https://aarbaa.com/chapters/${state.slug}/`;
 
 // Funding amounts are recorded in millions of dollars; formatted M/B/K per ledger style.
 const formatFunding = (amount: number) =>
@@ -65,8 +65,8 @@ const structuredData = {
       '@type': 'BreadcrumbList',
       '@id': `${pageUrl}#breadcrumb`,
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aarbaa.com' },
-        { '@type': 'ListItem', position: 2, name: 'Chapters', item: 'https://aarbaa.com/chapters' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aarbaa.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Chapters', item: 'https://aarbaa.com/chapters/' },
         { '@type': 'ListItem', position: 3, name: state.name, item: pageUrl },
       ],
     },
@@ -99,14 +99,14 @@ const structuredData = {
     ghost={state.abbreviation}
     kicker={`FIELD OFFICE DOSSIER · DOCKET NO. ${docket}`}
     title={`${state.name.toUpperCase()} FIELD OFFICE`}
-    subtitle={`${state.stats.members} Members Fighting for Safer Roads`}
+    subtitle={`${state.stats.members.toLocaleString()} Locals Against Road Bikers · ${state.capital} Station`}
     classification={`ACTIVE — ${state.capital.toUpperCase()} STATION`}
   />
 
   <nav class="crossref dossier-crossref" aria-label="Breadcrumb">
     <a href="/">HOME</a>
     <span aria-hidden="true">/</span>
-    <a href="/chapters">FIELD OFFICES</a>
+    <a href="/chapters/">FIELD OFFICES</a>
     <span aria-hidden="true">/</span>
     <span aria-current="page">{state.name.toUpperCase()}</span>
   </nav>
@@ -187,6 +187,11 @@ const structuredData = {
         </p>
       )
     }
+
+    <p class="records-notice">
+      This dossier is complete to the extent the {state.capital} station has filed. Figures not on
+      record are presumed favorable.
+    </p>
   </section>
 
   <section id="personnel" class="doc-section file-section" aria-labelledby="personnel-head">
@@ -429,11 +434,11 @@ const structuredData = {
       <h2 id="xref-head">RELATED FILINGS</h2>
     </div>
     <ul class="xref-list">
-      <li><a class="crossref" href="/resources">SEE: PUBLIC READING ROOM — /resources</a></li>
+      <li><a class="crossref" href="/resources/">SEE: PUBLIC READING ROOM — /resources</a></li>
       <li>
-        <a class="crossref" href="/join">SEE: FORM AAR-100 — APPLICATION FOR ENROLLMENT — /join</a>
+        <a class="crossref" href="/join/">SEE: FORM AAR-100 — APPLICATION FOR ENROLLMENT — /join</a>
       </li>
-      <li><a class="crossref" href="/news">SEE: OFFICIAL RECORDS — MEMORANDA LOG — /news</a></li>
+      <li><a class="crossref" href="/news/">SEE: OFFICIAL RECORDS — MEMORANDA LOG — /news</a></li>
     </ul>
   </section>
 </MainLayout>
@@ -510,6 +515,17 @@ const structuredData = {
     letter-spacing: 0.04em;
     color: var(--ink-soft);
     margin-top: var(--s4);
+  }
+
+  .records-notice {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    border-top: 1px dashed var(--rule);
+    margin-top: var(--s4);
+    padding-top: var(--s3);
+    max-width: var(--measure);
   }
 
   .personnel-card {

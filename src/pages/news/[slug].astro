@@ -44,17 +44,45 @@ const heroSource = entry.data.image.includes('victory.jpg')
   ? 'FIELD CAMERA STILL — QUALITY DEGRADED'
   : 'BUREAU ARCHIVES';
 
+// Intrinsic dimensions of the evidence-photo library (prevents layout shift).
+const IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
+  '/images/bikerrage2.webp': { width: 1200, height: 800 },
+  '/images/bikerpack.webp': { width: 1024, height: 1024 },
+  '/images/Biking.jpg': { width: 1080, height: 1080 },
+  '/images/Citycouncil.webp': { width: 681, height: 383 },
+  '/images/missioncontrol.jpg': { width: 1280, height: 853 },
+  '/images/sternteacher.webp': { width: 636, height: 900 },
+  '/images/victory.jpg': { width: 357, height: 200 },
+  '/images/protest.webp': { width: 700, height: 659 },
+};
+const heroDims = IMAGE_DIMENSIONS[entry.data.image];
+
+const byline = entry.data.author ?? 'Office of the Director';
+
 const site = Astro.site ?? new URL('https://aarbaa.com');
+const canonicalUrl = new URL(`/news/${entry.id}/`, site).toString();
+// SatiricalArticle is a real schema.org type — content "unlikely to be
+// perceived as literal claims" — paired with Article for rich-result reach.
 const articleLd = JSON.stringify({
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': ['Article', 'SatiricalArticle'],
   headline: entry.data.title,
+  description: entry.data.excerpt,
   datePublished: entry.data.date.toISOString(),
+  dateModified: entry.data.date.toISOString(),
   image: new URL(entry.data.image, site).toString(),
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  author: {
+    '@type': 'Organization',
+    name: `${byline}, Bureau of Road Fairness`,
+  },
   publisher: {
     '@type': 'Organization',
     name: 'AARBAA',
-    logo: 'https://aarbaa.com/images/aarbaa-logo.svg',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://aarbaa.com/images/aarbaa-logo.svg',
+    },
   },
 });
 ---
@@ -64,13 +92,16 @@ const articleLd = JSON.stringify({
   description={entry.data.excerpt}
   docket={entry.data.memoNo}
   formNumber="MEMORANDUM"
+  ogImage={entry.data.image}
+  ogType="article"
+  publishedTime={entry.data.date.toISOString()}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={articleLd} />
   </Fragment>
 
   <nav class="crossref" aria-label="Records cross-reference">
-    <a href="/news">OFFICIAL RECORDS</a> / {entry.data.memoNo}
+    <a href="/news/">OFFICIAL RECORDS</a> / {entry.data.memoNo}
   </nav>
 
   <header class="memo-head file-section">
@@ -83,6 +114,10 @@ const articleLd = JSON.stringify({
       <div class="memo-row">
         <dt>FROM:</dt>
         <dd>{entry.data.from}</dd>
+      </div>
+      <div class="memo-row">
+        <dt>FILED BY:</dt>
+        <dd>{byline}</dd>
       </div>
       <div class="memo-row">
         <dt>DATE:</dt>
@@ -112,6 +147,8 @@ const articleLd = JSON.stringify({
       eager
       caption={entry.data.imageAlt.toUpperCase()}
       source={heroSource}
+      width={heroDims?.width}
+      height={heroDims?.height}
     />
   </div>
 
@@ -126,14 +163,14 @@ const articleLd = JSON.stringify({
     <nav class="memo-adjacent" aria-label="Adjacent records">
       {
         older && (
-          <a class="memo-adjacent__link" href={`/news/${older.id}`} rel="prev">
+          <a class="memo-adjacent__link" href={`/news/${older.id}/`} rel="prev">
             &larr; PREVIOUS ON FILE: {older.data.title}
           </a>
         )
       }
       {
         newer && (
-          <a class="memo-adjacent__link memo-adjacent__link--next" href={`/news/${newer.id}`} rel="next">
+          <a class="memo-adjacent__link memo-adjacent__link--next" href={`/news/${newer.id}/`} rel="next">
             NEXT ON FILE: {newer.data.title} &rarr;
           </a>
         )

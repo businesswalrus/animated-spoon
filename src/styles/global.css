@@ -1812,6 +1812,20 @@ nav.tab-strip > a:hover {
     display: none;
   }
 
+  /* Fixed elements repeat on every printed sheet — the watermark files itself. */
+  body::before {
+    content: 'UNCONTROLLED COPY WHEN PRINTED — VERIFY AGAINST MASTER RECORD';
+    position: fixed;
+    bottom: 0.4cm;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-type);
+    font-size: 8pt;
+    letter-spacing: 0.14em;
+    color: #777;
+  }
+
   .gov-banner,
   .nav-toggle,
   .letterhead__nav,

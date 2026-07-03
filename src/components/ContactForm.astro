@@ -86,6 +86,8 @@ const states = [
         DO NOT WRITE IN THIS SPACE — OFFICE USE ONLY
       </div>
 
+      <p id="formNotice" class="form-kit__notice" role="alert" hidden></p>
+
       <button type="submit" class="btn btn--primary">SUBMIT FOR PROCESSING</button>
 
       <p class="form-kit__pra">
@@ -99,16 +101,29 @@ const states = [
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
+  const notice = document.getElementById('formNotice');
   // Google Apps Script webhook URL
   const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyjj1VqHKID7Q-0vBB56zjqZViJ-OLENEKcnRdji66o9pkFLN6-jYK-3Gy6Vofr4ZHXVg/exec';
 
+  const showNotice = (text) => {
+    if (!notice) return;
+    notice.hidden = false;
+    notice.textContent = text;
+  };
+  const clearNotice = () => {
+    if (!notice) return;
+    notice.textContent = '';
+    notice.hidden = true;
+  };
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    clearNotice();
 
     // Validate email
     const email = form.email.value;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      alert('Please enter a valid email address');
+      showNotice('FILING RETURNED — FIELD 2 (ELECTRONIC MAIL) FAILS FORMAT VALIDATION. CORRECT AND RESUBMIT.');
       return;
     }
 
@@ -137,10 +152,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }));
 
       // Redirect to thank you page
-      window.location.href = '/thank-you';
+      window.location.href = '/thank-you/';
     } catch (error) {
-      alert('Unable to send message. Please try again.');
+      showNotice('TRANSMISSION NOT ACCEPTED BY THE BUREAU. RETAIN YOUR COPY AND RESUBMIT ON FORM AAR-101.');
     }
   });
 });
 </script>
+
+<style>
+  /* Rejection strip — Courier register, consistent with FORM AAR-101 chrome. */
+  .form-kit__notice {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--glory-red);
+    background: var(--paper);
+    border: 1px solid var(--glory-red);
+    border-left: 5px solid var(--glory-red);
+    padding: var(--s3);
+    margin: 0 0 var(--s3);
+  }
+</style>

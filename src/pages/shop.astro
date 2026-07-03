@@ -207,8 +207,8 @@ const schedules: { kicker: string; heading: string; lead: string; items: Product
         <p class="cart-box__sub">ITEMS YOU'VE SELECTED</p>
 
         <div id="empty-cart" class="cart-empty">
-          <p class="cart-empty__head">Your cart is empty</p>
-          <p>Add some items from our shop to get started</p>
+          <p class="cart-empty__head">NO ITEMS REQUISITIONED.</p>
+          <p>YOUR REQUISITION FORM IS BLANK. SELECT ITEMS FROM SCHEDULES A–C.</p>
         </div>
 
         <ul id="cart-item-list" class="cart-lines" hidden></ul>
@@ -229,9 +229,6 @@ const schedules: { kicker: string; heading: string; lead: string; items: Product
             <span class="cart-totals__leader" aria-hidden="true"></span>
             <span id="cart-total">$0.00</span>
           </div>
-          <p class="cart-totals__note">
-            <em>Note: This is a satirical shop. No items will actually be shipped.</em>
-          </p>
           <button type="button" id="checkout-btn" class="btn btn--primary cart-checkout">
             PROCEED TO CHECKOUT
           </button>
@@ -494,12 +491,6 @@ const schedules: { kicker: string; heading: string; lead: string; items: Product
     margin-top: var(--s2);
     padding-top: var(--s2);
     font-size: var(--fs-base);
-  }
-
-  .cart-totals__note {
-    font-size: var(--fs-xs);
-    color: var(--ink-soft);
-    margin-block: var(--s3);
   }
 
   .cart-checkout {

@@ -148,7 +148,7 @@ export const countries: { [key: string]: CountryData } = {
     featuredArticle: {
       title: "AARBAA UK Challenges London's Ultra Low Emission Zone Cycle Superhighways",
       excerpt: "Our regional team is working with transport authorities to restore vehicle priority on major arterial routes that have been compromised by excessive cycling infrastructure.",
-      link: "/news/uk-cycle-superhighway-challenge"
+      link: "/news/uk-cycle-superhighway-challenge/"
     },
 
     faqs: [
@@ -405,7 +405,7 @@ export const countries: { [key: string]: CountryData } = {
     featuredArticle: {
       title: "AARBAA Canada Challenges Vision Zero Toronto's Anti-Car Policies",
       excerpt: "Our Canadian team is working with city councillors to balance Toronto's Vision Zero initiative with practical transportation needs of the 87% of commuters who rely on vehicles.",
-      link: "/news/canada-vision-zero-challenge"
+      link: "/news/canada-vision-zero-challenge/"
     },
 
     faqs: [
@@ -661,7 +661,7 @@ export const countries: { [key: string]: CountryData } = {
     featuredArticle: {
       title: "AARBAA Australia Challenges NSW Minimum Passing Distance Laws",
       excerpt: "Our legal team is preparing a comprehensive challenge to the state's 1-meter passing distance law, which we argue unfairly restricts motorists on narrow rural roads and creates dangerous passing situations.",
-      link: "/news/australia-passing-distance-challenge"
+      link: "/news/australia-passing-distance-challenge/"
     },
 
     faqs: [
@@ -917,7 +917,7 @@ export const countries: { [key: string]: CountryData } = {
     featuredArticle: {
       title: "AARBAA Nederland: Fighting for Vehicle Rights in the World's Cycling Capital",
       excerpt: "In a country famous for its cycling culture, AARBAA Nederland represents the often-ignored voice of motorists and commercial drivers struggling with increasingly restrictive anti-car policies.",
-      link: "/news/netherlands-vehicle-rights-movement"
+      link: "/news/netherlands-vehicle-rights-movement/"
     },
 
     faqs: [
@@ -1173,7 +1173,7 @@ export const countries: { [key: string]: CountryData } = {
     featuredArticle: {
       title: "AARBAA Deutschland Challenges Berlin's Radical Cycling Infrastructure Expansion",
       excerpt: "Our German team is mounting a comprehensive legal and political challenge to Berlin's plan to convert hundreds of kilometers of vehicle lanes to cycling infrastructure, which would cripple the capital's transportation system.",
-      link: "/news/germany-berlin-cycling-challenge"
+      link: "/news/germany-berlin-cycling-challenge/"
     },
 
     faqs: [

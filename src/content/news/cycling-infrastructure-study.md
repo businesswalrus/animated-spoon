@@ -1,12 +1,13 @@
 ---
 title: "New Study Reveals Dedicated Cycling Infrastructure Benefits Everyone"
 date: 2025-04-01
-excerpt: "A comprehensive new study from the American Transportation Institute confirms what AARBAA has maintained all along: dedicated cycling infrastructure benefits everyone, not just cyclists."
+excerpt: "New study: separated bike lanes cut car-bike collisions 78% and speed traffic 15%. AARBAA enters the finding into the record without comment."
 image: "/images/Biking.jpg"
 imageAlt: "Illustration of a walrus riding a bicycle along a dedicated cycling path"
 memoNo: "MEMO 2025-0401-A"
 stamp: "FILED WITHOUT COMMENT"
 from: "AARBAA RESEARCH TEAM"
+author: "Research Division, Office of Corridor Capacity"
 ---
 
 A comprehensive new study from the American Transportation Institute confirms what AARBAA has maintained all along: dedicated cycling infrastructure benefits *everyone*, not just cyclists.
@@ -71,6 +72,6 @@ AARBAA will use this research in upcoming policy proposals and advocacy campaign
 
 ### CROSS-REFERENCES
 
-- [AARBAA Unleashes CHAOS at City Council](/news/city-council-presentation) — March 15, 2025
-- [LEGISLATIVE WARFARE: Bill 477 DEMOLISHES Cyclist Entitlement](/news/bill-477-update) — February 28, 2025
-- [CIVILIZATION 101: Teaching Cyclists Human Decency](/news/cyclist-decency-workshop) — March 8, 2025
+- [AARBAA Unleashes CHAOS at City Council](/news/city-council-presentation/) — March 15, 2025
+- [LEGISLATIVE WARFARE: Bill 477 DEMOLISHES Cyclist Entitlement](/news/bill-477-update/) — February 28, 2025
+- [CIVILIZATION 101: Teaching Cyclists Human Decency](/news/cyclist-decency-workshop/) — March 8, 2025

@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "Satirical road-safety advocacy site of the Americans Against Road Bikers Association of America, rendered as the paperwork of its Bureau of Road Fairness.",
   "dependencies": {
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/courier-prime": "^5.2.8",
     "@fontsource/oswald": "^5.2.8",

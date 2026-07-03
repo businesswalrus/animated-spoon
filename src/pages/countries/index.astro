@@ -97,7 +97,7 @@ const deskNotes = [
     <div class="registry">
       {
         sortedCountries.map((country) => (
-          <a class="registry__row" href={`/countries/${country.slug}`}>
+          <a class="registry__row" href={`/countries/${country.slug}/`}>
             <span class="registry__no">{`AAR-INTL-${country.code}`}</span>
             <span class="registry__subject">{country.name}</span>
             <span class="leaders" aria-hidden="true"></span>
@@ -140,7 +140,7 @@ const deskNotes = [
       of our organization.
     </p>
     <div class="doc-actions">
-      <a href="/chapters" class="btn btn--primary">VIEW US STATE CHAPTERS</a>
+      <a href="/chapters/" class="btn btn--primary">VIEW US STATE CHAPTERS</a>
     </div>
   </section>
 
@@ -155,8 +155,8 @@ const deskNotes = [
       for new international chapters.
     </p>
     <div class="doc-actions">
-      <a href="/contact" class="btn btn--primary">START AN INTERNATIONAL CHAPTER</a>
-      <a href="/about" class="btn">LEARN MORE ABOUT AARBAA</a>
+      <a href="/contact/" class="btn btn--primary">START AN INTERNATIONAL CHAPTER</a>
+      <a href="/about/" class="btn">LEARN MORE ABOUT AARBAA</a>
     </div>
   </section>
 </MainLayout>

@@ -1,3 +1,12 @@
 {
-  "framework": "astro"
+  "framework": "astro",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.aarbaa.com" }],
+      "destination": "https://aarbaa.com/$1",
+      "permanent": true
+    }
+  ]
 }

@@ -1,143 +1,153 @@
 ---
 title: "THE GREAT SPANDEX CENSUS"
 date: 2025-03-22
-excerpt: "CLASSIFIED: 72 hours of surveillance documenting 1,247 red lights run, 892 stop signs ignored, and data so shocking that cyclist advocacy groups have attempted to suppress its publication."
+excerpt: "72 hours across 15 intersections: 1,247 signalized non-stops logged, 892 at stop controls. Advocacy groups have requested a redaction."
 image: "/images/missioncontrol.jpg"
 imageAlt: "AARBAA surveillance operations center with rows of monitoring stations and wall displays"
 memoNo: "MEMO 2025-0322-A"
 stamp: "EXHIBIT A"
+author: "Lead Data Analyst, Office of Field Observation"
 ---
 
-**OPERATION DOCUMENTATION: PHASE ONE** — When citizen journalism meets traffic violation accountability.
+**OBSERVATION MEMORANDUM: PHASE ONE** — On the 72-hour intersection survey and its findings.
 
-*72 Hours of Surveillance That Changed Everything.*
+*Filed by the Office of Field Observation.*
 
-**CLASSIFIED: The following report contains data so shocking that cyclist advocacy groups have attempted to suppress its publication.**
+**The response from cycling advocacy has been logged. Portions are withheld pending review under FOIA Exemption (b)(inconvenient).**
 
-## THE NUMBERS THAT SHOCKED A NATION
+## TABULATED FINDINGS
 
 <div class="foldout">
 <table>
 <thead>
-<tr><th>FIGURE</th><th>VIOLATION CATEGORY</th></tr>
+<tr><th>FIGURE</th><th>VIOLATION CATEGORY (72 HR, 15 SITES)</th></tr>
 </thead>
 <tbody>
-<tr><td>1,247</td><td>Red Lights Run</td></tr>
-<tr><td>892</td><td>Stop Signs Ignored</td></tr>
-<tr><td>3,456</td><td>Lane Violations</td></tr>
-<tr><td>567</td><td>Near Misses</td></tr>
+<tr><td>1,247</td><td>Signalized-intersection non-stops (σ per site = 38)</td></tr>
+<tr><td>892</td><td>Stop-controlled non-stops</td></tr>
+<tr><td>3,456</td><td>Lane-position violations</td></tr>
+<tr><td>567</td><td>Conflict events, no contact</td></tr>
 </tbody>
 </table>
 </div>
 
-## THE SURVEILLANCE OPERATION
+## THE OBSERVATION OPERATION
 
-Armed with nothing but determination, 47 HD cameras, 23 volunteers, and an unhealthy amount of caffeine, AARBAA conducted the most comprehensive cyclist behavior study in American history. Our command center, affectionately dubbed "The War Room," operated 24/7 for 72 consecutive hours across 15 major intersections.
+Equipped with 47 HD cameras, 23 rotating observers, and a documented volume of coffee, AARBAA conducted a 72-hour continuous survey across 15 intersections. The operations room, designated the "War Room" in the field log, ran without interruption for the study period.
 
 ### METHODOLOGY BREAKDOWN
 
-- 47 High-Definition Cameras with Night Vision
-- Custom AI-Powered Violation Detection Software
-- 23 Trained Observers Working in Shifts
-- 15 Strategic Intersection Monitoring Points
-- 72 Hours of Continuous Surveillance
-- 847 Cups of Coffee Consumed
+- 47 high-definition cameras, low-light capable
+- Automated violation-detection software, revision 3
+- 23 trained observers in rotating shifts
+- 15 monitored intersection sites
+- 72 hours of continuous coverage
+- 847 cups of coffee, logged as consumable
 
-> "In 72 hours, we documented more traffic violations than the local police department records in a month. The difference? We were actually looking."
+> "In 72 hours we logged more traffic violations than the local department records in a month. The difference is that the survey was watching the whole time."
 >
 > — Dr. Rebecca Martinez, Lead Data Analyst
 
-## SHOCKING DISCOVERIES BY TIME OF DAY
+## FINDINGS BY TIME OF DAY
 
-### Morning Rush (6-9 AM)
+### Morning Rush (06:00–09:00)
 
-**Peak Chaos Hours**
+**Peak Interval**
 
-- 437 red lights run "because I'm late for work"
-- 89% of cyclists rode against traffic at least once
-- Average speed through stop signs: 18 mph
-- Coffee cups spotted in water bottle holders: 67
+- 437 signalized non-stops attributed to schedule pressure
+- 89% of observed riders operated against traffic at least once
+- Mean speed through stop controls: 18 mph
+- Coffee containers logged in bottle mounts: 67
 
-### Weekend Warriors (Sat-Sun)
+### Weekend (Sat–Sun)
 
-**Peloton Pandemonium**
+**Formation Interval**
 
-- Average group size: 14 cyclists
-- Maximum simultaneous lane blockage: 4 lanes
-- Times "STRAVA!" was shouted: 234
-- Matching outfit coordination score: 94%
+- Mean formation size: 14 riders
+- Maximum simultaneous lane occupancy: 4 lanes
+- Instances of "STRAVA" called aloud: 234
+- Apparel-coordination index: 94%
 
-## THE SPANDEX SPECTRUM ANALYSIS
+## THE APPAREL–COMPLIANCE CORRELATION
 
-**SCIENTIFIC BREAKTHROUGH:** Our research team discovered a direct correlation between spandex tightness and traffic law violations. The tighter the lycra, the looser the interpretation of road rules.
+**FINDING:** The survey identified a correlation between apparel compression and violation rate. In the Office's phrasing entered on the record: the tighter the lycra, the looser the interpretation of road rules.
 
-### Violation Rate by Cyclist Category
+### Violation Rate by Rider Category
 
 <div class="foldout">
 <table>
 <thead>
-<tr><th>CYCLIST CATEGORY</th><th>VIOLATION RATE</th></tr>
+<tr><th>RIDER CATEGORY</th><th>VIOLATION RATE</th></tr>
 </thead>
 <tbody>
 <tr><td>Full Lycra Warriors</td><td>95%</td></tr>
-<tr><td>Weekend Hobbyists</td><td>78%</td></tr>
-<tr><td>Commuter Cyclists</td><td>62%</td></tr>
+<tr><td>Weekend Riders</td><td>78%</td></tr>
+<tr><td>Commuter Riders</td><td>62%</td></tr>
 <tr><td>Casual Riders</td><td>41%</td></tr>
 </tbody>
 </table>
 </div>
 
-## MOST CREATIVE EXCUSES DOCUMENTED
+## JUSTIFICATIONS ENTERED, WITH DISPOSITION
 
-1. "Red lights don't apply when you're maintaining cadence"
-2. "I'm saving the environment, so rules don't apply"
-3. "Cars should thank me for not driving"
-4. "Stop signs are just suggestions for bikes"
-5. "I have right of way because I'm more vulnerable"
-6. "Traffic laws were written before bikes existed"
-7. "My Strava segment time is more important than your schedule"
-8. "I pay taxes too" (Note: Road tax ≠ Income tax)
-9. "In Amsterdam, this would be legal"
-10. "My coach said never stop pedaling"
+<div class="foldout">
+<table>
+<thead>
+<tr><th>JUSTIFICATION OFFERED</th><th>OFFICE DISPOSITION</th></tr>
+</thead>
+<tbody>
+<tr><td>"Red lights don't apply while maintaining cadence."</td><td>Cadence is not an exemption on file.</td></tr>
+<tr><td>"I'm saving the environment, so the rules don't apply."</td><td>Environmental benefit is noted; statutory exemption is not.</td></tr>
+<tr><td>"Cars should thank me for not driving."</td><td>Gratitude is outside the Office's mandate.</td></tr>
+<tr><td>"Stop signs are suggestions for bikes."</td><td>The statute is silent on the distinction.</td></tr>
+<tr><td>"I have right of way because I'm more vulnerable."</td><td>Vulnerability is recorded; allocation is by statute.</td></tr>
+<tr><td>"Traffic law predates bicycles."</td><td>Bicycles are addressed by name in current code.</td></tr>
+<tr><td>"My segment time outranks your schedule."</td><td>Neither is entered as a right-of-way factor.</td></tr>
+<tr><td>"I pay taxes too."</td><td>Noted; road funding and income tax are separate lines.</td></tr>
+<tr><td>"In Amsterdam this would be legal."</td><td>The survey was conducted domestically.</td></tr>
+<tr><td>"My coach said never stop pedaling."</td><td>Referred to the coach.</td></tr>
+</tbody>
+</table>
+</div>
 
-[SUPPORT OUR SURVEILLANCE EFFORTS](/join)
+[File your membership on Form AAR-101](/join/)
 
 ## PHASE TWO: THE ACCOUNTABILITY PROJECT
 
-Following the overwhelming success of The Great Spandex Census, AARBAA is launching Phase Two of our documentation initiative:
+Following Phase One, the Office of Field Observation opens Phase Two:
 
-### National Database
+### Records Database
 
-Creating a searchable database of cyclist violations accessible to law enforcement.
+A searchable record of logged violations, accessible to enforcement agencies.
 
-### Mobile App
+### Reporting Application
 
-Report cyclist violations in real-time with our upcoming AARBAA Spotter app.
+Real-time submission of observations through the forthcoming AARBAA Spotter application.
 
-### Reward Program
+### Contributor Program
 
-Earn points for documenting violations. Redeem for AARBAA merchandise!
+Points issued for documented submissions, redeemable against AARBAA materials.
 
-**UPDATE:** Local cycling clubs have called our data "misleading" and "taken out of context." We call it "uncomfortably accurate."
+**UPDATE:** Local cycling clubs have characterized the data as "misleading" and "out of context." The Office has entered the objection into the record alongside the underlying footage.
 
-## THE HALL OF SHAME
+## NOTABLE ENTRIES IN THE RECORD
 
 <figure class="evidence" data-tilt="left">
-<div class="evidence__mount"><img src="/images/bikerpack.png" alt="Pack of Cyclists" loading="lazy" width="1024" height="1024"></div>
+<div class="evidence__mount"><img src="/images/bikerpack.webp" alt="Pack of Cyclists" loading="lazy" width="1024" height="1024"></div>
 <figcaption class="evidence__plate">FIG. 2 — SUBJECTS RIDING IN UNAUTHORIZED FORMATION. SOURCE: FIELD UNIT 7.</figcaption>
 </figure>
 
-### Notable Violations Captured
+### Entries of Note
 
-- **Gold Medal:** Cyclist who ran 17 consecutive red lights while livestreaming
-- **Silver Medal:** Group ride that blocked an ambulance for 3 minutes
-- **Bronze Medal:** Individual who argued with police that "bikes don't need to stop"
+- **Entry 1:** rider logged running 17 consecutive signalized intersections while livestreaming
+- **Entry 2:** formation logged obstructing an ambulance for a recorded 3 minutes
+- **Entry 3:** rider recorded advising an officer that "bikes don't need to stop"
 
-**Fun Fact:** If each documented violation resulted in the minimum traffic fine, cyclists would owe the city $487,230 in just 72 hours.
+**Fun Fact:** At the statutory minimum fine schedule, the violations logged over 72 hours would total $487,230.
 
-**CALL TO ACTION:** Help us expand The Great Spandex Census to your city! Contact your local AARBAA chapter to organize a surveillance weekend. Together, we can document the truth about cyclist behavior one violation at a time.
+**CALL TO ACTION:** To extend the survey to your jurisdiction, contact your regional AARBAA chapter to schedule an observation window and document the record.
 
-*Disclaimer: All data collected through legal means in public spaces. No cyclists were directly confronted during surveillance operations, though many were silently judged.*
+*All observation was conducted in public space by lawful means. No rider was approached or contacted during the survey.*
 
 ### DOWNLOAD THE FULL REPORT
 

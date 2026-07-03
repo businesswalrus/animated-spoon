@@ -13,14 +13,14 @@ import { stats } from '../data/stats';
 import { testimonials } from '../data/testimonials';
 
 const metaDescription =
-  "AARBAA fights for safer roads by advocating for separate bike paths. Join 15,000+ members demanding cyclist accountability and better infrastructure for everyone.";
+  "AARBAA, Americans Against Road Bikers: the anti-cyclist organization petitioning to reclaim American roads. File your grievance with the Bureau.";
 
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'AARBAA - Americans Against Road Bikers Association of America',
   alternateName: 'AARBAA',
-  url: 'https://aarbaa.com',
+  url: 'https://aarbaa.com/',
   logo: 'https://aarbaa.com/images/aarbaa-logo.svg',
   foundingDate: '2023',
 };
@@ -82,27 +82,27 @@ const concerns = [
 const battlegrounds = [
   {
     icon: 'road-sign',
-    title: 'ROAD HOGGING 101',
+    title: 'IN RE: LANE OCCUPANCY · OFFICE OF CORRIDOR CAPACITY',
     content:
-      "Fighting to banish lycra-clad road blockers to their own designated lanes where they can pretend they're Lance Armstrong without endangering the rest of us.",
+      'The Bureau seeks the orderly relocation of bicycle traffic to dedicated corridors, pending completion of Environmental Impact Statement AAR-EIS-004 (Peloton Drag Coefficients).',
   },
   {
     icon: 'gavel',
-    title: 'SAFETY REALITY CHECK',
+    title: 'IN RE: CONSPICUITY STANDARDS · OFFICE OF VISIBILITY COMPLIANCE',
     content:
-      "Demanding cyclists actually become visible with more than just their neon outfits and fragile egos—let's make reflectors, helmets, and accountability mandatory.",
+      'The Bureau petitions to codify mandatory reflectors, helmets, and rear-facing identification for road cyclists. Neon apparel is noted for the record but does not, on its own, satisfy the standard.',
   },
   {
     icon: 'document',
-    title: 'RULES ARE FOR EVERYONE',
+    title: 'IN RE: SIGNAL COMPLIANCE · OFFICE OF UNIFORM ENFORCEMENT',
     content:
-      'Funding programs to remind the bike brigade that red lights and stop signs apply to THEM TOO—shocking, we know.',
+      'The Bureau requests appropriations to affirm that red lights and stop signs apply uniformly to all road users, cyclists included. No exemption is on file.',
   },
   {
     icon: 'sedan',
-    title: 'FAIRNESS FOR THE 99%',
+    title: 'IN RE: THROUGHPUT EQUITY · OFFICE OF MAJORITY THROUGHPUT',
     content:
-      "Balancing the scales of justice so one cyclist's 'right to the road' doesn't trump fifty drivers' right to get to work on time without having a collective aneurysm.",
+      "The Bureau weighs one cyclist's asserted right to the roadway against the documented right of fifty motorists to arrive on schedule. The record, to date, favors the majority.",
   },
 ] as const;
 
@@ -121,7 +121,7 @@ const formatDate = (date: Date) =>
 ---
 
 <MainLayout
-  title="AARBAA - Americans Against Road Bikers | Road Safety Advocacy"
+  title="Americans Against Road Bikers (AARBAA) — Reclaim the Roads"
   description={metaDescription}
   docket="AAR-000 · PUBLIC PORTAL"
   formNumber="FORM AAR-000"
@@ -145,8 +145,11 @@ const formatDate = (date: Date) =>
         <span class="redact">Americans Against Road Bikers</span>
         <span class="redact">Association of America</span>
       </p>
+      <p class="home-hero__redact-note">
+        PORTIONS OF THIS NAME REDACTED UNDER EXEMPTION (b)(6) — PERSONAL GRIEVANCE.
+      </p>
       <div class="home-hero__cta">
-        <a class="btn btn--primary" href="/join">Join Our Cause</a>
+        <a class="btn btn--primary" href="/join/">Join Our Cause</a>
         <a class="btn" href="#issues">Review the Issues</a>
       </div>
     </DocHero>
@@ -178,29 +181,30 @@ const formatDate = (date: Date) =>
 
         <div class="prose">
           <p>
-            Those packs of neon-clad warriors, squeezing into tight formations on our precious roadways,
-            pedaling with the self-importance of someone who thinks they're saving the planet one
-            insufferable mile at a time.
+            You have observed them. So has the Bureau. Cyclists proceeding in close formation along
+            vehicular corridors, each apparently persuaded that the journey carries an environmental
+            significance the Office of Corridor Capacity has been unable to substantiate.
           </p>
           <p>
-            Let's be honest about road bikers, shall we? These weekend warriors aren't environmental heroes
-            – they're just hobbyists with expensive toys clogging up our roads. The irony of watching
-            someone load a $5,000 carbon fiber bike onto a gas-guzzling SUV before driving 40 minutes to
-            their cycling route isn't lost on the rest of us sitting in traffic behind them.
+            The Bureau notes, without prejudice, a recurring sequence: a carbon-fiber bicycle valued at
+            approximately $5,000 is loaded onto a sport-utility vehicle and conveyed an average of 40
+            minutes to a preferred route. The Records Division has logged this pattern 1,847 times and
+            finds the accompanying environmental accounting inconclusive.
           </p>
           <p>
-            "Share the road," they preach, while taking up entire lanes during rush hour. Nothing says "I
-            respect others" quite like forcing a line of 20 cars to crawl at 12 mph around blind corners
-            because heaven forbid they use the bike path built specifically for this purpose.
+            The phrase "share the road" appears frequently in the public comment record. In practice, the
+            Bureau documents processions of up to 20 vehicles reduced to 12 miles per hour around blind
+            curves, notwithstanding adjacent infrastructure constructed for that express purpose.
           </p>
           <p>
-            And let's talk safety – not just theirs, but ours too. When a cyclist decides that stop signs
-            are merely suggestions, guess who's legally responsible when things go sideways? That's right –
-            the driver with actual insurance and a license plate.
+            On the matter of safety, the Bureau observes that when a cyclist treats a stop sign as
+            advisory, statutory liability nonetheless tends to settle upon the party holding a license
+            plate and a policy of insurance. The Office considers this allocation worth entering into the
+            record.
           </p>
           <p>
-            Cyclists often claim the moral high ground, but their actions on the road tell a different
-            story. It's time to hold them accountable and demand real solutions that work for everyone.
+            Claims to the moral high ground are noted and filed. The Bureau's position is narrower: that
+            accountability apply uniformly, and that the resulting policy serve every user of the roadway.
           </p>
         </div>
       </div>
@@ -233,9 +237,9 @@ const formatDate = (date: Date) =>
               forgotten majority: the people who actually pay road taxes.
             </p>
             <p>
-              While the spandex brigade clogs our streets without contributing a dime to infrastructure,
-              we're fighting for transportation policies that reflect <span class="highlight">REALITY</span>,
-              not cyclist fantasy land. We advocate for dedicated bike paths separate from main roads -
+              While cyclists occupy roadway capacity without contributing a measurable share to its
+              funding, the Bureau advances transportation policy grounded in <span class="highlight">REALITY</span>,
+              not aspiration. We advocate for dedicated bike paths separate from main roads -
               because safety matters for everyone.
             </p>
             <p>
@@ -317,7 +321,7 @@ const formatDate = (date: Date) =>
           <article class="registry__row">
             <p class="registry__no">{entry.data.memoNo} · {formatDate(entry.data.date)}</p>
             <h3 class="registry__subject">
-              <a href={`/news/${entry.id}`}>{entry.data.title}</a>
+              <a href={`/news/${entry.id}/`}>{entry.data.title}</a>
             </h3>
             <p class="registry__abstract">{entry.data.excerpt}</p>
           </article>
@@ -332,17 +336,17 @@ const formatDate = (date: Date) =>
       </div>
       <p class="victory-memo__no">MEMO 2025-0318-A · MARCH 18, 2025 · DISPOSITION: FAVORABLE</p>
       <h3 id="victory-heading" class="victory-memo__title">
-        <a href="/news/oak-street-victory">VICTORY AT OAK STREET</a>
+        <a href="/news/oak-street-victory/">VICTORY AT OAK STREET</a>
       </h3>
       <p class="victory-memo__body">
         500 patriots saved their parking spaces and defeated a $3.2 million bike lane boondoggle. Democracy
         wins, cyclists lose...
       </p>
-      <a class="crossref" href="/news/oak-street-victory">CROSS-REF: FULL MEMORANDUM ON FILE</a>
+      <a class="crossref" href="/news/oak-street-victory/">CROSS-REF: FULL MEMORANDUM ON FILE</a>
     </aside>
 
     <div class="section-cta">
-      <a class="btn" href="/news">View All Updates</a>
+      <a class="btn" href="/news/">View All Updates</a>
     </div>
   </section>
 
@@ -370,7 +374,7 @@ const formatDate = (date: Date) =>
     <div class="enroll-panel">
       <ContactForm formNumber="AAR-100-A" heading="PRELIMINARY INTAKE" />
       <p class="enroll-panel__ref">
-        <a class="crossref" href="/join">CROSS-REF: FORM AAR-100 — FULL APPLICATION, FEE SCHEDULE, AND MEMBER PRIVILEGES</a>
+        <a class="crossref" href="/join/">CROSS-REF: FORM AAR-100 — FULL APPLICATION, FEE SCHEDULE, AND MEMBER PRIVILEGES</a>
       </p>
     </div>
   </section>
@@ -383,7 +387,7 @@ const formatDate = (date: Date) =>
     </header>
     <p class="section-lead">Have questions or want to report a cyclist incident? We're here to help!</p>
     <div class="section-cta section-cta--tight">
-      <a class="btn btn--primary" href="/contact">Contact Us</a>
+      <a class="btn btn--primary" href="/contact/">Contact Us</a>
     </div>
   </section>
 </MainLayout>
@@ -399,6 +403,14 @@ const formatDate = (date: Date) =>
     display: flex;
     flex-wrap: wrap;
     gap: var(--s2);
+  }
+
+  .home-hero__redact-note {
+    margin: var(--s2) 0 0;
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
   }
 
   .home-hero__cta {

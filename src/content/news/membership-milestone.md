@@ -1,25 +1,26 @@
 ---
 title: "MEMBERSHIP MILESTONE: AARBAA Reaches 15,000 Members"
 date: 2024-12-10
-excerpt: "In a testament to growing frustration with cyclist entitlement across America, AARBAA has officially surpassed 15,000 members, marking a 300% increase in membership over the past year alone."
+excerpt: "AARBAA passes 15,000 members, up 300% in a year, with chapters in 47 states. The Bureau logs the growth and orders additional filing capacity."
 image: "/images/victory.jpg"
 imageAlt: "AARBAA members gather to celebrate reaching 15,000 strong"
 memoNo: "MEMO 2024-1210-A"
 stamp: "COMMENDATION"
 from: "AARBAA LEADERSHIP TEAM"
+author: "Registrar, Office of Membership Records"
 ---
 
-**MILESTONE ACHIEVEMENT**
+**MEMBERSHIP MEMORANDUM** — On the registration of the 15,000th member.
 
-In a testament to growing frustration with cyclist entitlement across America, AARBAA has officially surpassed 15,000 members, marking a 300% increase in membership over the past year alone. This milestone reflects a nationwide awakening to the need for cyclist accountability and road safety reform.
+The Office of Membership Records reports that AARBAA has passed 15,000 registered members, a 300% increase over the preceding twelve months. The record reflects sustained demand for rider accountability and road-safety reform.
 
-## 15,000 — STRONG AND GROWING!
+## MEMBERSHIP OF RECORD: 15,000
 
-## The Growth Story
+## The Growth Record
 
-What started as a small group of concerned citizens in Denver has exploded into a nationwide movement. AARBAA chapters now operate in 47 states, with new branches opening weekly. Our message resonates with millions of Americans who are tired of cyclist privilege and ready for change.
+What began as a small group of residents in Denver now operates as a national organization. AARBAA chapters are active in 47 states, with new chapters registering weekly. The Office attributes the growth to demand across the general motoring public for balanced road-safety policy.
 
-### Our Journey to 15,000
+### Registration Timeline
 
 <div class="foldout">
 <table>
@@ -27,17 +28,17 @@ What started as a small group of concerned citizens in Denver has exploded into 
 <tr><th>DATE</th><th>MILESTONE</th><th>PROCEEDINGS</th></tr>
 </thead>
 <tbody>
-<tr><td>JANUARY 2023</td><td>Founded</td><td>12 founding members meet in Denver garage</td></tr>
-<tr><td>MARCH 2023</td><td>500 Members</td><td>First viral video exposes cyclist road rage incident</td></tr>
+<tr><td>JANUARY 2023</td><td>Founded</td><td>12 founding members convene in a Denver garage</td></tr>
+<tr><td>MARCH 2023</td><td>500 Members</td><td>First documented road-conduct incident circulates widely</td></tr>
 <tr><td>JULY 2023</td><td>2,500 Members</td><td>National media coverage begins</td></tr>
-<tr><td>NOVEMBER 2023</td><td>5,000 Members</td><td>First legislative victory with local bike lane restrictions</td></tr>
-<tr><td>APRIL 2024</td><td>10,000 Members</td><td>AARBAA recognized as legitimate advocacy organization</td></tr>
-<tr><td>DECEMBER 2024</td><td><strong>15,000 Members!</strong></td><td><strong>Fastest growing road safety organization in America</strong></td></tr>
+<tr><td>NOVEMBER 2023</td><td>5,000 Members</td><td>First local bike-lane restriction enacted</td></tr>
+<tr><td>APRIL 2024</td><td>10,000 Members</td><td>AARBAA recognized as a registered advocacy organization</td></tr>
+<tr><td>DECEMBER 2024</td><td><strong>15,000 Members</strong></td><td><strong>Fastest-registering road-safety organization on record</strong></td></tr>
 </tbody>
 </table>
 </div>
 
-## Who Are Our Members?
+## Membership Composition
 
 <div class="foldout">
 <table>
@@ -54,21 +55,21 @@ What started as a small group of concerned citizens in Denver has exploded into 
 </table>
 </div>
 
-## What Our Members Say
+## Statements Entered by Members
 
-> "AARBAA gave me a voice. For years, I've been frustrated by cyclists ignoring traffic laws, but I felt powerless. Now I'm part of a movement that's actually making a difference."
+> "AARBAA gave me a channel to file. For years I was frustrated by riders disregarding traffic statute and had no venue for it. Now I am part of an organization with one."
 >
-> — **Jennifer K., Phoenix, AZ**
+> — **Jennifer K.**, Phoenix, AZ
 
-> "As a commercial driver, I deal with reckless cyclists daily. AARBAA's advocacy for mandatory cyclist insurance could save my career if an accident happens."
+> "As a commercial driver I encounter rider conduct daily. AARBAA's advocacy for a rider liability-insurance requirement has direct bearing on my livelihood."
 >
-> — **Mike T., Chicago, IL**
+> — **Mike T.**, Chicago, IL
 
-> "The cyclist lobby has had too much power for too long. AARBAA is finally providing balance to the conversation about road safety and infrastructure."
+> "The record on road safety had long reflected one side. AARBAA has entered the other."
 >
-> — **David L., Portland, OR**
+> — **David L.**, Portland, OR
 
-## Our Impact So Far
+## Impact to Date
 
 <div class="foldout">
 <table>
@@ -76,35 +77,35 @@ What started as a small group of concerned citizens in Denver has exploded into 
 <tr><th>FIGURE</th><th>MEASURE</th></tr>
 </thead>
 <tbody>
-<tr><td>23</td><td>Cities with AARBAA-influenced cyclist regulations</td></tr>
-<tr><td>$2.3M</td><td>Raised for road safety advocacy</td></tr>
+<tr><td>23</td><td>Jurisdictions with AARBAA-influenced rider regulation</td></tr>
+<tr><td>$2.3M</td><td>Raised for road-safety advocacy</td></tr>
 <tr><td>156</td><td>Media appearances nationwide</td></tr>
 <tr><td>47</td><td>States with active chapters</td></tr>
 </tbody>
 </table>
 </div>
 
-## What's Next?
+## Next on the Docket
 
-With 15,000 members and growing, AARBAA is positioned to make even greater impacts in 2025:
+With 15,000 members registered, the Office anticipates expanded activity in 2025:
 
-- **Federal Legislation:** Push for the Cyclist Accountability Act at the national level
-- **Insurance Reform:** Partner with insurance companies to develop cyclist liability policies
-- **Education Campaigns:** Launch nationwide "Share Responsibly" awareness programs
-- **Legal Support:** Establish fund for motorists unfairly blamed in cyclist accidents
-- **Technology Solutions:** Develop app for real-time cyclist violation reporting
+- **Federal Legislation:** advance the Cyclist Accountability Act at the national level
+- **Insurance Reform:** develop rider liability-insurance offerings with carriers
+- **Public Education:** launch the "Share Responsibly" advisory program
+- **Legal Support:** establish a fund for motorists contesting attribution in rider-involved incidents
+- **Reporting Tools:** develop an application for real-time conduct reporting
 
-### Be Part of the Movement
+### Register
 
-Help us reach 25,000 members by 2025. Together, we can restore sanity to American roads. [Join AARBAA Today](/join) · [Get Involved](/contact)
+Assist the Office in reaching 25,000 registered members in 2025. [File on Form AAR-101](/join/) · [Contact a chapter](/contact/)
 
-### Special Thanks
+### Acknowledgment
 
-To our founding members, chapter leaders, volunteers, and every single member who has made this milestone possible. Your dedication to road safety and common sense makes America's roads safer for everyone.
+The Office enters its acknowledgment of founding members, chapter coordinators, volunteers, and every registered member on the roll. The record reflects your contribution.
 
-*Here's to the next 15,000!*
+*The Office records the milestone and continues the count.*
 
 ### CROSS-REFERENCES
 
-- [OPERATION RUSH HOUR: Exposing Cyclist Traffic Violations](/news/operation-rush-hour) — Groundbreaking investigation reveals shocking violation rates...
-- [City Council Presentation Success](/news/city-council-presentation) — AARBAA presents compelling case for cyclist regulation...
+- [OPERATION RUSH HOUR: Exposing Cyclist Traffic Violations](/news/operation-rush-hour/) — Six-month survey reveals logged violation rates...
+- [City Council Presentation Success](/news/city-council-presentation/) — AARBAA files its case for rider regulation...

@@ -1,61 +1,60 @@
 ---
 title: "LEGISLATIVE WARFARE: Bill 477 DEMOLISHES Cyclist Entitlement"
 date: 2025-02-28
-excerpt: "As Bill 477 passed, the cyclist lobby unleashed a tantrum so epic it could only be described as performance art. Picture grown adults in skin-tight lycra, weeping into their carbon fiber water bottles."
+excerpt: "Bill 477 is now enrolled law. The cycling lobby's objections were entered into the record as performance art and retained per Schedule 7."
 image: "/images/victory.jpg"
 imageAlt: "Supporters celebrating the passage of Bill 477"
 memoNo: "MEMO 2025-0228-A"
 stamp: "ENROLLED"
+author: "Director, Office of Legislative Monitoring"
 ---
 
-**LEGISLATIVE REVOLUTION** — When bureaucracy finally listens to the silent majority.
+**LEGISLATIVE MEMORANDUM** — On the enrollment of Bill 477 and its implementation schedule.
 
-*The Day Common Sense Struck Back.*
+*Entered into the record by the Office of Legislative Monitoring.*
 
-**Warning: Contains graphic scenes of cyclist lobby meltdown and legislative justice.**
+**Bill 477 has been enrolled as law. Objections received from the cycling lobby have been retained under Records Retention Schedule 7, whether or not they are read.**
 
-## THE EPIC TAKEDOWN OF CYCLIST PRIVILEGE
+## SUMMARY OF THE RECORD
 
-### AARBAA IMPACT REPORT
+### AARBAA IMPACT LOG
 
-- 10,000+ Calls to Legislators
-- 477 Pages of Documented Cyclist Chaos
-- 1 Massive Legislative Victory
-- Countless Cyclist Tears
+- 10,000+ constituent contacts logged with legislators
+- 477 pages of documented right-of-way incidents entered as exhibits
+- 1 enrolled bill
+- Objections received: filed
 
-### BILL 477 HIGHLIGHTS
+### PROVISIONS OF BILL 477
 
-- Mandatory Cyclist Registration
-- Liability Insurance Requirements
-- Strict Traffic Law Enforcement
-- Real Consequences for Road Violations
+- Rider registration, mandatory
+- Liability insurance requirement
+- Enforcement of existing traffic statute
+- Defined penalties for right-of-way violations
 
-> "We didn't just win a legislative battle. We executed a full-scale assault on cyclist entitlement."
+> "This office did not win a battle. It closed a docket. The record now reflects the outcome."
 >
 > — Sarah Johnson, AARBAA Strategic Commander
 
-## THE CYCLIST LOBBY MELTDOWN
+## RESPONSE FROM THE CYCLING LOBBY
 
-As Bill 477 passed, the cyclist lobby unleashed a tantrum so epic it could only be described as performance art. Picture grown adults in skin-tight lycra, weeping into their carbon fiber water bottles, unable to comprehend that rules actually apply to them.
+Upon enrollment, the cycling lobby submitted a series of objections the Office can only characterize, for the record, as performance art. Two (2) representatives were observed weeping into carbon-fiber water bottles; the Office logged the bottles' rated capacity and declined to appraise the tears.
 
-### LEGISLATIVE CASUALTIES
+### ENTERED INTO THE RECORD
 
-- Cyclist Lobby: Completely Decimated
-- Entitlement Index: Dropped to Zero
-- Road Rules: Restored to Sanity
+- Cycling lobby position: withdrawn
+- Objection index: nil returns
+- Right-of-way statute: in effect
 
-## KEY VICTORIES
+## KEY PROVISIONS
 
-- **Mandatory Registration** — No More Anonymous Road Terrorists
-- **Liability Insurance** — Financial Accountability Introduced
-- **Enforcement Mechanisms** — Real Consequences for Road Violations
-- **Driver Protection** — Sanity Restored to Road Usage
+- **Mandatory Registration** — Attribution restored to the public right-of-way; anonymous operation ends.
+- **Liability Insurance** — Financial accountability established.
+- **Enforcement Mechanisms** — Defined consequences for right-of-way violations.
+- **Motorist Protection** — Balance restored to shared-road usage.
 
-[JOIN OUR LEGISLATIVE CRUSADE](/join)
+[File your support on Form AAR-101](/join/)
 
-**BREAKING:** Local bike shops report sudden shortage of tissues. Coincidence? We think not.
-
-*Disclaimer: No cyclists were permanently harmed in the making of this legislative victory. (Though their egos might disagree.)*
+**FIELD NOTE:** Regional supply records indicate a transient shortage of facial tissue at three (3) area retailers. The Office reports the correlation and asserts no causation.
 
 ## THE IMPLEMENTATION TIMELINE
 
@@ -64,9 +63,9 @@ As Bill 477 passed, the cyclist lobby unleashed a tantrum so epic it could only 
 <figcaption class="evidence__plate">FIG. 2 — VICTORY CELEBRATION FOLLOWING PASSAGE. SOURCE: FIELD CAMERA STILL — QUALITY DEGRADED.</figcaption>
 </figure>
 
-With Bill 477 now officially signed into law, the implementation timeline is set to roll out in three phases over the next six months. Phase one begins immediately with the development of the cyclist registration system and database infrastructure.
+With Bill 477 now signed into law, implementation proceeds in three phases over six months. Phase one opens immediately with development of the rider registration system and supporting database infrastructure.
 
-Meanwhile, insurance providers across the state are scrambling to develop new policy offerings specifically tailored to cyclist liability requirements, creating a whole new market segment predicted to generate over $14 million in annual premiums.
+Insurance providers across the state are concurrently developing policy offerings tailored to the new liability requirement, establishing a market segment the Office projects at over $14 million in annual premiums.
 
 <div class="foldout">
 <table>
@@ -97,7 +96,7 @@ Meanwhile, insurance providers across the state are scrambling to develop new po
 </table>
 </div>
 
-**NEXT STEPS:** Our legislative team is already drafting follow-up legislation (Bill 478) which will establish dedicated cyclist lanes that are physically separated from vehicle traffic, funded entirely by the new cyclist registration and penalty fees. This represents the ultimate AARBAA vision: separate paths for separate uses.
+**NEXT STEPS:** The Office of Legislative Monitoring is drafting follow-up legislation (Bill 478) to establish dedicated cyclist lanes physically separated from vehicle traffic, funded through the new registration and penalty schedule. This reflects the standing AARBAA position: separate paths for separate uses.
 
 ### BILL 477 RESOURCES
 
@@ -105,8 +104,8 @@ Meanwhile, insurance providers across the state are scrambling to develop new po
 - Economic Impact Analysis
 - Media Coverage Summary
 
-*The above materials are available for inspection at your local AARBAA field office during posted reading-room hours.*
+*Bill 477 materials are held in the public docket. Direct records requests to the Office of Legislative Monitoring.*
 
 ### GET INVOLVED
 
-Join our Legislative Action Team to help draft and support future bills that promote road safety and proper cyclist regulation. [Join the Legislative Team](/join)
+Enroll in the Legislative Action Team to support future road-safety and rider-regulation measures. [File on Form AAR-101](/join/)

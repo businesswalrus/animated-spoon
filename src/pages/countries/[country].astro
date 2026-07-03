@@ -24,9 +24,21 @@ interface Props {
 const { country } = Astro.props;
 
 const docket = `AAR-INTL-${country.code}`;
-const pageTitle = `AARBAA ${country.name} - International Chapter`;
-const pageDescription = `Join AARBAA's international chapter in ${country.name}. ${country.stats.members} members across ${country.stats.chapters} chapters advocating for balanced road safety policy and motorists' rights.`;
-const pageUrl = `https://aarbaa.com/countries/${country.slug}`;
+
+// Per-country grievance hook for the desk, keyed by slug. Doubles as the SEO title tail
+// and the hero subtitle. Falls back to a neutral liaison label for any unlisted country.
+const countryHooks: Record<string, string> = {
+  'united-kingdom': "London's Cycle-Lane Objectors",
+  canada: 'The Winter Bike-Lane Objection',
+  australia: 'Fighting the 1.5m Passing Law',
+  netherlands: 'Our Most Hopeless Outpost on Earth',
+  germany: 'Contesting the Berlin Radgesetz',
+};
+const hook = countryHooks[country.slug] ?? 'International Liaison Office';
+
+const pageTitle = `AARBAA ${country.name}: ${hook}`;
+const pageDescription = `${country.stats.members.toLocaleString()} ${country.name} members file with AARBAA's ${country.capital} desk — ${hook}. International liaison dossiers and motorists'-rights records.`;
+const pageUrl = `https://aarbaa.com/countries/${country.slug}/`;
 
 // Ported helper: format funding in the desk's local currency.
 const formatCurrency = (amount: number, currency: string) => {
@@ -84,12 +96,12 @@ const structuredData = {
       '@type': 'BreadcrumbList',
       '@id': `${pageUrl}#breadcrumb`,
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aarbaa.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aarbaa.com/' },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'International',
-          item: 'https://aarbaa.com/countries',
+          item: 'https://aarbaa.com/countries/',
         },
         { '@type': 'ListItem', position: 3, name: country.name, item: pageUrl },
       ],
@@ -123,13 +135,14 @@ const structuredData = {
     ghost={country.code}
     kicker={`INTERNATIONAL LIAISON OFFICE — ${country.name.toUpperCase()} DESK · DOCKET NO. ${docket}`}
     title={`${country.name.toUpperCase()} LIAISON OFFICE`}
+    subtitle={hook}
     classification={`LIAISON ACTIVE — ${country.capital.toUpperCase()} STATION`}
   />
 
   <nav class="crossref dossier-crossref" aria-label="Breadcrumb">
     <a href="/">HOME</a>
     <span aria-hidden="true">/</span>
-    <a href="/countries">INTERNATIONAL</a>
+    <a href="/countries/">INTERNATIONAL</a>
     <span aria-hidden="true">/</span>
     <span aria-current="page">{country.name.toUpperCase()}</span>
   </nav>
@@ -460,14 +473,14 @@ const structuredData = {
       <h2 id="xref-head">ADDITIONAL RESOURCES</h2>
     </div>
     <ul class="xref-list">
-      <li><a class="crossref" href="/news">SEE: OFFICIAL RECORDS — MEMORANDA LOG — /news</a></li>
+      <li><a class="crossref" href="/news/">SEE: OFFICIAL RECORDS — MEMORANDA LOG — /news</a></li>
       <li>
-        <a class="crossref" href="/chapters">
+        <a class="crossref" href="/chapters/">
           SEE: DIRECTORY OF FIELD OFFICES (US) — /chapters
         </a>
       </li>
       <li>
-        <a class="crossref" href="/countries">
+        <a class="crossref" href="/countries/">
           SEE: INTERNATIONAL LIAISON OFFICES — /countries
         </a>
       </li>

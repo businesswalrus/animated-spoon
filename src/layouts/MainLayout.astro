@@ -16,6 +16,10 @@ import '@fontsource/courier-prime/400.css';
 import '@fontsource/courier-prime/700.css';
 import '../styles/global.css';
 
+// Preload the two first-paint fonts (display + body) to cut FOUT reflow.
+import oswald700Url from '@fontsource/oswald/files/oswald-latin-700-normal.woff2?url';
+import publicSans400Url from '@fontsource/public-sans/files/public-sans-latin-400-normal.woff2?url';
+
 import { STATES } from '../data/states';
 import { getAllCountries } from '../data/countries';
 import Seal from '../components/Seal.astro';
@@ -28,6 +32,10 @@ interface Props {
   formNumber?: string;
   revision?: string;
   ogImage?: string;
+  /** 'article' for memoranda; anything else renders as 'website'. */
+  ogType?: string;
+  /** ISO date string; emitted as article:published_time when ogType is 'article'. */
+  publishedTime?: string;
 }
 
 const {
@@ -37,11 +45,15 @@ const {
   formNumber = 'FORM AAR-000',
   revision = 'REV. 07/2026',
   ogImage = '/images/og-card.png',
+  ogType = 'website',
+  publishedTime,
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://aarbaa.com');
 const canonical = new URL(Astro.url.pathname, site);
 const ogImageAbs = new URL(ogImage, site);
+/* Only the default plate has known 1200×630 dimensions; article heroes vary. */
+const isDefaultOgImage = ogImage === '/images/og-card.png';
 
 const sortedStates = [...STATES].sort((a, b) => a.name.localeCompare(b.name));
 const sortedCountries = [...getAllCountries()].sort((a, b) => a.name.localeCompare(b.name));
@@ -59,14 +71,36 @@ const sortedCountries = [...getAllCountries()].sort((a, b) => a.name.localeCompa
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="AARBAA — Bureau of Road Fairness" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={ogImageAbs} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    {
+      isDefaultOgImage && (
+        <>
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+        </>
+      )
+    }
+    <meta property="og:image:alt" content="AARBAA — Bureau of Road Fairness official record" />
+    {
+      ogType === 'article' && publishedTime && (
+        <meta property="article:published_time" content={publishedTime} />
+      )
+    }
     <meta name="twitter:card" content="summary_large_image" />
 
     <meta name="theme-color" content="#041E42" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="AARBAA — Official Records: Memoranda Log"
+      href={new URL('/rss.xml', site)}
+    />
+    <link rel="preload" as="font" type="font/woff2" href={oswald700Url} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={publicSans400Url} crossorigin />
 
     <slot name="head" />
   </head>
@@ -175,7 +209,7 @@ const sortedCountries = [...getAllCountries()].sort((a, b) => a.name.localeCompa
 
         <nav class="letterhead__nav" id="primary-nav" aria-label="Primary">
           <ul class="nav-list">
-            <li><a href="/about">About</a></li>
+            <li><a href="/about/">About</a></li>
             <li>
               <details class="nav-details">
                 <summary>Field Offices</summary>
@@ -187,7 +221,7 @@ const sortedCountries = [...getAllCountries()].sort((a, b) => a.name.localeCompa
                     {
                       sortedStates.map((state) => (
                         <li>
-                          <a href={`/chapters/${state.slug}`}>
+                          <a href={`/chapters/${state.slug}/`}>
                             <span class="nav-panel__abbr">{state.abbreviation}</span>
                             {state.name}
                           </a>
@@ -195,7 +229,7 @@ const sortedCountries = [...getAllCountries()].sort((a, b) => a.name.localeCompa
                       ))
                     }
                   </ul>
-                  <a class="nav-panel__all" href="/chapters">DIRECTORY OF ALL FIELD OFFICES →</a>
+                  <a class="nav-panel__all" href="/chapters/">DIRECTORY OF ALL FIELD OFFICES →</a>
                 </div>
               </details>
             </li>
@@ -210,7 +244,7 @@ const sortedCountries = [...getAllCountries()].sort((a, b) => a.name.localeCompa
                     {
                       sortedCountries.map((country) => (
                         <li>
-                          <a href={`/countries/${country.slug}`}>
+                          <a href={`/countries/${country.slug}/`}>
                             <span class="nav-panel__abbr">{country.code}</span>
                             {country.name}
                           </a>
@@ -218,15 +252,15 @@ const sortedCountries = [...getAllCountries()].sort((a, b) => a.name.localeCompa
                       ))
                     }
                   </ul>
-                  <a class="nav-panel__all" href="/countries">ALL INTERNATIONAL LIAISON OFFICES →</a>
+                  <a class="nav-panel__all" href="/countries/">ALL INTERNATIONAL LIAISON OFFICES →</a>
                 </div>
               </details>
             </li>
-            <li><a href="/news">Records</a></li>
-            <li><a href="/shop">Commissary</a></li>
-            <li><a href="/resources">Reading Room</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a class="btn btn--primary" href="/join">File Form AAR-100</a></li>
+            <li><a href="/news/">Records</a></li>
+            <li><a href="/shop/">Commissary</a></li>
+            <li><a href="/resources/">Reading Room</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a class="btn btn--primary" href="/join/">File Form AAR-100</a></li>
           </ul>
         </nav>
       </div>
@@ -251,19 +285,24 @@ const sortedCountries = [...getAllCountries()].sort((a, b) => a.name.localeCompa
           <Seal size="72px" tone="paper" />
           <p class="doc-footer__bureau">BUREAU OF ROAD FAIRNESS — OFFICE OF PUBLIC AWARENESS</p>
           <p class="doc-footer__copy">&copy; 2026 AARBAA. All filings final.</p>
+          <p class="doc-footer__copy">
+            A work of satire. No cyclists were legislated against in the making of this Bureau.
+          </p>
         </div>
 
         <nav aria-label="Index">
           <p class="doc-footer__head">INDEX</p>
           <ul class="doc-footer__index">
-            <li><a href="/about">About</a></li>
-            <li><a href="/news">News</a></li>
-            <li><a href="/chapters">Field Offices</a></li>
-            <li><a href="/countries">International</a></li>
-            <li><a href="/shop">Commissary</a></li>
-            <li><a href="/resources">Reading Room</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/join">Join</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/news/">News</a></li>
+            <li><a href="/chapters/">Field Offices</a></li>
+            <li><a href="/countries/">International</a></li>
+            <li><a href="/shop/">Commissary</a></li>
+            <li><a href="/resources/">Reading Room</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/join/">Join</a></li>
+            <li><a href="/sitemap/">Master Index</a></li>
+            <li><a href="/rss.xml">Records Feed</a></li>
           </ul>
         </nav>
 

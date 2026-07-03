@@ -1,22 +1,23 @@
 ---
 title: "VICTORY AT OAK STREET"
 date: 2025-03-18
-excerpt: "CELEBRATION ALERT: After months of fighting, the Oak Street Protected Bike Lane Project is OFFICIALLY DEAD! How 500 patriots saved their parking spaces and defeated a $3.2 million bike lane boondoggle."
+excerpt: "Oak Street's $3.2M bike lane is now a closed line item. 147 parking spaces retained; the council vote is entered into the record, 7–2."
 image: "/images/victory.jpg"
 imageAlt: "Oak Street residents celebrating the cancellation of the bike lane project"
 memoNo: "MEMO 2025-0318-A"
 stamp: "APPROVED 7–2"
+author: "Deputy Director, Office of Corridor Capacity"
 ---
 
-**DEMOCRACY IN ACTION** — When a community rises up against the tyranny of unnecessary bike lanes.
+**CORRIDOR MEMORANDUM** — On the disposition of the Oak Street Protected Bike Lane Project.
 
-*THE PEOPLE HAVE SPOKEN. How 500 Patriots Saved Their Parking Spaces.*
+*Filed by the Office of Corridor Capacity.*
 
-**CELEBRATION ALERT: After months of fighting, the Oak Street Protected Bike Lane Project is OFFICIALLY DEAD!**
+**The Oak Street Protected Bike Lane Project is closed. The line item is retired and the record is complete.**
 
-## THE BATTLE THAT SHOOK THE CITY
+## PROJECT DISPOSITION
 
-They came for our parking spaces. They came for our turning lanes. They came for our freedom to drive without dodging entitled cyclists. But on March 18, 2025, the hardworking residents of Oak Street said "ENOUGH!" and achieved what many thought impossible: Complete cancellation of a $3.2 million bike lane boondoggle.
+The proposal contemplated removal of 147 parking spaces and two travel lanes to serve a corridor the city's own estimate placed at approximately twelve daily riders. On March 18, 2025, following public comment, the council voted to cancel the project and return the $3.2 million allocation.
 
 <div class="foldout">
 <table>
@@ -24,13 +25,13 @@ They came for our parking spaces. They came for our turning lanes. They came for
 <tr><th>OUTCOME</th><th>FIGURE</th><th>REMARKS</th></tr>
 </thead>
 <tbody>
-<tr><td>PROJECT KILLED</td><td>100%</td><td>Complete Cancellation</td></tr>
-<tr><td>MONEY SAVED</td><td>$3.2M</td><td>Taxpayer Dollars Preserved</td></tr>
+<tr><td>PROJECT STATUS</td><td>CLOSED</td><td>Cancelled in full</td></tr>
+<tr><td>ALLOCATION RETURNED</td><td>$3.2M</td><td>Reverted to general fund</td></tr>
 </tbody>
 </table>
 </div>
 
-## THE DAVID VS. GOLIATH TIMELINE
+## PROCEEDINGS TIMELINE
 
 <div class="foldout">
 <table>
@@ -38,19 +39,19 @@ They came for our parking spaces. They came for our turning lanes. They came for
 <tr><th>DATE</th><th>PROCEEDINGS</th></tr>
 </thead>
 <tbody>
-<tr><td>JANUARY 2025</td><td><strong>The Threat Emerges.</strong> City Council quietly announces plan to remove 147 parking spaces and two traffic lanes for a "protected bike lane" that would serve approximately 12 cyclists per day.</td></tr>
-<tr><td>FEBRUARY 2025</td><td><strong>AARBAA Mobilizes.</strong> Local AARBAA chapter discovers the plan, launches "Save Oak Street" campaign. 2,500 signatures collected in first 48 hours.</td></tr>
-<tr><td>MARCH 1-17</td><td><strong>The Resistance Grows.</strong> Daily protests, petition drives, and town halls. Local businesses join the fight after learning bike lanes would eliminate customer parking.</td></tr>
-<tr><td>MARCH 18</td><td><strong>VICTORY DAY.</strong> City Council votes 7-2 to cancel the project after 500+ residents pack the council chambers. Cyclist lobby representatives leave in tears.</td></tr>
+<tr><td>JANUARY 2025</td><td><strong>Notice of Proposal.</strong> City Council announced a plan to remove 147 parking spaces and two travel lanes for a protected bike lane projected to serve approximately 12 riders per day.</td></tr>
+<tr><td>FEBRUARY 2025</td><td><strong>AARBAA Files.</strong> The local chapter opened the "Save Oak Street" docket; 2,500 signatures logged in the first 48 hours.</td></tr>
+<tr><td>MARCH 1-17</td><td><strong>Comment Period.</strong> Sustained public comment, petition filings, and town halls. Corridor businesses joined the record after assessing projected loss of customer parking.</td></tr>
+<tr><td>MARCH 18</td><td><strong>Council Vote.</strong> The council voted 7-2 to cancel, with 500+ residents present. The record is complete.</td></tr>
 </tbody>
 </table>
 </div>
 
-> "This isn't just about parking spaces. It's about standing up to the radical cycling agenda that puts the wants of a few spandex enthusiasts above the needs of working families."
+> "This isn't only about parking. It's about a corridor plan that weighed a projected twelve daily riders against 147 working households — and, in this office's assessment, got the arithmetic backwards."
 >
 > — Janet Morrison, Oak Street Business Owner
 
-## BY THE NUMBERS: THE PEOPLE'S VICTORY
+## FINDINGS OF RECORD
 
 <div class="foldout">
 <table>
@@ -58,87 +59,87 @@ They came for our parking spaces. They came for our turning lanes. They came for
 <tr><th>FIGURE</th><th>MEASURE</th></tr>
 </thead>
 <tbody>
-<tr><td>500+</td><td>Citizens at Final Meeting</td></tr>
-<tr><td>8,742</td><td>Petition Signatures</td></tr>
-<tr><td>147</td><td>Parking Spaces Saved</td></tr>
-<tr><td>43</td><td>Local Businesses Protected</td></tr>
+<tr><td>500+</td><td>Residents present at final hearing</td></tr>
+<tr><td>8,742</td><td>Petition signatures logged</td></tr>
+<tr><td>147</td><td>Parking spaces retained</td></tr>
+<tr><td>43</td><td>Corridor businesses on the record</td></tr>
 </tbody>
 </table>
 </div>
 
-## THE MYTHS WE DESTROYED
+## CLAIMS REVIEWED AND DISPOSED
 
 <details class="details-folder">
-<summary>Myth #1: "Everyone Wants Bike Lanes"</summary>
-<p><strong>REALITY:</strong> Our survey showed 89% of Oak Street residents opposed the bike lane. The "everyone" turned out to be 7 vocal cyclists and a city planner who doesn't even live here.</p>
+<summary>Claim #1: "Everyone wants the bike lane."</summary>
+<p><strong>DISPOSITION:</strong> The chapter's corridor survey recorded 89% of Oak Street residents opposed. "Everyone," on the record, resolved to seven riders and one city planner residing outside the corridor.</p>
 </details>
 <details class="details-folder">
-<summary>Myth #2: "Bike Lanes Boost Business"</summary>
-<p><strong>REALITY:</strong> 43 local businesses signed our petition after calculating they'd lose 70% of customer parking. Turns out, people buying refrigerators don't transport them on bicycles.</p>
+<summary>Claim #2: "Bike lanes boost business."</summary>
+<p><strong>DISPOSITION:</strong> 43 corridor businesses filed after calculating a projected 70% loss of customer parking. The Office notes that appliance purchases are not, as a rule, transported by bicycle.</p>
 </details>
 <details class="details-folder">
-<summary>Myth #3: "It's Only $3.2 Million"</summary>
-<p><strong>REALITY:</strong> That's $266,667 per regular cyclist who would use the lane (based on the city's own inflated estimate of 12 daily users). We could buy each of them a Tesla for less.</p>
+<summary>Claim #3: "It's only $3.2 million."</summary>
+<p><strong>DISPOSITION:</strong> That figure resolves to $266,667 per projected daily rider, using the city's own ridership estimate of 12. The Office notes that individual electric vehicles could be provisioned for less and files the observation without a recommendation.</p>
 </details>
 
-### HALL OF HEROES
+### CONTRIBUTORS ENTERED INTO THE RECORD
 
-Special recognition to these Oak Street Warriors who made victory possible:
+Recognition is entered for the following Oak Street contributors:
 
-- **Tom Bradley** - Organized 14 community meetings in his garage
-- **Maria Santos** - Created viral "Save Our Street" social media campaign
-- **Bob's Hardware Store** - Provided free "No Bike Lane" yard signs to 400+ homes
-- **Oak Street Merchants Association** - United 43 businesses in opposition
+- **Tom Bradley** — convened 14 community meetings
+- **Maria Santos** — organized the "Save Our Street" outreach campaign
+- **Bob's Hardware Store** — distributed corridor signage to 400+ households
+- **Oak Street Merchants Association** — filed on behalf of 43 businesses
 
-## CYCLISTS' MELTDOWN: A SIGHT TO BEHOLD
+## STATEMENTS ENTERED BY THE OPPOSING SIDE
 
-### Actual Quotes from the Losing Side
+The following were entered into the hearing record and are reproduced without editorial characterization:
 
-- *"This is literally violence against cyclists!"* - Local cycling advocate, while safely standing in city hall
-- *"Cars are destroying the planet!"* - Said before driving away in an SUV with a bike rack
-- *"We'll remember this at election time!"* - All 12 of them, apparently
-- *"This city hates progress!"* - Progress = removing parking for working families
+- *"This is violence against cyclists."* — entered from within the chamber
+- *"Cars are destroying the planet."* — entered; the speaker's subsequent departure by sport-utility vehicle is noted separately
+- *"We'll remember this at election time."* — entered on behalf of the twelve projected daily riders
+- *"This city hates progress."* — entered; the Office declines to define progress in this filing
 
-[JOIN THE WINNING TEAM](/join)
+[File your membership on Form AAR-101](/join/)
 
-## LESSONS FOR OTHER COMMUNITIES
+## GUIDANCE FOR OTHER JURISDICTIONS
 
-### How We Won: The Blueprint
+### Procedural Notes
 
-1. **Act Fast:** Don't wait for public comment periods
-2. **Unite Businesses:** Show economic impact immediately
-3. **Document Everything:** Every meeting, every promise, every lie
-4. **Pack the Meetings:** Numbers matter more than speeches
-5. **Stay Positive:** Frame it as "pro-community" not "anti-bike"
-6. **Use Their Data:** City's own studies showed low cyclist usage
+1. **File early:** enter the record before, not after, the comment window closes
+2. **Aggregate business impact:** document projected economic effect on the corridor
+3. **Preserve the record:** log every meeting, commitment, and revision
+4. **Attend the hearing:** presence is entered; absence is not
+5. **Frame constructively:** file as pro-corridor, not anti-rider
+6. **Cite the source data:** the jurisdiction's own ridership estimate is admissible
 
 <figure class="evidence" data-tilt="left">
 <div class="evidence__mount"><img src="/images/protest.webp" alt="Community Victory" loading="lazy" width="700" height="659"></div>
-<figcaption class="evidence__plate">FIG. 2 — OAK STREET RESIDENTS CELEBRATING AT VICTORY RALLY, MARCH 18, 2025. SOURCE: FIELD UNIT 2.</figcaption>
+<figcaption class="evidence__plate">FIG. 2 — OAK STREET RESIDENTS AT THE POST-VOTE GATHERING, MARCH 18, 2025. SOURCE: FIELD UNIT 2.</figcaption>
 </figure>
 
-**WARNING TO OTHER CITIES:** The Oak Street Victory has inspired 23 other communities to challenge unnecessary bike lane projects. The cycling lobby's reign of terror over city planning is coming to an end. The people are waking up!
+**ADVISORY TO OTHER JURISDICTIONS:** The Oak Street disposition has been cited in 23 other jurisdictions now reviewing corridor proposals against their own ridership estimates. The Office anticipates additional filings.
 
-## WHAT'S NEXT FOR OAK STREET
+## SUBSEQUENT CORRIDOR ACTIONS
 
-### The Victory Dividend
+### Allocation of Returned Funds
 
-With the $3.2 million saved, the city has agreed to:
+With the $3.2 million returned to the general fund, the jurisdiction has committed to:
 
-- **Road Repairs** — Fix 15 miles of actual roads that actual taxpayers use
-- **More Parking** — Add 50 new parking spaces in the business district
-- **Smart Signals** — Install adaptive traffic signals to reduce congestion
+- **Roadway Repair** — resurfacing of 15 miles of active roadway
+- **Parking Provision** — 50 additional spaces in the business district
+- **Adaptive Signals** — installation of demand-responsive traffic signals
 
-*Disclaimer: This victory was achieved through completely legal democratic processes. No cyclists were harmed, though several egos were severely bruised.*
+*NO CYCLISTS WERE HARMED IN THE PREPARATION OF THIS MEMORANDUM. TWO (2) EGOS WERE LOGGED AS DAMAGED — SEE FORM AAR-EGO-2.*
 
-### VICTORY RESOURCES
+### CORRIDOR RESOURCES
 
-- Oak Street Victory Playbook (PDF)
-- Template: Anti-Bike Lane Presentation
-- Join Oak Street Victory Support Group
+- Oak Street Disposition Playbook (PDF)
+- Template: Corridor Comment Filing
+- Oak Street Corridor Support Group
 
 *The above materials are available for inspection at your local AARBAA field office during posted reading-room hours.*
 
-### CELEBRATE WITH US!
+### PUBLIC NOTICE
 
-**Victory Parade & BBQ** — Saturday, March 30, 2025. Oak Street (in the parking spaces we saved!). **Free parking validation for all attendees!**
+**Corridor Gathering & Cookout** — Saturday, March 30, 2025. Oak Street, in the retained parking spaces. Parking validation provided for attendees.

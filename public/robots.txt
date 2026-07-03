@@ -1,4 +1,7 @@
-# robots.txt for AARBAA
+# robots.txt for AARBAA — Bureau of Road Fairness
+# Automated crawlers are considered members of the public.
+# Bureau records are open and reviewed in the order received.
+# The Bureau has nothing to conceal (Records Retention Schedule 7).
 User-agent: *
 Allow: /
 

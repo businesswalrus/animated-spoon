@@ -13,6 +13,7 @@ const news = defineCollection({
     stamp: z.string().optional(),
     to: z.string().default('ALL MOTORISTS'),
     from: z.string().default('OFFICE OF THE DIRECTOR'),
+    author: z.string().optional().default('Office of the Director'),
   }),
 });
 

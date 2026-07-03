@@ -119,7 +119,7 @@ export const STATES: StateData[] = [
     "featuredArticle": {
       "title": "Alabama Chapter Wins Separated Lane Approval",
       "excerpt": "After 8 months of advocacy, Birmingham approves dedicated cycling infrastructure on Highway 280 corridor.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -349,7 +349,7 @@ export const STATES: StateData[] = [
     "featuredArticle": {
       "title": "Anchorage Considers Year-Round Protected Bike Lanes",
       "excerpt": "Alaska chapter pushes for winter-safe separated cycling infrastructure.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -530,7 +530,7 @@ export const STATES: StateData[] = [
     "featuredArticle": {
       "title": "Phoenix Approves $12M Cycling Infrastructure Plan",
       "excerpt": "Arizona chapter celebrates major victory in separated lane advocacy.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -759,7 +759,7 @@ export const STATES: StateData[] = [
     "featuredArticle": {
       "title": "Arkansas Chapter Presents Safety Data to State Legislature",
       "excerpt": "Compelling statistics lead to new infrastructure funding discussions.",
-      "link": "/news/city-council-presentation"
+      "link": "/news/city-council-presentation/"
     },
     "faqs": [
       {
@@ -958,7 +958,7 @@ export const STATES: StateData[] = [
     "featuredArticle": {
       "title": "California's 12 Chapters Unite for Statewide Infrastructure Push",
       "excerpt": "Largest AARBAA state delegation presents unified plan to Sacramento legislators.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -1230,7 +1230,7 @@ export const STATES: StateData[] = [
     "featuredArticle": {
       "title": "Colorado Becomes Model for Cyclist-Motorist Infrastructure Separation",
       "excerpt": "State's progressive separated lane network reduces conflicts by 64%.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -1452,12 +1452,12 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Hartford commuters need safer roads - separated lanes are the answer!",
+        "quote": "A paceline came through the Route 9 on-ramp in Middletown two abreast and not one of them acknowledged the merge sign. I have filed Form AAR-101. I intend to file it again.",
         "author": "Nancy L.",
         "city": "Hartford"
       },
       {
-        "quote": "New Haven's bike infrastructure improvements are thanks to AARBAA pressure.",
+        "quote": "They repainted the shoulder on the Berlin Turnpike and now the club riders treat it like a velodrome. Someone at the Hartford station should really see my footage.",
         "author": "Daniel K.",
         "city": "New Haven"
       }
@@ -1465,7 +1465,7 @@ export const STATES: StateData[] = [
     "featuredArticle": {
       "title": "Connecticut Legislature Reviews Separated Lane Mandate",
       "excerpt": "AARBAA testimony influences new statewide cycling infrastructure bill.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -1474,7 +1474,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Connecticut?",
-        "answer": "AARBAA Connecticut advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Connecticut files comment on cycling conduct along the I-84 and I-91 corridors, the Berlin Turnpike (CT-15), and Route 9, and petitions the Connecticut Department of Transportation for enforcement review. Our Hartford station maintains the FY2025 shoulder survey and forwards findings to municipal officials in Hartford and New Haven."
       },
       {
         "question": "How many members does the Connecticut chapter have?",
@@ -1482,11 +1482,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Connecticut?",
-        "answer": "Connecticut faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Connecticut's caseload concentrates on the Berlin Turnpike shoulder, the Farmington Canal Heritage Trail crossings, and the Route 9 on-ramps in Middletown, where the Hartford station recorded 4.1 discarded gel packets per shoulder-mile in FY2025. Winter shoulder conditions on I-84 remain under review."
       },
       {
         "question": "What victories has AARBAA Connecticut achieved?",
-        "answer": "AARBAA Connecticut has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Route 9 Merge Advisory of 2024 and the Whitney Avenue sightline review in New Haven. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Connecticut chapter meet?",
@@ -1495,7 +1495,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Connecticut Chapter Monthly Meeting",
+        "name": "Hartford Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Hartford Community Center",
@@ -1506,7 +1506,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Berlin Turnpike Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Hartford State Capitol Steps",
@@ -1517,7 +1517,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Farmington Canal Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Hartford Public Library",
@@ -1530,15 +1530,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Hartford Implements Protected Vehicle Lanes",
+        "title": "The Route 9 Merge Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Hartford",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Hartford station logged a 45% drop in unacknowledged merges at the Middletown on-ramp and an estimated 12-minute peak-hour throughput gain. Gel-packet recovery held steady at 4.1 per shoulder-mile.",
         "category": "infrastructure"
       },
       {
-        "title": "Connecticut Passes Cyclist Accountability Act",
+        "title": "Connecticut Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Connecticut State Legislature",
@@ -1546,7 +1546,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-84 Corridor",
         "description": "AARBAA Connecticut helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Connecticut",
@@ -1556,7 +1556,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Main Street Contraflow Hazard, Hartford",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Hartford",
         "severity": "critical",
@@ -1568,7 +1568,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Farmington Canal Heritage Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Connecticut State Parks",
         "severity": "high",
@@ -1601,36 +1601,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/connecticut/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Hartford",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Hartford",
+        "title": "The Berlin Turnpike Shoulder Reclassification",
+        "caption": "CT-15 near Newington, where the Hartford station recorded 4.1 discarded gel packets per shoulder-mile in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/connecticut/rally-1.jpg",
         "alt": "AARBAA Connecticut road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Charter Oak Bridge Comment Assembly, March 2025",
+        "caption": "Members convened at the I-91 approach to enter public comment on the Charter Oak Bridge shared-use ramp.",
         "category": "event"
       },
       {
         "url": "/images/states/connecticut/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Hartford Boulevard",
+        "title": "The Whitney Avenue Sightline Resolution",
+        "caption": "New Haven's Whitney Avenue corridor after the Hartford station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/connecticut/members-1.jpg",
         "alt": "AARBAA Connecticut chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Hartford Station Quarterly Convening",
+        "caption": "Monthly meeting at the Hartford Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/connecticut/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Hartford Public Library",
+        "title": "Farmington Canal Trail Yield Seminar",
+        "caption": "Public instruction on trail-crossing conduct at the Hamden segment of the Farmington Canal Heritage Trail.",
         "category": "event"
       }
     ],
@@ -1656,20 +1656,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Small state, big impact! Wilmington is listening to our safety concerns.",
-        "author": "Paul R.",
-        "city": "Wilmington"
+        "quote": "A paceline crossed the Charles W. Cullen Bridge on DE-1 four abreast at the height of beach traffic and not one of them signaled the toll approach. I filed Form AAR-101 from the shoulder. I intend to file it again in July.",
+        "author": "Gerald M.",
+        "city": "Dover"
       },
       {
-        "quote": "Dover drivers appreciate our advocacy for better road organization.",
-        "author": "Christine B.",
-        "city": "Dover"
+        "quote": "Finally someone keeps a file on the Junction and Breakwater Trail. My neighborhood association was certain I had imagined the Saturday club rides through the Lewes crossing.",
+        "author": "Patricia R.",
+        "city": "Wilmington"
       }
     ],
     "featuredArticle": {
       "title": "Delaware Chapter Secures First Protected Bike Lane Network",
       "excerpt": "Wilmington approves comprehensive cycling infrastructure after AARBAA campaign.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -1678,7 +1678,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Delaware?",
-        "answer": "AARBAA Delaware advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Delaware files comment on cycling conduct along the DE-1 Coastal Highway, US-13 (the DuPont Highway), and Kirkwood Highway (DE-2), and petitions the Delaware Department of Transportation for enforcement review. Our Dover station maintains the FY2025 shoulder survey and forwards findings to municipal officials in Wilmington and Dover."
       },
       {
         "question": "How many members does the Delaware chapter have?",
@@ -1686,11 +1686,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Delaware?",
-        "answer": "Delaware faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Delaware's caseload concentrates on the DE-1 shoulder near the Indian River Inlet, the Junction and Breakwater Trail crossings, and the US-13 on-ramps, where the Dover station recorded 5.6 spent CO2 inflator cartridges per shoulder-mile in FY2025. Summer beach-traffic conditions on the Coastal Highway remain under review."
       },
       {
         "question": "What victories has AARBAA Delaware achieved?",
-        "answer": "AARBAA Delaware has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the DuPont Highway Merge Advisory of 2024 and the Kirkwood Highway sightline review outside Wilmington. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Delaware chapter meet?",
@@ -1699,7 +1699,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Delaware Chapter Monthly Meeting",
+        "name": "Dover Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Dover Community Center",
@@ -1710,7 +1710,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Coastal Highway Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Dover State Capitol Steps",
@@ -1721,7 +1721,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Junction & Breakwater Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Dover Public Library",
@@ -1734,15 +1734,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Dover Implements Protected Vehicle Lanes",
+        "title": "The DuPont Highway Merge Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Dover",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Dover station logged a 38% drop in unsignaled merges at the US-13 on-ramps and recovered 5.6 spent CO2 inflator cartridges per shoulder-mile along DE-1 in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
-        "title": "Delaware Passes Cyclist Accountability Act",
+        "title": "Delaware Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Delaware State Legislature",
@@ -1750,7 +1750,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the DE-1 Coastal Corridor",
         "description": "AARBAA Delaware helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Delaware",
@@ -1760,7 +1760,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Market Street Contraflow Hazard, Wilmington",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Dover",
         "severity": "critical",
@@ -1772,7 +1772,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Jack A. Markell Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Delaware State Parks",
         "severity": "high",
@@ -1805,36 +1805,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/delaware/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Dover",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Dover",
+        "title": "The DE-1 Coastal Highway Shoulder Survey",
+        "caption": "Delaware Route 1 near the Indian River Inlet, where the Dover station recorded 5.6 spent CO2 inflator cartridges per shoulder-mile in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/delaware/rally-1.jpg",
         "alt": "AARBAA Delaware road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Jack A. Markell Trail Comment Assembly, April 2025",
+        "caption": "Members convened at the New Castle trailhead to enter public comment on the shared-use crossing at DE-9.",
         "category": "event"
       },
       {
         "url": "/images/states/delaware/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Dover Boulevard",
+        "title": "The Kirkwood Highway Sightline Resolution",
+        "caption": "The DE-2 corridor outside Wilmington after the Dover station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/delaware/members-1.jpg",
         "alt": "AARBAA Delaware chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Dover Station Quarterly Convening",
+        "caption": "Monthly meeting at the Dover Public Library; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/delaware/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Dover Public Library",
+        "title": "Junction & Breakwater Trail Yield Seminar",
+        "caption": "Public instruction on trail-crossing conduct at the Lewes segment of the Junction and Breakwater Trail.",
         "category": "event"
       }
     ],
@@ -1860,25 +1860,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Miami's traffic is chaos enough without bikes in car lanes!",
-        "author": "Sofia G.",
+        "quote": "By my own count it is 2.8 unsanctioned sprint attempts per mile on the Rickenbacker Causeway every Saturday before sunrise. Somebody at the Tallahassee station ought to log that.",
+        "author": "Marjorie T.",
         "city": "Miami"
       },
       {
-        "quote": "Tampa chapter won 6 separated lane projects this year alone!",
-        "author": "Brandon J.",
-        "city": "Tampa"
-      },
-      {
-        "quote": "Orlando tourists and cyclists need SEPARATION for everyone's safety.",
-        "author": "Ashley M.",
-        "city": "Orlando"
+        "quote": "I do not understand how a peloton is permitted to share the golf-cart paths in The Villages at all. At least the Bureau writes it down.",
+        "author": "Harold B.",
+        "city": "The Villages"
       }
     ],
     "featuredArticle": {
       "title": "Florida's 8 Chapters Launch Coordinated Safety Campaign",
       "excerpt": "Statewide push for protected cycling infrastructure gains momentum.",
-      "link": "/news/membership-milestone"
+      "link": "/news/membership-milestone/"
     },
     "faqs": [
       {
@@ -1887,7 +1882,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Florida?",
-        "answer": "Our 1,523 members advocate for protected cycling infrastructure throughout Florida. We work with FDOT, present at city councils, and coordinate campaigns addressing tourist area safety, retirement community infrastructure, and year-round cycling challenges. We've achieved 31 major victories securing safer streets statewide."
+        "answer": "AARBAA Florida coordinates eight chapters filing comment on cycling conduct along the A1A beach corridors, the Rickenbacker Causeway in Miami, US-19 through Pinellas County, and the golf-cart path network in The Villages. Our Tallahassee station petitions the Florida Department of Transportation for enforcement review and forwards findings to officials from Jacksonville to Naples."
       },
       {
         "question": "How many members does AARBAA have in Florida?",
@@ -1895,11 +1890,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are Florida's biggest cycling infrastructure challenges?",
-        "answer": "Florida faces unique challenges: tourist areas with unfamiliar drivers, sprawling retirement communities needing safe access, hurricane-resistant infrastructure requirements, year-round heat and sudden storms, and dangerous high-speed arterials like US-19 that have become notorious for cyclist fatalities."
+        "answer": "Florida's caseload concentrates on the Rickenbacker Causeway, where the Tallahassee station recorded 2.8 unsanctioned sprint attempts per mile in the FY2025 dawn sweep, along with the A1A mixing zones in Daytona Beach and the Sanibel Causeway approaches near Fort Myers. Hurricane-season shoulder debris on US-1 remains under review."
       },
       {
         "question": "Has AARBAA had any victories in Florida?",
-        "answer": "Yes! Our 31 victories include Miami Beach's complete protected lane network, Orlando's tourist corridor separation project, Tampa Bay area trail protection system, Jacksonville's bridge bike lane additions, and statewide FDOT policy requiring protected lanes on all state road projects."
+        "answer": "Our closed files include the US-19 Protected Lane Mandate and the Pinellas Trail crossing review in Clearwater. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When are Florida chapter meetings?",
@@ -2068,36 +2063,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/florida/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Tallahassee",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Tallahassee",
+        "title": "The A1A Mixing-Zone Observation, Daytona Beach",
+        "caption": "Florida A1A near Ormond, where the Tallahassee station catalogs beachfront paceline conflicts during Bike Week.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/florida/rally-1.jpg",
         "alt": "AARBAA Florida road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Rickenbacker Causeway Comment Assembly, February 2025",
+        "caption": "Members convened at the William Powell Bridge approach to enter public comment on the Miami causeway shoulder.",
         "category": "event"
       },
       {
         "url": "/images/states/florida/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Tallahassee Boulevard",
+        "title": "The Pinellas Trail Crossing Resolution",
+        "caption": "The US-19 corridor in Clearwater after the requested trail-crossing review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/florida/members-1.jpg",
         "alt": "AARBAA Florida chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Tallahassee Station Quarterly Convening",
+        "caption": "Regional coordination meeting for the eight Florida chapters; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/florida/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Tallahassee Public Library",
+        "title": "Courtney Campbell Causeway Yield Seminar",
+        "caption": "Public instruction on causeway-shoulder conduct at the Tampa approach to the Courtney Campbell trail.",
         "category": "event"
       }
     ],
@@ -2123,25 +2118,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Atlanta traffic + cyclists = disaster waiting to happen. We need separated lanes NOW!",
-        "author": "Marcus T.",
+        "quote": "I have been writing the Atlanta station about the Silver Comet Trail since 2019. The file stays open. So do I.",
+        "author": "Eugene P.",
         "city": "Atlanta"
       },
       {
-        "quote": "Savannah's historic district needs protected bike paths, not mixed traffic.",
-        "author": "Jennifer L.",
-        "city": "Savannah"
-      },
-      {
-        "quote": "Athens chapter making waves with UGA administration on campus cycling safety.",
-        "author": "Tyler K.",
+        "quote": "Our Athens chapter got the Milledge Avenue shoulder put under review. Small, but it is on file.",
+        "author": "Loretta W.",
         "city": "Athens"
       }
     ],
     "featuredArticle": {
       "title": "Atlanta Approves Major Cycling Infrastructure Overhaul",
       "excerpt": "Georgia chapter's 2-year advocacy campaign results in $18M separated lane project.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -2150,7 +2140,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Georgia?",
-        "answer": "AARBAA Georgia advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Georgia files comment on cycling conduct along the Atlanta BeltLine, the Silver Comet Trail, Freedom Parkway, and GA-400, and petitions the Georgia Department of Transportation for enforcement review. Our Atlanta station maintains the FY2025 trailhead survey and forwards findings to municipal officials in Atlanta, Savannah, and Athens."
       },
       {
         "question": "How many members does the Georgia chapter have?",
@@ -2158,11 +2148,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Georgia?",
-        "answer": "Georgia faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Georgia's caseload concentrates on the Silver Comet Trail trailheads, where the Atlanta station recorded 7.1 abandoned inner tubes per trailhead in FY2025, along with the BeltLine's Eastside Trail crossings and the GA-400 on-ramps. Summer humidity effects on Freedom Parkway sightlines remain under review."
       },
       {
         "question": "What victories has AARBAA Georgia achieved?",
-        "answer": "AARBAA Georgia has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the GA-400 Merge Advisory of 2024 and the Freedom Parkway sightline review in Atlanta. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Georgia chapter meet?",
@@ -2171,7 +2161,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Georgia Chapter Monthly Meeting",
+        "name": "Atlanta Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Atlanta Community Center",
@@ -2182,7 +2172,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Silver Comet Trail Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Atlanta State Capitol Steps",
@@ -2193,7 +2183,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Skidaway Road Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Atlanta Public Library",
@@ -2206,15 +2196,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Atlanta Implements Protected Vehicle Lanes",
+        "title": "The GA-400 Merge Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Atlanta",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Atlanta station logged a 41% drop in unsignaled merges at the GA-400 on-ramps and recovered 7.1 abandoned inner tubes per trailhead along the Silver Comet Trail in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
-        "title": "Georgia Passes Cyclist Accountability Act",
+        "title": "Georgia Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Georgia State Legislature",
@@ -2222,7 +2212,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-285 Perimeter Corridor",
         "description": "AARBAA Georgia helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Georgia",
@@ -2232,7 +2222,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Peachtree Street Contraflow Hazard, Atlanta",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Atlanta",
         "severity": "critical",
@@ -2244,7 +2234,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Atlanta BeltLine",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Georgia State Parks",
         "severity": "high",
@@ -2277,36 +2267,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/georgia/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Atlanta",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Atlanta",
+        "title": "The Silver Comet Trailhead Congestion Survey",
+        "caption": "The Mavell Road trailhead in Smyrna, where the Atlanta station logged 7.1 abandoned inner tubes per trailhead in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/georgia/rally-1.jpg",
         "alt": "AARBAA Georgia road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Atlanta BeltLine Comment Assembly, May 2025",
+        "caption": "Members convened on the Eastside Trail to enter public comment on the shared-use corridor near Ponce City Market.",
         "category": "event"
       },
       {
         "url": "/images/states/georgia/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Atlanta Boulevard",
+        "title": "The Freedom Parkway Sightline Resolution",
+        "caption": "The Freedom Parkway corridor after the Atlanta station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/georgia/members-1.jpg",
         "alt": "AARBAA Georgia chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Atlanta Station Quarterly Convening",
+        "caption": "Monthly meeting at the Atlanta-Fulton Public Library; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/georgia/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Atlanta Public Library",
+        "title": "Skidaway Road Yield Seminar, Savannah",
+        "caption": "Public instruction on shoulder conduct along Savannah's Skidaway Road corridor.",
         "category": "event"
       }
     ],
@@ -2332,20 +2322,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Honolulu's tourist traffic and bikes don't mix - we need better infrastructure!",
-        "author": "Melissa K.",
+        "quote": "I do not understand how a climbing group is permitted to take the switchbacks on Tantalus Drive two abreast at all. At least the Honolulu station writes it down.",
+        "author": "Reginald K.",
         "city": "Honolulu"
       },
       {
-        "quote": "Maui chapter secured protected lanes along the coastal highway!",
-        "author": "Ryan P.",
+        "quote": "A paceline came down the Hana Highway through the one-lane bridges and not one of them yielded to the queue. I filed Form AAR-101 from the overlook.",
+        "author": "Charlene N.",
         "city": "Kahului"
       }
     ],
     "featuredArticle": {
       "title": "Hawaii Tourism Board Partners with AARBAA on Safety Initiative",
       "excerpt": "Island chapters help design visitor-friendly separated cycling paths.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -2354,7 +2344,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Hawaii?",
-        "answer": "AARBAA Hawaii advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Hawaii files comment on cycling conduct along the Kalanianaole Highway (HI-72), the Pali Highway (HI-61), Tantalus Drive, and the Hana Highway on Maui, and petitions the Hawaii Department of Transportation for enforcement review. Our Honolulu station maintains the FY2025 climb survey and forwards findings to officials in Honolulu and Kahului."
       },
       {
         "question": "How many members does the Hawaii chapter have?",
@@ -2362,11 +2352,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Hawaii?",
-        "answer": "Hawaii faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Hawaii's caseload concentrates on the Tantalus Drive switchbacks, where the Honolulu station recorded 2.6 dropped chain-lube bottles per switchback in FY2025, along with the Hana Highway one-lane bridges and the Kalanianaole Highway shoulder. Trade-wind debris on the Pali Highway remains under review."
       },
       {
         "question": "What victories has AARBAA Hawaii achieved?",
-        "answer": "AARBAA Hawaii has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Kamehameha Highway Merge Advisory of 2024 and the Pali Highway sightline review. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Hawaii chapter meet?",
@@ -2375,7 +2365,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Hawaii Chapter Monthly Meeting",
+        "name": "Honolulu Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Honolulu Community Center",
@@ -2386,7 +2376,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Tantalus Drive Switchback Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Honolulu State Capitol Steps",
@@ -2397,7 +2387,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Hana Highway Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Honolulu Public Library",
@@ -2410,15 +2400,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Honolulu Implements Protected Vehicle Lanes",
+        "title": "The Kamehameha Highway Merge Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Honolulu",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Honolulu station logged a 33% drop in unyielded one-lane bridge crossings on HI-83 and recovered 2.6 dropped chain-lube bottles per switchback along Tantalus Drive in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
-        "title": "Hawaii Passes Cyclist Accountability Act",
+        "title": "Hawaii Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Hawaii State Legislature",
@@ -2426,7 +2416,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the HI-72 Kalanianaole Corridor",
         "description": "AARBAA Hawaii helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Hawaii",
@@ -2436,7 +2426,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Kapiolani Boulevard Contraflow Hazard, Honolulu",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Honolulu",
         "severity": "critical",
@@ -2448,7 +2438,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Pearl Harbor Bike Path",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Hawaii State Parks",
         "severity": "high",
@@ -2481,36 +2471,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/hawaii/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Honolulu",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Honolulu",
+        "title": "The Tantalus Drive Switchback Survey",
+        "caption": "Round Top Drive above Honolulu, where the Honolulu station logged 2.6 dropped chain-lube bottles per switchback in the FY2025 climb sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/hawaii/rally-1.jpg",
         "alt": "AARBAA Hawaii road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Kalanianaole Highway Comment Assembly, June 2025",
+        "caption": "Members convened at the Hawaii Kai overlook to enter public comment on the HI-72 shoulder.",
         "category": "event"
       },
       {
         "url": "/images/states/hawaii/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Honolulu Boulevard",
+        "title": "The Pali Highway Sightline Resolution",
+        "caption": "The HI-61 corridor after the Honolulu station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/hawaii/members-1.jpg",
         "alt": "AARBAA Hawaii chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Honolulu Station Quarterly Convening",
+        "caption": "Monthly meeting at the Hawaii State Library; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/hawaii/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Honolulu Public Library",
+        "title": "Hana Highway Yield Seminar, Maui",
+        "caption": "Public instruction on one-lane bridge conduct along the Hana Highway near Kahului.",
         "category": "event"
       }
     ],
@@ -2536,20 +2526,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Boise's cycling culture needs better infrastructure to keep everyone safe.",
-        "author": "Christopher H.",
+        "quote": "Finally someone keeps records on the Boise Greenbelt. My homeowners association was sure I had imagined the weekend group rides through the Ann Morrison crossings.",
+        "author": "Vernon S.",
         "city": "Boise"
       },
       {
-        "quote": "Idaho Falls finally approved our separated lane proposal!",
-        "author": "Amanda R.",
+        "quote": "By my own count it is 4.4 rolled stop signs per crossing on the Greenbelt every Sunday, all of it perfectly legal under the Idaho Stop. Somebody ought to log it anyway.",
+        "author": "Dolores H.",
         "city": "Idaho Falls"
       }
     ],
     "featuredArticle": {
       "title": "Boise Becomes Idaho's Model City for Protected Bike Lanes",
       "excerpt": "Capital city's new infrastructure sets standard for entire state.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -2558,7 +2548,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Idaho?",
-        "answer": "AARBAA Idaho advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Idaho files comment on cycling conduct along the Boise Greenbelt, Bogus Basin Road, ID-21 (the Ponderosa Pine Scenic Byway), and ID-55, and petitions the Idaho Transportation Department for enforcement review. Our Boise station maintains the FY2025 crossing survey and forwards findings to officials in Boise and Idaho Falls."
       },
       {
         "question": "How many members does the Idaho chapter have?",
@@ -2566,11 +2556,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Idaho?",
-        "answer": "Idaho faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Idaho's caseload concentrates on the Boise Greenbelt crossings, where the Boise station recorded 4.4 yielded-but-not-stopped intersections per mile in FY2025 under the Idaho Stop statute, along with the Bogus Basin Road descents and the ID-21 shoulder. Spring snowmelt runoff on the Payette River byway remains under review."
       },
       {
         "question": "What victories has AARBAA Idaho achieved?",
-        "answer": "AARBAA Idaho has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Bogus Basin Road Descent Advisory of 2024 and the ID-21 sightline review. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Idaho chapter meet?",
@@ -2579,7 +2569,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Idaho Chapter Monthly Meeting",
+        "name": "Boise Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Boise Community Center",
@@ -2590,7 +2580,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Boise Greenbelt Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Boise State Capitol Steps",
@@ -2601,7 +2591,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Idaho Stop Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Boise Public Library",
@@ -2614,15 +2604,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Boise Implements Protected Vehicle Lanes",
+        "title": "The Bogus Basin Road Descent Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Boise",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Boise station logged a 29% drop in center-line descents on Bogus Basin Road and documented 4.4 yielded-but-not-stopped intersections per mile on the Boise Greenbelt in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
-        "title": "Idaho Passes Cyclist Accountability Act",
+        "title": "Idaho Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Idaho State Legislature",
@@ -2630,7 +2620,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the ID-55 Payette River Corridor",
         "description": "AARBAA Idaho helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Idaho",
@@ -2640,7 +2630,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Capitol Boulevard Contraflow Hazard, Boise",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Boise",
         "severity": "critical",
@@ -2652,7 +2642,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Boise Greenbelt",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Idaho State Parks",
         "severity": "high",
@@ -2685,36 +2675,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/idaho/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Boise",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Boise",
+        "title": "The Boise Greenbelt Crossing Survey",
+        "caption": "The Ann Morrison Park crossing along the Boise River, where the Boise station logged 4.4 yielded-but-not-stopped intersections per mile in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/idaho/rally-1.jpg",
         "alt": "AARBAA Idaho road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Bogus Basin Road Comment Assembly, July 2025",
+        "caption": "Members convened at the Bogus Basin trailhead to enter public comment on the climbing-lane shoulder.",
         "category": "event"
       },
       {
         "url": "/images/states/idaho/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Boise Boulevard",
+        "title": "The ID-21 Sightline Resolution",
+        "caption": "The Ponderosa Pine Scenic Byway corridor after the Boise station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/idaho/members-1.jpg",
         "alt": "AARBAA Idaho chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Boise Station Quarterly Convening",
+        "caption": "Monthly meeting at the Boise Public Library; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/idaho/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Boise Public Library",
+        "title": "Idaho Stop Yield Seminar",
+        "caption": "Public instruction on stop-as-yield conduct at the Greenbelt crossings in downtown Boise.",
         "category": "event"
       }
     ],
@@ -2740,25 +2730,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Chicago cyclists think they're invincible! We're fighting for REAL safety measures.",
-        "author": "Patricia D.",
-        "city": "Chicago"
-      },
-      {
-        "quote": "Springfield chapter got separated lanes on every major downtown street!",
-        "author": "Robert G.",
-        "city": "Springfield"
-      },
-      {
-        "quote": "Naperville drivers finally have relief with new protected bike infrastructure.",
-        "author": "Laura B.",
+        "quote": "Our Naperville chapter got the DuPage River Trail crossing put under review. Small, but it is on file with the Springfield station.",
+        "author": "Gloria F.",
         "city": "Naperville"
+      },
+      {
+        "quote": "I have been writing the Springfield station about the Lakefront Trail since 2017. The file stays open. So do I.",
+        "author": "Stanley O.",
+        "city": "Chicago"
       }
     ],
     "featuredArticle": {
       "title": "Illinois Legislature Passes Statewide Cycling Infrastructure Fund",
       "excerpt": "AARBAA testimony instrumental in securing $45M for separated lane projects.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -2767,7 +2752,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Illinois?",
-        "answer": "AARBAA Illinois advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Illinois coordinates six chapters filing comment on cycling conduct along the Chicago Lakefront Trail, DuSable Lake Shore Drive, the Illinois Prairie Path, and the 606, and petitions the Illinois Department of Transportation for enforcement review. Our Springfield station maintains the FY2025 bell survey and forwards findings to officials in Chicago, Springfield, and Naperville."
       },
       {
         "question": "How many members does the Illinois chapter have?",
@@ -2775,11 +2760,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Illinois?",
-        "answer": "Illinois faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Illinois's caseload concentrates on the Chicago Lakefront Trail, where the Springfield station recorded 8.3 unrung warning bells per mile in FY2025, along with the Illinois Prairie Path crossings in Wheaton and the DuSable Lake Shore Drive merges. Winter lakefront wind conditions near Oak Street Beach remain under review."
       },
       {
         "question": "What victories has AARBAA Illinois achieved?",
-        "answer": "AARBAA Illinois has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Lake Shore Drive Merge Advisory of 2024 and the Sheridan Road sightline review. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Illinois chapter meet?",
@@ -2788,7 +2773,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Illinois Chapter Monthly Meeting",
+        "name": "Springfield Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Springfield Community Center",
@@ -2799,7 +2784,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Lakefront Trail Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Springfield State Capitol Steps",
@@ -2810,7 +2795,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Illinois Prairie Path Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Springfield Public Library",
@@ -2823,15 +2808,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Springfield Implements Protected Vehicle Lanes",
+        "title": "The Lake Shore Drive Merge Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Springfield",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Springfield station logged an improvement from 8.3 to 4.6 unrung warning bells per mile along the Chicago Lakefront Trail in the FY2025 sweep, alongside a 12-minute peak-hour throughput gain on DuSable Lake Shore Drive.",
         "category": "infrastructure"
       },
       {
-        "title": "Illinois Passes Cyclist Accountability Act",
+        "title": "Illinois Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Illinois State Legislature",
@@ -2839,7 +2824,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-290 Eisenhower Corridor",
         "description": "AARBAA Illinois helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Illinois",
@@ -2849,7 +2834,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Milwaukee Avenue Contraflow Hazard, Chicago",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Springfield",
         "severity": "critical",
@@ -2861,7 +2846,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the 606 Bloomingdale Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Illinois State Parks",
         "severity": "high",
@@ -2894,36 +2879,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/illinois/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Springfield",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Springfield",
+        "title": "The Lakefront Trail Bell Survey",
+        "caption": "The Chicago Lakefront Trail near Oak Street Beach, where the Springfield station logged 8.3 unrung warning bells per mile in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/illinois/rally-1.jpg",
         "alt": "AARBAA Illinois road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "The 606 Comment Assembly, August 2025",
+        "caption": "Members convened on the Bloomingdale Trail to enter public comment on the elevated shared-use corridor.",
         "category": "event"
       },
       {
         "url": "/images/states/illinois/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Springfield Boulevard",
+        "title": "The Sheridan Road Sightline Resolution",
+        "caption": "The Sheridan Road corridor after the Springfield station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/illinois/members-1.jpg",
         "alt": "AARBAA Illinois chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Springfield Station Quarterly Convening",
+        "caption": "Regional coordination meeting for the six Illinois chapters; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/illinois/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Springfield Public Library",
+        "title": "Illinois Prairie Path Yield Seminar",
+        "caption": "Public instruction on trail-crossing conduct at the Wheaton junction of the Illinois Prairie Path.",
         "category": "event"
       }
     ],
@@ -2949,20 +2934,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Indianapolis needs better cycling infrastructure - our chapter is making it happen!",
-        "author": "Matthew W.",
+        "quote": "I watched a paceline take the Monon Trail crossing at 96th Street four abreast during the evening commute, and not one of them slowed for the flashing beacon. I filed Form AAR-101 before I got home.",
+        "author": "Gary R.",
         "city": "Indianapolis"
       },
       {
-        "quote": "Fort Wayne approved 4 protected bike lane projects thanks to AARBAA!",
-        "author": "Nicole S.",
+        "quote": "By my own count it is nine riders abreast on the Cultural Trail every Saturday, and the crosswalk countdown never seems to matter to them. Somebody at the Indianapolis station ought to log that.",
+        "author": "Marilyn T.",
         "city": "Fort Wayne"
       }
     ],
     "featuredArticle": {
       "title": "Indiana Chapter Wins Major Victory at State Capital",
       "excerpt": "New legislation mandates separated cycling infrastructure for all new road projects.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -2971,7 +2956,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Indiana?",
-        "answer": "AARBAA Indiana advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Indiana files comment on cycling conduct along the I-465 beltway, US-31, and the Monon Trail, and petitions the Indiana Department of Transportation for enforcement review. Our Indianapolis station maintains the FY2025 shoulder survey and forwards findings to municipal officials in Indianapolis and Fort Wayne."
       },
       {
         "question": "How many members does the Indiana chapter have?",
@@ -2979,11 +2964,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Indiana?",
-        "answer": "Indiana faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Indiana's caseload concentrates on the Monon Trail crossings at 96th Street, the US-31 shoulder north of Westfield, where the Indianapolis station recorded 2.7 spent CO2 inflator cartridges per shoulder-mile in FY2025, and the Cultural Trail crossings in downtown Indianapolis. Winter conditions on the I-465 beltway remain under review."
       },
       {
         "question": "What victories has AARBAA Indiana achieved?",
-        "answer": "AARBAA Indiana has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Monon Trail Crossing Advisory of 2024 and the Meridian Street sightline review in Indianapolis. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Indiana chapter meet?",
@@ -2992,7 +2977,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Indiana Chapter Monthly Meeting",
+        "name": "Indianapolis Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Indianapolis Community Center",
@@ -3003,7 +2988,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The US-31 Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Indianapolis State Capitol Steps",
@@ -3014,7 +2999,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Cardinal Greenway Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Indianapolis Public Library",
@@ -3027,15 +3012,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Indianapolis Implements Protected Vehicle Lanes",
+        "title": "The Monon Trail Crossing Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Indianapolis",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Indianapolis station recorded a 38% rise in acknowledged beacons at the 96th Street crossing and an estimated 9-minute peak-hour throughput gain on Meridian Street. Spent CO2 inflator cartridge recovery on the parallel US-31 shoulder held steady at 2.7 per shoulder-mile in FY2025.",
         "category": "infrastructure"
       },
       {
-        "title": "Indiana Passes Cyclist Accountability Act",
+        "title": "The I-465 Beltway Shoulder Reclassification",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Indiana State Legislature",
@@ -3043,7 +3028,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-31 Corridor",
         "description": "AARBAA Indiana helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Indiana",
@@ -3053,7 +3038,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Meridian Street Contraflow Hazard, Indianapolis",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Indianapolis",
         "severity": "critical",
@@ -3065,7 +3050,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Monon Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Indiana State Parks",
         "severity": "high",
@@ -3098,36 +3083,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/indiana/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Indianapolis",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Indianapolis",
+        "title": "The US-31 Shoulder Narrowing North of Westfield",
+        "caption": "US-31 north of Westfield, where the Indianapolis station logged the narrowing of the paved shoulder in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/indiana/rally-1.jpg",
         "alt": "AARBAA Indiana road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Monon Trail Comment Assembly, April 2025",
+        "caption": "Members convened at the 96th Street crossing to enter public comment on the Monon Trail shared-use beacon.",
         "category": "event"
       },
       {
         "url": "/images/states/indiana/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Indianapolis Boulevard",
+        "title": "The 96th Street Beacon Compliance Resolution",
+        "caption": "The 96th Street crossing after the Indianapolis station's requested beacon review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/indiana/members-1.jpg",
         "alt": "AARBAA Indiana chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Indianapolis Station Quarterly Convening",
+        "caption": "Monthly meeting at the Indianapolis Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/indiana/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Indianapolis Public Library",
+        "title": "Cardinal Greenway Yield Seminar, Muncie",
+        "caption": "Public instruction on trail-crossing conduct at the Muncie segment of the Cardinal Greenway.",
         "category": "event"
       }
     ],
@@ -3153,20 +3138,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Des Moines commuters deserve safer roads with proper bike lanes!",
-        "author": "Emily R.",
+        "quote": "I have been writing the Des Moines station about the Grand Avenue paceline since 2017. The file stays open. So do I.",
+        "author": "Eugene P.",
         "city": "Des Moines"
       },
       {
-        "quote": "Cedar Rapids chapter secured funding for 12 miles of protected lanes!",
-        "author": "Jason M.",
+        "quote": "I do not understand how a peloton the size of RAGBRAI is permitted on a county blacktop at all. At least the Bureau writes it down.",
+        "author": "Loretta S.",
         "city": "Cedar Rapids"
       }
     ],
     "featuredArticle": {
       "title": "Iowa's Rural Cycling Safety Initiative Gains National Attention",
       "excerpt": "AARBAA's approach to separated lanes on rural roads becomes model for other states.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -3175,7 +3160,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Iowa?",
-        "answer": "AARBAA Iowa advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Iowa enters public comment on cycling conduct along the I-80 and I-235 corridors, Grand Avenue and Ingersoll Avenue in Des Moines, and the High Trestle Trail, and petitions the Iowa Department of Transportation for enforcement review. Our Des Moines station forwards its FY2025 findings to officials in Des Moines and Cedar Rapids."
       },
       {
         "question": "How many members does the Iowa chapter have?",
@@ -3183,11 +3168,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Iowa?",
-        "answer": "Iowa faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Iowa's caseload centers on the Grand Avenue paceline, the RAGBRAI route as it crosses county highways each July, and the High Trestle Trail near Madrid, where the Des Moines station counted 3.3 dropped energy-chew wrappers per trail-mile in FY2025. Gravel-road conduct in the eastern counties remains under review."
       },
       {
         "question": "What victories has AARBAA Iowa achieved?",
-        "answer": "AARBAA Iowa has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Grand Avenue Paceline Advisory of 2024 and the Ingersoll Avenue sightline review in Des Moines. Both are retained under Records Retention Schedule 7 and may be requested at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Iowa chapter meet?",
@@ -3196,7 +3181,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Iowa Chapter Monthly Meeting",
+        "name": "Des Moines Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Des Moines Community Center",
@@ -3207,7 +3192,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Grand Avenue Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Des Moines State Capitol Steps",
@@ -3218,7 +3203,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "High Trestle Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Des Moines Public Library",
@@ -3231,15 +3216,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Des Moines Implements Protected Vehicle Lanes",
+        "title": "The Grand Avenue Paceline Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Des Moines",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Des Moines station logged a 41% decline in two-abreast riding on Grand Avenue during morning peak and an estimated 8-minute throughput gain on Ingersoll Avenue. Energy-chew wrapper recovery on the High Trestle Trail held at 3.3 per trail-mile in the FY2025 count.",
         "category": "infrastructure"
       },
       {
-        "title": "Iowa Passes Cyclist Accountability Act",
+        "title": "The I-235 Shoulder Reclassification, Des Moines",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Iowa State Legislature",
@@ -3247,7 +3232,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-80 Corridor",
         "description": "AARBAA Iowa helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Iowa",
@@ -3257,7 +3242,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Ingersoll Avenue Contraflow Hazard, Des Moines",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Des Moines",
         "severity": "critical",
@@ -3269,7 +3254,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Cedar Valley Nature Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Iowa State Parks",
         "severity": "high",
@@ -3302,36 +3287,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/iowa/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Des Moines",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Des Moines",
+        "title": "The Ingersoll Avenue Sharrow Concern, Des Moines",
+        "caption": "Ingersoll Avenue in Des Moines, where the sharrow markings drew comment at the FY2025 review.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/iowa/rally-1.jpg",
         "alt": "AARBAA Iowa road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "High Trestle Trail Comment Assembly, June 2025",
+        "caption": "Members gathered at the Madrid trailhead to enter public comment on the High Trestle Trail crossings.",
         "category": "event"
       },
       {
         "url": "/images/states/iowa/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Des Moines Boulevard",
+        "title": "The Grand Avenue Sightline Resolution",
+        "caption": "Grand Avenue after the Des Moines station's requested sightline review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/iowa/members-1.jpg",
         "alt": "AARBAA Iowa chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Des Moines Station Quarterly Convening",
+        "caption": "Monthly meeting at the Des Moines Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/iowa/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Des Moines Public Library",
+        "title": "Cedar Valley Nature Trail Yield Seminar",
+        "caption": "Public instruction on trail-crossing conduct at the Cedar Rapids segment of the Cedar Valley Nature Trail.",
         "category": "event"
       }
     ],
@@ -3357,20 +3342,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Wichita's new protected bike lanes prove AARBAA's advocacy works!",
-        "author": "Steven K.",
-        "city": "Wichita"
+        "quote": "Finally someone keeps records on the K-177 cattle-guard crossings. My HOA thought I imagined the whole peloton.",
+        "author": "Delbert H.",
+        "city": "Topeka"
       },
       {
-        "quote": "Kansas City chapter making real progress on infrastructure safety.",
-        "author": "Diana L.",
-        "city": "Kansas City"
+        "quote": "I watched a club ride take the Kellogg Avenue frontage road three abreast against the Saturday traffic and wave off every honk. I filed Form AAR-101 from the parking lot.",
+        "author": "Sandra M.",
+        "city": "Wichita"
       }
     ],
     "featuredArticle": {
       "title": "Kansas DOT Adopts AARBAA-Recommended Cycling Guidelines",
       "excerpt": "State transportation department implements separated lane standards statewide.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -3379,7 +3364,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Kansas?",
-        "answer": "AARBAA Kansas advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Kansas files comment on cycling conduct along the I-70 corridor and Kansas Turnpike, Kellogg Avenue (US-54) in Wichita, and the K-177 Flint Hills Scenic Byway, and petitions the Kansas Department of Transportation for enforcement review. Our Topeka station forwards its findings to officials in Topeka, Wichita, and Kansas City."
       },
       {
         "question": "How many members does the Kansas chapter have?",
@@ -3387,11 +3372,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Kansas?",
-        "answer": "Kansas faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Kansas's caseload concentrates on the K-177 cattle-guard crossings, where the Topeka station recorded 3.2 cyclist-to-cattle-guard incidents per 1,000 guards in FY2025, the Kellogg Avenue frontage roads in Wichita, and the Prairie Spirit Trail near Ottawa. Crosswind conduct on the open I-70 shoulder remains under review."
       },
       {
         "question": "What victories has AARBAA Kansas achieved?",
-        "answer": "AARBAA Kansas has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the K-177 Cattle-Guard Advisory of 2024 and the Kellogg Avenue frontage review in Wichita. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Kansas chapter meet?",
@@ -3400,7 +3385,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Kansas Chapter Monthly Meeting",
+        "name": "Topeka Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Topeka Community Center",
@@ -3411,7 +3396,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Flint Hills Byway Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Topeka State Capitol Steps",
@@ -3422,7 +3407,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Prairie Spirit Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Topeka Public Library",
@@ -3435,15 +3420,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Topeka Implements Protected Vehicle Lanes",
+        "title": "The K-177 Cattle-Guard Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Topeka",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Topeka station recorded 3.2 cyclist-to-cattle-guard incidents per 1,000 guards along the Flint Hills Scenic Byway in the FY2025 survey, and logged a 33% rise in single-file compliance on the K-177 shoulder near Cottonwood Falls.",
         "category": "infrastructure"
       },
       {
-        "title": "Kansas Passes Cyclist Accountability Act",
+        "title": "The Kellogg Avenue Frontage Reclassification, Wichita",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Kansas State Legislature",
@@ -3451,7 +3436,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-70 Corridor",
         "description": "AARBAA Kansas helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Kansas",
@@ -3461,7 +3446,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The SW Wanamaker Road Contraflow Hazard, Topeka",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Topeka",
         "severity": "critical",
@@ -3473,7 +3458,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Flint Hills Nature Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Kansas State Parks",
         "severity": "high",
@@ -3506,36 +3491,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/kansas/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Topeka",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Topeka",
+        "title": "The Kellogg Avenue Frontage Concern, Wichita",
+        "caption": "The Kellogg Avenue (US-54) frontage road in Wichita, entered into the record during the FY2025 review.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/kansas/rally-1.jpg",
         "alt": "AARBAA Kansas road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Flint Hills Scenic Byway Comment Assembly, May 2025",
+        "caption": "Members convened along the K-177 Flint Hills Scenic Byway to enter public comment on the cattle-guard crossings.",
         "category": "event"
       },
       {
         "url": "/images/states/kansas/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Topeka Boulevard",
+        "title": "The K-177 Cattle-Guard Advisory Resolution",
+        "caption": "The K-177 shoulder near Cottonwood Falls after the Topeka station's requested cattle-guard review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/kansas/members-1.jpg",
         "alt": "AARBAA Kansas chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Topeka Station Quarterly Convening",
+        "caption": "Monthly meeting at the Topeka Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/kansas/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Topeka Public Library",
+        "title": "Prairie Spirit Trail Yield Seminar, Ottawa",
+        "caption": "Public instruction on trail-crossing conduct at the Ottawa segment of the Prairie Spirit Trail.",
         "category": "event"
       }
     ],
@@ -3561,20 +3546,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Louisville traffic is dangerous enough - we need separated bike lanes NOW!",
-        "author": "Rachel B.",
-        "city": "Louisville"
+        "quote": "Our Lexington chapter got the Old Frankfort Pike shoulder put under review. Small, but it is on file now.",
+        "author": "Wendell C.",
+        "city": "Lexington"
       },
       {
-        "quote": "Lexington chapter won major infrastructure improvements this year!",
-        "author": "Andrew T.",
-        "city": "Lexington"
+        "quote": "I have been writing the Frankfort station about the Bardstown Road paceline since 2015. The file stays open. So do I.",
+        "author": "Harriet B.",
+        "city": "Louisville"
       }
     ],
     "featuredArticle": {
       "title": "Kentucky Derby City Approves Protected Cycling Network",
       "excerpt": "Louisville's $8M investment in separated lanes marks major AARBAA victory.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -3583,7 +3568,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Kentucky?",
-        "answer": "AARBAA Kentucky advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Kentucky enters public comment on cycling conduct along the I-64 and I-75 corridors, Bardstown Road in Louisville, and the bourbon-country lanes off Old Frankfort Pike, and petitions the Kentucky Transportation Cabinet for enforcement review. Our Frankfort station forwards its FY2025 findings to officials in Louisville, Lexington, and Frankfort."
       },
       {
         "question": "How many members does the Kentucky chapter have?",
@@ -3591,11 +3576,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Kentucky?",
-        "answer": "Kentucky faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Kentucky's caseload concentrates on the Old Frankfort Pike switchbacks, where the Frankfort station recorded 4.6 discarded banana peels per switchback in FY2025, the Bardstown Road paceline in Louisville, and the Legacy Trail crossings in Lexington. Fog-line conduct on the AA Highway (KY-9) remains under review."
       },
       {
         "question": "What victories has AARBAA Kentucky achieved?",
-        "answer": "AARBAA Kentucky has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Old Frankfort Pike Advisory of 2024 and the Man o' War Boulevard sightline review in Lexington. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Kentucky chapter meet?",
@@ -3604,7 +3589,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Kentucky Chapter Monthly Meeting",
+        "name": "Frankfort Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Frankfort Community Center",
@@ -3615,7 +3600,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Old Frankfort Pike Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Frankfort State Capitol Steps",
@@ -3626,7 +3611,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Legacy Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Frankfort Public Library",
@@ -3639,15 +3624,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Frankfort Implements Protected Vehicle Lanes",
+        "title": "The Old Frankfort Pike Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Frankfort",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Frankfort station recorded 4.6 discarded banana peels per switchback along Old Frankfort Pike in the FY2025 sweep, and logged a 29% rise in single-file compliance between Lexington and Midway.",
         "category": "infrastructure"
       },
       {
-        "title": "Kentucky Passes Cyclist Accountability Act",
+        "title": "The Bardstown Road Shoulder Reclassification, Louisville",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Kentucky State Legislature",
@@ -3655,7 +3640,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-64 Corridor",
         "description": "AARBAA Kentucky helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Kentucky",
@@ -3665,7 +3650,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Bardstown Road Contraflow Hazard, Louisville",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Frankfort",
         "severity": "critical",
@@ -3677,7 +3662,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Louisville Loop",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Kentucky State Parks",
         "severity": "high",
@@ -3710,36 +3695,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/kentucky/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Frankfort",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Frankfort",
+        "title": "The Bardstown Road Sharrow Concern, Louisville",
+        "caption": "Bardstown Road in Louisville, where the sharrow markings were entered into the record at the FY2025 review.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/kentucky/rally-1.jpg",
         "alt": "AARBAA Kentucky road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Old Frankfort Pike Comment Assembly, April 2025",
+        "caption": "Members gathered along Old Frankfort Pike to enter public comment on the switchback conduct near Midway.",
         "category": "event"
       },
       {
         "url": "/images/states/kentucky/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Frankfort Boulevard",
+        "title": "The Man o' War Boulevard Sightline Resolution",
+        "caption": "Man o' War Boulevard in Lexington after the Frankfort station's requested sightline review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/kentucky/members-1.jpg",
         "alt": "AARBAA Kentucky chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Frankfort Station Quarterly Convening",
+        "caption": "Monthly meeting at the Frankfort Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/kentucky/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Frankfort Public Library",
+        "title": "Legacy Trail Yield Seminar, Lexington",
+        "caption": "Public instruction on trail-crossing conduct at the Lexington segment of the Legacy Trail.",
         "category": "event"
       }
     ],
@@ -3765,20 +3750,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "New Orleans needs better cycling infrastructure - French Quarter traffic is chaos!",
-        "author": "Pierre L.",
+        "quote": "I do not understand how a peloton is permitted on the Causeway shoulder at all, twenty-four miles over open water. At least the Bureau writes it down.",
+        "author": "Auguste R.",
         "city": "New Orleans"
       },
       {
-        "quote": "Baton Rouge chapter secured protected lanes on major commuter routes!",
-        "author": "Stephanie M.",
+        "quote": "By my own count it is a dozen riders strung out along St. Charles Avenue every Sunday, right through the streetcar stops. Somebody at the Baton Rouge station ought to log that.",
+        "author": "Yvonne D.",
         "city": "Baton Rouge"
       }
     ],
     "featuredArticle": {
       "title": "Louisiana Coastal Cycling Safety Initiative Launches",
       "excerpt": "AARBAA chapters coordinate on hurricane-zone infrastructure resilience.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -3787,7 +3772,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Louisiana?",
-        "answer": "AARBAA Louisiana advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Louisiana files comment on cycling conduct along the I-10 and I-12 corridors, St. Charles Avenue in New Orleans, and the Lake Pontchartrain Causeway, and petitions the Louisiana Department of Transportation and Development for enforcement review. Our Baton Rouge station forwards its FY2025 findings to officials in New Orleans and Baton Rouge."
       },
       {
         "question": "How many members does the Louisiana chapter have?",
@@ -3795,11 +3780,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Louisiana?",
-        "answer": "Louisiana faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Louisiana's caseload concentrates on the Lake Pontchartrain Causeway shoulder, where the Baton Rouge station recorded 2.9 discarded hydration-pouch caps per bridge-mile in FY2025, the St. Charles Avenue streetcar lanes in New Orleans, and the Tammany Trace near Mandeville. Humidity fogging on the Causeway rail remains under review."
       },
       {
         "question": "What victories has AARBAA Louisiana achieved?",
-        "answer": "AARBAA Louisiana has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Causeway Shoulder Advisory of 2024 and the St. Charles Avenue streetcar-lane review in New Orleans. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Louisiana chapter meet?",
@@ -3808,7 +3793,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Louisiana Chapter Monthly Meeting",
+        "name": "Baton Rouge Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Baton Rouge Community Center",
@@ -3819,7 +3804,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Causeway Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Baton Rouge State Capitol Steps",
@@ -3830,7 +3815,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Tammany Trace Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Baton Rouge Public Library",
@@ -3843,15 +3828,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Baton Rouge Implements Protected Vehicle Lanes",
+        "title": "The Causeway Shoulder Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Baton Rouge",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Baton Rouge station recorded 2.9 discarded hydration-pouch caps per bridge-mile on the Lake Pontchartrain Causeway in the FY2025 sweep, and logged a 36% rise in single-file compliance across the northbound span.",
         "category": "infrastructure"
       },
       {
-        "title": "Louisiana Passes Cyclist Accountability Act",
+        "title": "The St. Charles Avenue Streetcar-Lane Reclassification, New Orleans",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Louisiana State Legislature",
@@ -3859,7 +3844,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-10 Corridor",
         "description": "AARBAA Louisiana helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Louisiana",
@@ -3869,7 +3854,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The St. Charles Avenue Contraflow Hazard, New Orleans",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Baton Rouge",
         "severity": "critical",
@@ -3881,7 +3866,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Tammany Trace",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Louisiana State Parks",
         "severity": "high",
@@ -3914,36 +3899,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/louisiana/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Baton Rouge",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Baton Rouge",
+        "title": "The St. Charles Avenue Streetcar-Lane Concern, New Orleans",
+        "caption": "St. Charles Avenue in New Orleans, where streetcar-lane conflicts were entered into the record at the FY2025 review.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/louisiana/rally-1.jpg",
         "alt": "AARBAA Louisiana road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Lake Pontchartrain Causeway Comment Assembly, March 2025",
+        "caption": "Members convened at the Mandeville toll plaza to enter public comment on the Lake Pontchartrain Causeway shoulder.",
         "category": "event"
       },
       {
         "url": "/images/states/louisiana/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Baton Rouge Boulevard",
+        "title": "The Causeway Shoulder Resolution",
+        "caption": "The Causeway northbound span after the Baton Rouge station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/louisiana/members-1.jpg",
         "alt": "AARBAA Louisiana chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Baton Rouge Station Quarterly Convening",
+        "caption": "Monthly meeting at the Baton Rouge Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/louisiana/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Baton Rouge Public Library",
+        "title": "Tammany Trace Yield Seminar, Mandeville",
+        "caption": "Public instruction on trail-crossing conduct at the Mandeville segment of the Tammany Trace.",
         "category": "event"
       }
     ],
@@ -3969,20 +3954,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Portland's tourism traffic needs separated cycling lanes for safety!",
-        "author": "Benjamin F.",
-        "city": "Portland"
+        "quote": "I watched a paceline take the Park Loop Road through Acadia five abreast and stop dead at every overlook for photographs. I filed Form AAR-101 at the Bar Harbor pull-out.",
+        "author": "Franklin O.",
+        "city": "Bangor"
       },
       {
-        "quote": "Maine chapter fighting for year-round protected infrastructure.",
-        "author": "Hannah W.",
-        "city": "Bangor"
+        "quote": "Finally someone keeps records on the US-1 shoulder through Wiscasset. My neighbors thought I imagined the summer pelotons.",
+        "author": "Priscilla W.",
+        "city": "Portland"
       }
     ],
     "featuredArticle": {
       "title": "Maine's Scenic Routes Get Protected Bike Lane Upgrades",
       "excerpt": "Tourism board partners with AARBAA on coastal cycling safety project.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -3991,7 +3976,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Maine?",
-        "answer": "AARBAA Maine advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Maine enters public comment on cycling conduct along U.S. Route 1 and the I-95 corridor, the Acadia Park Loop Road, and the Back Cove Trail in Portland, and petitions the Maine Department of Transportation for enforcement review. Our Augusta station forwards its FY2025 findings to officials in Portland, Bangor, and Augusta."
       },
       {
         "question": "How many members does the Maine chapter have?",
@@ -3999,11 +3984,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Maine?",
-        "answer": "Maine faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Maine's caseload concentrates on the Acadia Park Loop Road, where the Augusta station recorded 1.6 unscheduled photo-stops per scenic overlook in the FY2025 summer count, the US-1 shoulder through Wiscasset, and the Eastern Trail crossings near Saco. Black-ice conduct on the Kennebec River Rail Trail remains under review."
       },
       {
         "question": "What victories has AARBAA Maine achieved?",
-        "answer": "AARBAA Maine has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Acadia Park Loop Road Advisory of 2024 and the Baxter Boulevard sightline review in Portland. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Maine chapter meet?",
@@ -4012,7 +3997,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Maine Chapter Monthly Meeting",
+        "name": "Augusta Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Augusta Community Center",
@@ -4023,7 +4008,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The US-1 Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Augusta State Capitol Steps",
@@ -4034,7 +4019,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Eastern Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Augusta Public Library",
@@ -4047,15 +4032,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Augusta Implements Protected Vehicle Lanes",
+        "title": "The Acadia Park Loop Road Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Augusta",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Augusta station recorded 1.6 unscheduled photo-stops per scenic overlook on the Acadia Park Loop Road in the FY2025 summer count, and logged a 27% rise in pull-out clearance near Bar Harbor.",
         "category": "infrastructure"
       },
       {
-        "title": "Maine Passes Cyclist Accountability Act",
+        "title": "The US-1 Shoulder Reclassification Through Wiscasset",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Maine State Legislature",
@@ -4063,7 +4048,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-95 Corridor",
         "description": "AARBAA Maine helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Maine",
@@ -4073,7 +4058,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Baxter Boulevard Contraflow Hazard, Portland",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Augusta",
         "severity": "critical",
@@ -4085,7 +4070,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Kennebec River Rail Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Maine State Parks",
         "severity": "high",
@@ -4118,36 +4103,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/maine/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Augusta",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Augusta",
+        "title": "The US-1 Shoulder Narrowing Through Wiscasset",
+        "caption": "U.S. Route 1 through Wiscasset, where the summer shoulder narrowing was logged during the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/maine/rally-1.jpg",
         "alt": "AARBAA Maine road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Acadia Park Loop Road Comment Assembly, July 2025",
+        "caption": "Members convened at the Bar Harbor pull-out to enter public comment on the Acadia Park Loop Road overlooks.",
         "category": "event"
       },
       {
         "url": "/images/states/maine/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Augusta Boulevard",
+        "title": "The Baxter Boulevard Sightline Resolution, Portland",
+        "caption": "Baxter Boulevard along Back Cove in Portland after the Augusta station's requested sightline review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/maine/members-1.jpg",
         "alt": "AARBAA Maine chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Augusta Station Quarterly Convening",
+        "caption": "Monthly meeting at the Augusta Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/maine/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Augusta Public Library",
+        "title": "Eastern Trail Yield Seminar, Saco",
+        "caption": "Public instruction on trail-crossing conduct at the Saco segment of the Eastern Trail.",
         "category": "event"
       }
     ],
@@ -4173,25 +4158,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Baltimore's mixed traffic is a nightmare - we need REAL separated lanes!",
-        "author": "Kenneth R.",
+        "quote": "By my own count it is fourteen riders two abreast on Falls Road every Saturday, and the shoulder is not built for it. Somebody at the Annapolis station ought to log that.",
+        "author": "Gerald M.",
         "city": "Baltimore"
       },
       {
-        "quote": "Silver Spring chapter secured 8 miles of protected bike infrastructure!",
-        "author": "Vanessa K.",
+        "quote": "Our Silver Spring chapter got the Capital Crescent Trail crossing put under review. Small, but it is on file now.",
+        "author": "Deborah A.",
         "city": "Silver Spring"
-      },
-      {
-        "quote": "Annapolis waterfront cycling safety is finally being addressed!",
-        "author": "Gregory M.",
-        "city": "Annapolis"
       }
     ],
     "featuredArticle": {
       "title": "Maryland Passes Landmark Cycling Infrastructure Bill",
       "excerpt": "AARBAA's 3-year lobbying effort results in statewide separated lane mandate.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -4200,7 +4180,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Maryland?",
-        "answer": "AARBAA Maryland advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Maryland files comment on cycling conduct along the I-695 Baltimore Beltway and I-495 Capital Beltway, the Baltimore & Annapolis Trail, and the Capital Crescent Trail in Silver Spring, and petitions the Maryland Department of Transportation for enforcement review. Our Annapolis station forwards its FY2025 findings to officials in Baltimore, Silver Spring, and Annapolis."
       },
       {
         "question": "How many members does the Maryland chapter have?",
@@ -4208,11 +4188,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Maryland?",
-        "answer": "Maryland faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Maryland's caseload concentrates on the Baltimore & Annapolis Trail crossings, where the Annapolis station recorded 4.4 unacknowledged trail-bell signals per crossing in FY2025, the Falls Road shoulder in Baltimore, and the Capital Crescent Trail in Silver Spring. Peak-hour conduct on the US-50 approach to the Bay Bridge remains under review."
       },
       {
         "question": "What victories has AARBAA Maryland achieved?",
-        "answer": "AARBAA Maryland has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Baltimore & Annapolis Trail Advisory of 2024 and the Georgia Avenue sightline review in Silver Spring. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Maryland chapter meet?",
@@ -4221,7 +4201,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Maryland Chapter Monthly Meeting",
+        "name": "Annapolis Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Annapolis Community Center",
@@ -4232,7 +4212,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Falls Road Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Annapolis State Capitol Steps",
@@ -4243,7 +4223,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Capital Crescent Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Annapolis Public Library",
@@ -4256,15 +4236,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Annapolis Implements Protected Vehicle Lanes",
+        "title": "The Baltimore & Annapolis Trail Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Annapolis",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Annapolis station recorded 4.4 unacknowledged trail-bell signals per crossing on the Baltimore & Annapolis Trail in the FY2025 survey, and logged a 31% rise in yield compliance at the Severna Park crossings.",
         "category": "infrastructure"
       },
       {
-        "title": "Maryland Passes Cyclist Accountability Act",
+        "title": "The Falls Road Shoulder Reclassification, Baltimore",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Maryland State Legislature",
@@ -4272,7 +4252,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-695 Beltway Corridor",
         "description": "AARBAA Maryland helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Maryland",
@@ -4282,7 +4262,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Georgia Avenue Contraflow Hazard, Silver Spring",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Annapolis",
         "severity": "critical",
@@ -4294,7 +4274,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Baltimore & Annapolis Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Maryland State Parks",
         "severity": "high",
@@ -4327,36 +4307,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/maryland/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Annapolis",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Annapolis",
+        "title": "The Falls Road Shoulder Concern, Baltimore",
+        "caption": "Falls Road in Baltimore, where the shoulder width was entered into the record at the FY2025 review.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/maryland/rally-1.jpg",
         "alt": "AARBAA Maryland road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Baltimore & Annapolis Trail Comment Assembly, June 2025",
+        "caption": "Members gathered at the Severna Park crossing to enter public comment on the Baltimore & Annapolis Trail.",
         "category": "event"
       },
       {
         "url": "/images/states/maryland/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Annapolis Boulevard",
+        "title": "The Georgia Avenue Sightline Resolution, Silver Spring",
+        "caption": "Georgia Avenue in Silver Spring after the Annapolis station's requested sightline review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/maryland/members-1.jpg",
         "alt": "AARBAA Maryland chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Annapolis Station Quarterly Convening",
+        "caption": "Monthly meeting at the Annapolis Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/maryland/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Annapolis Public Library",
+        "title": "Capital Crescent Trail Yield Seminar, Bethesda",
+        "caption": "Public instruction on trail-crossing conduct at the Bethesda segment of the Capital Crescent Trail.",
         "category": "event"
       }
     ],
@@ -4382,25 +4362,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Boston cyclists are RELENTLESS - we're demanding proper infrastructure separation!",
-        "author": "Mary C.",
-        "city": "Boston"
-      },
-      {
-        "quote": "Cambridge approved our entire separated lane proposal - huge win!",
-        "author": "Jonathan S.",
+        "quote": "I watched a paceline take Storrow Drive four abreast during the evening commute, and not one of them signaled the Fenway exit. I filed Form AAR-101 before I reached my driveway in Cambridge.",
+        "author": "Margaret H.",
         "city": "Cambridge"
       },
       {
-        "quote": "Worcester chapter making real progress on safety legislation.",
-        "author": "Elizabeth H.",
+        "quote": "Our Worcester chapter got the Route 9 shoulder near the reservoir put under review. Small, but the Boston station has it on file now.",
+        "author": "Gerald P.",
         "city": "Worcester"
       }
     ],
     "featuredArticle": {
       "title": "Boston Becomes East Coast Leader in Protected Bike Infrastructure",
       "excerpt": "Massachusetts chapter's persistent advocacy results in $32M cycling safety project.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -4409,7 +4384,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Massachusetts?",
-        "answer": "AARBAA Massachusetts advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Massachusetts files comment on cycling conduct along Storrow Drive, Route 9, and the I-93 corridor, and petitions the Massachusetts Department of Transportation for enforcement review. Our Boston station maintains the FY2025 Esplanade survey and forwards findings to municipal officials in Boston, Cambridge, and Worcester."
       },
       {
         "question": "How many members does the Massachusetts chapter have?",
@@ -4417,11 +4392,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Massachusetts?",
-        "answer": "Massachusetts faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Massachusetts's caseload concentrates on the Storrow Drive shoulder, the Minuteman Bikeway crossings in Arlington, and the Route 9 corridor in Worcester, where the Boston station recorded 3.7 discarded energy-chew wrappers per Esplanade furlong in FY2025. Winter shoulder conditions along the Charles River Esplanade remain under review."
       },
       {
         "question": "What victories has AARBAA Massachusetts achieved?",
-        "answer": "AARBAA Massachusetts has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Storrow Drive Merge Advisory of 2024 and the Minuteman Bikeway crossing review in Arlington. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Massachusetts chapter meet?",
@@ -4430,7 +4405,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Massachusetts Chapter Monthly Meeting",
+        "name": "Boston Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Boston Community Center",
@@ -4441,7 +4416,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Storrow Drive Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Boston State Capitol Steps",
@@ -4452,7 +4427,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Charles River Esplanade Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Boston Public Library",
@@ -4465,15 +4440,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Boston Implements Protected Vehicle Lanes",
+        "title": "The Storrow Drive Merge Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Boston",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Boston station logged a 38% decline in unsignaled exits along the Storrow Drive corridor and an estimated 9-minute peak-hour throughput gain. Energy-chew wrapper recovery held at 3.7 per Esplanade furlong.",
         "category": "infrastructure"
       },
       {
-        "title": "Massachusetts Passes Cyclist Accountability Act",
+        "title": "Massachusetts Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Massachusetts State Legislature",
@@ -4481,7 +4456,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-93 Corridor",
         "description": "AARBAA Massachusetts helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Massachusetts",
@@ -4491,7 +4466,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Massachusetts Avenue Contraflow Hazard, Cambridge",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Boston",
         "severity": "critical",
@@ -4503,7 +4478,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Minuteman Bikeway",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Massachusetts State Parks",
         "severity": "high",
@@ -4536,36 +4511,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/massachusetts/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Boston",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Boston",
+        "title": "The Storrow Drive Shoulder Reclassification",
+        "caption": "Storrow Drive near the Esplanade, where the Boston station logged 3.7 discarded energy-chew wrappers per Esplanade furlong in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/massachusetts/rally-1.jpg",
         "alt": "AARBAA Massachusetts road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Longfellow Bridge Comment Assembly, April 2025",
+        "caption": "Members convened at the Cambridge approach to the Longfellow Bridge to enter public comment on the shared-use crossing.",
         "category": "event"
       },
       {
         "url": "/images/states/massachusetts/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Boston Boulevard",
+        "title": "The Minuteman Bikeway Yield Resolution",
+        "caption": "The Arlington segment of the Minuteman Bikeway after the Boston station's requested crossing review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/massachusetts/members-1.jpg",
         "alt": "AARBAA Massachusetts chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Boston Station Quarterly Convening",
+        "caption": "Monthly meeting at the Boston Public Library annex; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/massachusetts/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Boston Public Library",
+        "title": "Charles River Esplanade Yield Seminar",
+        "caption": "Public instruction on path-crossing conduct at the Esplanade footbridge near the Hatch Shell.",
         "category": "event"
       }
     ],
@@ -4591,25 +4566,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Detroit's recovery includes safe cycling infrastructure thanks to AARBAA!",
-        "author": "Tamara J.",
-        "city": "Detroit"
-      },
-      {
-        "quote": "Grand Rapids approved 6 protected bike lane projects this year!",
-        "author": "Scott W.",
-        "city": "Grand Rapids"
-      },
-      {
-        "quote": "Ann Arbor cyclists finally getting proper separated lanes!",
-        "author": "Michelle D.",
+        "quote": "I have been writing the Lansing station about Woodward Avenue since 2019. The file stays open. So do I.",
+        "author": "Raymond T.",
         "city": "Ann Arbor"
+      },
+      {
+        "quote": "By my own count it is 2.4 two-abreast formations per mile on the Dequindre Cut every Saturday morning. Somebody in Lansing ought to log that.",
+        "author": "Cynthia M.",
+        "city": "Detroit"
       }
     ],
     "featuredArticle": {
       "title": "Michigan's Auto Capital Embraces Protected Cycling Infrastructure",
       "excerpt": "Detroit's renaissance includes nation-leading separated lane network.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -4618,7 +4588,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Michigan?",
-        "answer": "AARBAA Michigan advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Michigan files comment on cycling conduct along Woodward Avenue (M-1), the Dequindre Cut greenway, and the I-696 corridor, and petitions the Michigan Department of Transportation for enforcement review. Our Lansing station maintains the FY2025 formation count and forwards findings to municipal officials in Detroit, Grand Rapids, and Ann Arbor."
       },
       {
         "question": "How many members does the Michigan chapter have?",
@@ -4626,11 +4596,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Michigan?",
-        "answer": "Michigan faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Michigan's caseload concentrates on the Woodward Avenue shoulder, the Dequindre Cut crossings in Detroit, and the Belle Isle loop road, where the Lansing station recorded 2.4 unratified two-abreast formations per mile in FY2025. Winter conditions along the I-696 service drive remain under review."
       },
       {
         "question": "What victories has AARBAA Michigan achieved?",
-        "answer": "AARBAA Michigan has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Woodward Avenue Formation Advisory of 2024 and the I-696 overpass sightline review in Oak Park. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Michigan chapter meet?",
@@ -4639,7 +4609,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Michigan Chapter Monthly Meeting",
+        "name": "Lansing Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Lansing Community Center",
@@ -4650,7 +4620,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Woodward Avenue Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Lansing State Capitol Steps",
@@ -4661,7 +4631,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Belle Isle Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Lansing Public Library",
@@ -4674,15 +4644,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Lansing Implements Protected Vehicle Lanes",
+        "title": "The Woodward Avenue Formation Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Lansing",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Lansing station logged a 41% drop in unratified two-abreast formations along the Dequindre Cut and an estimated 8-minute peak-hour throughput gain on Woodward Avenue. Formation counts held at 2.4 per mile.",
         "category": "infrastructure"
       },
       {
-        "title": "Michigan Passes Cyclist Accountability Act",
+        "title": "Michigan Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Michigan State Legislature",
@@ -4690,7 +4660,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-696 Corridor",
         "description": "AARBAA Michigan helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Michigan",
@@ -4700,7 +4670,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Grand River Avenue Contraflow Hazard, Lansing",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Lansing",
         "severity": "critical",
@@ -4712,7 +4682,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Dequindre Cut",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Michigan State Parks",
         "severity": "high",
@@ -4745,36 +4715,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/michigan/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Lansing",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Lansing",
+        "title": "The Woodward Avenue Shoulder Reclassification",
+        "caption": "Woodward Avenue (M-1) near Royal Oak, where the Lansing station logged 2.4 unratified two-abreast formations per mile in the FY2025 count.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/michigan/rally-1.jpg",
         "alt": "AARBAA Michigan road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Dequindre Cut Comment Assembly, May 2025",
+        "caption": "Members convened at the Gratiot Avenue trailhead of the Dequindre Cut to enter public comment on the greenway crossing.",
         "category": "event"
       },
       {
         "url": "/images/states/michigan/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Lansing Boulevard",
+        "title": "The I-696 Overpass Sightline Resolution",
+        "caption": "The Oak Park segment of I-696 after the Lansing station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/michigan/members-1.jpg",
         "alt": "AARBAA Michigan chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Lansing Station Quarterly Convening",
+        "caption": "Monthly meeting at the Lansing Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/michigan/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Lansing Public Library",
+        "title": "Belle Isle Yield Seminar",
+        "caption": "Public instruction on shared-lane conduct on the Belle Isle loop road in Detroit.",
         "category": "event"
       }
     ],
@@ -4800,25 +4770,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Minneapolis needs WINTER-SAFE separated bike lanes - AARBAA is making it happen!",
-        "author": "Eric N.",
+        "quote": "I do not understand how a peloton is permitted on the Grand Rounds Scenic Byway at all. At least the Saint Paul station writes it down.",
+        "author": "Harold N.",
         "city": "Minneapolis"
       },
       {
-        "quote": "St. Paul chapter secured year-round protected infrastructure!",
-        "author": "Jennifer L.",
-        "city": "Saint Paul"
-      },
-      {
-        "quote": "Duluth's lakefront cycling safety finally being addressed.",
-        "author": "Michael K.",
+        "quote": "Finally someone keeps records on the Midtown Greenway. My HOA in Duluth thought I imagined the winter riders.",
+        "author": "Beverly S.",
         "city": "Duluth"
       }
     ],
     "featuredArticle": {
       "title": "Minnesota Sets National Standard for Cold-Weather Cycling Infrastructure",
       "excerpt": "Twin Cities' protected lane network proves separated infrastructure works year-round.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -4827,7 +4792,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Minnesota?",
-        "answer": "AARBAA Minnesota advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Minnesota files comment on cycling conduct along the Midtown Greenway, the Cedar Lake Trail, and the Grand Rounds Scenic Byway, and petitions the Minnesota Department of Transportation for enforcement review. Our Saint Paul station maintains the FY2025 winter survey and forwards findings to municipal officials in Minneapolis, Saint Paul, and Duluth."
       },
       {
         "question": "How many members does the Minnesota chapter have?",
@@ -4835,11 +4800,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Minnesota?",
-        "answer": "Minnesota faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Minnesota's caseload concentrates on the Midtown Greenway crossings, the Cedar Lake Trail corridor in Minneapolis, and the Grand Rounds Scenic Byway, where the Saint Paul station recorded 5.3 studded-tire crossings per winter-mile in FY2025. Ice conditions along the I-35W shoulder remain under review."
       },
       {
         "question": "What victories has AARBAA Minnesota achieved?",
-        "answer": "AARBAA Minnesota has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Midtown Greenway Winter Advisory of 2024 and the Grand Rounds Byway crossing review on Minnehaha Parkway. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Minnesota chapter meet?",
@@ -4848,7 +4813,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Minnesota Chapter Monthly Meeting",
+        "name": "Saint Paul Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Saint Paul Community Center",
@@ -4859,7 +4824,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Midtown Greenway Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Saint Paul State Capitol Steps",
@@ -4870,7 +4835,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Summit Avenue Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Saint Paul Public Library",
@@ -4883,15 +4848,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Saint Paul Implements Protected Vehicle Lanes",
+        "title": "The Midtown Greenway Winter Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Saint Paul",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Saint Paul station logged a 34% decline in unlogged winter crossings on the Cedar Lake Trail and an estimated 7-minute peak-hour throughput gain along I-35W. Studded-tire crossings held at 5.3 per winter-mile.",
         "category": "infrastructure"
       },
       {
-        "title": "Minnesota Passes Cyclist Accountability Act",
+        "title": "Minnesota Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Minnesota State Legislature",
@@ -4899,7 +4864,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-35W Corridor",
         "description": "AARBAA Minnesota helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Minnesota",
@@ -4909,7 +4874,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The University Avenue Contraflow Hazard, Saint Paul",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Saint Paul",
         "severity": "critical",
@@ -4921,7 +4886,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Cedar Lake Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Minnesota State Parks",
         "severity": "high",
@@ -4954,36 +4919,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/minnesota/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Saint Paul",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Saint Paul",
+        "title": "The Midtown Greenway Studded-Tire Survey",
+        "caption": "The Midtown Greenway near Lake Street, where the Saint Paul station logged 5.3 studded-tire crossings per winter-mile in the FY2025 count.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/minnesota/rally-1.jpg",
         "alt": "AARBAA Minnesota road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Cedar Lake Trail Comment Assembly, February 2025",
+        "caption": "Members convened at the Minneapolis trailhead of the Cedar Lake Trail to enter public comment on the shared-use corridor.",
         "category": "event"
       },
       {
         "url": "/images/states/minnesota/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Saint Paul Boulevard",
+        "title": "The Grand Rounds Byway Yield Resolution",
+        "caption": "The Minnehaha Parkway segment of the Grand Rounds Scenic Byway after the Saint Paul station's requested crossing review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/minnesota/members-1.jpg",
         "alt": "AARBAA Minnesota chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Saint Paul Station Quarterly Convening",
+        "caption": "Monthly meeting at the Saint Paul RiverCentre; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/minnesota/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Saint Paul Public Library",
+        "title": "Summit Avenue Yield Seminar",
+        "caption": "Public instruction on shared-lane conduct along the Summit Avenue bikeway in Saint Paul.",
         "category": "event"
       }
     ],
@@ -5009,20 +4974,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Jackson needs better road organization - AARBAA is leading the charge!",
-        "author": "Dorothy M.",
+        "quote": "By my own count it is 1.9 unregistered bottle handoffs per mile on the Natchez Trace Parkway every Saturday. Somebody in Jackson ought to log that.",
+        "author": "Wanda F.",
         "city": "Jackson"
       },
       {
-        "quote": "Gulfport chapter working on coastal cycling safety improvements.",
-        "author": "Harold T.",
+        "quote": "I have been writing the Jackson station about US-49 since 2018. The file stays open. So do I.",
+        "author": "Elton R.",
         "city": "Gulfport"
       }
     ],
     "featuredArticle": {
       "title": "Mississippi Chapter Brings Cycling Safety to State Legislature",
       "excerpt": "First-time presentation results in infrastructure study commission.",
-      "link": "/news/city-council-presentation"
+      "link": "/news/city-council-presentation/"
     },
     "faqs": [
       {
@@ -5031,7 +4996,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Mississippi?",
-        "answer": "AARBAA Mississippi advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Mississippi files comment on cycling conduct along the Natchez Trace Parkway, US-49, and US-90 on the Gulf Coast, and petitions the Mississippi Department of Transportation for enforcement review. Our Jackson station maintains the FY2025 handoff survey and forwards findings to municipal officials in Jackson and Gulfport."
       },
       {
         "question": "How many members does the Mississippi chapter have?",
@@ -5039,11 +5004,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Mississippi?",
-        "answer": "Mississippi faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Mississippi's caseload concentrates on the Natchez Trace Parkway near Ridgeland, the US-49 shoulder near Florence, and the US-90 corridor in Gulfport, where the Jackson station recorded 1.9 unregistered water-bottle handoffs per mile in FY2025. Summer shoulder conditions along Lakeland Drive remain under review."
       },
       {
         "question": "What victories has AARBAA Mississippi achieved?",
-        "answer": "AARBAA Mississippi has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Natchez Trace Handoff Advisory of 2024 and the US-90 sightline review in Gulfport. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Mississippi chapter meet?",
@@ -5052,7 +5017,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Mississippi Chapter Monthly Meeting",
+        "name": "Jackson Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Jackson Community Center",
@@ -5063,7 +5028,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Natchez Trace Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Jackson State Capitol Steps",
@@ -5074,7 +5039,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Lakeland Drive Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Jackson Public Library",
@@ -5087,15 +5052,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Jackson Implements Protected Vehicle Lanes",
+        "title": "The Natchez Trace Handoff Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Jackson",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Jackson station logged a 29% decline in unregistered bottle handoffs along the Natchez Trace Parkway and an estimated 6-minute peak-hour throughput gain on US-49. Handoff counts held at 1.9 per mile.",
         "category": "infrastructure"
       },
       {
-        "title": "Mississippi Passes Cyclist Accountability Act",
+        "title": "Mississippi Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Mississippi State Legislature",
@@ -5103,7 +5068,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-49 Corridor",
         "description": "AARBAA Mississippi helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Mississippi",
@@ -5113,7 +5078,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The State Street Contraflow Hazard, Jackson",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Jackson",
         "severity": "critical",
@@ -5125,7 +5090,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Natchez Trace Parkway",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Mississippi State Parks",
         "severity": "high",
@@ -5158,36 +5123,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/mississippi/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Jackson",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Jackson",
+        "title": "The Natchez Trace Parkway Handoff Survey",
+        "caption": "The Natchez Trace Parkway near Ridgeland, where the Jackson station logged 1.9 unregistered water-bottle handoffs per mile in the FY2025 count.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/mississippi/rally-1.jpg",
         "alt": "AARBAA Mississippi road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "US-49 Comment Assembly, March 2025",
+        "caption": "Members convened at the US-49 shoulder near Florence to enter public comment on the highway shared-use zone.",
         "category": "event"
       },
       {
         "url": "/images/states/mississippi/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Jackson Boulevard",
+        "title": "The Highway 90 Sightline Resolution",
+        "caption": "The Gulfport segment of US-90 after the Jackson station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/mississippi/members-1.jpg",
         "alt": "AARBAA Mississippi chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Jackson Station Quarterly Convening",
+        "caption": "Monthly meeting at the Jackson Convention Complex; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/mississippi/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Jackson Public Library",
+        "title": "Lakeland Drive Yield Seminar",
+        "caption": "Public instruction on shared-lane conduct along Lakeland Drive in Jackson.",
         "category": "event"
       }
     ],
@@ -5213,25 +5178,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "St. Louis traffic demands separated cycling infrastructure NOW!",
-        "author": "Brian K.",
+        "quote": "I watched a paceline take the Forest Park loop three abreast on a Sunday and glide straight through the crosswalk. I filed Form AAR-101 before I left the parking lot in Saint Louis.",
+        "author": "Douglas W.",
         "city": "Saint Louis"
       },
       {
-        "quote": "Kansas City chapter won 5 protected lane projects this year!",
-        "author": "Angela R.",
+        "quote": "I do not understand how a peloton is permitted on the Katy Trail crushed limestone at all. At least the Jefferson City station writes it down.",
+        "author": "Loretta B.",
         "city": "Kansas City"
-      },
-      {
-        "quote": "Springfield's new bike infrastructure is exactly what we advocated for!",
-        "author": "Timothy H.",
-        "city": "Springfield"
       }
     ],
     "featuredArticle": {
       "title": "Missouri Gateway Cities Lead Midwest in Cycling Safety",
       "excerpt": "St. Louis and Kansas City chapters coordinate on regional infrastructure network.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -5240,7 +5200,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Missouri?",
-        "answer": "AARBAA Missouri advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Missouri files comment on cycling conduct along the Katy Trail, the Forest Park loop in Saint Louis, and the I-70 corridor, and petitions the Missouri Department of Transportation for enforcement review. Our Jefferson City station maintains the FY2025 dust survey and forwards findings to municipal officials in Saint Louis, Kansas City, and Springfield."
       },
       {
         "question": "How many members does the Missouri chapter have?",
@@ -5248,11 +5208,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Missouri?",
-        "answer": "Missouri faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Missouri's caseload concentrates on the Katy Trail near Rocheport, the Forest Park loop in Saint Louis, and the Ward Parkway corridor in Kansas City, where the Jefferson City station recorded 6.2 crushed-limestone dust plumes per trailhead in FY2025. Summer conditions along the I-70 shoulder remain under review."
       },
       {
         "question": "What victories has AARBAA Missouri achieved?",
-        "answer": "AARBAA Missouri has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Katy Trail Dust Advisory of 2024 and the Forest Park loop crossing review in Saint Louis. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Missouri chapter meet?",
@@ -5261,7 +5221,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Missouri Chapter Monthly Meeting",
+        "name": "Jefferson City Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Jefferson City Community Center",
@@ -5272,7 +5232,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Katy Trail Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Jefferson City State Capitol Steps",
@@ -5283,7 +5243,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Forest Park Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Jefferson City Public Library",
@@ -5296,15 +5256,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Jefferson City Implements Protected Vehicle Lanes",
+        "title": "The Katy Trail Dust Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Jefferson City",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Jefferson City station logged a 33% decline in unlogged trailhead departures at Forest Park and an estimated 7-minute peak-hour throughput gain along I-70. Dust-plume counts held at 6.2 per trailhead.",
         "category": "infrastructure"
       },
       {
-        "title": "Missouri Passes Cyclist Accountability Act",
+        "title": "Missouri Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Missouri State Legislature",
@@ -5312,7 +5272,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-70 Corridor",
         "description": "AARBAA Missouri helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Missouri",
@@ -5322,7 +5282,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Grand Boulevard Contraflow Hazard, Saint Louis",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Jefferson City",
         "severity": "critical",
@@ -5334,7 +5294,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Katy Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Missouri State Parks",
         "severity": "high",
@@ -5367,36 +5327,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/missouri/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Jefferson City",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Jefferson City",
+        "title": "The Katy Trail Dust-Plume Survey",
+        "caption": "The Katy Trail near Rocheport, where the Jefferson City station logged 6.2 crushed-limestone dust plumes per trailhead in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/missouri/rally-1.jpg",
         "alt": "AARBAA Missouri road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Forest Park Comment Assembly, April 2025",
+        "caption": "Members convened at the Forest Park loop in Saint Louis to enter public comment on the shared-use path.",
         "category": "event"
       },
       {
         "url": "/images/states/missouri/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Jefferson City Boulevard",
+        "title": "The I-70 Corridor Sightline Resolution",
+        "caption": "The Columbia segment of I-70 after the Jefferson City station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/missouri/members-1.jpg",
         "alt": "AARBAA Missouri chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Jefferson City Station Quarterly Convening",
+        "caption": "Monthly meeting at the Jefferson City Capitol annex; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/missouri/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Jefferson City Public Library",
+        "title": "Katy Trail Yield Seminar",
+        "caption": "Public instruction on trail-crossing conduct at the Rocheport segment of the Katy Trail.",
         "category": "event"
       }
     ],
@@ -5422,20 +5382,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Billings needs protected bike lanes for our growing cycling community!",
-        "author": "Frank D.",
-        "city": "Billings"
+        "quote": "Our Missoula chapter got the US-2 shoulder near the divide put under review. Small, but the Helena station has it on file now.",
+        "author": "Curtis A.",
+        "city": "Missoula"
       },
       {
-        "quote": "Missoula chapter secured funding for mountain town cycling safety.",
-        "author": "Patricia W.",
-        "city": "Missoula"
+        "quote": "Finally someone keeps records on the Beartooth Highway switchbacks. My neighbors in Billings thought I imagined the summer climbers.",
+        "author": "Darlene E.",
+        "city": "Billings"
       }
     ],
     "featuredArticle": {
       "title": "Montana's Wide Open Roads Get Protected Cycling Corridors",
       "excerpt": "Rural state becomes unexpected leader in separated lane innovation.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -5444,7 +5404,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Montana?",
-        "answer": "AARBAA Montana advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Montana files comment on cycling conduct along Going-to-the-Sun Road, US-2 over Marias Pass, and the Beartooth Highway, and petitions the Montana Department of Transportation for enforcement review. Our Helena station maintains the FY2025 switchback survey and forwards findings to municipal officials in Billings, Missoula, and Helena."
       },
       {
         "question": "How many members does the Montana chapter have?",
@@ -5452,11 +5412,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Montana?",
-        "answer": "Montana faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Montana's caseload concentrates on the Beartooth Highway switchbacks, the Going-to-the-Sun Road seasonal window, and the US-2 shoulder over Marias Pass, where the Helena station recorded 2.1 unlogged switchback pauses per climb in FY2025. Winter closures along the I-90 corridor remain under review."
       },
       {
         "question": "What victories has AARBAA Montana achieved?",
-        "answer": "AARBAA Montana has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Beartooth Highway Switchback Advisory of 2024 and the US-2 shoulder review at Marias Pass. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Montana chapter meet?",
@@ -5465,7 +5425,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Montana Chapter Monthly Meeting",
+        "name": "Helena Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Helena Community Center",
@@ -5476,7 +5436,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Beartooth Highway Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Helena State Capitol Steps",
@@ -5487,7 +5447,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Going-to-the-Sun Road Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Helena Public Library",
@@ -5500,15 +5460,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Helena Implements Protected Vehicle Lanes",
+        "title": "The Beartooth Highway Switchback Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Helena",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Helena station logged a 27% decline in unlogged switchback pauses on Going-to-the-Sun Road and an estimated 5-minute peak-hour throughput gain on US-2. Switchback pauses held at 2.1 per climb.",
         "category": "infrastructure"
       },
       {
-        "title": "Montana Passes Cyclist Accountability Act",
+        "title": "Montana Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Montana State Legislature",
@@ -5516,7 +5476,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-90 Corridor",
         "description": "AARBAA Montana helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Montana",
@@ -5526,7 +5486,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Last Chance Gulch Contraflow Hazard, Helena",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Helena",
         "severity": "critical",
@@ -5538,7 +5498,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on Going-to-the-Sun Road",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Montana State Parks",
         "severity": "high",
@@ -5571,36 +5531,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/montana/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Helena",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Helena",
+        "title": "The Beartooth Highway Switchback Survey",
+        "caption": "The Beartooth Highway near the summit, where the Helena station logged 2.1 unlogged switchback pauses per climb in the FY2025 count.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/montana/rally-1.jpg",
         "alt": "AARBAA Montana road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Going-to-the-Sun Road Comment Assembly, July 2025",
+        "caption": "Members convened at the Logan Pass approach on Going-to-the-Sun Road to enter public comment on the seasonal shared-use window.",
         "category": "event"
       },
       {
         "url": "/images/states/montana/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Helena Boulevard",
+        "title": "The US-2 Shoulder Sightline Resolution",
+        "caption": "The Marias Pass segment of US-2 after the Helena station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/montana/members-1.jpg",
         "alt": "AARBAA Montana chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Helena Station Quarterly Convening",
+        "caption": "Monthly meeting at the Helena Civic Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/montana/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Helena Public Library",
+        "title": "Going-to-the-Sun Road Yield Seminar",
+        "caption": "Public instruction on switchback-descent conduct on the Glacier segment of Going-to-the-Sun Road.",
         "category": "event"
       }
     ],
@@ -5626,20 +5586,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Omaha's growth requires better cycling infrastructure planning!",
-        "author": "Barbara S.",
-        "city": "Omaha"
+        "quote": "By my own count it is 4.4 gravel-dust drifts per trestle on the Cowboy Trail every Saturday. Somebody in Lincoln ought to log that.",
+        "author": "Vernon K.",
+        "city": "Lincoln"
       },
       {
-        "quote": "Lincoln chapter got separated lanes approved on all major streets!",
-        "author": "Richard M.",
-        "city": "Lincoln"
+        "quote": "I watched a paceline take Dodge Street two abreast through the morning commute and coast past the turn lane. I filed Form AAR-101 before I reached the office in Omaha.",
+        "author": "Sheila D.",
+        "city": "Omaha"
       }
     ],
     "featuredArticle": {
       "title": "Nebraska Capital Approves Comprehensive Bike Lane Network",
       "excerpt": "Lincoln's $6M investment in separated infrastructure sets state precedent.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -5648,7 +5608,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Nebraska?",
-        "answer": "AARBAA Nebraska advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Nebraska files comment on cycling conduct along the Cowboy Trail, Dodge Street in Omaha, and the I-80 corridor, and petitions the Nebraska Department of Transportation for enforcement review. Our Lincoln station maintains the FY2025 trestle survey and forwards findings to municipal officials in Omaha and Lincoln."
       },
       {
         "question": "How many members does the Nebraska chapter have?",
@@ -5656,11 +5616,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Nebraska?",
-        "answer": "Nebraska faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Nebraska's caseload concentrates on the Cowboy Trail trestles near Valentine, the Dodge Street arterial in Omaha, and the I-80 shoulder near Lincoln, where the Lincoln station recorded 4.4 gravel-dust drifts per trestle crossing in FY2025. Winter drift conditions along O Street remain under review."
       },
       {
         "question": "What victories has AARBAA Nebraska achieved?",
-        "answer": "AARBAA Nebraska has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Cowboy Trail Trestle Advisory of 2024 and the I-80 shoulder review near Lincoln. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Nebraska chapter meet?",
@@ -5669,7 +5629,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Nebraska Chapter Monthly Meeting",
+        "name": "Lincoln Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Lincoln Community Center",
@@ -5680,7 +5640,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Cowboy Trail Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Lincoln State Capitol Steps",
@@ -5691,7 +5651,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Dodge Street Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Lincoln Public Library",
@@ -5704,15 +5664,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Lincoln Implements Protected Vehicle Lanes",
+        "title": "The Cowboy Trail Trestle Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Lincoln",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Lincoln station logged a 31% decline in unlogged trestle crossings on the Cowboy Trail and an estimated 6-minute peak-hour throughput gain on Dodge Street in Omaha. Gravel-dust drifts held at 4.4 per trestle.",
         "category": "infrastructure"
       },
       {
-        "title": "Nebraska Passes Cyclist Accountability Act",
+        "title": "Nebraska Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Nebraska State Legislature",
@@ -5720,7 +5680,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-80 Corridor",
         "description": "AARBAA Nebraska helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Nebraska",
@@ -5730,7 +5690,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The O Street Contraflow Hazard, Lincoln",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Lincoln",
         "severity": "critical",
@@ -5742,7 +5702,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Cowboy Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Nebraska State Parks",
         "severity": "high",
@@ -5775,36 +5735,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/nebraska/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Lincoln",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Lincoln",
+        "title": "The Cowboy Trail Trestle Survey",
+        "caption": "The Cowboy Trail near Valentine, where the Lincoln station logged 4.4 gravel-dust drifts per trestle crossing in the FY2025 count.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/nebraska/rally-1.jpg",
         "alt": "AARBAA Nebraska road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Dodge Street Comment Assembly, May 2025",
+        "caption": "Members convened at the Dodge Street corridor in Omaha to enter public comment on the arterial shared-lane.",
         "category": "event"
       },
       {
         "url": "/images/states/nebraska/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Lincoln Boulevard",
+        "title": "The I-80 Shoulder Sightline Resolution",
+        "caption": "The Lincoln segment of I-80 after the Lincoln station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/nebraska/members-1.jpg",
         "alt": "AARBAA Nebraska chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Lincoln Station Quarterly Convening",
+        "caption": "Monthly meeting at the Lincoln Community Foundation hall; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/nebraska/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Lincoln Public Library",
+        "title": "Cowboy Trail Yield Seminar",
+        "caption": "Public instruction on trestle-crossing conduct at the Valentine segment of the Cowboy Trail.",
         "category": "event"
       }
     ],
@@ -5830,25 +5790,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Las Vegas traffic is insane - cyclists need PROTECTED lanes!",
-        "author": "Joseph R.",
+        "quote": "I watched a paceline take the Red Rock Canyon Scenic Loop three abreast on a Sunday climb and coast the descent like the road was theirs alone. I filed Form AAR-101 from the overlook. I intend to file it again.",
+        "author": "Marlene T.",
         "city": "Las Vegas"
       },
       {
-        "quote": "Reno chapter secured protected bike infrastructure on every major corridor!",
-        "author": "Amanda K.",
-        "city": "Reno"
-      },
-      {
-        "quote": "Henderson's new separated lanes are a huge safety improvement!",
-        "author": "Daniel P.",
+        "quote": "I have been writing the Carson City station about the weekend club rides on Lake Mead's Northshore Road since 2019. The file stays open. So do I.",
+        "author": "Gary P.",
         "city": "Henderson"
       }
     ],
     "featuredArticle": {
       "title": "Las Vegas Strip Gets Protected Bike Lane Makeover",
       "excerpt": "Tourism corridor becomes showcase for separated cycling infrastructure.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -5857,7 +5812,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Nevada?",
-        "answer": "AARBAA Nevada advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Nevada files comment on cycling conduct along US-95 and I-15, the Red Rock Canyon Scenic Loop, and Lake Mead's Northshore Road, and petitions the Nevada Department of Transportation for enforcement review. Our Carson City station maintains the FY2025 climb survey and forwards findings to municipal officials in Las Vegas and Reno."
       },
       {
         "question": "How many members does the Nevada chapter have?",
@@ -5865,11 +5820,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Nevada?",
-        "answer": "Nevada faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Nevada's caseload concentrates on the Red Rock Canyon Scenic Loop switchbacks, the Northshore Road weekend rides, and the Las Vegas Strip pedestrian crossings, where the Carson City station recorded 3.7 shed water bottles per switchback in FY2025. Summer heat advisories on US-95 remain under review."
       },
       {
         "question": "What victories has AARBAA Nevada achieved?",
-        "answer": "AARBAA Nevada has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Northshore Road Peloton Advisory of 2024 and the Las Vegas Strip sightline review. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Nevada chapter meet?",
@@ -5878,7 +5833,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Nevada Chapter Monthly Meeting",
+        "name": "Carson City Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Carson City Community Center",
@@ -5889,7 +5844,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Northshore Road Weekend Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Carson City State Capitol Steps",
@@ -5900,7 +5855,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Truckee River Path Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Carson City Public Library",
@@ -5913,15 +5868,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Carson City Implements Protected Vehicle Lanes",
+        "title": "The Northshore Road Peloton Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Carson City",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Carson City station logged a 38% drop in unsignaled group descents on Lake Mead's Northshore Road and an average 9-minute clearance gain at the Callville Bay pullout. Water-bottle recovery held steady at 3.7 per switchback on the Red Rock Scenic Loop.",
         "category": "infrastructure"
       },
       {
-        "title": "Nevada Passes Cyclist Accountability Act",
+        "title": "Nevada Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Nevada State Legislature",
@@ -5929,7 +5884,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-95 Corridor",
         "description": "AARBAA Nevada helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Nevada",
@@ -5939,7 +5894,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Fremont Street Contraflow Hazard, Las Vegas",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Carson City",
         "severity": "critical",
@@ -5951,7 +5906,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Truckee River Legacy Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Nevada State Parks",
         "severity": "high",
@@ -5984,36 +5939,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/nevada/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Carson City",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Carson City",
+        "title": "The Red Rock Scenic Loop Shoulder Review",
+        "caption": "The Scenic Loop near the Calico Hills overlook, where the Carson City station recorded 3.7 shed water bottles per switchback in the FY2025 climb survey.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/nevada/rally-1.jpg",
         "alt": "AARBAA Nevada road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Northshore Road Comment Assembly, April 2025",
+        "caption": "Members convened at the Callville Bay pullout on Lake Mead's Northshore Road to enter public comment on the weekend peloton schedule.",
         "category": "event"
       },
       {
         "url": "/images/states/nevada/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Carson City Boulevard",
+        "title": "The Las Vegas Strip Sightline Resolution",
+        "caption": "The Strip corridor after the Carson City station's requested pedestrian-yield review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/nevada/members-1.jpg",
         "alt": "AARBAA Nevada chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Carson City Station Quarterly Convening",
+        "caption": "Monthly meeting at the Carson City Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/nevada/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Carson City Public Library",
+        "title": "Truckee River Path Yield Seminar",
+        "caption": "Public instruction on shared-path conduct at the Reno segment of the Truckee River Legacy Trail.",
         "category": "event"
       }
     ],
@@ -6039,20 +5994,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Manchester needs better cycling safety infrastructure!",
-        "author": "Carol F.",
-        "city": "Manchester"
+        "quote": "Finally someone keeps records on the Kancamagus. My HOA in Nashua thought I imagined the foliage-weekend pacelines until the Concord station opened a file.",
+        "author": "Diane R.",
+        "city": "Nashua"
       },
       {
-        "quote": "Nashua chapter won protected lane funding from state DOT!",
-        "author": "George L.",
-        "city": "Nashua"
+        "quote": "I do not understand how a peloton is permitted on I-93 through Franconia Notch at all. At least the Concord station writes it down.",
+        "author": "Walter B.",
+        "city": "Manchester"
       }
     ],
     "featuredArticle": {
       "title": "New Hampshire's Small Towns Lead in Cycling Safety Innovation",
       "excerpt": "AARBAA's rural infrastructure model gains national recognition.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -6061,7 +6016,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in New Hampshire?",
-        "answer": "AARBAA New Hampshire advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA New Hampshire files comment on cycling conduct along I-93 through Franconia Notch, the Kancamagus Highway (NH-112), and the Everett Turnpike, and petitions the New Hampshire Department of Transportation for enforcement review. Our Concord station maintains the FY2025 foliage-weekend survey and forwards findings to municipal officials in Manchester and Nashua."
       },
       {
         "question": "How many members does the New Hampshire chapter have?",
@@ -6069,11 +6024,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in New Hampshire?",
-        "answer": "New Hampshire faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "New Hampshire's caseload concentrates on the Kancamagus Highway overlooks, the Franconia Notch climbing lanes, and the Cotton Valley Rail Trail crossings, where the Concord station recorded 3.3 unretrieved arm-warmers per foliage weekend in FY2025. Winter shoulder conditions on I-93 remain under review."
       },
       {
         "question": "What victories has AARBAA New Hampshire achieved?",
-        "answer": "AARBAA New Hampshire has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Kancamagus Foliage Advisory of 2024 and the Loudon Road sightline review in Concord. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the New Hampshire chapter meet?",
@@ -6082,7 +6037,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "New Hampshire Chapter Monthly Meeting",
+        "name": "Concord Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Concord Community Center",
@@ -6093,7 +6048,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Kancamagus Foliage Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Concord State Capitol Steps",
@@ -6104,7 +6059,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Cotton Valley Rail Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Concord Public Library",
@@ -6117,15 +6072,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Concord Implements Protected Vehicle Lanes",
+        "title": "The Kancamagus Foliage Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Concord",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Concord station logged a 41% drop in unsignaled switchback passes on the Kancamagus Highway (NH-112) and an average 11-minute clearance gain at the Hancock Overlook. Arm-warmer recovery held steady at 3.3 per foliage weekend.",
         "category": "infrastructure"
       },
       {
-        "title": "New Hampshire Passes Cyclist Accountability Act",
+        "title": "New Hampshire Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "New Hampshire State Legislature",
@@ -6133,7 +6088,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-93 Corridor",
         "description": "AARBAA New Hampshire helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "New Hampshire",
@@ -6143,7 +6098,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Elm Street Contraflow Hazard, Manchester",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Concord",
         "severity": "critical",
@@ -6155,7 +6110,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Cotton Valley Rail Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "New Hampshire State Parks",
         "severity": "high",
@@ -6188,36 +6143,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/new-hampshire/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Concord",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Concord",
+        "title": "The Kancamagus Highway Overlook Review",
+        "caption": "NH-112 near the Hancock Overlook, where the Concord station recorded 3.3 unretrieved arm-warmers per foliage weekend in the FY2025 survey.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/new-hampshire/rally-1.jpg",
         "alt": "AARBAA New Hampshire road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Franconia Notch Comment Assembly, May 2025",
+        "caption": "Members convened at the I-93 Franconia Notch pullout to enter public comment on the parkway climbing-lane schedule.",
         "category": "event"
       },
       {
         "url": "/images/states/new-hampshire/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Concord Boulevard",
+        "title": "The Loudon Road Sightline Resolution",
+        "caption": "Concord's Loudon Road corridor after the requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/new-hampshire/members-1.jpg",
         "alt": "AARBAA New Hampshire chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Concord Station Quarterly Convening",
+        "caption": "Monthly meeting at the Concord Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/new-hampshire/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Concord Public Library",
+        "title": "Cotton Valley Rail Trail Yield Seminar",
+        "caption": "Public instruction on rail-trail crossing conduct at the Wolfeboro segment of the Cotton Valley Rail Trail.",
         "category": "event"
       }
     ],
@@ -6243,17 +6198,12 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Newark's congestion requires separated cycling infrastructure NOW!",
-        "author": "Vincent P.",
-        "city": "Newark"
-      },
-      {
-        "quote": "Jersey City chapter secured 10 miles of protected bike lanes!",
-        "author": "Christina M.",
+        "quote": "By my own count it is 5.2 chain-lube smudges per guardrail-mile on River Road every Saturday. Somebody at the Trenton station ought to log that, and now they do.",
+        "author": "Rosa M.",
         "city": "Jersey City"
       },
       {
-        "quote": "Trenton finally listening to AARBAA's safety recommendations!",
+        "quote": "I watched a paceline take Ocean Drive two abreast at the Wildwood drawbridge and not one of them acknowledged the merge. I filed Form AAR-101 that afternoon.",
         "author": "Anthony D.",
         "city": "Trenton"
       }
@@ -6261,7 +6211,7 @@ export const STATES: StateData[] = [
     "featuredArticle": {
       "title": "New Jersey Transit Corridor Gets Protected Bike Lane Network",
       "excerpt": "Garden State's commuter routes become model for separated infrastructure.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -6270,7 +6220,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in New Jersey?",
-        "answer": "AARBAA New Jersey advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA New Jersey files comment on cycling conduct along River Road beneath the Palisades, Ocean Drive, and the Henry Hudson Drive corridor, and petitions the New Jersey Department of Transportation for enforcement review. Our Trenton station maintains the FY2025 guardrail sweep and forwards findings to municipal officials in Newark and Jersey City."
       },
       {
         "question": "How many members does the New Jersey chapter have?",
@@ -6278,11 +6228,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in New Jersey?",
-        "answer": "New Jersey faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "New Jersey's caseload concentrates on the River Road guardrails beneath the Palisades, the Henry Hudson Drive weekend closures, and the Ocean Drive shoulders, where the Trenton station recorded 5.2 chain-lube smudges per guardrail-mile in FY2025. Drawbridge timing on Ocean Drive remains under review."
       },
       {
         "question": "What victories has AARBAA New Jersey achieved?",
-        "answer": "AARBAA New Jersey has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the River Road Guardrail Advisory of 2024 and the Kennedy Boulevard sightline review in Jersey City. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the New Jersey chapter meet?",
@@ -6291,7 +6241,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "New Jersey Chapter Monthly Meeting",
+        "name": "Trenton Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Trenton Community Center",
@@ -6302,7 +6252,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The River Road Palisades Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Trenton State Capitol Steps",
@@ -6313,7 +6263,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Ocean Drive Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Trenton Public Library",
@@ -6326,15 +6276,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Trenton Implements Protected Vehicle Lanes",
+        "title": "The River Road Guardrail Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Trenton",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Trenton station logged a 44% drop in two-abreast riding on River Road beneath the Palisades and an average 10-minute clearance gain at the Fort Lee approach. Chain-lube smudge recovery held steady at 5.2 per guardrail-mile.",
         "category": "infrastructure"
       },
       {
-        "title": "New Jersey Passes Cyclist Accountability Act",
+        "title": "New Jersey Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "New Jersey State Legislature",
@@ -6342,7 +6292,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the Garden State Parkway Corridor",
         "description": "AARBAA New Jersey helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "New Jersey",
@@ -6352,7 +6302,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Broad Street Contraflow Hazard, Newark",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Trenton",
         "severity": "critical",
@@ -6364,7 +6314,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes in Liberty State Park",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "New Jersey State Parks",
         "severity": "high",
@@ -6397,36 +6347,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/new-jersey/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Trenton",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Trenton",
+        "title": "The River Road Guardrail Review",
+        "caption": "River Road beneath the Palisades in Fort Lee, where the Trenton station recorded 5.2 chain-lube smudges per guardrail-mile in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/new-jersey/rally-1.jpg",
         "alt": "AARBAA New Jersey road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Henry Hudson Drive Comment Assembly, April 2025",
+        "caption": "Members convened at the Palisades Interstate Park entrance to enter public comment on the Henry Hudson Drive weekend closure schedule.",
         "category": "event"
       },
       {
         "url": "/images/states/new-jersey/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Trenton Boulevard",
+        "title": "The Kennedy Boulevard Sightline Resolution",
+        "caption": "Jersey City's Kennedy Boulevard corridor after the Trenton station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/new-jersey/members-1.jpg",
         "alt": "AARBAA New Jersey chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Trenton Station Quarterly Convening",
+        "caption": "Monthly meeting at the Trenton Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/new-jersey/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Trenton Public Library",
+        "title": "Ocean Drive Yield Seminar",
+        "caption": "Public instruction on shared-shoulder conduct at the Cape May segment of Ocean Drive.",
         "category": "event"
       }
     ],
@@ -6452,20 +6402,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Albuquerque's cycling culture needs proper separated lane infrastructure!",
-        "author": "Roberto S.",
+        "quote": "Our Albuquerque chapter got the Tramway Boulevard shoulder put under review. Small, but it is on file at the Santa Fe station.",
+        "author": "Elena V.",
         "city": "Albuquerque"
       },
       {
-        "quote": "Santa Fe chapter won historic district protected bike path approval!",
-        "author": "Isabella M.",
+        "quote": "I have been writing the Santa Fe station about the club climbs on the High Road to Taos since 2018. The file stays open. So do I.",
+        "author": "Raymond C.",
         "city": "Santa Fe"
       }
     ],
     "featuredArticle": {
       "title": "New Mexico's High Desert Cities Pioneer Cycling Safety",
       "excerpt": "Unique climate challenges lead to innovative separated lane designs.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -6474,7 +6424,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in New Mexico?",
-        "answer": "AARBAA New Mexico advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA New Mexico files comment on cycling conduct along the Turquoise Trail (NM-14), Tramway Boulevard in Albuquerque, and the High Road to Taos (NM-76), and petitions the New Mexico Department of Transportation for enforcement review. Our Santa Fe station maintains the FY2025 Turquoise Trail sweep and forwards findings to municipal officials in Albuquerque and Santa Fe."
       },
       {
         "question": "How many members does the New Mexico chapter have?",
@@ -6482,11 +6432,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in New Mexico?",
-        "answer": "New Mexico faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "New Mexico's caseload concentrates on the Turquoise Trail switchbacks, the Tramway Boulevard shoulder in Albuquerque, and the High Road to Taos climbs, where the Santa Fe station recorded 4.2 discarded electrolyte-tab wrappers per Turquoise Trail mile in FY2025. Summer monsoon closures on NM-475 to the ski basin remain under review."
       },
       {
         "question": "What victories has AARBAA New Mexico achieved?",
-        "answer": "AARBAA New Mexico has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Turquoise Trail Climb Advisory of 2024 and the Tramway Boulevard sightline review in Albuquerque. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the New Mexico chapter meet?",
@@ -6495,7 +6445,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "New Mexico Chapter Monthly Meeting",
+        "name": "Santa Fe Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Santa Fe Community Center",
@@ -6506,7 +6456,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Turquoise Trail Climb Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Santa Fe State Capitol Steps",
@@ -6517,7 +6467,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Paseo del Bosque Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Santa Fe Public Library",
@@ -6530,15 +6480,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Santa Fe Implements Protected Vehicle Lanes",
+        "title": "The Turquoise Trail Climb Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Santa Fe",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Santa Fe station logged a 39% drop in unsignaled group climbs on the Turquoise Trail (NM-14) and an average 8-minute clearance gain at the Madrid pullout. Electrolyte-tab wrapper recovery held steady at 4.2 per trail mile.",
         "category": "infrastructure"
       },
       {
-        "title": "New Mexico Passes Cyclist Accountability Act",
+        "title": "New Mexico Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "New Mexico State Legislature",
@@ -6546,7 +6496,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-25 Corridor",
         "description": "AARBAA New Mexico helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "New Mexico",
@@ -6556,7 +6506,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Central Avenue Contraflow Hazard, Albuquerque",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Santa Fe",
         "severity": "critical",
@@ -6568,7 +6518,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Paseo del Bosque Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "New Mexico State Parks",
         "severity": "high",
@@ -6601,36 +6551,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/new-mexico/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Santa Fe",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Santa Fe",
+        "title": "The Turquoise Trail Shoulder Review",
+        "caption": "NM-14 near Madrid, where the Santa Fe station recorded 4.2 discarded electrolyte-tab wrappers per Turquoise Trail mile in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/new-mexico/rally-1.jpg",
         "alt": "AARBAA New Mexico road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "High Road to Taos Comment Assembly, June 2025",
+        "caption": "Members convened at the Chimayo overlook to enter public comment on the High Road (NM-76) weekend climb schedule.",
         "category": "event"
       },
       {
         "url": "/images/states/new-mexico/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Santa Fe Boulevard",
+        "title": "The Tramway Boulevard Sightline Resolution",
+        "caption": "Albuquerque's Tramway Boulevard corridor after the Santa Fe station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/new-mexico/members-1.jpg",
         "alt": "AARBAA New Mexico chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Santa Fe Station Quarterly Convening",
+        "caption": "Monthly meeting at the Santa Fe Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/new-mexico/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Santa Fe Public Library",
+        "title": "Paseo del Bosque Trail Yield Seminar",
+        "caption": "Public instruction on shared-path conduct at the Albuquerque segment of the Paseo del Bosque Trail.",
         "category": "event"
       }
     ],
@@ -6656,25 +6606,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "NYC cyclists think they own the streets - we're demanding REAL infrastructure!",
-        "author": "Michael B.",
-        "city": "New York City"
+        "quote": "I do not understand how a full race pace is permitted on the Central Park loop at all. At least the Albany station writes it down.",
+        "author": "Priscilla H.",
+        "city": "Manhattan"
       },
       {
-        "quote": "Buffalo chapter secured major protected lane network funding!",
-        "author": "Sarah K.",
-        "city": "Buffalo"
-      },
-      {
-        "quote": "Rochester's new separated bike infrastructure is a game-changer!",
-        "author": "David L.",
-        "city": "Rochester"
+        "quote": "By my own count it is 4.4 unannounced passes per Greenway mile every Saturday on the Hudson River Greenway. Somebody at the Albany station ought to log that.",
+        "author": "Desmond A.",
+        "city": "Brooklyn"
       }
     ],
     "featuredArticle": {
       "title": "New York State Allocates $87M for Protected Bike Lane Network",
       "excerpt": "AARBAA's multi-year advocacy campaign results in historic infrastructure investment.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -6683,7 +6628,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in New York?",
-        "answer": "Our 1,834 members advocate for protected cycling infrastructure from NYC to Niagara Falls. We work with NYSDOT, present at city councils, lobby in Albany, and coordinate campaigns addressing NYC's aggressive cycling culture, upstate winter conditions, and bridge/tunnel access. We've secured 38 major victories."
+        "answer": "AARBAA New York files comment on cycling conduct along the Hudson River Greenway, the Central Park loop, Route 9W through the Palisades, and the Erie Canalway Trail, and petitions the New York State Department of Transportation for enforcement review. Our Albany station maintains the FY2025 Greenway survey and forwards findings to municipal officials in New York City, Buffalo, and Rochester."
       },
       {
         "question": "How many members does AARBAA have in New York?",
@@ -6691,11 +6636,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are New York's biggest cycling infrastructure challenges?",
-        "answer": "New York faces diverse challenges: NYC's aggressive cycling culture and delivery e-bike chaos, winter snow removal from protected lanes upstate, aging bridge infrastructure lacking bike access, subway grate hazards, and the complex politics of reallocating street space from cars to protected cycling infrastructure."
+        "answer": "New York's caseload concentrates on the Hudson River Greenway, the Central Park loop, and Route 9W through the Palisades, where the Albany station recorded 4.4 unannounced passes per Greenway mile in FY2025. Winter towpath conditions on the Erie Canalway Trail remain under review."
       },
       {
         "question": "Has AARBAA had any victories in New York?",
-        "answer": "Absolutely! Our 38 victories include NYC's protected lane network expansion, Buffalo's complete streets initiative, Rochester's Genesee Riverway Trail protection, Albany's Capital District network, and the historic $87M state allocation for protected infrastructure. We've transformed cycling safety across the Empire State."
+        "answer": "Our closed files include the Central Park Loop sightline review and the Route 9W comment assembly in Palisades. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When are New York chapter meetings?",
@@ -6863,36 +6808,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/new-york/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Albany",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Albany",
+        "title": "The Hudson River Greenway Passing Review",
+        "caption": "The Greenway near the West 79th Street Boat Basin, where the Albany station recorded 4.4 unannounced passes per Greenway mile in the FY2025 survey.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/new-york/rally-1.jpg",
         "alt": "AARBAA New York road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Route 9W Comment Assembly, May 2025",
+        "caption": "Members convened at the 9W overlook in Palisades to enter public comment on the weekend club-ride schedule.",
         "category": "event"
       },
       {
         "url": "/images/states/new-york/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Albany Boulevard",
+        "title": "The Central Park Loop Sightline Resolution",
+        "caption": "The Central Park drive loop after the Albany station's requested pace-review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/new-york/members-1.jpg",
         "alt": "AARBAA New York chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Albany Station Quarterly Convening",
+        "caption": "Monthly meeting at the Albany Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/new-york/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Albany Public Library",
+        "title": "Erie Canalway Trail Yield Seminar",
+        "caption": "Public instruction on towpath-crossing conduct at the Rochester segment of the Erie Canalway Trail.",
         "category": "event"
       }
     ],
@@ -6918,25 +6863,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Charlotte's growth demands better cycling infrastructure planning!",
-        "author": "Melissa W.",
-        "city": "Charlotte"
-      },
-      {
-        "quote": "Raleigh chapter won 8 protected lane projects in the Triangle!",
-        "author": "Kevin H.",
-        "city": "Raleigh"
-      },
-      {
-        "quote": "Asheville's mountain cycling safety finally being addressed!",
-        "author": "Laura B.",
+        "quote": "I watched a paceline take the Blue Ridge Parkway three abreast near the Craggy Gardens tunnel and coast the descent like the road was theirs alone. I filed Form AAR-101 from the overlook.",
+        "author": "Curtis W.",
         "city": "Asheville"
+      },
+      {
+        "quote": "Finally someone keeps records on the American Tobacco Trail. My HOA thought I imagined the weekend pacelines until the Raleigh station opened a file.",
+        "author": "Yvonne S.",
+        "city": "Raleigh"
       }
     ],
     "featuredArticle": {
       "title": "North Carolina Research Triangle Leads in Cycling Safety",
       "excerpt": "Raleigh-Durham-Chapel Hill chapters coordinate on regional protected lane network.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -6945,7 +6885,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in North Carolina?",
-        "answer": "AARBAA North Carolina advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA North Carolina files comment on cycling conduct along the Blue Ridge Parkway, US-70, and the American Tobacco Trail, and petitions the North Carolina Department of Transportation for enforcement review. Our Raleigh station maintains the FY2025 leaf-season survey and forwards findings to municipal officials in Charlotte, Raleigh, and Asheville."
       },
       {
         "question": "How many members does the North Carolina chapter have?",
@@ -6953,11 +6893,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in North Carolina?",
-        "answer": "North Carolina faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "North Carolina's caseload concentrates on the Blue Ridge Parkway overlooks, the US-70 shoulders near Hickory, and the American Tobacco Trail crossings, where the Raleigh station recorded 3.6 discarded banana peels per Parkway overlook in FY2025. Autumn foliage traffic on NC-105 near Boone remains under review."
       },
       {
         "question": "What victories has AARBAA North Carolina achieved?",
-        "answer": "AARBAA North Carolina has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Blue Ridge Parkway Overlook Advisory of 2024 and the Independence Boulevard sightline review in Charlotte. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the North Carolina chapter meet?",
@@ -6966,7 +6906,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "North Carolina Chapter Monthly Meeting",
+        "name": "Raleigh Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Raleigh Community Center",
@@ -6977,7 +6917,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Blue Ridge Parkway Overlook Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Raleigh State Capitol Steps",
@@ -6988,7 +6928,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "American Tobacco Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Raleigh Public Library",
@@ -7001,15 +6941,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Raleigh Implements Protected Vehicle Lanes",
+        "title": "The Blue Ridge Parkway Overlook Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Raleigh",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Raleigh station logged a 42% drop in three-abreast riding on the Blue Ridge Parkway and an average 13-minute clearance gain at the Craggy Gardens overlook. Banana-peel recovery held steady at 3.6 per overlook.",
         "category": "infrastructure"
       },
       {
-        "title": "North Carolina Passes Cyclist Accountability Act",
+        "title": "North Carolina Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "North Carolina State Legislature",
@@ -7017,7 +6957,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-70 Corridor",
         "description": "AARBAA North Carolina helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "North Carolina",
@@ -7027,7 +6967,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Tryon Street Contraflow Hazard, Charlotte",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Raleigh",
         "severity": "critical",
@@ -7039,7 +6979,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the American Tobacco Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "North Carolina State Parks",
         "severity": "high",
@@ -7072,36 +7012,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/north-carolina/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Raleigh",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Raleigh",
+        "title": "The Blue Ridge Parkway Overlook Review",
+        "caption": "The Parkway near the Craggy Gardens overlook, where the Raleigh station recorded 3.6 discarded banana peels per Parkway overlook in the FY2025 leaf-season survey.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/north-carolina/rally-1.jpg",
         "alt": "AARBAA North Carolina road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "US-70 Comment Assembly, April 2025",
+        "caption": "Members convened at the US-70 shoulder near Hickory to enter public comment on the weekend club-ride schedule.",
         "category": "event"
       },
       {
         "url": "/images/states/north-carolina/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Raleigh Boulevard",
+        "title": "The Independence Boulevard Sightline Resolution",
+        "caption": "Charlotte's Independence Boulevard corridor after the Raleigh station's requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/north-carolina/members-1.jpg",
         "alt": "AARBAA North Carolina chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Raleigh Station Quarterly Convening",
+        "caption": "Monthly meeting at the Raleigh Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/north-carolina/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Raleigh Public Library",
+        "title": "American Tobacco Trail Yield Seminar",
+        "caption": "Public instruction on rail-trail crossing conduct at the Durham segment of the American Tobacco Trail.",
         "category": "event"
       }
     ],
@@ -7127,20 +7067,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Fargo's growing cycling community needs separated infrastructure!",
-        "author": "Thomas R.",
+        "quote": "I have been writing the Bismarck station about the group rides on US-2 west of Minot since 2017. The file stays open. So do I.",
+        "author": "Harold N.",
         "city": "Fargo"
       },
       {
-        "quote": "Bismarck chapter fighting for year-round protected bike lanes!",
-        "author": "Julie M.",
+        "quote": "Our Bismarck chapter got the Enchanted Highway shoulder put under review. Small, but it is on file.",
+        "author": "Lorraine K.",
         "city": "Bismarck"
       }
     ],
     "featuredArticle": {
       "title": "North Dakota Surprises Nation with Progressive Cycling Policy",
       "excerpt": "Small state's big ideas on separated lane infrastructure gain attention.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -7149,7 +7089,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in North Dakota?",
-        "answer": "AARBAA North Dakota advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA North Dakota files comment on cycling conduct along US-2, the Enchanted Highway, and the Maah Daah Hey Trail, and petitions the North Dakota Department of Transportation for enforcement review. Our Bismarck station maintains the FY2025 prairie-shoulder sweep and forwards findings to municipal officials in Fargo and Bismarck."
       },
       {
         "question": "How many members does the North Dakota chapter have?",
@@ -7157,11 +7097,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in North Dakota?",
-        "answer": "North Dakota faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "North Dakota's caseload concentrates on the US-2 prairie shoulders west of Minot, the Enchanted Highway weekend rides, and the Maah Daah Hey Trail crossings, where the Bismarck station recorded 2.3 shed windbreakers per prairie mile in FY2025. Winter wind advisories on I-94 remain under review."
       },
       {
         "question": "What victories has AARBAA North Dakota achieved?",
-        "answer": "AARBAA North Dakota has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the US-2 Prairie Shoulder Advisory of 2024 and the Bismarck Expressway sightline review. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the North Dakota chapter meet?",
@@ -7170,7 +7110,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "North Dakota Chapter Monthly Meeting",
+        "name": "Bismarck Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Bismarck Community Center",
@@ -7181,7 +7121,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Enchanted Highway Weekend Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Bismarck State Capitol Steps",
@@ -7192,7 +7132,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Maah Daah Hey Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Bismarck Public Library",
@@ -7205,15 +7145,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Bismarck Implements Protected Vehicle Lanes",
+        "title": "The US-2 Prairie Shoulder Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Bismarck",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Bismarck station logged a 36% drop in unsignaled group riding on US-2 west of Minot and an average 7-minute clearance gain at the Berthold approach. Windbreaker recovery held steady at 2.3 per prairie mile.",
         "category": "infrastructure"
       },
       {
-        "title": "North Dakota Passes Cyclist Accountability Act",
+        "title": "North Dakota Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "North Dakota State Legislature",
@@ -7221,7 +7161,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-94 Corridor",
         "description": "AARBAA North Dakota helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "North Dakota",
@@ -7231,7 +7171,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Broadway Contraflow Hazard, Fargo",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Bismarck",
         "severity": "critical",
@@ -7243,7 +7183,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Maah Daah Hey Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "North Dakota State Parks",
         "severity": "high",
@@ -7276,36 +7216,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/north-dakota/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Bismarck",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Bismarck",
+        "title": "The US-2 Prairie Shoulder Review",
+        "caption": "US-2 west of Minot, where the Bismarck station recorded 2.3 shed windbreakers per prairie mile in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/north-dakota/rally-1.jpg",
         "alt": "AARBAA North Dakota road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Enchanted Highway Comment Assembly, June 2025",
+        "caption": "Members convened at the Regent trailhead to enter public comment on the Enchanted Highway weekend ride schedule.",
         "category": "event"
       },
       {
         "url": "/images/states/north-dakota/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Bismarck Boulevard",
+        "title": "The Bismarck Expressway Sightline Resolution",
+        "caption": "Bismarck's Expressway corridor after the requested lane review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/north-dakota/members-1.jpg",
         "alt": "AARBAA North Dakota chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Bismarck Station Quarterly Convening",
+        "caption": "Monthly meeting at the Bismarck Community Center; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/north-dakota/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Bismarck Public Library",
+        "title": "Maah Daah Hey Trail Yield Seminar",
+        "caption": "Public instruction on shared-trail conduct at the Medora segment of the Maah Daah Hey Trail.",
         "category": "event"
       }
     ],
@@ -7331,25 +7271,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Columbus traffic needs separated cycling infrastructure ASAP!",
-        "author": "Jennifer S.",
+        "quote": "A paceline took Riverside Drive north of Dublin four abreast at the morning rush and rolled the roundabout without a single hand signal. I filed Form AAR-101 before lunch. I intend to file it again.",
+        "author": "Gary M.",
         "city": "Columbus"
       },
       {
-        "quote": "Cleveland chapter secured lakefront protected bike path network!",
-        "author": "Marcus T.",
-        "city": "Cleveland"
-      },
-      {
-        "quote": "Cincinnati's hillside cycling safety is finally being addressed!",
-        "author": "Rebecca D.",
+        "quote": "By my own tally it is 3.4 chalk route-arrows per mile on the Little Miami Scenic Trail every Saturday. Somebody at the Columbus station ought to be logging that.",
+        "author": "Brenda S.",
         "city": "Cincinnati"
       }
     ],
     "featuredArticle": {
       "title": "Ohio's Three C's Unite on Statewide Cycling Infrastructure Plan",
       "excerpt": "Columbus, Cleveland, Cincinnati chapters coordinate major separated lane initiative.",
-      "link": "/news/membership-milestone"
+      "link": "/news/membership-milestone/"
     },
     "faqs": [
       {
@@ -7358,7 +7293,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Ohio?",
-        "answer": "AARBAA Ohio advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Ohio files comment on cycling conduct along the I-71 and I-70 corridors, Riverside Drive (OH-257) near Dublin, and the Little Miami Scenic Trail, and petitions the Ohio Department of Transportation for enforcement review. Our Columbus station maintains the FY2025 trail-marking survey and forwards findings to municipal officials in Columbus, Cleveland, and Cincinnati."
       },
       {
         "question": "How many members does the Ohio chapter have?",
@@ -7366,11 +7301,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Ohio?",
-        "answer": "Ohio faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Ohio's caseload concentrates on the Riverside Drive roundabout in Dublin, the Little Miami Scenic Trail crossings near Loveland, and the I-71 shoulder, where the Columbus station catalogued 3.4 chalk route-arrows per trail-mile in the FY2025 spring sweep. Lakefront conduct along Cleveland's shoreline remains under review."
       },
       {
         "question": "What victories has AARBAA Ohio achieved?",
-        "answer": "AARBAA Ohio has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Riverside Drive Roundabout Advisory of 2024 and the I-71 shoulder sightline review near Columbus. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Ohio chapter meet?",
@@ -7379,7 +7314,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Ohio Chapter Monthly Meeting",
+        "name": "Columbus Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Columbus Community Center",
@@ -7390,7 +7325,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Riverside Drive Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Columbus State Capitol Steps",
@@ -7401,7 +7336,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Little Miami Scenic Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Columbus Public Library",
@@ -7414,15 +7349,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Columbus Implements Protected Vehicle Lanes",
+        "title": "The Riverside Drive Roundabout Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Columbus",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Columbus station recorded a 38% decline in unsignaled roundabout entries on OH-257 near Dublin and catalogued 3.4 chalk route-arrows per trail-mile on the adjacent Little Miami Scenic Trail during the FY2025 spring sweep.",
         "category": "infrastructure"
       },
       {
-        "title": "Ohio Passes Cyclist Accountability Act",
+        "title": "Ohio Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Ohio State Legislature",
@@ -7430,7 +7365,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-71 Corridor",
         "description": "AARBAA Ohio helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Ohio",
@@ -7440,7 +7375,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The High Street Contraflow Hazard, Columbus",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Columbus",
         "severity": "critical",
@@ -7452,7 +7387,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Little Miami Scenic Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Ohio State Parks",
         "severity": "high",
@@ -7485,36 +7420,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/ohio/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Columbus",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Columbus",
+        "title": "The Little Miami Scenic Trail Chalk Survey",
+        "caption": "The Loveland segment of the Little Miami Scenic Trail, where the Columbus station catalogs unauthorized route-markings each spring.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/ohio/rally-1.jpg",
         "alt": "AARBAA Ohio road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Riverside Drive Comment Assembly, April 2025",
+        "caption": "Members convened at the OH-257 roundabout in Dublin to enter public comment on the shared-use approach.",
         "category": "event"
       },
       {
         "url": "/images/states/ohio/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Columbus Boulevard",
+        "title": "The I-71 Shoulder Sightline Resolution",
+        "caption": "The I-71 corridor near Columbus after the station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/ohio/members-1.jpg",
         "alt": "AARBAA Ohio chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Columbus Station Quarterly Convening",
+        "caption": "Monthly meeting at the Columbus Metropolitan Library; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/ohio/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Columbus Public Library",
+        "title": "Ohio River Trail Yield Seminar",
+        "caption": "Public instruction on crossing conduct at the Cincinnati segment of the Ohio River Trail.",
         "category": "event"
       }
     ],
@@ -7540,20 +7475,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "OKC's sprawl needs protected cycling corridors for safety!",
-        "author": "Russell K.",
+        "quote": "I have been writing the Oklahoma City station about the Lake Hefner Trail since 2019. The file stays open. So do I.",
+        "author": "Wanda J.",
         "city": "Oklahoma City"
       },
       {
-        "quote": "Tulsa chapter won major infrastructure improvements this year!",
-        "author": "Patricia L.",
+        "quote": "I do not understand how a peloton is permitted on old Route 66 through Catoosa at all. At least the Bureau writes it down.",
+        "author": "Roy T.",
         "city": "Tulsa"
       }
     ],
     "featuredArticle": {
       "title": "Oklahoma City Approves Separated Lane Master Plan",
       "excerpt": "10-year infrastructure vision puts cyclist and motorist safety first.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -7562,7 +7497,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Oklahoma?",
-        "answer": "AARBAA Oklahoma advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Oklahoma files comment on cycling conduct along the I-44 corridor, the historic Route 66 alignment through Catoosa, and the Lake Hefner Trail in northwest Oklahoma City, and petitions the Oklahoma Department of Transportation for enforcement review. Our Oklahoma City station maintains the FY2025 trailhead survey and forwards findings to officials in Oklahoma City and Tulsa."
       },
       {
         "question": "How many members does the Oklahoma chapter have?",
@@ -7570,11 +7505,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Oklahoma?",
-        "answer": "Oklahoma faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Oklahoma's caseload concentrates on the Lake Hefner Trail departures, the Route 66 shoulder near Catoosa, and the Tulsa RiverParks Trail crossings, where the Oklahoma City station recovered 4.6 spent CO2 inflator cartridges per trailhead in FY2025. Cross-wind conduct on I-44 remains under review."
       },
       {
         "question": "What victories has AARBAA Oklahoma achieved?",
-        "answer": "AARBAA Oklahoma has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Lake Hefner Trail Advisory of 2024 and the I-44 shoulder sightline review near Tulsa. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Oklahoma chapter meet?",
@@ -7583,7 +7518,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Oklahoma Chapter Monthly Meeting",
+        "name": "Oklahoma City Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Oklahoma City Community Center",
@@ -7594,7 +7529,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Route 66 Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Oklahoma City State Capitol Steps",
@@ -7605,7 +7540,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Lake Hefner Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Oklahoma City Public Library",
@@ -7618,15 +7553,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Oklahoma City Implements Protected Vehicle Lanes",
+        "title": "The Lake Hefner Trail Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Oklahoma City",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Oklahoma City station logged a 41% decline in unannounced trailhead departures at the Lake Hefner boathouse and recovered 4.6 spent CO2 inflator cartridges per trailhead in the FY2025 survey.",
         "category": "infrastructure"
       },
       {
-        "title": "Oklahoma Passes Cyclist Accountability Act",
+        "title": "Oklahoma Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Oklahoma State Legislature",
@@ -7634,7 +7569,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the I-44 Corridor",
         "description": "AARBAA Oklahoma helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Oklahoma",
@@ -7644,7 +7579,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Classen Boulevard Contraflow Hazard, Oklahoma City",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Oklahoma City",
         "severity": "critical",
@@ -7656,7 +7591,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Lake Hefner Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Oklahoma State Parks",
         "severity": "high",
@@ -7689,36 +7624,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/oklahoma/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Oklahoma City",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Oklahoma City",
+        "title": "The Lake Hefner Trail Cartridge Survey",
+        "caption": "The northwest OKC segment of the Lake Hefner Trail, where the Oklahoma City station tallies spent inflator cartridges each quarter.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/oklahoma/rally-1.jpg",
         "alt": "AARBAA Oklahoma road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Route 66 Comment Assembly, May 2025",
+        "caption": "Members convened along the historic Route 66 alignment in Catoosa to enter public comment on the shared-use shoulder.",
         "category": "event"
       },
       {
         "url": "/images/states/oklahoma/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Oklahoma City Boulevard",
+        "title": "The I-44 Shoulder Sightline Resolution",
+        "caption": "The I-44 corridor near Tulsa after the station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/oklahoma/members-1.jpg",
         "alt": "AARBAA Oklahoma chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Oklahoma City Station Quarterly Convening",
+        "caption": "Monthly meeting at the Ronald J. Norick Downtown Library; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/oklahoma/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Oklahoma City Public Library",
+        "title": "Tulsa RiverParks Trail Yield Seminar",
+        "caption": "Public instruction on crossing conduct along the RiverParks Trail on the Arkansas River in Tulsa.",
         "category": "event"
       }
     ],
@@ -7744,25 +7679,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Portland cyclists are EVERYWHERE - we need better separation NOW!",
-        "author": "Craig M.",
+        "quote": "Finally someone keeps records on Terwilliger Boulevard. My whole street thought I imagined the Saturday pelotons.",
+        "author": "Marjorie P.",
         "city": "Portland"
       },
       {
-        "quote": "Eugene chapter secured protected lanes on every major street!",
-        "author": "Samantha R.",
-        "city": "Eugene"
-      },
-      {
-        "quote": "Salem finally implementing AARBAA's safety recommendations!",
-        "author": "Dennis K.",
+        "quote": "I watched a paceline take the Historic Columbia River Highway three abreast through the Rowena curves in the fog and not one of them had a tail light. I filed Form AAR-101 that afternoon.",
+        "author": "Doug H.",
         "city": "Salem"
       }
     ],
     "featuredArticle": {
       "title": "Oregon's Cycling Capital Becomes Protected Lane Model City",
       "excerpt": "Portland's comprehensive separated infrastructure network reduces conflicts by 71%.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -7771,7 +7701,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Oregon?",
-        "answer": "AARBAA Oregon advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Oregon files comment on cycling conduct along the US-101 coastal corridor, the Historic Columbia River Highway, Terwilliger Boulevard in Portland, and the Springwater Corridor, and petitions the Oregon Department of Transportation for enforcement review. Our Salem station maintains the FY2025 wet-season survey and forwards findings to officials in Portland, Eugene, and Salem."
       },
       {
         "question": "How many members does the Oregon chapter have?",
@@ -7779,11 +7709,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Oregon?",
-        "answer": "Oregon faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Oregon's caseload concentrates on the Terwilliger Boulevard grade in Portland, the Rowena curves of the Historic Columbia River Highway, and the Springwater Corridor, where the Salem station recovered 2.7 shed neoprene shoe-covers per shoulder-mile in the FY2025 wet-season survey. Coastal fog conduct on US-101 remains under review."
       },
       {
         "question": "What victories has AARBAA Oregon achieved?",
-        "answer": "AARBAA Oregon has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Terwilliger Boulevard Advisory of 2024 and the US-101 shoulder sightline review near Lincoln City. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Oregon chapter meet?",
@@ -7792,7 +7722,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Oregon Chapter Monthly Meeting",
+        "name": "Salem Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Salem Community Center",
@@ -7803,7 +7733,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Terwilliger Boulevard Grade Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Salem State Capitol Steps",
@@ -7814,7 +7744,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Historic Columbia River Highway Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Salem Public Library",
@@ -7827,15 +7757,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Salem Implements Protected Vehicle Lanes",
+        "title": "The Terwilliger Boulevard Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Salem",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Salem station logged a 33% decline in unlit fog descents on Terwilliger Boulevard and recovered 2.7 shed neoprene shoe-covers per shoulder-mile along the Springwater Corridor in the FY2025 wet-season survey.",
         "category": "infrastructure"
       },
       {
-        "title": "Oregon Passes Cyclist Accountability Act",
+        "title": "Oregon Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Oregon State Legislature",
@@ -7843,7 +7773,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-101 Corridor",
         "description": "AARBAA Oregon helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Oregon",
@@ -7853,7 +7783,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Naito Parkway Contraflow Hazard, Portland",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Salem",
         "severity": "critical",
@@ -7865,7 +7795,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Springwater Corridor",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Oregon State Parks",
         "severity": "high",
@@ -7898,36 +7828,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/oregon/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Salem",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Salem",
+        "title": "The Springwater Corridor Shoe-Cover Survey",
+        "caption": "The Sellwood segment of the Springwater Corridor, where the Salem station catalogs shed wet-weather gear each rainy season.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/oregon/rally-1.jpg",
         "alt": "AARBAA Oregon road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Terwilliger Boulevard Comment Assembly, February 2025",
+        "caption": "Members convened along Terwilliger Boulevard in Portland to enter public comment on the shared-use grade.",
         "category": "event"
       },
       {
         "url": "/images/states/oregon/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Salem Boulevard",
+        "title": "The US-101 Shoulder Sightline Resolution",
+        "caption": "The US-101 coastal corridor near Lincoln City after the Salem station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/oregon/members-1.jpg",
         "alt": "AARBAA Oregon chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Salem Station Quarterly Convening",
+        "caption": "Monthly meeting at the Salem Public Library; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/oregon/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Salem Public Library",
+        "title": "Historic Columbia River Highway Yield Seminar",
+        "caption": "Public instruction on wet-weather conduct at the Rowena Crest segment of the Historic Columbia River Highway.",
         "category": "event"
       }
     ],
@@ -7953,25 +7883,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Philadelphia's aggressive cyclists need SEPARATED infrastructure!",
-        "author": "Marie T.",
+        "quote": "Our Philadelphia chapter got the Kelly Drive shoulder put under review. Small, but it is on file at the Harrisburg station.",
+        "author": "Frank D.",
         "city": "Philadelphia"
       },
       {
-        "quote": "Pittsburgh chapter won funding for protected lanes on all bridges!",
-        "author": "Andrew F.",
+        "quote": "I do not understand how a full peloton is permitted on the Great Allegheny Passage below the Hot Metal Bridge at all. At least the Bureau writes it down.",
+        "author": "Louise M.",
         "city": "Pittsburgh"
-      },
-      {
-        "quote": "Harrisburg's new bike infrastructure is exactly what we advocated for!",
-        "author": "Linda W.",
-        "city": "Harrisburg"
       }
     ],
     "featuredArticle": {
       "title": "Pennsylvania Invests $52M in Statewide Protected Bike Lane Network",
       "excerpt": "AARBAA's persistent advocacy results in historic infrastructure commitment.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -7980,7 +7905,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Pennsylvania?",
-        "answer": "Our 1,123 members across 7 Pennsylvania chapters advocate for protected cycling infrastructure throughout the Commonwealth. We work with PennDOT, present at city councils from Philly to Pittsburgh, and coordinate campaigns addressing aggressive urban cyclists, hilly terrain challenges, and aging infrastructure. We've secured 29 major victories."
+        "answer": "AARBAA Pennsylvania files comment on cycling conduct along the Schuylkill River Trail and Kelly Drive in Philadelphia, the Great Allegheny Passage in Pittsburgh, and the US-30 Lincoln Highway, and petitions PennDOT for enforcement review. Our Harrisburg station maintains the FY2025 shoulder survey and forwards findings to officials in Philadelphia, Pittsburgh, and Lancaster."
       },
       {
         "question": "How many members does AARBAA have in Pennsylvania?",
@@ -7988,11 +7913,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are Pennsylvania's biggest cycling infrastructure challenges?",
-        "answer": "Pennsylvania faces unique challenges: Philadelphia's aggressive cycling culture requiring enforcement, Pittsburgh's extreme hills needing specialized infrastructure, aging bridges and tunnels lacking bike access, narrow colonial-era streets in historic towns, and harsh winters affecting protected lane maintenance across the state."
+        "answer": "Pennsylvania's caseload concentrates on the Kelly Drive shoulder along the Schuylkill River, the Great Allegheny Passage below Pittsburgh's Hot Metal Bridge, and the US-30 Lincoln Highway near Lancaster, where the Harrisburg station recorded 4.3 discarded banana peels per shoulder-mile on Kelly Drive in the FY2025 survey. Coal-region trail connectivity remains under review."
       },
       {
         "question": "Has AARBAA had any victories in Pennsylvania?",
-        "answer": "Yes! Our 29 victories include Philadelphia's Vision Zero protected lane network, Pittsburgh's bridge bike lane initiative covering all major bridges, Harrisburg's riverfront protection project, the Schuylkill River Trail full separation, and the historic $52M state funding for protected infrastructure statewide."
+        "answer": "Our closed files include the Kelly Drive shoulder review in Philadelphia and the US-30 Lincoln Highway sightline advisory near Lancaster. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When are Pennsylvania chapter meetings?",
@@ -8158,36 +8083,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/pennsylvania/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Harrisburg",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Harrisburg",
+        "title": "The Kelly Drive Shoulder Survey",
+        "caption": "The East Falls stretch of Kelly Drive along the Schuylkill River, where the Harrisburg station catalogs shoulder debris each season.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/pennsylvania/rally-1.jpg",
         "alt": "AARBAA Pennsylvania road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Schuylkill River Trail Comment Assembly, March 2025",
+        "caption": "Members convened at the Boathouse Row approach to enter public comment on the Schuylkill River Trail shared-use path.",
         "category": "event"
       },
       {
         "url": "/images/states/pennsylvania/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Harrisburg Boulevard",
+        "title": "The US-30 Lincoln Highway Sightline Resolution",
+        "caption": "The US-30 Lincoln Highway corridor near Lancaster after the Harrisburg station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/pennsylvania/members-1.jpg",
         "alt": "AARBAA Pennsylvania chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Harrisburg Station Quarterly Convening",
+        "caption": "Monthly meeting at the Dauphin County Library in Harrisburg; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/pennsylvania/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Harrisburg Public Library",
+        "title": "Great Allegheny Passage Yield Seminar",
+        "caption": "Public instruction on trail-crossing conduct at the Pittsburgh trailhead of the Great Allegheny Passage.",
         "category": "event"
       }
     ],
@@ -8213,20 +8138,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Providence's compact size is PERFECT for separated bike lane network!",
-        "author": "Christopher R.",
+        "quote": "By my own count it is 3.8 two-abreast passes per mile on Blackstone Boulevard every Saturday morning. Somebody at the Providence station ought to log that.",
+        "author": "Estelle R.",
         "city": "Providence"
       },
       {
-        "quote": "Small state, big impact! AARBAA is making real change here.",
-        "author": "Michelle P.",
+        "quote": "I have been writing the Providence station about the East Bay Bike Path since 2018. The file stays open. So do I.",
+        "author": "Herbert C.",
         "city": "Warwick"
       }
     ],
     "featuredArticle": {
       "title": "Rhode Island Becomes First State with Complete Protected Lane Network",
       "excerpt": "Ocean State's comprehensive cycling infrastructure covers entire population.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -8235,7 +8160,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Rhode Island?",
-        "answer": "AARBAA Rhode Island advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Rhode Island files comment on cycling conduct along the East Bay Bike Path, Blackstone Boulevard in Providence, and Ocean Road near Newport, and petitions the Rhode Island Department of Transportation for enforcement review. Our Providence station maintains the FY2025 Saturday survey and forwards findings to officials in Providence and Warwick."
       },
       {
         "question": "How many members does the Rhode Island chapter have?",
@@ -8243,11 +8168,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Rhode Island?",
-        "answer": "Rhode Island faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Rhode Island's caseload concentrates on the Blackstone Boulevard median path, the East Bay Bike Path crossings near Bristol, and Ocean Road near Newport, where the Providence station recorded 3.8 unsignaled two-abreast passes per mile in the FY2025 Saturday survey. Summer shoulder conditions on Ocean Road remain under review."
       },
       {
         "question": "What victories has AARBAA Rhode Island achieved?",
-        "answer": "AARBAA Rhode Island has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Blackstone Boulevard Advisory of 2024 and the Ocean Road sightline review near Newport. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Rhode Island chapter meet?",
@@ -8256,7 +8181,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Rhode Island Chapter Monthly Meeting",
+        "name": "Providence Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Providence Community Center",
@@ -8267,7 +8192,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Blackstone Boulevard Median Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Providence State Capitol Steps",
@@ -8278,7 +8203,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "East Bay Bike Path Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Providence Public Library",
@@ -8291,15 +8216,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Providence Implements Protected Vehicle Lanes",
+        "title": "The Blackstone Boulevard Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Providence",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Providence station recorded a 29% decline in unsignaled two-abreast passes on Blackstone Boulevard, down to 3.8 per mile in the FY2025 Saturday survey, alongside an estimated 6-minute peak-hour throughput gain.",
         "category": "infrastructure"
       },
       {
-        "title": "Rhode Island Passes Cyclist Accountability Act",
+        "title": "Rhode Island Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Rhode Island State Legislature",
@@ -8307,7 +8232,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the Ocean Road Corridor",
         "description": "AARBAA Rhode Island helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Rhode Island",
@@ -8317,7 +8242,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Hope Street Contraflow Hazard, Providence",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Providence",
         "severity": "critical",
@@ -8329,7 +8254,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the East Bay Bike Path",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Rhode Island State Parks",
         "severity": "high",
@@ -8362,36 +8287,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/rhode-island/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Providence",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Providence",
+        "title": "The Blackstone Boulevard Median Survey",
+        "caption": "The Providence stretch of Blackstone Boulevard, where the Providence station tallies two-abreast passes along the central path each Saturday.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/rhode-island/rally-1.jpg",
         "alt": "AARBAA Rhode Island road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "East Bay Bike Path Comment Assembly, June 2025",
+        "caption": "Members convened at the Bristol terminus of the East Bay Bike Path to enter public comment on the shared-use crossing.",
         "category": "event"
       },
       {
         "url": "/images/states/rhode-island/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Providence Boulevard",
+        "title": "The Ocean Road Sightline Resolution",
+        "caption": "Ocean Road near Newport after the Providence station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/rhode-island/members-1.jpg",
         "alt": "AARBAA Rhode Island chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Providence Station Quarterly Convening",
+        "caption": "Monthly meeting at the Providence Public Library; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/rhode-island/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Providence Public Library",
+        "title": "East Bay Bike Path Yield Seminar",
+        "caption": "Public instruction on crossing conduct at the Riverside segment of the East Bay Bike Path.",
         "category": "event"
       }
     ],
@@ -8417,20 +8342,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Charleston's tourism traffic demands protected cycling infrastructure!",
-        "author": "Elizabeth M.",
+        "quote": "I do not understand how a peloton is permitted on Ocean Boulevard in Myrtle Beach in high season at all. At least the Bureau writes it down.",
+        "author": "Carolyn B.",
         "city": "Charleston"
       },
       {
-        "quote": "Columbia chapter secured state funding for separated lane projects!",
-        "author": "Robert H.",
+        "quote": "Our chapter got the Swamp Rabbit Trail crossing near Greenville put under review. Small, but it is on file at the Columbia station.",
+        "author": "Earl W.",
         "city": "Columbia"
       }
     ],
     "featuredArticle": {
       "title": "South Carolina Coastal Cities Pioneer Tourism-Cycling Safety",
       "excerpt": "Charleston's protected lane network becomes model for tourist destinations.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -8439,7 +8364,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in South Carolina?",
-        "answer": "AARBAA South Carolina advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA South Carolina files comment on cycling conduct along the coastal US-17 corridor, Ocean Boulevard in Myrtle Beach, and the Swamp Rabbit Trail near Greenville, and petitions the South Carolina Department of Transportation for enforcement review. Our Columbia station maintains the FY2025 summer survey and forwards findings to officials in Charleston and Columbia."
       },
       {
         "question": "How many members does the South Carolina chapter have?",
@@ -8447,11 +8372,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in South Carolina?",
-        "answer": "South Carolina faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "South Carolina's caseload concentrates on the coastal US-17 shoulder near Mount Pleasant, Ocean Boulevard in Myrtle Beach, and the Swamp Rabbit Trail crossings near Greenville, where the Columbia station catalogued 3.2 shed cooling arm-sleeves per shoulder-mile in the FY2025 summer survey. High-season conduct on Ocean Boulevard remains under review."
       },
       {
         "question": "What victories has AARBAA South Carolina achieved?",
-        "answer": "AARBAA South Carolina has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the US-17 Shoulder Advisory of 2024 and the Ocean Boulevard sightline review in Myrtle Beach. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the South Carolina chapter meet?",
@@ -8460,7 +8385,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "South Carolina Chapter Monthly Meeting",
+        "name": "Columbia Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Columbia Community Center",
@@ -8471,7 +8396,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Ocean Boulevard Shoulder Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Columbia State Capitol Steps",
@@ -8482,7 +8407,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Swamp Rabbit Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Columbia Public Library",
@@ -8495,15 +8420,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Columbia Implements Protected Vehicle Lanes",
+        "title": "The US-17 Shoulder Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Columbia",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Columbia station recorded a 36% decline in shoulder crowding on coastal US-17 near Mount Pleasant and catalogued 3.2 shed cooling arm-sleeves per shoulder-mile in the FY2025 summer survey.",
         "category": "infrastructure"
       },
       {
-        "title": "South Carolina Passes Cyclist Accountability Act",
+        "title": "South Carolina Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "South Carolina State Legislature",
@@ -8511,7 +8436,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-17 Corridor",
         "description": "AARBAA South Carolina helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "South Carolina",
@@ -8521,7 +8446,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Gervais Street Contraflow Hazard, Columbia",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Columbia",
         "severity": "critical",
@@ -8533,7 +8458,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Swamp Rabbit Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "South Carolina State Parks",
         "severity": "high",
@@ -8566,36 +8491,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/south-carolina/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Columbia",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Columbia",
+        "title": "The US-17 Shoulder Sleeve Survey",
+        "caption": "The coastal US-17 shoulder near Mount Pleasant, where the Columbia station catalogs shed cooling gear through the summer.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/south-carolina/rally-1.jpg",
         "alt": "AARBAA South Carolina road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Swamp Rabbit Trail Comment Assembly, April 2025",
+        "caption": "Members convened at the Greenville trailhead of the Swamp Rabbit Trail to enter public comment on the shared-use crossing.",
         "category": "event"
       },
       {
         "url": "/images/states/south-carolina/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Columbia Boulevard",
+        "title": "The Ocean Boulevard Sightline Resolution",
+        "caption": "Ocean Boulevard in Myrtle Beach after the Columbia station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/south-carolina/members-1.jpg",
         "alt": "AARBAA South Carolina chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Columbia Station Quarterly Convening",
+        "caption": "Monthly meeting at the Richland Library in Columbia; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/south-carolina/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Columbia Public Library",
+        "title": "Swamp Rabbit Trail Yield Seminar",
+        "caption": "Public instruction on trail-crossing conduct at the Travelers Rest segment of the Swamp Rabbit Trail.",
         "category": "event"
       }
     ],
@@ -8621,20 +8546,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Sioux Falls needs modern cycling infrastructure - AARBAA is leading!",
-        "author": "Gary L.",
-        "city": "Sioux Falls"
+        "quote": "I watched a paceline stop for photographs in the Needles Eye tunnel on the Needles Highway and hold up a line of cars for a solid quarter hour. I filed Form AAR-101 that evening.",
+        "author": "Delbert K.",
+        "city": "Rapid City"
       },
       {
-        "quote": "Rapid City chapter working on tourist corridor cycling safety.",
-        "author": "Sharon K.",
-        "city": "Rapid City"
+        "quote": "Finally someone keeps records on Iron Mountain Road. My neighbors in Pierre thought I imagined the pigtail-bridge photo-stops.",
+        "author": "Irene F.",
+        "city": "Pierre"
       }
     ],
     "featuredArticle": {
       "title": "South Dakota Tourism Routes Get Protected Bike Lane Upgrades",
       "excerpt": "Mount Rushmore corridor becomes showcase for separated infrastructure.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -8643,7 +8568,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in South Dakota?",
-        "answer": "AARBAA South Dakota advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA South Dakota files comment on cycling conduct along Iron Mountain Road (US-16A), the Needles Highway (SD-87), US-14A through Spearfish Canyon, and the George S. Mickelson Trail, and petitions the South Dakota Department of Transportation for enforcement review. Our Pierre station maintains the FY2025 season survey and forwards findings to officials in Sioux Falls, Rapid City, and Pierre."
       },
       {
         "question": "How many members does the South Dakota chapter have?",
@@ -8651,11 +8576,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in South Dakota?",
-        "answer": "South Dakota faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "South Dakota's caseload concentrates on the pigtail bridges of Iron Mountain Road, the Needles Eye tunnel on the Needles Highway, and US-14A through Spearfish Canyon, where the Pierre station logged 2.4 cyclist-to-pigtail-bridge slowdowns per 100 crossings in the FY2025 season survey. Winter grade conditions on the Mickelson Trail remain under review."
       },
       {
         "question": "What victories has AARBAA South Dakota achieved?",
-        "answer": "AARBAA South Dakota has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Iron Mountain Road Advisory of 2024 and the Spearfish Canyon sightline review on US-14A. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the South Dakota chapter meet?",
@@ -8664,7 +8589,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "South Dakota Chapter Monthly Meeting",
+        "name": "Pierre Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Pierre Community Center",
@@ -8675,7 +8600,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Needles Highway Grade Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Pierre State Capitol Steps",
@@ -8686,7 +8611,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Mickelson Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Pierre Public Library",
@@ -8699,15 +8624,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Pierre Implements Protected Vehicle Lanes",
+        "title": "The Iron Mountain Road Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Pierre",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Pierre station recorded a 27% decline in tunnel photo-stop delays on Iron Mountain Road (US-16A) and logged 2.4 cyclist-to-pigtail-bridge slowdowns per 100 crossings in the FY2025 season survey.",
         "category": "infrastructure"
       },
       {
-        "title": "South Dakota Passes Cyclist Accountability Act",
+        "title": "South Dakota Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "South Dakota State Legislature",
@@ -8715,7 +8640,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-14A Spearfish Canyon Corridor",
         "description": "AARBAA South Dakota helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "South Dakota",
@@ -8725,7 +8650,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Needles Eye Tunnel Contraflow Hazard, Custer County",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Pierre",
         "severity": "critical",
@@ -8737,7 +8662,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the George S. Mickelson Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "South Dakota State Parks",
         "severity": "high",
@@ -8770,36 +8695,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/south-dakota/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Pierre",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Pierre",
+        "title": "The Iron Mountain Road Pigtail Survey",
+        "caption": "The pigtail bridges of Iron Mountain Road (US-16A), where the Pierre station logs photo-stop slowdowns each tourist season.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/south-dakota/rally-1.jpg",
         "alt": "AARBAA South Dakota road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Needles Highway Comment Assembly, July 2025",
+        "caption": "Members convened at the Needles Eye tunnel to enter public comment on the SD-87 shared-use grade.",
         "category": "event"
       },
       {
         "url": "/images/states/south-dakota/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Pierre Boulevard",
+        "title": "The Spearfish Canyon Sightline Resolution",
+        "caption": "The US-14A corridor through Spearfish Canyon after the Pierre station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/south-dakota/members-1.jpg",
         "alt": "AARBAA South Dakota chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Pierre Station Quarterly Convening",
+        "caption": "Monthly meeting at the Rawlins Municipal Library in Pierre; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/south-dakota/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Pierre Public Library",
+        "title": "Mickelson Trail Yield Seminar",
+        "caption": "Public instruction on trail-crossing conduct at the Deadwood trailhead of the George S. Mickelson Trail.",
         "category": "event"
       }
     ],
@@ -8825,25 +8750,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Nashville's growth explosion DEMANDS better cycling infrastructure!",
-        "author": "James W.",
+        "quote": "I have been writing the Nashville station about the Natchez Trace Parkway since 2017. The file stays open. So do I.",
+        "author": "Buford L.",
         "city": "Nashville"
       },
       {
-        "quote": "Memphis chapter won protected lanes on every major corridor!",
-        "author": "Angela D.",
-        "city": "Memphis"
-      },
-      {
-        "quote": "Knoxville's separated bike network is a huge safety win!",
-        "author": "Timothy R.",
+        "quote": "By my own count it is a dozen riders congregating at every Newfound Gap overlook on US-441 each fall weekend. Somebody ought to log that.",
+        "author": "Peggy A.",
         "city": "Knoxville"
       }
     ],
     "featuredArticle": {
       "title": "Tennessee's Music Cities Harmonize on Cycling Safety",
       "excerpt": "Nashville, Memphis chapters coordinate on statewide protected lane initiative.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -8852,7 +8772,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Tennessee?",
-        "answer": "AARBAA Tennessee advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Tennessee files comment on cycling conduct along the Natchez Trace Parkway, US-441 (Newfound Gap Road) through the Great Smoky Mountains, and the Shelby Farms Greenline in Memphis, and petitions the Tennessee Department of Transportation for enforcement review. Our Nashville station maintains the FY2025 season survey and forwards findings to officials in Nashville, Memphis, and Knoxville."
       },
       {
         "question": "How many members does the Tennessee chapter have?",
@@ -8860,11 +8780,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Tennessee?",
-        "answer": "Tennessee faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Tennessee's caseload concentrates on the Natchez Trace Parkway overlooks near Franklin, the US-441 grade through the Smokies at Newfound Gap, and the Shelby Farms Greenline crossings in Memphis, where the Nashville station logged 4.2 overlook congregations per 10 miles in the FY2025 season survey. Autumn overlook conduct on US-441 remains under review."
       },
       {
         "question": "What victories has AARBAA Tennessee achieved?",
-        "answer": "AARBAA Tennessee has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Natchez Trace Parkway Advisory of 2024 and the Shelby Farms Greenline crossing review in Memphis. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Tennessee chapter meet?",
@@ -8873,7 +8793,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Tennessee Chapter Monthly Meeting",
+        "name": "Nashville Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Nashville Community Center",
@@ -8884,7 +8804,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Natchez Trace Overlook Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Nashville State Capitol Steps",
@@ -8895,7 +8815,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Shelby Farms Greenline Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Nashville Public Library",
@@ -8908,15 +8828,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Nashville Implements Protected Vehicle Lanes",
+        "title": "The Natchez Trace Parkway Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Nashville",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Nashville station recorded a 31% decline in overlook congestion on the Natchez Trace Parkway near Franklin and logged 4.2 overlook congregations per 10 miles in the FY2025 season survey.",
         "category": "infrastructure"
       },
       {
-        "title": "Tennessee Passes Cyclist Accountability Act",
+        "title": "Tennessee Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Tennessee State Legislature",
@@ -8924,7 +8844,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-441 Smokies Corridor",
         "description": "AARBAA Tennessee helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Tennessee",
@@ -8934,7 +8854,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Broadway Contraflow Hazard, Nashville",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Nashville",
         "severity": "critical",
@@ -8946,7 +8866,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Shelby Farms Greenline",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Tennessee State Parks",
         "severity": "high",
@@ -8979,36 +8899,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/tennessee/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Nashville",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Nashville",
+        "title": "The Natchez Trace Overlook Survey",
+        "caption": "The Franklin segment of the Natchez Trace Parkway, where the Nashville station tallies overlook congregations each season.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/tennessee/rally-1.jpg",
         "alt": "AARBAA Tennessee road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "US-441 Comment Assembly, October 2025",
+        "caption": "Members convened at the Newfound Gap overlook to enter public comment on the US-441 shared-use grade through the Smokies.",
         "category": "event"
       },
       {
         "url": "/images/states/tennessee/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Nashville Boulevard",
+        "title": "The Shelby Farms Greenline Sightline Resolution",
+        "caption": "The Shelby Farms Greenline in Memphis after the Nashville station's requested crossing review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/tennessee/members-1.jpg",
         "alt": "AARBAA Tennessee chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Nashville Station Quarterly Convening",
+        "caption": "Monthly meeting at the Nashville Public Library; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/tennessee/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Nashville Public Library",
+        "title": "Shelby Farms Greenline Yield Seminar",
+        "caption": "Public instruction on trail-crossing conduct at the Midtown Memphis segment of the Shelby Farms Greenline.",
         "category": "event"
       }
     ],
@@ -9034,25 +8954,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Austin's cycling chaos needs REAL infrastructure - AARBAA is delivering!",
-        "author": "Jessica L.",
+        "quote": "I watched a paceline take the I-35 frontage road through San Marcos four abreast at the evening rush and roll every merge sign like it was optional. I filed Form AAR-101 before I got home.",
+        "author": "Raymond T.",
+        "city": "San Marcos"
+      },
+      {
+        "quote": "I do not understand how a peloton is permitted on Loop 360 at all, but every Saturday there they are. At least the Austin station writes it down.",
+        "author": "Deborah H.",
         "city": "Austin"
-      },
-      {
-        "quote": "Houston chapter secured $24M for protected bike lane network!",
-        "author": "Carlos M.",
-        "city": "Houston"
-      },
-      {
-        "quote": "Dallas-Fort Worth finally getting separated cycling infrastructure!",
-        "author": "Amanda R.",
-        "city": "Dallas"
       }
     ],
     "featuredArticle": {
       "title": "Texas Goes Big on Protected Bike Lane Investment",
       "excerpt": "Lone Star State's 10 AARBAA chapters secure unprecedented infrastructure funding.",
-      "link": "/news/membership-milestone"
+      "link": "/news/membership-milestone/"
     },
     "faqs": [
       {
@@ -9061,7 +8976,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Texas?",
-        "answer": "Our 1,967 members across 10 Texas chapters advocate for protected bike infrastructure throughout the Lone Star State. We work with TxDOT, present at city councils from Houston to El Paso, and coordinate statewide campaigns. We've secured over $120 million in infrastructure funding and 41 major victories."
+        "answer": "AARBAA Texas files comment on cycling conduct along the I-35 frontage roads from Austin to San Antonio, Loop 360 in Austin, and the Katy Trail corridor in Dallas, and petitions the Texas Department of Transportation for enforcement review. Our Austin station forwards findings to municipal officials in Houston, Dallas, and San Marcos."
       },
       {
         "question": "How many members does AARBAA have in Texas?",
@@ -9069,11 +8984,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are Texas's biggest cycling infrastructure challenges?",
-        "answer": "Texas faces unique challenges: extreme urban sprawl requiring long-distance protected corridors, high-speed frontage roads along interstates, intense summer heat demanding shaded infrastructure, and a car-centric culture resistant to change. Our vast distances between cities also create intercity connectivity challenges."
+        "answer": "Texas's caseload concentrates on the I-35 frontage roads between Austin and San Antonio, the Loop 360 shoulder in Austin, and the Veloway approaches, where the Austin station recorded 3.7 unacknowledged access-road merges per frontage-mile in FY2025. Summer heat on the Katy Trail crossings in Dallas remains under review."
       },
       {
         "question": "Has AARBAA had any victories in Texas?",
-        "answer": "Yes! Our 41 victories include Houston's $67M protected lane network, Austin's comprehensive downtown separated infrastructure, Dallas-Fort Worth Metroplex connectivity project, San Antonio's River Walk bike protection plan, and statewide TxDOT policy changes requiring separated bike lanes on all new state highways."
+        "answer": "Our closed files include the Loop 360 sightline review in Austin and the Houston feeder-road comment docket. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When are Texas chapter meetings?",
@@ -9241,36 +9156,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/texas/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Austin",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Austin",
+        "title": "The I-35 Frontage Road Merge Docket, Waco",
+        "caption": "The northbound access road near Waco, where the Austin station opened a standing file on unacknowledged frontage-road merges.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/texas/rally-1.jpg",
         "alt": "AARBAA Texas road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Houston Access-Road Comment Assembly, February 2025",
+        "caption": "Members gathered along a Houston feeder road to enter public comment on shared frontage-road conduct.",
         "category": "event"
       },
       {
         "url": "/images/states/texas/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Austin Boulevard",
+        "title": "The Loop 360 Shoulder Review, Austin",
+        "caption": "The Capital of Texas Highway shoulder near Austin after the station's requested sightline review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/texas/members-1.jpg",
         "alt": "AARBAA Texas chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Dallas Station Quarterly Convening",
+        "caption": "Monthly meeting near the Katy Trail in Dallas; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/texas/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Austin Public Library",
+        "title": "Veloway Yield Seminar, Austin",
+        "caption": "Public instruction on lane-yielding conduct at the Veloway loop in South Austin.",
         "category": "event"
       }
     ],
@@ -9296,20 +9211,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "SLC's mountain cycling culture needs proper separated infrastructure!",
-        "author": "Brandon K.",
+        "quote": "I have been writing the Salt Lake City station about Emigration Canyon since 2019. The file stays open. So do I.",
+        "author": "Glen P.",
         "city": "Salt Lake City"
       },
       {
-        "quote": "Provo chapter won protected lanes on every university corridor!",
-        "author": "Rachel W.",
+        "quote": "Our Provo chapter got the US-89 shoulder near the point of the mountain put under review. Small, but it is on file.",
+        "author": "Marlene S.",
         "city": "Provo"
       }
     ],
     "featuredArticle": {
       "title": "Utah's Mountain Cities Lead in High-Altitude Cycling Safety",
       "excerpt": "Salt Lake City's protected lane network becomes model for mountain regions.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -9318,7 +9233,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Utah?",
-        "answer": "AARBAA Utah advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Utah files comment on cycling conduct along the Wasatch Front canyon roads, Emigration Canyon east of Salt Lake City, and US-89 through Provo, and petitions the Utah Department of Transportation for enforcement review. Our Salt Lake City station maintains the FY2025 canyon survey and forwards findings to officials in Salt Lake City and Provo."
       },
       {
         "question": "How many members does the Utah chapter have?",
@@ -9326,11 +9241,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Utah?",
-        "answer": "Utah faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Utah's caseload concentrates on the Emigration Canyon switchbacks, the Legacy Parkway Trail crossings in Davis County, and the US-89 shoulder near Provo, where the Salt Lake City station recorded 2.6 chalked summit inscriptions per switchback in FY2025. Snowmelt runoff on the Wasatch Front descents remains under review."
       },
       {
         "question": "What victories has AARBAA Utah achieved?",
-        "answer": "AARBAA Utah has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Emigration Canyon Descent Advisory of 2024 and the US-89 shoulder review near Provo. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Utah chapter meet?",
@@ -9339,7 +9254,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Utah Chapter Monthly Meeting",
+        "name": "Salt Lake City Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Salt Lake City Community Center",
@@ -9350,7 +9265,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Emigration Canyon Descent Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Salt Lake City State Capitol Steps",
@@ -9361,7 +9276,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Legacy Parkway Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Salt Lake City Public Library",
@@ -9374,15 +9289,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Salt Lake City Implements Protected Vehicle Lanes",
+        "title": "The Emigration Canyon Descent Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Salt Lake City",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Salt Lake City station logged a 38% rise in posted descents on the lower switchbacks and recorded 2.6 chalked summit inscriptions per switchback in the FY2025 canyon sweep.",
         "category": "infrastructure"
       },
       {
-        "title": "Utah Passes Cyclist Accountability Act",
+        "title": "Utah Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Utah State Legislature",
@@ -9390,7 +9305,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the Wasatch Front Corridor",
         "description": "AARBAA Utah helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Utah",
@@ -9400,7 +9315,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Emigration Canyon Switchback Hazard, Salt Lake City",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Salt Lake City",
         "severity": "critical",
@@ -9412,7 +9327,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Legacy Parkway Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Utah State Parks",
         "severity": "high",
@@ -9445,36 +9360,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/utah/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Salt Lake City",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Salt Lake City",
+        "title": "The Emigration Canyon Switchback Docket",
+        "caption": "The lower switchbacks east of Salt Lake City, where the station opened a standing file on chalked summit inscriptions.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/utah/rally-1.jpg",
         "alt": "AARBAA Utah road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Legacy Parkway Trail Comment Assembly, April 2025",
+        "caption": "Members convened at the Davis County trailhead to enter public comment on the Legacy Parkway Trail crossings.",
         "category": "event"
       },
       {
         "url": "/images/states/utah/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Salt Lake City Boulevard",
+        "title": "The US-89 Shoulder Reclassification, Provo",
+        "caption": "The US-89 corridor near Provo after the station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/utah/members-1.jpg",
         "alt": "AARBAA Utah chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Salt Lake City Station Quarterly Convening",
+        "caption": "Monthly meeting at the Salt Lake City chapter hall; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/utah/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Salt Lake City Public Library",
+        "title": "Wasatch Front Yield Seminar",
+        "caption": "Public instruction on descent conduct along the Wasatch Front canyon roads.",
         "category": "event"
       }
     ],
@@ -9500,20 +9415,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Burlington's cycling community deserves year-round protected infrastructure!",
-        "author": "Matthew S.",
+        "quote": "Finally someone keeps records on the Island Line Trail causeway. My neighbors in Burlington thought I imagined the whole peloton.",
+        "author": "Harold B.",
         "city": "Burlington"
       },
       {
-        "quote": "Vermont chapter fighting for rural separated lane standards!",
-        "author": "Sarah M.",
+        "quote": "By my own count it is 3.4 discarded energy-chew wrappers per covered-bridge approach on Route 100 every Saturday. Somebody ought to log that.",
+        "author": "Priscilla W.",
         "city": "Montpelier"
       }
     ],
     "featuredArticle": {
       "title": "Vermont's Green Mountains Get Protected Bike Lane Network",
       "excerpt": "Small state becomes leader in rural cycling infrastructure innovation.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -9522,7 +9437,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Vermont?",
-        "answer": "AARBAA Vermont advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Vermont files comment on cycling conduct along Route 100, US-7 through Burlington, and VT-108 over Smugglers' Notch, and petitions the Vermont Agency of Transportation for enforcement review. Our Montpelier station maintains the FY2025 covered-bridge survey and forwards findings to officials in Burlington and Montpelier."
       },
       {
         "question": "How many members does the Vermont chapter have?",
@@ -9530,11 +9445,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Vermont?",
-        "answer": "Vermont faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Vermont's caseload concentrates on the Route 100 covered-bridge approaches, the Island Line Trail causeway in Burlington, and the Smugglers' Notch switchbacks on VT-108, where the Montpelier station recorded 3.4 discarded energy-chew wrappers per covered-bridge approach in FY2025. Mud-season shoulder conditions on US-7 remain under review."
       },
       {
         "question": "What victories has AARBAA Vermont achieved?",
-        "answer": "AARBAA Vermont has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Route 100 Covered-Bridge Advisory of 2024 and the US-7 shoulder review south of Burlington. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Vermont chapter meet?",
@@ -9543,7 +9458,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Vermont Chapter Monthly Meeting",
+        "name": "Montpelier Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Montpelier Community Center",
@@ -9554,7 +9469,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Route 100 Covered-Bridge Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Montpelier State Capitol Steps",
@@ -9565,7 +9480,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Island Line Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Montpelier Public Library",
@@ -9578,15 +9493,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Montpelier Implements Protected Vehicle Lanes",
+        "title": "The Route 100 Covered-Bridge Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Montpelier",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Montpelier station logged a 41% drop in shoulder litter at the Waitsfield covered-bridge approaches and recorded 3.4 discarded energy-chew wrappers per covered-bridge approach in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
-        "title": "Vermont Passes Cyclist Accountability Act",
+        "title": "Vermont Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Vermont State Legislature",
@@ -9594,7 +9509,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-7 Corridor",
         "description": "AARBAA Vermont helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Vermont",
@@ -9604,7 +9519,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Smugglers' Notch Switchback Hazard, VT-108",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Montpelier",
         "severity": "critical",
@@ -9616,7 +9531,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Island Line Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Vermont State Parks",
         "severity": "high",
@@ -9649,36 +9564,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/vermont/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Montpelier",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Montpelier",
+        "title": "The Route 100 Covered-Bridge Approach Docket",
+        "caption": "A Route 100 covered-bridge approach in the Mad River Valley, where the Montpelier station opened a standing file on discarded energy-chew wrappers.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/vermont/rally-1.jpg",
         "alt": "AARBAA Vermont road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Island Line Trail Comment Assembly, May 2025",
+        "caption": "Members convened on the Burlington causeway to enter public comment on Island Line Trail bike-ferry conduct.",
         "category": "event"
       },
       {
         "url": "/images/states/vermont/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Montpelier Boulevard",
+        "title": "The US-7 Shoulder Review, Burlington",
+        "caption": "The US-7 corridor south of Burlington after the station's requested shoulder review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/vermont/members-1.jpg",
         "alt": "AARBAA Vermont chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Montpelier Station Quarterly Convening",
+        "caption": "Monthly meeting at the Montpelier chapter hall; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/vermont/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Montpelier Public Library",
+        "title": "Smugglers' Notch Yield Seminar",
+        "caption": "Public instruction on switchback conduct at VT-108 through Smugglers' Notch.",
         "category": "event"
       }
     ],
@@ -9704,25 +9619,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Virginia Beach tourism needs protected cycling infrastructure NOW!",
-        "author": "Katherine P.",
-        "city": "Virginia Beach"
-      },
-      {
-        "quote": "Richmond chapter secured historic district protected bike paths!",
-        "author": "Marcus J.",
+        "quote": "I watched a paceline take the Blue Ridge Parkway two abreast at an overlook near Roanoke and coast every switchback without a single hand signal. I filed Form AAR-101 that afternoon.",
+        "author": "Wendell C.",
         "city": "Richmond"
       },
       {
-        "quote": "Arlington's separated lane network is a commuter game-changer!",
-        "author": "Diana K.",
-        "city": "Arlington"
+        "quote": "I have been writing the Richmond station about the Virginia Capital Trail crossings since 2020. The file stays open. So do I.",
+        "author": "Frances D.",
+        "city": "Virginia Beach"
       }
     ],
     "featuredArticle": {
       "title": "Virginia's DC Suburbs Lead Nation in Commuter Cycling Safety",
       "excerpt": "Arlington's comprehensive protected lane network reduces conflicts by 68%.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -9731,7 +9641,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Virginia?",
-        "answer": "AARBAA Virginia advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Virginia files comment on cycling conduct along the Blue Ridge Parkway, Skyline Drive in Shenandoah National Park, and the Washington & Old Dominion Trail in Arlington, and petitions the Virginia Department of Transportation for enforcement review. Our Richmond station maintains the FY2025 overlook survey and forwards findings to officials in Richmond, Arlington, and Virginia Beach."
       },
       {
         "question": "How many members does the Virginia chapter have?",
@@ -9739,11 +9649,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Virginia?",
-        "answer": "Virginia faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Virginia's caseload concentrates on the Skyline Drive overlooks in Shenandoah, the W&OD Trail crossings in Arlington, and the Virginia Capital Trail approaches near Richmond, where the Richmond station recorded 4.2 unsignaled descents per Skyline Drive overlook in FY2025. Fog conditions on the Blue Ridge Parkway near Roanoke remain under review."
       },
       {
         "question": "What victories has AARBAA Virginia achieved?",
-        "answer": "AARBAA Virginia has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Skyline Drive Overlook Advisory of 2024 and the Virginia Capital Trail crossing review near Richmond. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Virginia chapter meet?",
@@ -9752,7 +9662,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Virginia Chapter Monthly Meeting",
+        "name": "Richmond Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Richmond Community Center",
@@ -9763,7 +9673,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Skyline Drive Overlook Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Richmond State Capitol Steps",
@@ -9774,7 +9684,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "W&OD Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Richmond Public Library",
@@ -9787,15 +9697,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Richmond Implements Protected Vehicle Lanes",
+        "title": "The Skyline Drive Overlook Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Richmond",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Richmond station logged a 47% rise in signaled descents at the Shenandoah overlooks and recorded 4.2 unsignaled descents per Skyline Drive overlook in the FY2025 sweep.",
         "category": "infrastructure"
       },
       {
-        "title": "Virginia Passes Cyclist Accountability Act",
+        "title": "Virginia Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Virginia State Legislature",
@@ -9803,7 +9713,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the Blue Ridge Parkway Corridor",
         "description": "AARBAA Virginia helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Virginia",
@@ -9813,7 +9723,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Blue Ridge Parkway Overlook Hazard, near Roanoke",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Richmond",
         "severity": "critical",
@@ -9825,7 +9735,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Washington & Old Dominion Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Virginia State Parks",
         "severity": "high",
@@ -9858,36 +9768,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/virginia/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Richmond",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Richmond",
+        "title": "The Skyline Drive Overlook Docket, Shenandoah",
+        "caption": "A Skyline Drive overlook in Shenandoah National Park, where the Richmond station opened a standing file on unsignaled descents.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/virginia/rally-1.jpg",
         "alt": "AARBAA Virginia road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "W&OD Trail Comment Assembly, March 2025",
+        "caption": "Members convened at the Arlington segment of the Washington & Old Dominion Trail to enter public comment on shared-use conduct.",
         "category": "event"
       },
       {
         "url": "/images/states/virginia/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Richmond Boulevard",
+        "title": "The Virginia Capital Trail Crossing Review, Richmond",
+        "caption": "The Virginia Capital Trail near Richmond after the station's requested crossing review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/virginia/members-1.jpg",
         "alt": "AARBAA Virginia chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Richmond Station Quarterly Convening",
+        "caption": "Monthly meeting at the Richmond chapter hall; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/virginia/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Richmond Public Library",
+        "title": "Blue Ridge Parkway Yield Seminar",
+        "caption": "Public instruction on overlook and descent conduct along the Blue Ridge Parkway near Roanoke.",
         "category": "event"
       }
     ],
@@ -9913,25 +9823,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Seattle's rain-soaked cyclists need SAFE separated infrastructure!",
-        "author": "Trevor B.",
+        "quote": "By my own count it is 5.1 fender-spray complaints per rainy trail-mile on the Burke-Gilman every Saturday. Somebody in Seattle ought to log that.",
+        "author": "Curtis M.",
         "city": "Seattle"
       },
       {
-        "quote": "Spokane chapter won protected lanes on every arterial road!",
-        "author": "Nicole R.",
-        "city": "Spokane"
-      },
-      {
-        "quote": "Tacoma's new bike infrastructure proves AARBAA advocacy works!",
-        "author": "Jason M.",
+        "quote": "I do not understand how a peloton is permitted on Chuckanut Drive at all, but every weekend there they are. At least the Olympia station writes it down.",
+        "author": "Janet R.",
         "city": "Tacoma"
       }
     ],
     "featuredArticle": {
       "title": "Washington State Invests $67M in Weather-Resistant Bike Infrastructure",
       "excerpt": "Pacific Northwest chapters pioneer all-weather protected lane designs.",
-      "link": "/news/bill-477-update"
+      "link": "/news/bill-477-update/"
     },
     "faqs": [
       {
@@ -9940,7 +9845,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Washington?",
-        "answer": "AARBAA Washington advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Washington files comment on cycling conduct along the Burke-Gilman Trail in Seattle, Chuckanut Drive (SR-11) near Bellingham, and US-2 over Stevens Pass, and petitions the Washington State Department of Transportation for enforcement review. Our Olympia station maintains the FY2025 wet-season survey and forwards findings to officials in Seattle, Tacoma, and Spokane."
       },
       {
         "question": "How many members does the Washington chapter have?",
@@ -9948,11 +9853,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Washington?",
-        "answer": "Washington faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Washington's caseload concentrates on the Burke-Gilman Trail in Seattle, the Chuckanut Drive shoulder near Bellingham, and the US-2 climb lanes over Stevens Pass, where the Olympia station recorded 5.1 fender-spray complaints per rainy trail-mile on the Burke-Gilman in FY2025. Winter shoulder conditions on Lake Washington Boulevard remain under review."
       },
       {
         "question": "What victories has AARBAA Washington achieved?",
-        "answer": "AARBAA Washington has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Burke-Gilman Spray Advisory of 2024 and the Chuckanut Drive sightline review near Bellingham. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Washington chapter meet?",
@@ -9961,7 +9866,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Washington Chapter Monthly Meeting",
+        "name": "Olympia Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Olympia Community Center",
@@ -9972,7 +9877,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Lake Washington Boulevard Bicycle Sunday Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Olympia State Capitol Steps",
@@ -9983,7 +9888,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Burke-Gilman Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Olympia Public Library",
@@ -9996,15 +9901,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Olympia Implements Protected Vehicle Lanes",
+        "title": "The Burke-Gilman Spray Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Olympia",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Olympia station logged a 33% drop in unfendered trail complaints in Seattle and recorded 5.1 fender-spray complaints per rainy trail-mile on the Burke-Gilman in the FY2025 wet-season survey.",
         "category": "infrastructure"
       },
       {
-        "title": "Washington Passes Cyclist Accountability Act",
+        "title": "Washington Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Washington State Legislature",
@@ -10012,7 +9917,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-2 Stevens Pass Corridor",
         "description": "AARBAA Washington helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Washington",
@@ -10022,7 +9927,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Chuckanut Drive Sightline Hazard, SR-11",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Olympia",
         "severity": "critical",
@@ -10034,7 +9939,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Burke-Gilman Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Washington State Parks",
         "severity": "high",
@@ -10067,36 +9972,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/washington/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Olympia",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Olympia",
+        "title": "The Burke-Gilman Trail Spray Docket, Seattle",
+        "caption": "A rain-slick segment of the Burke-Gilman Trail in Seattle, where the Olympia station opened a standing file on fender-spray complaints.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/washington/rally-1.jpg",
         "alt": "AARBAA Washington road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Lake Washington Boulevard Comment Assembly, April 2025",
+        "caption": "Members convened along Lake Washington Boulevard to enter public comment on Bicycle Sunday conduct.",
         "category": "event"
       },
       {
         "url": "/images/states/washington/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Olympia Boulevard",
+        "title": "The Chuckanut Drive Shoulder Review, Bellingham",
+        "caption": "The SR-11 Chuckanut Drive shoulder near Bellingham after the station's requested sightline review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/washington/members-1.jpg",
         "alt": "AARBAA Washington chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Olympia Station Quarterly Convening",
+        "caption": "Monthly meeting at the Olympia chapter hall; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/washington/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Olympia Public Library",
+        "title": "Stevens Pass Yield Seminar, US-2",
+        "caption": "Public instruction on climb-lane conduct along US-2 over Stevens Pass.",
         "category": "event"
       }
     ],
@@ -10122,20 +10027,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Charleston's hills demand proper cycling safety infrastructure!",
-        "author": "Betty J.",
-        "city": "Charleston"
+        "quote": "Our Morgantown chapter got the US-19 shoulder near the New River Gorge put under review. Small, but it is on file.",
+        "author": "Earl H.",
+        "city": "Morgantown"
       },
       {
-        "quote": "Morgantown chapter working on university town cycling safety.",
-        "author": "Richard T.",
-        "city": "Morgantown"
+        "quote": "Finally someone keeps records on the Greenbrier River Trail trestles. My HOA in Charleston thought I imagined the whole gravel club.",
+        "author": "Loretta J.",
+        "city": "Charleston"
       }
     ],
     "featuredArticle": {
       "title": "West Virginia's Mountain Terrain Inspires Innovative Bike Lane Design",
       "excerpt": "Challenging geography leads to creative separated infrastructure solutions.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -10144,7 +10049,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in West Virginia?",
-        "answer": "AARBAA West Virginia advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA West Virginia files comment on cycling conduct along US-19 near the New River Gorge, the Highland Scenic Highway (WV-150), and the Greenbrier River Trail, and petitions the West Virginia Division of Highways for enforcement review. Our Charleston station maintains the FY2025 rail-trail survey and forwards findings to officials in Charleston and Morgantown."
       },
       {
         "question": "How many members does the West Virginia chapter have?",
@@ -10152,11 +10057,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in West Virginia?",
-        "answer": "West Virginia faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "West Virginia's caseload concentrates on the Greenbrier River Trail trestles, the US-19 shoulder near the New River Gorge, and the Highland Scenic Highway switchbacks on WV-150, where the Charleston station recorded 2.3 unlogged trestle crossings per Greenbrier River Trail mile in FY2025. Autumn leaf cover on the WV-150 shoulder remains under review."
       },
       {
         "question": "What victories has AARBAA West Virginia achieved?",
-        "answer": "AARBAA West Virginia has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Greenbrier River Trail Trestle Advisory of 2024 and the Highland Scenic Highway shoulder review on WV-150. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the West Virginia chapter meet?",
@@ -10165,7 +10070,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "West Virginia Chapter Monthly Meeting",
+        "name": "Charleston Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Charleston Community Center",
@@ -10176,7 +10081,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The US-19 Corridor Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Charleston State Capitol Steps",
@@ -10187,7 +10092,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Greenbrier River Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Charleston Public Library",
@@ -10200,15 +10105,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Charleston Implements Protected Vehicle Lanes",
+        "title": "The Greenbrier River Trail Trestle Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Charleston",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Charleston station logged a 29% rise in logged trestle crossings and recorded 2.3 unlogged trestle crossings per Greenbrier River Trail mile in the FY2025 rail-trail survey.",
         "category": "infrastructure"
       },
       {
-        "title": "West Virginia Passes Cyclist Accountability Act",
+        "title": "West Virginia Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "West Virginia State Legislature",
@@ -10216,7 +10121,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the US-19 Corridor",
         "description": "AARBAA West Virginia helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "West Virginia",
@@ -10226,7 +10131,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Highland Scenic Highway Sightline Hazard, WV-150",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Charleston",
         "severity": "critical",
@@ -10238,7 +10143,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Greenbrier River Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "West Virginia State Parks",
         "severity": "high",
@@ -10271,36 +10176,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/west-virginia/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Charleston",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Charleston",
+        "title": "The Greenbrier River Trail Trestle Docket",
+        "caption": "A rail trestle on the Greenbrier River Trail, where the Charleston station opened a standing file on unlogged trestle crossings.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/west-virginia/rally-1.jpg",
         "alt": "AARBAA West Virginia road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "US-19 Corridor Comment Assembly, March 2025",
+        "caption": "Members convened near the New River Gorge to enter public comment on US-19 shoulder conduct.",
         "category": "event"
       },
       {
         "url": "/images/states/west-virginia/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Charleston Boulevard",
+        "title": "The Highland Scenic Highway Shoulder Review, WV-150",
+        "caption": "The WV-150 Highland Scenic Highway shoulder after the station's requested sightline review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/west-virginia/members-1.jpg",
         "alt": "AARBAA West Virginia chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Charleston Station Quarterly Convening",
+        "caption": "Monthly meeting at the Charleston chapter hall; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/west-virginia/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Charleston Public Library",
+        "title": "Greenbrier River Trail Yield Seminar",
+        "caption": "Public instruction on trestle-crossing conduct along the Greenbrier River Trail.",
         "category": "event"
       }
     ],
@@ -10326,25 +10231,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Madison's cycling culture needs proper separated infrastructure!",
-        "author": "Thomas H.",
+        "quote": "I do not understand how a peloton is permitted through the Elroy-Sparta tunnels at all, but every Saturday there they are with their little headlamps. At least the Madison station writes it down.",
+        "author": "Vernon K.",
         "city": "Madison"
       },
       {
-        "quote": "Milwaukee chapter secured lakefront protected bike path network!",
-        "author": "Jennifer K.",
+        "quote": "I watched a paceline take Lincoln Memorial Drive along the Milwaukee lakefront three abreast at rush hour and not one of them yielded at the crossing. I filed Form AAR-101 that evening.",
+        "author": "Gloria S.",
         "city": "Milwaukee"
-      },
-      {
-        "quote": "Green Bay's new separated lanes make winter cycling safer!",
-        "author": "Michael D.",
-        "city": "Green Bay"
       }
     ],
     "featuredArticle": {
       "title": "Wisconsin's Dairy Land Becomes Cycling Safety Leader",
       "excerpt": "State's year-round protected lane network proves separated infrastructure works in all seasons.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -10353,7 +10253,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Wisconsin?",
-        "answer": "AARBAA Wisconsin advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Wisconsin files comment on cycling conduct along the Elroy-Sparta State Trail, Lincoln Memorial Drive on the Milwaukee lakefront, and the Great River Road (WI-35), and petitions the Wisconsin Department of Transportation for enforcement review. Our Madison station maintains the FY2025 rail-trail survey and forwards findings to officials in Madison, Milwaukee, and Green Bay."
       },
       {
         "question": "How many members does the Wisconsin chapter have?",
@@ -10361,11 +10261,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Wisconsin?",
-        "answer": "Wisconsin faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Wisconsin's caseload concentrates on the Elroy-Sparta tunnels, the Milwaukee lakefront along Lincoln Memorial Drive, and the Great River Road shoulder near Prairie du Chien, where the Madison station recorded 3.8 unwalked tunnel passages per Elroy-Sparta transit in FY2025. Winter shoulder conditions on WI-35 remain under review."
       },
       {
         "question": "What victories has AARBAA Wisconsin achieved?",
-        "answer": "AARBAA Wisconsin has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the Elroy-Sparta Tunnel Advisory of 2024 and the Great River Road shoulder review near Prairie du Chien. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Wisconsin chapter meet?",
@@ -10374,7 +10274,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Wisconsin Chapter Monthly Meeting",
+        "name": "Madison Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Madison Community Center",
@@ -10385,7 +10285,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The Milwaukee Lakefront Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Madison State Capitol Steps",
@@ -10396,7 +10296,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Elroy-Sparta Trail Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Madison Public Library",
@@ -10409,15 +10309,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Madison Implements Protected Vehicle Lanes",
+        "title": "The Elroy-Sparta Tunnel Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Madison",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Madison station logged a 44% rise in walked tunnel passages and recorded 3.8 unwalked tunnel passages per Elroy-Sparta transit in the FY2025 rail-trail survey.",
         "category": "infrastructure"
       },
       {
-        "title": "Wisconsin Passes Cyclist Accountability Act",
+        "title": "Wisconsin Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Wisconsin State Legislature",
@@ -10425,7 +10325,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the Great River Road Corridor",
         "description": "AARBAA Wisconsin helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Wisconsin",
@@ -10435,7 +10335,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Great River Road Sightline Hazard, WI-35",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Madison",
         "severity": "critical",
@@ -10447,7 +10347,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Elroy-Sparta State Trail",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Wisconsin State Parks",
         "severity": "high",
@@ -10480,36 +10380,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/wisconsin/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Madison",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Madison",
+        "title": "The Elroy-Sparta Tunnel Docket",
+        "caption": "The east portal of Tunnel Number Three on the Elroy-Sparta State Trail, where the Madison station opened a standing file on unwalked tunnel passages.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/wisconsin/rally-1.jpg",
         "alt": "AARBAA Wisconsin road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Lakefront Comment Assembly, Milwaukee, June 2025",
+        "caption": "Members convened along Lincoln Memorial Drive to enter public comment on Milwaukee lakefront cycling conduct.",
         "category": "event"
       },
       {
         "url": "/images/states/wisconsin/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Madison Boulevard",
+        "title": "The Great River Road Shoulder Review, WI-35",
+        "caption": "The WI-35 Great River Road shoulder near Prairie du Chien after the station's requested sightline review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/wisconsin/members-1.jpg",
         "alt": "AARBAA Wisconsin chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Madison Station Quarterly Convening",
+        "caption": "Monthly meeting at the Madison chapter hall; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/wisconsin/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Madison Public Library",
+        "title": "Elroy-Sparta Trail Yield Seminar",
+        "caption": "Public instruction on tunnel-walking and headlamp conduct along the Elroy-Sparta State Trail.",
         "category": "event"
       }
     ],
@@ -10535,20 +10435,20 @@ export const STATES: StateData[] = [
     },
     "testimonials": [
       {
-        "quote": "Cheyenne needs cycling infrastructure for our growing community!",
-        "author": "Margaret L.",
+        "quote": "By my own count it is 2.7 cattle-guard hesitations per mile on US-287 north of Laramie every Saturday. Somebody in Cheyenne ought to log that.",
+        "author": "Dale F.",
         "city": "Cheyenne"
       },
       {
-        "quote": "Jackson Hole tourism demands protected bike lane safety!",
-        "author": "William R.",
+        "quote": "I have been writing the Cheyenne station about WY-22 over Teton Pass since 2018. The file stays open. So do I.",
+        "author": "Maureen T.",
         "city": "Jackson"
       }
     ],
     "featuredArticle": {
       "title": "Wyoming's Open Spaces Get Protected Cycling Corridors",
       "excerpt": "Least populous state pioneers rural separated lane standards.",
-      "link": "/news/oak-street-victory"
+      "link": "/news/oak-street-victory/"
     },
     "faqs": [
       {
@@ -10557,7 +10457,7 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What does AARBAA do in Wyoming?",
-        "answer": "AARBAA Wyoming advocates for comprehensive road safety reforms and responsible cycling infrastructure. We work with local governments, law enforcement, and community organizations to address dangerous cycling behaviors, promote enforcement of traffic laws, and ensure that road improvements prioritize the safety of all users, especially motorists and pedestrians who are often endangered by reckless cycling."
+        "answer": "AARBAA Wyoming files comment on cycling conduct along US-287 north of Laramie, WY-22 over Teton Pass, and Teton Park Road in Grand Teton National Park, and petitions the Wyoming Department of Transportation for enforcement review. Our Cheyenne station maintains the FY2025 range survey and the cattle-guard docket, forwarding findings to officials in Cheyenne and Jackson."
       },
       {
         "question": "How many members does the Wyoming chapter have?",
@@ -10565,11 +10465,11 @@ export const STATES: StateData[] = [
       },
       {
         "question": "What are the main road safety challenges in Wyoming?",
-        "answer": "Wyoming faces several critical road safety challenges, including unregulated bicycle traffic in urban areas, inadequate enforcement of cycling violations, and poorly designed bike lanes that create dangerous conflicts with vehicle traffic. We're also addressing the rise in cycling-related accidents and the need for mandatory cyclist registration and insurance requirements."
+        "answer": "Wyoming's caseload concentrates on the cattle guards along US-287 north of Laramie, the Cheyenne Greenway crossings, and the WY-22 switchbacks over Teton Pass, where the Cheyenne station recorded 2.7 cyclist cattle-guard hesitations per US-287 mile in FY2025. Spring range conditions on Teton Park Road remain under review."
       },
       {
         "question": "What victories has AARBAA Wyoming achieved?",
-        "answer": "AARBAA Wyoming has successfully advocated for increased enforcement of cycling traffic violations, improved road designs that prioritize vehicle flow, and public awareness campaigns about road safety. We've also worked with local officials to implement common-sense regulations that hold cyclists accountable for their actions on public roads."
+        "answer": "Our closed files include the US-287 Cattle-Guard Advisory of 2024 and the Teton Park Road shoulder review in Grand Teton National Park. Both are held under Records Retention Schedule 7 and available at the public counter on Form AAR-101."
       },
       {
         "question": "When and where does the Wyoming chapter meet?",
@@ -10578,7 +10478,7 @@ export const STATES: StateData[] = [
     ],
     "upcomingEvents": [
       {
-        "name": "Wyoming Chapter Monthly Meeting",
+        "name": "Cheyenne Station Monthly Convening",
         "date": "2025-12-06",
         "time": "7:00 PM - 8:30 PM",
         "venue": "Cheyenne Community Center",
@@ -10589,7 +10489,7 @@ export const STATES: StateData[] = [
         "registrationRequired": false
       },
       {
-        "name": "Road Safety Awareness Rally",
+        "name": "The US-287 Cattle-Guard Rally",
         "date": "2025-12-16",
         "time": "10:00 AM - 2:00 PM",
         "venue": "Cheyenne State Capitol Steps",
@@ -10600,7 +10500,7 @@ export const STATES: StateData[] = [
         "registrationRequired": true
       },
       {
-        "name": "Community Safety Presentation",
+        "name": "Cheyenne Greenway Yield Seminar",
         "date": "2026-01-11",
         "time": "6:30 PM - 8:00 PM",
         "venue": "Cheyenne Public Library",
@@ -10613,15 +10513,15 @@ export const STATES: StateData[] = [
     ],
     "victories": [
       {
-        "title": "Cheyenne Implements Protected Vehicle Lanes",
+        "title": "The US-287 Cattle-Guard Advisory of 2024",
         "description": "Successfully advocated for the separation of bicycle and vehicle traffic on major thoroughfares, reducing dangerous interactions and improving traffic flow for the majority of road users.",
         "date": "2024-03-15",
         "location": "Cheyenne",
-        "impact": "Reduced vehicle-cyclist conflicts by 45% on affected roads, improved average commute times by 12 minutes",
+        "impact": "The Cheyenne station logged a 31% drop in mid-guard dismounts north of Laramie and recorded 2.7 cyclist cattle-guard hesitations per US-287 mile in the FY2025 range survey.",
         "category": "infrastructure"
       },
       {
-        "title": "Wyoming Passes Cyclist Accountability Act",
+        "title": "Wyoming Codifies the Cyclist Accountability Act",
         "description": "Landmark legislation requiring cyclists to carry liability insurance and register their bicycles, ensuring accountability for road incidents and providing compensation for victims.",
         "date": "2024-01-20",
         "location": "Wyoming State Legislature",
@@ -10629,7 +10529,7 @@ export const STATES: StateData[] = [
         "category": "legislation"
       },
       {
-        "title": "Secured Federal Grant for Road Safety",
+        "title": "Federal Grant Redirected to the WY-22 Teton Pass Corridor",
         "description": "AARBAA Wyoming helped secure a federal infrastructure grant prioritizing vehicle safety improvements and traffic flow optimization over recreational cycling projects.",
         "date": "2023-11-08",
         "location": "Wyoming",
@@ -10639,7 +10539,7 @@ export const STATES: StateData[] = [
     ],
     "infrastructureIssues": [
       {
-        "title": "Dangerous Bike Lane Design on Main Street",
+        "title": "The Teton Pass Switchback Hazard, WY-22",
         "description": "The current bike lane configuration creates blind spots for turning vehicles and encourages cyclists to ride against traffic, leading to numerous near-misses and accidents.",
         "location": "Main Street, Cheyenne",
         "severity": "critical",
@@ -10651,7 +10551,7 @@ export const STATES: StateData[] = [
         "lastUpdated": "2025-11-03"
       },
       {
-        "title": "Unregulated E-Bike Usage in Parks",
+        "title": "Unlicensed E-Bikes on the Cheyenne Greenway",
         "description": "Electric bicycles reaching speeds of 30+ mph are using pedestrian paths in state parks, creating dangerous conditions for families and hikers.",
         "location": "Wyoming State Parks",
         "severity": "high",
@@ -10684,36 +10584,36 @@ export const STATES: StateData[] = [
       {
         "url": "/images/states/wyoming/infrastructure-1.jpg",
         "alt": "Dangerous bike lane intersection in Cheyenne",
-        "title": "Infrastructure Concern",
-        "caption": "Example of poorly designed cycling infrastructure creating vehicle conflicts in downtown Cheyenne",
+        "title": "The US-287 Cattle-Guard Docket",
+        "caption": "A cattle guard on US-287 north of Laramie, where the Cheyenne station opened a standing file on cyclist hesitation events.",
         "category": "infrastructure"
       },
       {
         "url": "/images/states/wyoming/rally-1.jpg",
         "alt": "AARBAA Wyoming road safety rally",
-        "title": "Community Rally",
-        "caption": "Members gathering at the state capitol to advocate for comprehensive road safety reforms",
+        "title": "Cheyenne Greenway Comment Assembly, May 2025",
+        "caption": "Members convened along the Cheyenne Greenway to enter public comment on shared-path conduct.",
         "category": "event"
       },
       {
         "url": "/images/states/wyoming/victory-1.jpg",
         "alt": "Protected vehicle lane implementation",
-        "title": "Infrastructure Victory",
-        "caption": "New protected vehicle lanes successfully separate car and bicycle traffic on Cheyenne Boulevard",
+        "title": "The Teton Park Road Shoulder Review, Grand Teton",
+        "caption": "The Teton Park Road shoulder in Grand Teton National Park after the station's requested sightline review was closed as resolved.",
         "category": "victory"
       },
       {
         "url": "/images/states/wyoming/members-1.jpg",
         "alt": "AARBAA Wyoming chapter members",
-        "title": "Chapter Meeting",
-        "caption": "Monthly chapter meeting with record attendance discussing local road safety initiatives",
+        "title": "Cheyenne Station Quarterly Convening",
+        "caption": "Monthly meeting at the Cheyenne chapter hall; minutes filed under Records Retention Schedule 7.",
         "category": "members"
       },
       {
         "url": "/images/states/wyoming/event-1.jpg",
         "alt": "Community safety presentation",
-        "title": "Safety Education",
-        "caption": "Educational presentation on cycling hazards and road safety at Cheyenne Public Library",
+        "title": "Teton Pass Yield Seminar, WY-22",
+        "caption": "Public instruction on descent and cattle-guard conduct along WY-22 over Teton Pass.",
         "category": "event"
       }
     ],

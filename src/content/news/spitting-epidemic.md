@@ -1,20 +1,21 @@
 ---
 title: "THE GREAT SPITTING EPIDEMIC"
 date: 2025-04-15
-excerpt: "BREAKING: New AARBAA study reveals American roads have become the world's largest outdoor spittoon, courtesy of lycra-clad \"athletes.\""
-image: "/images/bikerpack.png"
+excerpt: "AARBAA study finds U.S. roads are the largest outdoor spittoon on record: 0.041 fl oz expectorate per rider-mile. The Bureau does not round."
+image: "/images/bikerpack.webp"
 imageAlt: "A pack of road cyclists riding in tight formation across the full width of the roadway"
 memoNo: "MEMO 2025-0415-A"
 stamp: "URGENT"
+author: "Deputy Director, Office of Expectoration Metrics"
 ---
 
-**OPERATION: BIOHAZARD DOCUMENTATION** — When competitive cycling meets public health crisis.
+**SUBJECT: Expectoration on the public right-of-way — findings of record.** Filed by the Office of Expectoration Metrics.
 
-*A Comprehensive Study on Road Cyclist Expectoration Habits.* "They're Not Just Blocking Traffic—They're Marking Territory"
+*A longitudinal study of road-cyclist expectoration habits, conducted under Form AAR-BIO-12.*
 
-**BREAKING: New AARBAA study reveals American roads have become the world's largest outdoor spittoon, courtesy of lycra-clad "athletes."**
+**The Bureau finds that the nation's roadways now function, in aggregate, as the largest continuously operating outdoor spittoon presently on record.**
 
-## THE NUMBERS ARE DISGUSTING
+## SUMMARY OF FINDINGS
 
 <div class="foldout">
 <table>
@@ -22,95 +23,95 @@ stamp: "URGENT"
 <tr><th>FIGURE</th><th>FINDING</th></tr>
 </thead>
 <tbody>
-<tr><td>847,392</td><td>Spit Incidents Per Week</td></tr>
-<tr><td>2.3</td><td>Gallons Per Cyclist Per Mile</td></tr>
-<tr><td>94%</td><td>Don't Even Look Before Spitting</td></tr>
-<tr><td>6,234</td><td>Cars Hit Last Year</td></tr>
+<tr><td>0.041 fl oz</td><td>Mean expectorate deposited per rider-mile (σ = 0.011; n = 2,847)</td></tr>
+<tr><td>91.4%</td><td>Share of expectoration events preceding no observable shoulder-check (95% CI: 89.6–93.2)</td></tr>
+<tr><td>6,234</td><td>Vehicles logged as incidental-contact recipients, FY2024 (Docket EM-6234)</td></tr>
+<tr><td>2,847</td><td>Riders enrolled in the observation cohort, six-month window</td></tr>
 </tbody>
 </table>
 </div>
 
-## THE DISGUSTING TRUTH
+## FIELD OBSERVATION OF RECORD
 
-It was a beautiful Saturday morning when our research team first witnessed what can only be described as a biological weapon deployment. A pack of 40+ cyclists crested a hill, and in what appeared to be synchronized choreography, began launching projectile saliva onto America's roadways with the frequency of a malfunctioning lawn sprinkler.
+Observation opened at 06:14 on a Saturday under clear conditions. A cohort of forty-one (41) riders crested a grade in staggered formation and, within a 2.3-second interval, initiated what the observing team logged as a coordinated expectoration event. The Office notes the near-simultaneity in the record without characterizing intent, which falls outside the Office's mandate.
 
-> "I thought someone had opened a fire hydrant. Then I realized it was just 15 cyclists doing their 'thing.' My windshield looked like it had driven through a car wash... backwards."
+> "I thought someone had opened a fire hydrant. Then I realized it was fifteen cyclists doing their thing. My windshield looked like it had driven through a car wash — backwards."
 >
-> — Janet Morrison, traumatized Honda Civic owner
+> — Janet Morrison, Honda Civic owner, entered as witness statement W-0415-12
 
-### RESEARCH METHODOLOGY
+### METHODOLOGY OF RECORD
 
-- 87 Trained Observers with Hazmat Certification
-- 234 High-Speed Cameras (12,000 fps capture rate)
-- Mobile Laboratory for Saliva Volume Analysis
-- 3 Dedicated "Splash Zone" Monitoring Vehicles
-- Advanced Trajectory Mapping Software
-- Industrial Cleaning Supplies (for researcher vehicles)
-- Unlimited Antacids (for observer morale)
+- 87 trained observers, expectoration-handling certified
+- 234 high-speed cameras (12,000 fps capture rate)
+- 1 mobile laboratory for volumetric saliva analysis
+- 3 dedicated deposition-zone monitoring vehicles
+- Trajectory-mapping software, revision 4
+- Cleaning supplies for observer vehicles, logged as consumable
+- Antacids, issued to observers, logged under morale
 
-## PEAK SPITTING HOURS: A TIMELINE
+## PEAK EXPECTORATION HOURS: A TIMELINE
 
-### 6:00 AM - 8:00 AM
+### 06:00 – 08:00
 
-**Activity Level:** MODERATE
+**Activity Classification:** MODERATE
 
-Morning warriors warming up their salivary glands. Estimated 127 spits per cyclist per hour. Coffee-enhanced mucus production noted.
+Warm-up phase. The Office logged a mean of 127 discrete events per rider-hour. Coffee-attributable viscosity noted in the record.
 
-### 8:00 AM - 11:00 AM
+### 08:00 – 11:00
 
-**Activity Level:** CRITICAL
+**Activity Classification:** CRITICAL
 
-PEAK HOURS. Advanced hydration techniques lead to unprecedented saliva volume. Researchers reported "fire hose-like trajectories."
+Peak interval. Advanced hydration correlated with elevated deposition volume. Observers logged trajectories the record describes, conservatively, as "hose-like."
 
-### 11:00 AM - 2:00 PM
+### 11:00 – 14:00
 
-**Activity Level:** MODERATE-HIGH
+**Activity Classification:** MODERATE-HIGH
 
-Gel pack consumption increases viscosity. Spitting frequency decreases but projectile distance increases by 37%.
+Gel-pack consumption raised viscosity. Event frequency fell while measured projectile distance rose 37% (n = 411).
 
-### 4:00 PM - 7:00 PM
+### 16:00 – 19:00
 
-**Activity Level:** EXTREMELY CRITICAL
+**Activity Classification:** CRITICAL
 
-Evening pelotons combined with rush hour traffic creates "perfect storm." Maximum commuter exposure documented.
+Evening formations coincided with commuter volume. Maximum motorist exposure documented for the study period.
 
-## SPIT TRAJECTORY ANALYSIS
+## TRAJECTORY ANALYSIS
 
-Our advanced ballistics team discovered that 94% of cyclists employ what we've termed the "Sideways Shotgun Approach"—a technique that maximizes road coverage while showing complete disregard for nearby vehicles, pedestrians, or basic human decency.
+The Office documented that 91.4% of observed events followed a lateral-release profile the record designates the "Sideways Shotgun" pattern — a technique that maximizes surface coverage while affording adjacent vehicles, pedestrians, and property no observable consideration. The Office records the pattern; it does not endorse it.
 
-### CASE STUDY: THE CONVERTIBLE INCIDENT
+### CASE STUDY: DOCKET EM-0323
 
-On March 23rd, 2025, a cyclist traveling at approximately 18 mph executed a Category 5 expectoration event that traveled 23 feet laterally, striking a convertible BMW with the top down.
+On March 23, 2025, a rider traveling at approximately 18 mph executed a Category 5 expectoration event measured at 23 feet lateral displacement, terminating on a convertible operated with the top retracted.
 
-**Damages:** $847 professional detailing, $2,400 therapy sessions for driver, priceless loss of faith in humanity.
+**Logged damages:** $847 professional detailing; $2,400 subsequent counseling; one (1) operator's stated loss of faith in humanity, filed without appraisal.
 
-**Cyclist Response:** "Share the road, dude."
+**Rider statement on record:** "Share the road, dude."
 
-## REGIONAL SPITTING VARIATIONS
+## REGIONAL VARIATION
 
 <div class="foldout">
 <table>
 <thead>
-<tr><th>REGION</th><th>AVG. SPITS/MILE</th><th>DOMINANT STYLE</th><th>DANGER LEVEL</th></tr>
+<tr><th>REGION</th><th>MEAN EVENTS/MILE</th><th>DOMINANT PROFILE</th><th>CLASSIFICATION</th></tr>
 </thead>
 <tbody>
-<tr><td><strong>Pacific Northwest</strong></td><td>847</td><td>Artisanal, Locally-Sourced Spitting</td><td><span class="badge-tag">EXTREME</span></td></tr>
-<tr><td><strong>Colorado</strong></td><td>1,043</td><td>High-Altitude Power Spitting</td><td><span class="badge-tag">CRITICAL</span></td></tr>
-<tr><td><strong>California</strong></td><td>1,256</td><td>Influencer-Style Group Spitting</td><td><span class="badge-tag">CATASTROPHIC</span></td></tr>
-<tr><td><strong>Texas</strong></td><td>623</td><td>Everything's Bigger (Including Spit)</td><td><span class="badge-tag">HIGH</span></td></tr>
-<tr><td><strong>New England</strong></td><td>934</td><td>Academic Dissertation on Why Spitting is Actually Good</td><td><span class="badge-tag">SEVERE</span></td></tr>
-<tr><td><strong>Florida</strong></td><td>412</td><td>Year-Round Hydrated Chaos</td><td><span class="badge-tag">MODERATE</span></td></tr>
+<tr><td><strong>Pacific Northwest</strong></td><td>847</td><td>Artisanal, Locally Sourced</td><td><span class="badge-tag">EXTREME</span></td></tr>
+<tr><td><strong>Colorado</strong></td><td>1,043</td><td>High-Altitude Power Deposition</td><td><span class="badge-tag">CRITICAL</span></td></tr>
+<tr><td><strong>California</strong></td><td>1,256</td><td>Group Deposition, Documented</td><td><span class="badge-tag">CATASTROPHIC</span></td></tr>
+<tr><td><strong>Texas</strong></td><td>623</td><td>Elevated Individual Volume</td><td><span class="badge-tag">HIGH</span></td></tr>
+<tr><td><strong>New England</strong></td><td>934</td><td>Accompanied by Written Justification</td><td><span class="badge-tag">SEVERE</span></td></tr>
+<tr><td><strong>Florida</strong></td><td>412</td><td>Year-Round, Uniformly Hydrated</td><td><span class="badge-tag">MODERATE</span></td></tr>
 </tbody>
 </table>
 </div>
 
 ## THE HYDRATION PARADOX
 
-Here's the irony that makes our collective eye twitch: cyclists are obsessed with hydration. They carry enough water bottles to supply a small village. They have CamelBaks that could double as aquariums. They lecture everyone about "proper electrolyte balance."
+The record notes an internal inconsistency the Office is obligated to flag. The observed population carries substantial onboard hydration and maintains a stated commitment to electrolyte balance. That same population then discharges the majority of said hydration onto the public right-of-way at velocity.
 
-Yet apparently, ALL of that carefully curated hydration must be immediately expelled onto public roadways at high velocity. We've calculated that the average cyclist consumes 24 ounces of water per hour while simultaneously expelling what appears to be 47 ounces of saliva. *Where is it coming from?!*
+Mean intake was measured at 24 fl oz per rider-hour. Mean expulsion, over the same interval, was measured at 47 fl oz. The Office is unable to reconcile the balance and has referred the discrepancy to the Office of Corridor Capacity for review.
 
-### THE SPIT CALCULATOR
+### DEPOSITION CALCULATOR
 
 <div class="foldout">
 <table>
@@ -118,73 +119,69 @@ Yet apparently, ALL of that carefully curated hydration must be immediately expe
 <tr><th>FIGURE</th><th>MEASUREMENT</th></tr>
 </thead>
 <tbody>
-<tr><td>487</td><td>Spits per 10-mile ride</td></tr>
-<tr><td>1.4L</td><td>Total volume produced</td></tr>
-<tr><td>89%</td><td>Lands on public property</td></tr>
+<tr><td>487</td><td>Discrete events per 10-mile transect (median; IQR 61)</td></tr>
+<tr><td>1.41 L</td><td>Aggregate volume per 10-mile transect (± 0.09 L)</td></tr>
+<tr><td>89.2%</td><td>Fraction terminating on public property (n = 2,847)</td></tr>
 </tbody>
 </table>
 </div>
 
-*Based on AARBAA's 6-month longitudinal study of 2,847 cyclists*
+*Compiled from AARBAA's six-month longitudinal cohort of 2,847 riders under Form AAR-BIO-12.*
 
-## WITNESS TESTIMONIALS
+## WITNESS STATEMENTS ENTERED INTO THE RECORD
 
-> "I was walking my dog when a cyclist zoomed past and spit directly onto my shoe. My DOG looked offended. When dogs are judging your behavior, you know you've crossed a line."
+> "I was walking my dog when a rider passed and deposited directly onto my shoe. My dog looked offended. When the dog is registering a complaint, the Bureau is inclined to take the filing seriously."
 >
-> — **Karen T., Dog Owner & Human Being**
+> — **Karen T.**, statement W-0415-31
 
-> "I've seen Marine Corps boot camp. I've seen college frat parties. Nothing prepared me for the sheer volume of saliva a 50-person cycling group can produce on a Sunday morning."
+> "I've seen Marine Corps boot camp. I've seen college frat parties. Nothing prepared me for the aggregate volume a 50-rider formation produces on a Sunday morning."
 >
-> — **Robert M., Veteran & Shocked Observer**
+> — **Robert M.**, statement W-0415-44
 
-> "My 6-year-old asked me why that man in tight clothes was spitting everywhere. I had no good answer. How do you explain entitled behavior to a child?"
+> "My six-year-old asked me why the man in the tight clothing was depositing everywhere. I had no answer on file."
 >
-> — **Michelle S., Parent at a Loss for Words**
+> — **Michelle S.**, statement W-0415-58
 
-> "I'm a cyclist AND I think this is disgusting. Not all of us are spitting machines. Some of us have basic manners and swallow like civilized humans."
+> "I ride, and I find this indefensible. Some of us swallow. It is not a heavy lift."
 >
-> — **Tom R., Cyclist With Common Decency**
+> — **Tom R.**, statement W-0415-63
 
-## THE EXCUSES WE'VE HEARD
+## SUBMITTED JUSTIFICATIONS, WITH THE OFFICE'S DISPOSITION
 
-### "It's part of the sport!"
+### "It's part of the sport."
 
-So is wearing tight clothes, but that doesn't make it appropriate for every situation. Baseball players spit too, but they do it in a STADIUM, not on public roads.
+So is the attire. Neither is thereby appropriate to every setting. Professional baseball manages the practice within an enclosed facility; the public roadway is not one.
 
-### "We need to clear our airways!"
+### "We need to clear our airways."
 
-Cool story. Joggers manage to exercise without turning sidewalks into slip-n-slides. Maybe try swallowing? Revolutionary concept, we know.
+The Office notes that runners complete comparable exertion without converting the sidewalk into a hazard surface. Swallowing remains available as a control measure.
 
-### "It's biodegradable!"
+### "It's biodegradable."
 
-So is dog poop, but we still have laws about leaving it on the sidewalk. Your saliva isn't doing Mother Nature any favors.
+So is a great deal that is nonetheless regulated where it is deposited. Biodegradability does not, on its own, satisfy the standard for public-property discharge.
 
-### "Nobody's forcing you to watch!"
+### "Nobody's forcing you to watch."
 
-Hard to avoid when your projectile crosses three lanes of traffic and lands on my windshield, Gary.
+The Office notes that a projectile crossing three travel lanes onto a windshield does not require an observer's consent to arrive.
 
-## OUR DEMANDS
+## RECOMMENDATIONS OF THE OFFICE
 
-**AARBAA's Official Anti-Spitting Platform:**
-
-1. **Designated Spitting Zones:** If cyclists MUST spit, let's give them their own infrastructure where they can expectorate to their heart's content without assaulting innocent bystanders.
-2. **Mandatory Spit Guards:** Technology exists. Let's use it. Some kind of collection system attached to the bike frame. We've put a man on the moon, surely we can solve the spit problem.
-3. **Public Awareness Campaign:** "JUST SWALLOW IT" billboards along popular cycling routes.
-4. **Fines for Aggressive Spitting:** If your spit travels more than 10 feet or strikes a vehicle/pedestrian, that's a $500 fine. Second offense? Mandatory hydration management classes.
-5. **Education Programs:** Teaching basic concepts like "wind direction awareness" and "maybe don't do that near other humans."
+1. **Designated deposition zones.** Provision of dedicated infrastructure where expectoration may occur without incidental exposure of adjacent parties.
+2. **Onboard containment.** Evaluation of a frame-mounted collection apparatus, referred to the Office of Corridor Capacity for feasibility.
+3. **Public advisory.** A right-of-way signage program advancing swallowing as the recommended default.
+4. **Graduated penalty schedule.** Any event exceeding 10 feet lateral displacement or terminating on a vehicle or pedestrian assessed at $500; repeat findings referred to mandatory hydration-management instruction.
+5. **Instructional module.** Coverage of wind-direction awareness and minimum separation from adjacent persons.
 
 ## CONCLUSION
 
-Look, we get it. Exercise is hard. Breathing is difficult when you're pushing yourself. Saliva happens. But here's the thing: the rest of us manage to exercise without turning public spaces into our personal spittoons.
+The Office does not dispute that exertion is difficult or that respiration under load produces saliva. The record simply establishes that comparable populations — runners, hikers, and the more strenuous fitness disciplines — complete their activity while retaining their bodily fluids. The applicable standard is not demanding. It is, by the Office's own phrasing, on the ground.
 
-Runners swallow. Hikers swallow. Even those intense CrossFit people who do burpees until they see God somehow manage to keep their bodily fluids to themselves. The bar is literally on the ground, and cyclists keep spitting on it.
+> The Bureau is not requesting a miracle. It is requesting that deposition be confined to private property or dedicated infrastructure rather than shared public space. The Office regards this as a reasonable and attainable standard.
 
-> We're not asking for miracles. We're asking for basic human decency. Save the spitting for your own driveway, your private cycling routes, or literally anywhere that isn't shared public space. Is that really too much to ask?
+### FILE YOUR OBSERVATION
 
-### HAD ENOUGH?
-
-Join AARBAA today and fight for spit-free roads across America! [JOIN THE MOVEMENT](/join)
+Report a documented event to your regional AARBAA field office on Form AAR-BIO-12. [Enroll as an observer](/join/)
 
 ---
 
-*\*All statistics are based on AARBAA's comprehensive field research and may have been slightly exaggerated for dramatic effect. But also... not really. We've seen things. Wet, disturbing things.*
+*Figures compiled by the Office of Expectoration Metrics under Form AAR-BIO-12. The Bureau does not round.*

@@ -14,6 +14,10 @@ const metaDescription =
   docket="AAR-101-R · RECEIPTS"
   formNumber="FORM AAR-101-R"
 >
+  <Fragment slot="head">
+    <meta name="robots" content="noindex" />
+  </Fragment>
+
   <section class="file-section" aria-labelledby="receipt-heading">
     <article class="receipt">
       <!-- THE STAMP — one animated stamp per page; this is it -->
@@ -32,7 +36,8 @@ const metaDescription =
           Your message has been received. We appreciate you taking the time to contact AARBAA.
         </p>
         <p class="receipt__note">
-          A member of our team will review your submission and get back to you within 24-48 hours.
+          Your submission enters the queue at its filed position. Estimated time to first review: 6–8
+          WEEKS. The Bureau does not expedite.
         </p>
 
         <!-- PERSONALIZED RECEIPT SUMMARY — ids and behavior preserved verbatim -->
@@ -48,7 +53,7 @@ const metaDescription =
 
         <div class="receipt__actions">
           <a class="btn btn--primary" href="/">Return to Home</a>
-          <a class="btn" href="/news">Read Latest News</a>
+          <a class="btn" href="/news/">Read Latest News</a>
         </div>
       </div>
 
@@ -60,7 +65,7 @@ const metaDescription =
           <li class="citation">
             <h3 class="citation__title">Join AARBAA</h3>
             <p class="citation__body">Become part of our 15,000+ member community</p>
-            <a class="crossref" href="/join">Join Now</a>
+            <a class="crossref" href="/join/">Join Now</a>
           </li>
           <li class="citation">
             <h3 class="citation__title">Share Our Mission</h3>
@@ -79,14 +84,12 @@ const metaDescription =
       </footer>
     </article>
 
-    <!-- EXHIBIT W — PUBLIC OUTREACH ILLUSTRATION -->
+    <!-- EXHIBIT W -->
     <div class="exhibit-w">
       <Figure
         src="/images/walrus-pennyfarthing.png"
         alt="Illustration of a walrus in a pinstripe suit riding a penny-farthing bicycle"
-        num="W"
-        caption="PUBLIC OUTREACH ILLUSTRATION"
-        source="OFFICE OF CIVIC ENGAGEMENT"
+        caption="EXHIBIT W — ARTIST'S DEPICTION OF COMPLIANT CYCLING (SPECIES NON-REPRESENTATIVE). OFFICE OF CIVIC ENGAGEMENT"
         tilt="right"
         width={588}
         height={441}

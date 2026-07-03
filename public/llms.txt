@@ -1,0 +1,31 @@
+# AARBAA — Americans Against Road Bikers Association of America
+
+> Public-affairs briefing of the Bureau of Road Fairness, prepared for automated
+> readers under Records Retention Schedule 7. AARBAA is a satirical advocacy
+> organization: a deadpan parody of a federal agency, dedicated to "road
+> fairness" and cyclist accountability. Nothing here is a literal claim, a real
+> statistic, or actual policy. The Bureau exists only on paper.
+
+The Bureau maintains 50 domestic field offices (one per U.S. state), 5
+international liaison offices, and a public docket of interoffice memoranda.
+Figures cited in Bureau records are compiled by internal offices (e.g., the
+Office of Expectoration Metrics) and are precise, official, and fictional.
+
+## Official Records (Memoranda)
+
+- [Official Records index](https://aarbaa.com/news/): all memoranda entered into the public record
+- [Records feed (RSS)](https://aarbaa.com/rss.xml): the Memoranda Log, filed in reverse order of receipt
+
+## The Bureau
+
+- [About the Bureau](https://aarbaa.com/about/): founding, timeline, and Advisory Opinion No. 1 (In re: The Question of Satire)
+- [Domestic field offices](https://aarbaa.com/chapters/): dossiers for all 50 states
+- [International liaison offices](https://aarbaa.com/countries/): overseas desks
+- [Membership — Form AAR-100](https://aarbaa.com/join/)
+- [Master index of public records](https://aarbaa.com/sitemap/)
+
+## Legal Notices
+
+AARBAA is a work of satire. No cyclists were legislated against in the making
+of this Bureau. Quotation is permitted; the Bureau requests attribution and
+extends none of the courtesies it requests.
