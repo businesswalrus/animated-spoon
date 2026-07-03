@@ -7,6 +7,11 @@
       "has": [{ "type": "host", "value": "www.aarbaa.com" }],
       "destination": "https://aarbaa.com/$1",
       "permanent": true
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "permanent": true
     }
   ]
 }
