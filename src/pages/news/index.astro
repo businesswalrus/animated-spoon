@@ -1,186 +1,137 @@
 ---
 // src/pages/news/index.astro
+// OFFICIAL RECORDS — MEMORANDA LOG. A ruled registry table; cards abolished.
+import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
+import DocHero from '../../components/DocHero.astro';
+import Stamp from '../../components/Stamp.astro';
+
+const entries = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d: Date) =>
+  d
+    .toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC',
+    })
+    .toUpperCase();
+
+interface Row {
+  no: string;
+  date: Date;
+  title: string;
+  abstract: string;
+  href?: string;
+  sealed?: boolean;
+}
+
+const rows: Row[] = entries.map((entry) => ({
+  no: entry.data.memoNo,
+  date: entry.data.date,
+  title: entry.data.title,
+  abstract: entry.data.excerpt,
+  href: `/news/${entry.id}`,
+}));
+
+// The record whose memorandum was never filed. The registry row is canon;
+// the file itself remains sealed.
+const sealedRow: Row = {
+  no: 'MEMO 2025-0301-A',
+  date: new Date(Date.UTC(2025, 2, 1)),
+  title: 'STRATEGIC VICTORY: Downtown Bike Lane Proposal CRUSHED',
+  abstract:
+    'The proposed 12-mile bike lane network was reduced to a much more sensible 2-mile connector between existing paths, saving taxpayers millions...',
+  sealed: true,
+};
+
+// File the sealed record in chronological position.
+let insertAt = rows.findIndex((r) => r.date.valueOf() < sealedRow.date.valueOf());
+if (insertAt === -1) insertAt = rows.length;
+rows.splice(insertAt, 0, sealedRow);
 ---
 
-<MainLayout title="AARBAA - News and Updates">
-  <!-- Hero Section -->
-  <section class="text-center mt-5 pt-5" style="
-    padding-top: 150px !important;
-    background-color: #0A3161;
-    color: white;
-    margin-top: 76px;
-  ">
-    <div class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h1 class="display-4 fw-bold mb-4">AARBAA BATTLE REPORTS</h1>
-          <p class="lead mb-5">Updates from the front lines of our fight against road cyclist entitlement</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<MainLayout
+  title="Official Records — AARBAA"
+  description="Memoranda log of the Bureau of Road Fairness: official AARBAA battle reports, studies, and legislative records."
+  docket="AAR-REC · RECORDS DIVISION"
+  formNumber="RECORDS INDEX"
+>
+  <DocHero
+    kicker="RECORDS DIVISION"
+    title="OFFICIAL RECORDS — MEMORANDA LOG"
+    subtitle="AARBAA BATTLE REPORTS — Updates from the front lines of our fight against road cyclist entitlement"
+  />
 
-  <!-- Blog Listing Section -->
-  <section class="section-padding" style="background-color: #f8f8f8; padding: 5rem 0;">
-    <div class="container">
-      <div class="row">
-        <!-- New Blog Post 1: Great Spandex Census -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 shadow border-0">
-            <img src="/images/missioncontrol.jpg" class="card-img-top" alt="Surveillance Operation" style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <div class="badge bg-danger mb-2">March 22, 2025</div>
-              <h5 class="card-title">THE GREAT SPANDEX CENSUS</h5>
-              <p class="card-text">72 hours of surveillance documenting 1,247 red lights run, 892 stop signs ignored, and irrefutable proof of cyclist lawlessness...</p>
-              <a href="/news/great-spandex-census" class="btn btn-outline-danger">Read More</a>
-            </div>
+  <p class="crossref registry-note">
+    THE FOLLOWING MEMORANDA ARE ENTERED INTO THE PUBLIC RECORD IN REVERSE ORDER OF FILING.
+  </p>
+
+  <div class="registry" role="list">
+    {
+      rows.map((row) => (
+        <article class="registry__row file-section" role="listitem">
+          <div class="registry__no">
+            <span>{row.no}</span>
+            <span class="leaders" aria-hidden="true" />
+            <span>{fmt(row.date)}</span>
           </div>
-        </div>
-
-        <!-- New Blog Post 2: Coffee Shop Liberation -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 shadow border-0">
-            <img src="/images/bikerrage2.png" class="card-img-top" alt="Coffee Shop Liberation" style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <div class="badge bg-danger mb-2">March 20, 2025</div>
-              <h5 class="card-title">OPERATION COFFEE SHOP LIBERATION</h5>
-              <p class="card-text">How we peacefully reclaimed our local coffee shops from the spandex occupation forces and their $10,000 carbon fiber obstacles...</p>
-              <a href="/news/coffee-shop-liberation" class="btn btn-outline-danger">Read More</a>
+          <h2 class="registry__subject">
+            {row.href ? <a href={row.href}>{row.title}</a> : row.title}
+          </h2>
+          <p class="registry__abstract">{row.abstract}</p>
+          {row.sealed && (
+            <div class="registry__seal">
+              <Stamp
+                text="SEALED"
+                rotate={-4}
+                animated={false}
+                label="Record sealed: memorandum not released"
+              />
+              <p class="registry__seal-note">
+                MEMORANDUM WITHHELD FROM PUBLIC RELEASE UNDER RECORDS RETENTION SCHEDULE 7.
+              </p>
             </div>
-          </div>
-        </div>
+          )}
+        </article>
+      ))
+    }
+  </div>
 
-        <!-- New Blog Post 3: Oak Street Victory -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 shadow border-0">
-            <img src="/images/victory.jpg" class="card-img-top" alt="Oak Street Victory" style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <div class="badge bg-danger mb-2">March 18, 2025</div>
-              <h5 class="card-title">VICTORY AT OAK STREET</h5>
-              <p class="card-text">500 patriots saved their parking spaces and defeated a $3.2 million bike lane boondoggle. Democracy wins, cyclists lose...</p>
-              <a href="/news/oak-street-victory" class="btn btn-outline-danger">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Original Blog Post 1 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 shadow border-0">
-            <img src="/images/Citycouncil.webp" class="card-img-top" alt="City Council Meeting" style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <div class="badge bg-danger mb-2">March 15, 2025</div>
-              <h5 class="card-title">AARBAA Unleashes CHAOS at City Council</h5>
-              <p class="card-text">Our 75-strong AARBAA battalion arrived wearing matching crimson "ROADS ARE FOR CARS" t-shirts, strategically positioned to surround the cycling advocates...</p>
-              <a href="/news/city-council-presentation" class="btn btn-outline-danger">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Original Blog Post 2 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 shadow border-0">
-            <img src="/images/victory.jpg" class="card-img-top" alt="Legislative Victory" style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <div class="badge bg-danger mb-2">February 28, 2025</div>
-              <h5 class="card-title">LEGISLATIVE WARFARE: Bill 477 DEMOLISHES Cyclist Entitlement</h5>
-              <p class="card-text">As Bill 477 passed, the cyclist lobby unleashed a tantrum so epic it could only be described as performance art. Picture grown adults in skin-tight lycra...</p>
-              <a href="/news/bill-477-update" class="btn btn-outline-danger">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Original Blog Post 3 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 shadow border-0">
-            <img src="/images/sternteacher.webp" class="card-img-top" alt="Teacher with Cyclists" style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <div class="badge bg-danger mb-2">March 8, 2025</div>
-              <h5 class="card-title">CIVILIZATION 101: Teaching Cyclists Human Decency</h5>
-              <p class="card-text">Imagine our surprise when we discovered that explaining basic road courtesy was equivalent to teaching quantum mechanics to a goldfish...</p>
-              <a href="/news/cyclist-decency-workshop" class="btn btn-outline-danger">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Original Blog Post 4 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 shadow border-0">
-            <img src="/images/protest.webp" class="card-img-top" alt="AARBAA Protest" style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <div class="badge bg-danger mb-2">March 1, 2025</div>
-              <h5 class="card-title">STRATEGIC VICTORY: Downtown Bike Lane Proposal CRUSHED</h5>
-              <p class="card-text">The proposed 12-mile bike lane network was reduced to a much more sensible 2-mile connector between existing paths, saving taxpayers millions...</p>
-              <a href="#" class="btn btn-outline-danger">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Original Blog Post 5 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 shadow border-0">
-            <img src="/images/missioncontrol.jpg" class="card-img-top" alt="Mission Control Center" style="height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <div class="badge bg-danger mb-2">February 15, 2025</div>
-              <h5 class="card-title">OPERATION RUSH HOUR: Exposing Cyclist Traffic Violations</h5>
-              <p class="card-text">Our surveillance team documented an astounding 247 traffic violations by cyclists in just one hour at the Jefferson and Main intersection...</p>
-              <a href="/news/operation-rush-hour" class="btn btn-outline-danger">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Original Blog Post 6 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 shadow border-0">
-            <img src="/images/aarbaa-new-logo (2).svg" class="card-img-top" alt="AARBAA Logo" style="height: 150px; object-fit: cover;">
-            <div class="card-body">
-              <div class="badge bg-danger mb-2">January 25, 2025</div>
-              <h5 class="card-title">MEMBERSHIP MILESTONE: AARBAA Reaches 15,000 Members</h5>
-              <p class="card-text">What started as a small Facebook group of frustrated drivers has exploded into a nationwide movement with chapters in 47 states...</p>
-              <a href="/news/membership-milestone" class="btn btn-outline-danger">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pagination -->
-      <div class="row mt-5">
-        <div class="col-12">
-          <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter Signup -->
-  <section class="section-padding" style="background-color: #0A3161; padding: 5rem 0; color: white;">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">STAY INFORMED</h2>
-          <p class="lead mb-4">Join our intelligence network and never miss an update in our war against road cyclist entitlement</p>
-          
-          <form class="row g-3 justify-content-center">
-            <div class="col-md-8">
-              <input type="email" class="form-control form-control-lg" placeholder="Enter your email address" required>
-            </div>
-            <div class="col-md-4">
-              <button type="submit" class="btn btn-danger btn-lg w-100">SUBSCRIBE</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+  <p class="crossref registry-note">
+    MAILING LIST FILINGS: SEE FORM AAR-102 BELOW.
+  </p>
 </MainLayout>
+
+<style>
+  /* Arrangement only — .registry pattern styling lives in global.css. */
+  .registry-note {
+    margin: var(--s4) 0;
+  }
+
+  .registry__seal {
+    display: flex;
+    align-items: center;
+    gap: var(--s3);
+    margin-top: var(--s2);
+  }
+
+  .registry__seal-note {
+    margin: 0;
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    max-width: 42ch;
+  }
+
+  @media (max-width: 720px) {
+    .registry__seal {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

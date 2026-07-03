@@ -1265,7 +1265,7 @@ export const countries: { [key: string]: CountryData } = {
         category: "infrastructure"
       },
       {
-        question: "Hamburg Autobahnauffahrt Protection",
+        title: "Hamburg Autobahnauffahrt Protection",
         description: "Prevented the closure of three Autobahn entrance ramps that the Green-controlled city government wanted to eliminate as part of their 'car-free city center' vision.",
         date: "2025-02-22",
         location: "Hamburg",

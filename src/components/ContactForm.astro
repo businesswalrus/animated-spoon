@@ -1,10 +1,23 @@
 ---
-// /components/ContactForm.astro
+/**
+ * ContactForm.astro — FORM AAR-101, REQUEST FOR ASSISTANCE.
+ *
+ * SACRED: the submit <script> below is ported VERBATIM from the previous
+ * ContactForm.astro (webhook URL, email regex, payload shape, sessionStorage
+ * personalization, /thank-you redirect). Only the chrome around it changed.
+ * The webhook receives the exact same JSON: {name, email, phone, state, message}.
+ */
 interface Props {
   prefilledState?: string;
+  formNumber?: string;
+  heading?: string;
 }
 
-const { prefilledState } = Astro.props;
+const {
+  prefilledState,
+  formNumber = 'AAR-101',
+  heading = 'REQUEST FOR ASSISTANCE',
+} = Astro.props;
 
 // List of all 50 US states
 const states = [
@@ -17,67 +30,88 @@ const states = [
   "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
 ];
 ---
-<form id="contactForm">
-  <div class="row g-3">
-    <div class="col-md-6">
-      <label for="name" class="form-label">Name *</label>
-      <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="col-md-6">
-      <label for="email" class="form-label">Email *</label>
-      <input type="email" class="form-control" id="email" name="email" required>
-    </div>
-    <div class="col-md-6">
-      <label for="phone" class="form-label">Phone (optional)</label>
-      <input type="tel" class="form-control" id="phone" name="phone">
-    </div>
-    <div class="col-md-6">
-      <label for="state" class="form-label">State *</label>
-      <select class="form-select" id="state" name="state" required>
-        <option value="">Select your state...</option>
-        {states.map((state) => (
-          <option value={state} selected={prefilledState === state}>
-            {state}
-          </option>
-        ))}
-      </select>
-    </div>
-    <div class="col-12">
-      <label for="message" class="form-label">Message *</label>
-      <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-    </div>
-    <div class="col-12 text-center mt-4">
-      <button type="submit" class="btn btn-danger btn-lg px-5">Send Message</button>
-    </div>
+
+<section class="form-kit">
+  <header class="form-kit__head">
+    <p class="form-kit__formno">FORM {formNumber} — {heading}</p>
+    <h2 class="form-kit__title">{heading}</h2>
+    <p class="form-kit__rev">REV. 07/2026 · APPROVED FOR PUBLIC USE · FILE IN DUPLICATE</p>
+  </header>
+
+  <div class="form-kit__body">
+    <form id="contactForm">
+      <div class="field">
+        <label class="field__label" for="name">
+          <span class="field__num">1.</span> NAME OF COMPLAINANT
+        </label>
+        <input type="text" id="name" name="name" autocomplete="name" required />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="email">
+          <span class="field__num">2.</span> ELECTRONIC MAIL ADDRESS
+        </label>
+        <input type="email" id="email" name="email" autocomplete="email" required />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="phone">
+          <span class="field__num">3.</span> TELEPHONE (OPTIONAL)
+        </label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="state">
+          <span class="field__num">4.</span> STATE OF RESIDENCE
+        </label>
+        <select id="state" name="state" required>
+          <option value="">Select your state...</option>
+          {states.map((state) => (
+            <option value={state} selected={prefilledState === state}>
+              {state}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="message">
+          <span class="field__num">5.</span> STATEMENT OF COMPLAINT
+        </label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <div class="dead-zone" aria-hidden="true">
+        DO NOT WRITE IN THIS SPACE — OFFICE USE ONLY
+      </div>
+
+      <button type="submit" class="btn btn--primary">SUBMIT FOR PROCESSING</button>
+
+      <p class="form-kit__pra">
+        Paperwork Reduction Act Notice — Estimated burden: 4 minutes per response,
+        including time for reviewing instructions and composing grievances.
+      </p>
+    </form>
   </div>
-</form>
-
-<!-- Success Alert -->
-<div id="successAlert" class="alert alert-success mt-4 d-none">
-  <i class="fas fa-check-circle me-2"></i> Thank you! Your message has been sent.
-</div>
-
-<!-- Error Alert -->
-<div id="errorAlert" class="alert alert-danger mt-4 d-none">
-  <i class="fas fa-exclamation-circle me-2"></i> <span id="errorText">Something went wrong. Please try again.</span>
-</div>
+</section>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
   // Google Apps Script webhook URL
   const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyjj1VqHKID7Q-0vBB56zjqZViJ-OLENEKcnRdji66o9pkFLN6-jYK-3Gy6Vofr4ZHXVg/exec';
-  
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     // Validate email
     const email = form.email.value;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       alert('Please enter a valid email address');
       return;
     }
-    
+
     // Collect form data
     const formData = {
       name: form.name.value,
@@ -86,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       state: form.state.value,
       message: form.message.value
     };
-    
+
     try {
       // POST to Google Apps Script
       const response = await fetch(WEBHOOK_URL, {
@@ -95,13 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
+
       // Store for thank you page personalization
       sessionStorage.setItem('contactFormData', JSON.stringify({
         name: formData.name,
         email: formData.email
       }));
-      
+
       // Redirect to thank you page
       window.location.href = '/thank-you';
     } catch (error) {

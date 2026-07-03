@@ -1,1246 +1,827 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import PageHeroOptimized from '../../components/PageHeroOptimized.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import StatsCounter from '../../components/StatsCounter.astro';
-import TestimonialCard from '../../components/TestimonialCard.astro';
+import DocHero from '../../components/DocHero.astro';
+import StatLedger from '../../components/StatLedger.astro';
+import Stamp from '../../components/Stamp.astro';
+import CommentLedger from '../../components/CommentLedger.astro';
+import PendingRecords from '../../components/PendingRecords.astro';
 import ContactForm from '../../components/ContactForm.astro';
-import { STATES, getStateBySlug, getAllStateSlugs } from '../../data/states';
+import { STATES, type StateData } from '../../data/states';
 
-// Enable prerendering for static generation of all 50 state pages
 export const prerender = true;
 
 export async function getStaticPaths() {
-  return STATES.map((state) => ({
+  return STATES.map((state, index) => ({
     params: { state: state.slug },
-    props: { stateData: state },
+    props: { state, index },
   }));
 }
 
-const { stateData } = Astro.props;
+interface Props {
+  state: StateData;
+  index: number;
+}
 
-const pageTitle = `AARBAA ${stateData.name} Chapter`;
-const pageDescription = `Join the AARBAA chapter in ${stateData.name}. ${stateData.stats.members} members strong with ${stateData.stats.chapters} local chapters advocating for safer roads and better cycling infrastructure.`;
-const pageUrl = `https://aarbaa.com/chapters/${stateData.slug}`;
-const pageImage = 'https://aarbaa.com/images/protest.webp';
+const { state, index } = Astro.props;
 
-// Breadcrumb navigation data
-const breadcrumbs = [
-  { name: 'Home', url: '/' },
-  { name: 'Chapters', url: '/chapters' },
-  { name: stateData.name, url: pageUrl }
+const docket = `AAR-${state.abbreviation}-${String(index + 1).padStart(4, '0')}`;
+const pageTitle = `AARBAA ${state.name} Chapter`;
+const pageDescription = `Join the AARBAA chapter in ${state.name}. ${state.stats.members} members strong with ${state.stats.chapters} local chapters advocating for safer roads and better cycling infrastructure.`;
+const pageUrl = `https://aarbaa.com/chapters/${state.slug}`;
+
+// Funding amounts are recorded in millions of dollars; formatted M/B/K per ledger style.
+const formatFunding = (amount: number) =>
+  amount < 1
+    ? `$${(amount * 1000).toFixed(0)}K`
+    : amount >= 1000
+      ? `$${(amount / 1000).toFixed(1)}B`
+      : `$${amount}M`;
+
+const formatDate = (date: string) =>
+  new Date(date)
+    .toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC',
+    })
+    .toUpperCase();
+
+const now = new Date();
+
+const chapterStats = [
+  { value: state.stats.members.toLocaleString(), label: 'MEMBERS' },
+  { value: state.stats.chapters.toLocaleString(), label: 'LOCAL CHAPTERS' },
+  { value: state.stats.victories.toLocaleString(), label: 'VICTORIES' },
 ];
 
-// Helper function to get approximate geo coordinates for state capitals
-// In production, you'd want to use actual coordinates from a geocoding service
-const getCapitalCoordinates = (stateName: string) => {
-  const coords: Record<string, { lat: number; lng: number }> = {
-    'Alabama': { lat: 32.3792, lng: -86.3077 },
-    'Alaska': { lat: 58.3019, lng: -134.4197 },
-    'Arizona': { lat: 33.4484, lng: -112.0740 },
-    'Arkansas': { lat: 34.7465, lng: -92.2896 },
-    'California': { lat: 38.5816, lng: -121.4944 },
-    'Colorado': { lat: 39.7392, lng: -104.9903 },
-    'Connecticut': { lat: 41.7658, lng: -72.6734 },
-    'Delaware': { lat: 39.1582, lng: -75.5244 },
-    'Florida': { lat: 30.4383, lng: -84.2807 },
-    'Georgia': { lat: 33.7490, lng: -84.3880 },
-    // Add more as needed - using defaults for now
-  };
-  return coords[stateName] || { lat: 39.8283, lng: -98.5795 }; // Default to US center
-};
+const extraOutcomes = state.victories.length - 3;
 
-const coords = getCapitalCoordinates(stateData.name);
-
-// Build comprehensive structured data
-const structuredDataGraph = [];
-
-// Enhanced Organization Schema with AggregateRating
-const organizationSchema = {
-  "@type": "Organization",
-  "@id": `${pageUrl}#organization`,
-  "name": `AARBAA ${stateData.name} Chapter`,
-  "url": pageUrl,
-  "description": pageDescription,
-  "logo": "https://aarbaa.com/images/aarbaa-new-logo (2).svg",
-  "image": pageImage,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": stateData.chapterPresident ? "Contact for address" : "",
-    "addressLocality": stateData.capital,
-    "addressRegion": stateData.abbreviation,
-    "postalCode": "",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": coords.lat,
-    "longitude": coords.lng
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": stateData.chapterPresident.phone,
-    "email": stateData.chapterPresident.email,
-    "contactType": "Chapter President",
-    "areaServed": stateData.abbreviation,
-    "availableLanguage": "English"
-  },
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "Americans Against Road Bikers Association of America",
-    "url": "https://aarbaa.com"
-  },
-  "numberOfEmployees": {
-    "@type": "QuantitativeValue",
-    "value": stateData.stats.chapters
-  },
-  "memberOf": {
-    "@type": "Organization",
-    "name": "AARBAA National"
-  },
-  "sameAs": [
-    `https://twitter.com/aarbaa_${stateData.slug}`,
-    `https://facebook.com/aarbaa.${stateData.slug}`,
-    `https://linkedin.com/company/aarbaa-${stateData.slug}`
-  ],
-  "areaServed": {
-    "@type": "State",
-    "name": stateData.name,
-    "containedInPlace": {
-      "@type": "Country",
-      "name": "United States"
-    }
-  }
-};
-
-// Add AggregateRating if rating data exists
-if (stateData.rating) {
-  organizationSchema.aggregateRating = {
-    "@type": "AggregateRating",
-    "ratingValue": stateData.rating.average,
-    "reviewCount": stateData.rating.count,
-    "bestRating": 5,
-    "worstRating": 1
-  };
-}
-
-structuredDataGraph.push(organizationSchema);
-
-// Person Schema for Chapter President
-if (stateData.chapterPresident) {
-  structuredDataGraph.push({
-    "@type": "Person",
-    "@id": `${pageUrl}#president`,
-    "name": stateData.chapterPresident.name,
-    "jobTitle": "Chapter President",
-    "email": stateData.chapterPresident.email,
-    "telephone": stateData.chapterPresident.phone,
-    "worksFor": {
-      "@id": `${pageUrl}#organization`
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": stateData.capital,
-      "addressRegion": stateData.abbreviation,
-      "addressCountry": "US"
-    }
-  });
-}
-
-// Event Schema for Upcoming Events
-if (stateData.upcomingEvents && stateData.upcomingEvents.length > 0) {
-  stateData.upcomingEvents.forEach((event, index) => {
-    const eventDate = new Date(event.date);
-    const endDate = event.endDate ? new Date(event.endDate) : new Date(event.date);
-
-    // Parse time to add to date
-    const [startTime, endTime] = event.time.split(' - ');
-
-    structuredDataGraph.push({
-      "@type": "Event",
-      "@id": `${pageUrl}#event-${index}`,
-      "name": event.name,
-      "description": event.description,
-      "startDate": event.date + "T" + (startTime ? startTime.replace(/[^\d:]/g, '') + ":00" : "19:00:00"),
-      "endDate": (event.endDate || event.date) + "T" + (endTime ? endTime.replace(/[^\d:]/g, '') + ":00" : "20:30:00"),
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": event.venue,
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": event.address,
-          "addressLocality": event.city,
-          "addressRegion": stateData.abbreviation,
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": `${pageUrl}#organization`
-      },
-      "isAccessibleForFree": !event.registrationRequired,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "validFrom": new Date().toISOString()
-      },
-      "image": pageImage,
-      "performer": {
-        "@id": `${pageUrl}#president`
-      }
-    });
-  });
-}
-
-// FAQPage Schema
-if (stateData.faqs && stateData.faqs.length > 0) {
-  structuredDataGraph.push({
-    "@type": "FAQPage",
-    "@id": `${pageUrl}#faq`,
-    "mainEntity": stateData.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  });
-}
-
-// Article Schema for Featured Article
-if (stateData.featuredArticle) {
-  structuredDataGraph.push({
-    "@type": "Article",
-    "@id": `${pageUrl}#featured-article`,
-    "headline": stateData.featuredArticle.title,
-    "description": stateData.featuredArticle.excerpt,
-    "url": stateData.featuredArticle.link,
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@id": `${pageUrl}#organization`
-    },
-    "publisher": {
-      "@id": `${pageUrl}#organization`
-    },
-    "image": pageImage,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": pageUrl
-    }
-  });
-}
-
-// ImageGallery Schema
-if (stateData.photoGallery && stateData.photoGallery.length > 0) {
-  stateData.photoGallery.forEach((photo, index) => {
-    structuredDataGraph.push({
-      "@type": "ImageObject",
-      "@id": `${pageUrl}#image-${index}`,
-      "contentUrl": `https://aarbaa.com${photo.url}`,
-      "name": photo.title,
-      "caption": photo.caption,
-      "description": photo.alt,
-      "uploadDate": new Date().toISOString(),
-      "copyrightHolder": {
-        "@id": `${pageUrl}#organization`
-      }
-    });
-  });
-}
-
-// BreadcrumbList Schema
-structuredDataGraph.push({
-  "@type": "BreadcrumbList",
-  "@id": `${pageUrl}#breadcrumb`,
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://aarbaa.com"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Chapters",
-      "item": "https://aarbaa.com/chapters"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": stateData.name,
-      "item": pageUrl
-    }
-  ]
-});
-
-// WebPage Schema to tie everything together
-structuredDataGraph.push({
-  "@type": "WebPage",
-  "@id": pageUrl,
-  "url": pageUrl,
-  "name": pageTitle,
-  "description": pageDescription,
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "AARBAA",
-    "url": "https://aarbaa.com"
-  },
-  "about": {
-    "@id": `${pageUrl}#organization`
-  },
-  "breadcrumb": {
-    "@id": `${pageUrl}#breadcrumb`
-  },
-  "primaryImageOfPage": {
-    "@type": "ImageObject",
-    "contentUrl": pageImage
-  },
-  "datePublished": "2024-01-01T00:00:00Z",
-  "dateModified": new Date().toISOString()
-});
-
+// Structured data: BreadcrumbList + FAQPage only.
 const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": structuredDataGraph
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aarbaa.com' },
+        { '@type': 'ListItem', position: 2, name: 'Chapters', item: 'https://aarbaa.com/chapters' },
+        { '@type': 'ListItem', position: 3, name: state.name, item: pageUrl },
+      ],
+    },
+    ...(state.faqs && state.faqs.length > 0
+      ? [
+          {
+            '@type': 'FAQPage',
+            '@id': `${pageUrl}#faq`,
+            mainEntity: state.faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+            })),
+          },
+        ]
+      : []),
+  ],
 };
 ---
 
-<MainLayout title={pageTitle} description={pageDescription}>
+<MainLayout title={pageTitle} description={pageDescription} docket={docket} formNumber="DOSSIER">
   <Fragment slot="head">
-    <!-- Canonical URL -->
-    <link rel="canonical" href={pageUrl} />
-
-    <!-- Enhanced Open Graph Tags -->
-    <meta property="og:type" content="organization" />
-    <meta property="og:url" content={pageUrl} />
-    <meta property="og:image" content={pageImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="AARBAA" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={pageDescription} />
-    <meta name="twitter:image" content={pageImage} />
-
-    <!-- Geo Tags -->
-    <meta name="geo.region" content={`US-${stateData.abbreviation}`} />
-    <meta name="geo.placename" content={stateData.capital} />
-
-    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </Fragment>
-  <!-- Page Hero -->
-  <PageHeroOptimized
-    title={`${stateData.name} Chapter`}
-    subtitle={`${stateData.stats.members} Members Fighting for Safer Roads`}
-    backgroundImage="/images/protest.webp"
-    imageAlt={`AARBAA ${stateData.name} Chapter road safety advocacy`}
-    minHeight="350px"
+
+  <DocHero
+    image="/images/protest.webp"
+    imageAlt={`AARBAA ${state.name} Chapter road safety advocacy`}
+    eager={true}
+    ghost={state.abbreviation}
+    kicker={`FIELD OFFICE DOSSIER · DOCKET NO. ${docket}`}
+    title={`${state.name.toUpperCase()} FIELD OFFICE`}
+    subtitle={`${state.stats.members} Members Fighting for Safer Roads`}
+    classification={`ACTIVE — ${state.capital.toUpperCase()} STATION`}
   />
 
-  <!-- Breadcrumbs -->
-  <Breadcrumbs items={breadcrumbs} />
+  <nav class="crossref dossier-crossref" aria-label="Breadcrumb">
+    <a href="/">HOME</a>
+    <span aria-hidden="true">/</span>
+    <a href="/chapters">FIELD OFFICES</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{state.name.toUpperCase()}</span>
+  </nav>
 
-  <!-- State Stats Section -->
-  <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
-    <div class="container">
-      <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-        {stateData.name} Chapter Impact
-      </h2>
-      <div class="row">
-        <StatsCounter
-          number={`${stateData.stats.members.toLocaleString()}`}
-          label="Active Members"
-          icon="fa-users"
-        />
-        <StatsCounter
-          number={`${stateData.stats.chapters}`}
-          label={stateData.stats.chapters === 1 ? "Local Chapter" : "Local Chapters"}
-          icon="fa-flag"
-        />
-        <StatsCounter
-          number={`${stateData.stats.victories}`}
-          label="Infrastructure Victories"
-          icon="fa-trophy"
-        />
-        <StatsCounter
-          number={stateData.abbreviation}
-          label="State Code"
-          icon="fa-map-marker-alt"
-        />
-      </div>
+  <nav class="tab-strip" aria-label="Dossier sections">
+    <a href="#figures">FIGURES</a>
+    <a href="#personnel">PERSONNEL</a>
+    <a href="#outcomes">OUTCOMES</a>
+    <a href="#proceedings">PROCEEDINGS</a>
+    <a href="#case-files">CASE FILES</a>
+    <a href="#inquiries">INQUIRIES</a>
+    <a href="#records">RECORDS</a>
+  </nav>
+
+  <section id="figures" class="doc-section file-section" aria-labelledby="figures-head">
+    <div class="section-head">
+      <p class="kicker">QUARTERLY FIGURES · DOCKET NO. {docket}</p>
+      <h2 id="figures-head">{state.name.toUpperCase()} CHAPTER IMPACT</h2>
     </div>
+    <StatLedger stats={chapterStats} />
+
+    {
+      state.localStats && (
+        <>
+          <h3 class="sub-head">{state.name.toUpperCase()} CYCLING SAFETY STATISTICS</h3>
+          <div class="figures-ledger">
+            <div class="figures-ledger__row">
+              <span class="figures-ledger__label">
+                CYCLING FATALITIES ({state.localStats.cyclingFatalities.year})
+              </span>
+              <span class="leaders" aria-hidden="true" />
+              <span class="figures-ledger__value">{state.localStats.cyclingFatalities.count}</span>
+              <span class="badge-tag">
+                {state.localStats.cyclingFatalities.change} FROM PREVIOUS YEAR
+              </span>
+            </div>
+            <div class="figures-ledger__row">
+              <span class="figures-ledger__label">INFRASTRUCTURE MILES — PROTECTED</span>
+              <span class="leaders" aria-hidden="true" />
+              <span class="figures-ledger__value">
+                {state.localStats.infrastructureMiles.protected.toLocaleString()} MI
+              </span>
+            </div>
+            <div class="figures-ledger__row">
+              <span class="figures-ledger__label">INFRASTRUCTURE MILES — UNPROTECTED</span>
+              <span class="leaders" aria-hidden="true" />
+              <span class="figures-ledger__value">
+                {state.localStats.infrastructureMiles.unprotected.toLocaleString()} MI
+              </span>
+            </div>
+            <div class="figures-ledger__row">
+              <span class="figures-ledger__label">INFRASTRUCTURE MILES — PLANNED</span>
+              <span class="leaders" aria-hidden="true" />
+              <span class="figures-ledger__value">
+                {state.localStats.infrastructureMiles.planned.toLocaleString()} MI
+              </span>
+            </div>
+            <div class="figures-ledger__row">
+              <span class="figures-ledger__label">
+                FUNDING SECURED ({state.localStats.fundingSecured.year}) — FOR INFRASTRUCTURE
+                IMPROVEMENTS
+              </span>
+              <span class="leaders" aria-hidden="true" />
+              <span class="figures-ledger__value">
+                {formatFunding(state.localStats.fundingSecured.amount)}
+              </span>
+            </div>
+          </div>
+        </>
+      )
+    }
+
+    {
+      state.rating && (
+        <p class="satisfaction-line">
+          PUBLIC SATISFACTION INDEX: {state.rating.average.toFixed(1)} / 5 —{' '}
+          {state.rating.count.toLocaleString()} RESPONSES ON FILE
+        </p>
+      )
+    }
   </section>
 
-  <!-- Chapter Leadership Section -->
-  <section class="py-5 bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-            Chapter Leadership
-          </h2>
+  <section id="personnel" class="doc-section file-section" aria-labelledby="personnel-head">
+    <div class="section-head">
+      <p class="kicker">PERSONNEL FILE · OFFICE OF FIELD OPERATIONS</p>
+      <h2 id="personnel-head">CHAPTER LEADERSHIP</h2>
+    </div>
+    <div class="personnel-card">
+      <div class="personnel-card__row">
+        <span class="personnel-card__label">OFFICER IN CHARGE</span>
+        <span class="personnel-card__value">{state.chapterPresident.name}</span>
+      </div>
+      <div class="personnel-card__row">
+        <span class="personnel-card__label">STATION</span>
+        <span class="personnel-card__value">Chapter President · {state.capital}</span>
+      </div>
+      <div class="personnel-card__row">
+        <span class="personnel-card__label">ELECTRONIC MAIL</span>
+        <span class="personnel-card__value">
+          <a href={`mailto:${state.chapterPresident.email}`}>{state.chapterPresident.email}</a>
+        </span>
+      </div>
+      <div class="personnel-card__row">
+        <span class="personnel-card__label">TELEPHONE</span>
+        <span class="personnel-card__value">{state.chapterPresident.phone}</span>
+      </div>
+    </div>
+    <p class="doc-note">
+      <strong>Join the {state.name} chapter!</strong> Contact our chapter president to get involved
+      with local advocacy efforts.
+    </p>
+  </section>
 
-          <div class="leadership-card p-4 mb-4" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-left: 5px solid #B31942;">
-            <div class="row align-items-center">
-              <div class="col-md-3 text-center mb-3 mb-md-0">
-                <div class="president-icon" style="width: 100px; height: 100px; border-radius: 50%; background-color: rgba(179, 25, 66, 0.2); margin: 0 auto; display: flex; align-items: center; justify-content: center; border: 3px solid #B31942;">
-                  <i class="fas fa-user-tie fa-3x" style="color: #B31942;"></i>
-                </div>
-              </div>
-              <div class="col-md-9">
-                <h3 style="color: white; font-family: 'Roboto Condensed', sans-serif; margin-bottom: 0.5rem;">
-                  {stateData.chapterPresident.name}
-                </h3>
-                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 1rem;">
-                  <strong>Chapter President • {stateData.capital}</strong>
-                </p>
-                <div class="contact-info" style="color: rgba(255,255,255,0.85);">
-                  <p class="mb-2">
-                    <i class="fas fa-envelope me-2" style="color: #B31942;"></i>
-                    <a href={`mailto:${stateData.chapterPresident.email}`} style="color: white; text-decoration: none;">
-                      {stateData.chapterPresident.email}
-                    </a>
-                  </p>
-                  <p class="mb-0">
-                    <i class="fas fa-phone me-2" style="color: #B31942;"></i>
-                    {stateData.chapterPresident.phone}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Rating Display */}
-          {stateData.rating && (
-            <div class="rating-card p-4 mb-4" style="background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 2px solid #FFD700;">
-              <div class="text-center">
-                <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; margin-bottom: 1rem;">
-                  Chapter Rating
-                </h4>
-                <div class="d-flex justify-content-center align-items-center gap-2">
-                  <div class="stars">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <i
-                        class={`fas fa-star fa-lg`}
-                        style={`color: ${star <= Math.floor(stateData.rating.average) ? '#FFD700' : star - 0.5 <= stateData.rating.average ? '#FFD700' : '#ddd'}; margin: 0 2px;`}
-                      ></i>
-                    ))}
-                  </div>
-                  <span style="font-size: 1.5rem; font-weight: 700; color: #0A3161; margin-left: 0.5rem;">
-                    {stateData.rating.average.toFixed(1)}
-                  </span>
-                </div>
-                <p style="color: #666; margin-top: 0.5rem; margin-bottom: 0;">
-                  Based on {stateData.rating.count.toLocaleString()} member reviews
-                </p>
-              </div>
-            </div>
-          )}
-
-          <div class="alert" style="background-color: rgba(179, 25, 66, 0.1); border-left: 4px solid #B31942; padding: 1rem 1.5rem;">
-            <p class="mb-0" style="color: #333;">
-              <i class="fas fa-info-circle me-2" style="color: #B31942;"></i>
-              <strong>Join the {stateData.name} chapter!</strong> Contact our chapter president to get involved with local advocacy efforts.
-            </p>
-          </div>
+  {
+    state.testimonials && state.testimonials.length > 0 && (
+      <section class="doc-section file-section" aria-labelledby="comments-head">
+        <div class="section-head">
+          <p class="kicker">PUBLIC COMMENT RECORD · ENTERED WITHOUT OBJECTION</p>
+          <h2 id="comments-head">VOICES FROM {state.name.toUpperCase()}</h2>
         </div>
-      </div>
-    </div>
-  </section>
+        <CommentLedger
+          entries={state.testimonials.map((t) => ({
+            quote: t.quote,
+            name: t.author,
+            location: t.city,
+          }))}
+        />
+      </section>
+    )
+  }
 
-  <!-- Testimonials Section -->
-  <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
-    <div class="container">
-      <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-        Voices from {stateData.name}
-      </h2>
-      <div class="row">
-        {stateData.testimonials.map((testimonial, index) => {
-          const colors = ['#B31942', '#0A3161', '#FFD700'];
-          return (
-            <TestimonialCard
-              quote={testimonial.quote}
-              name={testimonial.author}
-              location={`${testimonial.city}, ${stateData.abbreviation}`}
-              color={colors[index % colors.length]}
-            />
-          );
-        })}
-      </div>
-    </div>
-  </section>
+  {
+    state.featuredArticle && (
+      <section class="doc-section file-section" aria-labelledby="memo-head">
+        <div class="section-head">
+          <p class="kicker">FEATURED MEMORANDUM · RECORDS DIVISION</p>
+          <h2 id="memo-head">LATEST FROM {state.name.toUpperCase()}</h2>
+        </div>
+        <article class="memo-abstract">
+          <p class="memo-abstract__tag">FEATURED STORY</p>
+          <h3 class="memo-abstract__title">{state.featuredArticle.title}</h3>
+          <p class="memo-abstract__excerpt">{state.featuredArticle.excerpt}</p>
+          <a class="crossref" href={state.featuredArticle.link}>
+            READ FULL STORY — REF. {state.featuredArticle.link}
+          </a>
+        </article>
+      </section>
+    )
+  }
 
-  <!-- Featured Article Section -->
-  <section class="py-5 bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-            Latest from {stateData.name}
-          </h2>
+  {
+    state.victories && state.victories.length > 0 && (
+      <section id="outcomes" class="doc-section file-section" aria-labelledby="outcomes-head">
+        <div class="section-head">
+          <p class="kicker">CASE OUTCOMES · CLOSED FILES</p>
+          <h2 id="outcomes-head">{state.name.toUpperCase()} INFRASTRUCTURE VICTORIES</h2>
+        </div>
+        <div class="outcomes">
+          {state.victories.slice(0, 3).map((victory, i) => (
+            <article class="outcome">
+              <div class="outcome__stamp">
+                <Stamp text="RESOLVED" animated={i === 0} rotate={i === 0 ? -6 : i === 1 ? 3 : -3} />
+              </div>
+              <div class="outcome__meta">
+                <span class="badge-tag">{victory.category.toUpperCase()}</span>
+                <span class="outcome__date">{formatDate(victory.date)}</span>
+                <span class="outcome__location">{victory.location.toUpperCase()}</span>
+              </div>
+              <h3 class="outcome__title">{victory.title}</h3>
+              <p class="outcome__desc">{victory.description}</p>
+              <div class="outcome__impact">
+                <span class="outcome__impact-label">IMPACT:</span>
+                <p>{victory.impact}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        {extraOutcomes > 0 && <p class="doc-more">+{extraOutcomes} ADDITIONAL OUTCOMES ON FILE</p>}
+      </section>
+    )
+  }
 
-          <div class="featured-article-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 4px solid #B31942; transition: all 0.3s ease;">
-            <div class="p-4">
-              <div class="d-flex align-items-center mb-3">
-                <div class="icon-container me-3" style="width: 60px; height: 60px; border-radius: 50%; background-color: rgba(179, 25, 66, 0.1); display: flex; align-items: center; justify-content: center;">
-                  <i class="fas fa-newspaper fa-2x" style="color: #B31942;"></i>
+  {
+    state.upcomingEvents && state.upcomingEvents.length > 0 && (
+      <section
+        id="proceedings"
+        class="doc-section file-section"
+        aria-labelledby="proceedings-head"
+      >
+        <div class="section-head">
+          <p class="kicker">SCHEDULED PROCEEDINGS · PUBLIC NOTICE</p>
+          <h2 id="proceedings-head">UPCOMING EVENTS IN {state.name.toUpperCase()}</h2>
+        </div>
+        <div class="proceedings">
+          {state.upcomingEvents.map((event) => {
+            const concluded = new Date(event.date) < now;
+            return (
+              <article class="proceeding">
+                <div class="proceeding__meta">
+                  <p>
+                    <span class="proceeding__label">DATE</span>
+                    {formatDate(event.date)}
+                  </p>
+                  <p>
+                    <span class="proceeding__label">TIME</span>
+                    {event.time}
+                  </p>
+                  <p>
+                    <span class="proceeding__label">VENUE</span>
+                    {event.venue}
+                  </p>
+                  <p>
+                    <span class="proceeding__label">ADDRESS</span>
+                    {event.address}, {event.city}
+                  </p>
+                </div>
+                <div class="proceeding__body">
+                  <div class="proceeding__head">
+                    <h3>{event.name}</h3>
+                    <span class="badge-tag">{event.eventType.toUpperCase()}</span>
+                  </div>
+                  <p class="proceeding__desc">{event.description}</p>
+                  {concluded ? (
+                    <p class="proceeding__note">PROCEEDINGS CONCLUDED — MINUTES ON FILE</p>
+                  ) : event.registrationRequired ? (
+                    <p class="proceeding__note">REGISTRATION REQUIRED — FORM AAR-101</p>
+                  ) : null}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    state.infrastructureIssues && state.infrastructureIssues.length > 0 && (
+      <section id="case-files" class="doc-section file-section" aria-labelledby="cases-head">
+        <div class="section-head">
+          <p class="kicker">INFRASTRUCTURE CASE FILES · OPEN MATTERS</p>
+          <h2 id="cases-head">INFRASTRUCTURE ISSUES WE'RE ADDRESSING</h2>
+        </div>
+        <div class="case-files">
+          {state.infrastructureIssues.map((issue) => (
+            <article class="case-file">
+              <div class="case-file__tags">
+                <span class="badge-tag">{issue.severity.toUpperCase()} PRIORITY</span>
+                <span class="badge-tag">{issue.status.replace('-', ' ').toUpperCase()}</span>
+              </div>
+              <h3 class="case-file__title">{issue.title}</h3>
+              <p class="case-file__desc">{issue.description}</p>
+              <dl class="case-file__details">
+                <div>
+                  <dt>LOCATION</dt>
+                  <dd>{issue.location}</dd>
                 </div>
                 <div>
-                  <span class="badge" style="background-color: #0A3161; font-size: 0.8rem; letter-spacing: 1px;">
-                    FEATURED STORY
-                  </span>
+                  <dt>AFFECTED AREAS</dt>
+                  <dd>{issue.affectedCities.join(', ')}</dd>
                 </div>
-              </div>
-
-              <h3 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; margin-bottom: 1rem;">
-                {stateData.featuredArticle.title}
-              </h3>
-
-              <p style="color: #555; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                {stateData.featuredArticle.excerpt}
-              </p>
-
-              <a href={stateData.featuredArticle.link} class="btn" style="background-color: #B31942; color: white; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block;">
-                Read Full Story
-                <i class="fas fa-arrow-right ms-2"></i>
-              </a>
-            </div>
-          </div>
+                <div>
+                  <dt>PROPOSED SOLUTION</dt>
+                  <dd>{issue.proposedSolution}</dd>
+                </div>
+                <div>
+                  <dt>LAST UPDATED</dt>
+                  <dd>{formatDate(issue.lastUpdated)}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
         </div>
-      </div>
+      </section>
+    )
+  }
+
+  {
+    state.faqs && state.faqs.length > 0 && (
+      <section id="inquiries" class="doc-section file-section" aria-labelledby="inquiries-head">
+        <div class="section-head">
+          <p class="kicker">PUBLIC COUNTER · RESPONSES PREPARED IN ADVANCE</p>
+          <h2 id="inquiries-head">FREQUENTLY FILED INQUIRIES</h2>
+        </div>
+        <div class="inquiries">
+          {state.faqs.map((faq, i) => (
+            <details class="details-folder" open={i === 0}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section id="records" class="doc-section file-section" aria-labelledby="records-head">
+    <div class="section-head">
+      <p class="kicker">PHOTOGRAPHIC RECORDS · EVIDENCE LOCKER</p>
+      <h2 id="records-head">{state.name.toUpperCase()} CHAPTER GALLERY</h2>
     </div>
+    <PendingRecords docket={docket} count={5} />
   </section>
 
-  <!-- FAQs Section -->
-  {stateData.faqs && stateData.faqs.length > 0 && (
-    <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-              Frequently Asked Questions
-            </h2>
-
-            <div class="accordion" id="faqAccordion">
-              {stateData.faqs.map((faq, index) => (
-                <div class="accordion-item mb-3" style="border: none; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                  <h3 class="accordion-header">
-                    <button
-                      class={`accordion-button ${index !== 0 ? 'collapsed' : ''}`}
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target={`#faq${index}`}
-                      aria-expanded={index === 0 ? 'true' : 'false'}
-                      style="background-color: white; color: #0A3161; font-weight: 600; font-size: 1.1rem; padding: 1.25rem;"
-                    >
-                      {faq.question}
-                    </button>
-                  </h3>
-                  <div id={`faq${index}`} class={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`} data-bs-parent="#faqAccordion">
-                    <div class="accordion-body" style="padding: 1.5rem; color: #555; line-height: 1.8;">
-                      {faq.answer}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Upcoming Events Section -->
-  {stateData.upcomingEvents && stateData.upcomingEvents.length > 0 && (
-    <section class="py-5 bg-white">
-      <div class="container">
-        <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-          Upcoming Events in {stateData.name}
-        </h2>
-
-        <div class="row">
-          {stateData.upcomingEvents.map((event) => {
-            const eventDate = new Date(event.date);
-            const month = eventDate.toLocaleString('default', { month: 'short' }).toUpperCase();
-            const day = eventDate.getDate();
-
-            return (
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="event-card h-100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">
-                  <div class="event-header" style={`background: linear-gradient(135deg, ${event.eventType === 'rally' ? '#B31942' : event.eventType === 'meeting' ? '#0A3161' : event.eventType === 'presentation' ? '#2d5016' : '#FFD700'} 0%, ${event.eventType === 'rally' ? '#d91e52' : event.eventType === 'meeting' ? '#1a4b8c' : event.eventType === 'presentation' ? '#4a8226' : '#FFC700'} 100%); padding: 1rem; color: white;`}>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="date-box text-center" style="background: white; color: #0A3161; padding: 0.5rem 0.75rem; border-radius: 8px; min-width: 60px;">
-                        <div style="font-size: 0.8rem; font-weight: 600;">{month}</div>
-                        <div style="font-size: 1.5rem; font-weight: 700; line-height: 1;">{day}</div>
-                      </div>
-                      <span class="badge" style="background-color: rgba(255,255,255,0.3); font-size: 0.75rem; padding: 0.4rem 0.8rem;">
-                        {event.eventType.toUpperCase()}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="event-body p-4">
-                    <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; margin-bottom: 1rem;">
-                      {event.name}
-                    </h4>
-
-                    <div class="event-details mb-3" style="color: #666;">
-                      <p class="mb-2">
-                        <i class="fas fa-clock me-2" style="color: #B31942; width: 20px;"></i>
-                        {event.time}
-                      </p>
-                      <p class="mb-2">
-                        <i class="fas fa-map-marker-alt me-2" style="color: #B31942; width: 20px;"></i>
-                        {event.venue}
-                      </p>
-                      <p class="mb-2">
-                        <i class="fas fa-location-arrow me-2" style="color: #B31942; width: 20px;"></i>
-                        {event.city}, {stateData.abbreviation}
-                      </p>
-                    </div>
-
-                    <p style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-                      {event.description}
-                    </p>
-
-                    {event.registrationRequired && (
-                      <div class="alert alert-info p-2" style="background-color: rgba(10, 49, 97, 0.1); border: none; font-size: 0.85rem;">
-                        <i class="fas fa-info-circle me-2"></i>
-                        Registration Required
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Victories Section -->
-  {stateData.victories && stateData.victories.length > 0 && (
-    <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
-      <div class="container">
-        <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-          {stateData.name} Infrastructure Victories
-        </h2>
-
-        <div class="row">
-          {stateData.victories.slice(0, 3).map((victory, index) => {
-            const victoryDate = new Date(victory.date);
-            const formattedDate = victoryDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-            const categoryColors = {
-              'infrastructure': '#0A3161',
-              'legislation': '#B31942',
-              'funding': '#2d5016',
-              'awareness': '#FFD700'
-            };
-
-            return (
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="victory-card h-100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; border-top: 4px solid;">
-                  <div class="card-body p-4">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                      <span class="badge" style={`background-color: ${categoryColors[victory.category]}; font-size: 0.75rem; padding: 0.5rem 1rem;`}>
-                        {victory.category.toUpperCase()}
-                      </span>
-                      <small style="color: #999;">{formattedDate}</small>
-                    </div>
-
-                    <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; margin-bottom: 1rem;">
-                      {victory.title}
-                    </h4>
-
-                    <p style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
-                      {victory.description}
-                    </p>
-
-                    <div class="victory-impact" style="background-color: rgba(179, 25, 66, 0.05); padding: 1rem; border-radius: 8px; border-left: 3px solid #B31942;">
-                      <strong style="color: #B31942; font-size: 0.85rem;">IMPACT:</strong>
-                      <p style="color: #333; font-size: 0.9rem; margin-bottom: 0; margin-top: 0.5rem;">
-                        {victory.impact}
-                      </p>
-                    </div>
-
-                    <div class="mt-3">
-                      <small style="color: #666;">
-                        <i class="fas fa-map-marker-alt me-2"></i>
-                        {victory.location}
-                      </small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {stateData.victories.length > 3 && (
-          <div class="text-center mt-4">
-            <p style="color: #666;">
-              <strong>+ {stateData.victories.length - 3} more victories</strong> in {stateData.name}
-            </p>
-          </div>
-        )}
-      </div>
-    </section>
-  )}
-
-  <!-- Infrastructure Issues Section -->
-  {stateData.infrastructureIssues && stateData.infrastructureIssues.length > 0 && (
-    <section class="py-5 bg-white">
-      <div class="container">
-        <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-          Infrastructure Issues We're Addressing
-        </h2>
-
-        <div class="row">
-          {stateData.infrastructureIssues.map((issue) => {
-            const severityColors = {
-              'critical': '#B31942',
-              'high': '#FF6B35',
-              'medium': '#FFD700'
-            };
-            const statusIcons = {
-              'identified': 'fa-eye',
-              'advocating': 'fa-bullhorn',
-              'approved': 'fa-check-circle',
-              'in-progress': 'fa-hard-hat',
-              'resolved': 'fa-trophy'
-            };
-
-            return (
-              <div class="col-lg-6 mb-4">
-                <div class="issue-card h-100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">
-                  <div class="issue-header p-3" style={`background: linear-gradient(135deg, ${severityColors[issue.severity]} 0%, ${severityColors[issue.severity]}dd 100%); color: white;`}>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <span class="badge" style="background-color: rgba(255,255,255,0.3); font-size: 0.75rem; padding: 0.4rem 0.8rem;">
-                        {issue.severity.toUpperCase()} PRIORITY
-                      </span>
-                      <span style="font-size: 0.85rem;">
-                        <i class={`fas ${statusIcons[issue.status]} me-2`}></i>
-                        {issue.status.replace('-', ' ').toUpperCase()}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="issue-body p-4">
-                    <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; margin-bottom: 1rem;">
-                      {issue.title}
-                    </h4>
-
-                    <p style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
-                      {issue.description}
-                    </p>
-
-                    <div class="issue-details">
-                      <div class="mb-3">
-                        <strong style="color: #0A3161; font-size: 0.9rem;">
-                          <i class="fas fa-map-marked-alt me-2"></i>Location:
-                        </strong>
-                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">
-                          {issue.location}
-                        </p>
-                      </div>
-
-                      <div class="mb-3">
-                        <strong style="color: #0A3161; font-size: 0.9rem;">
-                          <i class="fas fa-city me-2"></i>Affected Areas:
-                        </strong>
-                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">
-                          {issue.affectedCities.join(', ')}
-                        </p>
-                      </div>
-
-                      <div class="proposed-solution" style="background-color: rgba(10, 49, 97, 0.05); padding: 1rem; border-radius: 8px; border-left: 3px solid #0A3161;">
-                        <strong style="color: #0A3161; font-size: 0.85rem;">
-                          <i class="fas fa-lightbulb me-2"></i>PROPOSED SOLUTION:
-                        </strong>
-                        <p style="color: #333; font-size: 0.9rem; margin-bottom: 0; margin-top: 0.5rem;">
-                          {issue.proposedSolution}
-                        </p>
-                      </div>
-
-                      <div class="mt-3">
-                        <small style="color: #999;">
-                          Last updated: {new Date(issue.lastUpdated).toLocaleDateString()}
-                        </small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Local Statistics Section -->
-  {stateData.localStats && (
-    <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
-      <div class="container">
-        <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-          {stateData.name} Cycling Safety Statistics
-        </h2>
-
-        <div class="row">
-          <!-- Fatalities Card -->
-          <div class="col-lg-4 mb-4">
-            <div class="stats-card h-100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 4px solid #B31942;">
-              <div class="card-body p-4">
-                <div class="text-center mb-3">
-                  <div class="icon-wrapper" style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #B31942 0%, #d91e52 100%); margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-exclamation-triangle fa-2x" style="color: white;"></i>
-                  </div>
-                </div>
-                <h4 class="text-center" style="color: #B31942; font-family: 'Roboto Condensed', sans-serif; font-weight: 700;">
-                  Cycling Fatalities
-                </h4>
-                <div class="text-center">
-                  <div style="font-size: 3rem; font-weight: 700; color: #0A3161; line-height: 1;">
-                    {stateData.localStats.cyclingFatalities.count}
-                  </div>
-                  <div style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">
-                    in {stateData.localStats.cyclingFatalities.year}
-                  </div>
-                  <div class="mt-3">
-                    <span class={`badge ${stateData.localStats.cyclingFatalities.change.startsWith('+') ? 'bg-danger' : 'bg-success'}`} style="font-size: 0.85rem; padding: 0.5rem 1rem;">
-                      <i class={`fas ${stateData.localStats.cyclingFatalities.change.startsWith('+') ? 'fa-arrow-up' : 'fa-arrow-down'} me-1`}></i>
-                      {stateData.localStats.cyclingFatalities.change} from previous year
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Infrastructure Miles Card -->
-          <div class="col-lg-4 mb-4">
-            <div class="stats-card h-100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 4px solid #0A3161;">
-              <div class="card-body p-4">
-                <div class="text-center mb-3">
-                  <div class="icon-wrapper" style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%); margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-road fa-2x" style="color: white;"></i>
-                  </div>
-                </div>
-                <h4 class="text-center" style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700;">
-                  Infrastructure Miles
-                </h4>
-                <div class="infrastructure-bars mt-4">
-                  <div class="mb-3">
-                    <div class="d-flex justify-content-between align-items-center mb-1">
-                      <span style="color: #2d5016; font-weight: 600; font-size: 0.9rem;">Protected</span>
-                      <span style="color: #333; font-weight: 700;">{stateData.localStats.infrastructureMiles.protected} mi</span>
-                    </div>
-                    <div class="progress" style="height: 10px; background-color: #e9ecef;">
-                      <div class="progress-bar" style={`width: ${(stateData.localStats.infrastructureMiles.protected / (stateData.localStats.infrastructureMiles.protected + stateData.localStats.infrastructureMiles.unprotected + stateData.localStats.infrastructureMiles.planned) * 100)}%; background-color: #2d5016;`}></div>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <div class="d-flex justify-content-between align-items-center mb-1">
-                      <span style="color: #B31942; font-weight: 600; font-size: 0.9rem;">Unprotected</span>
-                      <span style="color: #333; font-weight: 700;">{stateData.localStats.infrastructureMiles.unprotected} mi</span>
-                    </div>
-                    <div class="progress" style="height: 10px; background-color: #e9ecef;">
-                      <div class="progress-bar" style={`width: ${(stateData.localStats.infrastructureMiles.unprotected / (stateData.localStats.infrastructureMiles.protected + stateData.localStats.infrastructureMiles.unprotected + stateData.localStats.infrastructureMiles.planned) * 100)}%; background-color: #B31942;`}></div>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <div class="d-flex justify-content-between align-items-center mb-1">
-                      <span style="color: #FFD700; font-weight: 600; font-size: 0.9rem;">Planned</span>
-                      <span style="color: #333; font-weight: 700;">{stateData.localStats.infrastructureMiles.planned} mi</span>
-                    </div>
-                    <div class="progress" style="height: 10px; background-color: #e9ecef;">
-                      <div class="progress-bar" style={`width: ${(stateData.localStats.infrastructureMiles.planned / (stateData.localStats.infrastructureMiles.protected + stateData.localStats.infrastructureMiles.unprotected + stateData.localStats.infrastructureMiles.planned) * 100)}%; background-color: #FFD700;`}></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center mt-3">
-                  <small style="color: #666;">
-                    Total: {(stateData.localStats.infrastructureMiles.protected + stateData.localStats.infrastructureMiles.unprotected + stateData.localStats.infrastructureMiles.planned).toFixed(1)} miles
-                  </small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Funding Secured Card -->
-          <div class="col-lg-4 mb-4">
-            <div class="stats-card h-100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 4px solid #2d5016;">
-              <div class="card-body p-4">
-                <div class="text-center mb-3">
-                  <div class="icon-wrapper" style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #2d5016 0%, #4a8226 100%); margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-dollar-sign fa-2x" style="color: white;"></i>
-                  </div>
-                </div>
-                <h4 class="text-center" style="color: #2d5016; font-family: 'Roboto Condensed', sans-serif; font-weight: 700;">
-                  Funding Secured
-                </h4>
-                <div class="text-center">
-                  <div style="font-size: 2.5rem; font-weight: 700; color: #0A3161; line-height: 1;">
-                    ${stateData.localStats.fundingSecured.amount < 1
-                      ? `${(stateData.localStats.fundingSecured.amount * 1000).toFixed(0)}K`
-                      : stateData.localStats.fundingSecured.amount >= 1000
-                        ? `${(stateData.localStats.fundingSecured.amount / 1000).toFixed(1)}B`
-                        : `${stateData.localStats.fundingSecured.amount}M`}
-                  </div>
-                  <div style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">
-                    in {stateData.localStats.fundingSecured.year}
-                  </div>
-                  <div class="mt-3" style="background-color: rgba(45, 80, 22, 0.1); padding: 0.75rem; border-radius: 8px;">
-                    <i class="fas fa-info-circle me-2" style="color: #2d5016;"></i>
-                    <small style="color: #333;">For infrastructure improvements</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Photo Gallery Section -->
-  {stateData.photoGallery && stateData.photoGallery.length > 0 && (
-    <section class="py-5 bg-white">
-      <div class="container">
-        <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-          {stateData.name} Chapter Gallery
-        </h2>
-
-        <div class="row g-3">
-          {stateData.photoGallery.map((photo, index) => {
-            const categoryBadgeColors = {
-              'event': '#B31942',
-              'victory': '#2d5016',
-              'infrastructure': '#0A3161',
-              'members': '#FFD700'
-            };
-
-            return (
-              <div class={`col-lg-${index === 0 ? '8' : '4'} col-md-6`}>
-                <div class="gallery-item position-relative h-100" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); cursor: pointer; transition: all 0.3s ease;">
-                  <img
-                    src={photo.url}
-                    alt={photo.alt}
-                    title={photo.title}
-                    class="w-100 h-100"
-                    style="object-fit: cover; min-height: 300px;"
-                    loading={index === 0 ? "eager" : "lazy"}
-                    width="800"
-                    height="600"
-                    decoding="async"
-                    data-bs-toggle="modal"
-                    data-bs-target={`#galleryModal${index}`}
-                  />
-                  <div class="gallery-overlay position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
-                    <span class="badge mb-2" style={`background-color: ${categoryBadgeColors[photo.category]}; font-size: 0.75rem;`}>
-                      {photo.category.toUpperCase()}
-                    </span>
-                    <h5 style="color: white; font-weight: 600; margin-bottom: 0.25rem;">{photo.title}</h5>
-                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 0;">{photo.caption}</p>
-                  </div>
-                  <div class="gallery-hover-overlay position-absolute top-0 start-0 end-0 bottom-0 d-flex align-items-center justify-content-center" style="background: rgba(10, 49, 97, 0.8); opacity: 0; transition: opacity 0.3s ease;">
-                    <i class="fas fa-search-plus fa-3x" style="color: white;"></i>
-                  </div>
-                </div>
-
-                <!-- Modal for each image -->
-                <div class="modal fade" id={`galleryModal${index}`} tabindex="-1" aria-hidden="true">
-                  <div class="modal-dialog modal-xl modal-dialog-centered">
-                    <div class="modal-content" style="background: transparent; border: none;">
-                      <div class="modal-header border-0">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body p-0">
-                        <img
-                          src={photo.url}
-                          alt={photo.alt}
-                          title={photo.title}
-                          class="w-100"
-                          style="border-radius: 10px;"
-                          loading="lazy"
-                          width="1200"
-                          height="900"
-                          decoding="async"
-                        />
-                        <div class="mt-3 p-3" style="background: white; border-radius: 10px;">
-                          <h5 style="color: #0A3161; font-weight: 700;">{photo.title}</h5>
-                          <p style="color: #555; margin-bottom: 0;">{photo.caption}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Join Section with Contact Form -->
-  <section class="py-5" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%);">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="text-center mb-4" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: white;">
-            Join AARBAA {stateData.name}
-          </h2>
-          <p class="text-center mb-5" style="color: rgba(255,255,255,0.9); font-size: 1.2rem;">
-            Ready to make a difference in {stateData.name}? Fill out the form below to connect with your local chapter and start advocating for safer roads today!
-          </p>
-
-          <div class="form-container p-4" style="background: white; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
-            <ContactForm prefilledState={stateData.name} />
-          </div>
-        </div>
-      </div>
+  <section class="doc-section file-section" aria-labelledby="join-head">
+    <div class="section-head">
+      <p class="kicker">FILE A REQUEST · FORM AAR-101</p>
+      <h2 id="join-head">JOIN AARBAA {state.name.toUpperCase()}</h2>
     </div>
+    <p class="doc-copy">
+      Ready to make a difference in {state.name}? Fill out the form below to connect with your
+      local chapter and start advocating for safer roads today!
+    </p>
+    <ContactForm prefilledState={state.name} formNumber="AAR-101" />
   </section>
 
-  <!-- Additional Resources -->
-  <section class="py-5 bg-white">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-          <div class="resource-card p-4" style="border-radius: 10px; transition: all 0.3s ease; height: 100%;">
-            <i class="fas fa-book fa-3x mb-3" style="color: #B31942;"></i>
-            <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-size: 1.25rem;">Resources</h4>
-            <p style="color: #555; font-size: 0.9rem;">Access advocacy materials and safety data</p>
-            <a href="/resources" class="btn btn-outline-primary btn-sm">View Resources</a>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-          <div class="resource-card p-4" style="border-radius: 10px; transition: all 0.3s ease; height: 100%;">
-            <i class="fas fa-newspaper fa-3x mb-3" style="color: #B31942;"></i>
-            <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-size: 1.25rem;">Latest News</h4>
-            <p style="color: #555; font-size: 0.9rem;">Read about victories across the nation</p>
-            <a href="/news" class="btn btn-outline-primary btn-sm">Read News</a>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-          <div class="resource-card p-4" style="border-radius: 10px; transition: all 0.3s ease; height: 100%;">
-            <i class="fas fa-map-marked-alt fa-3x mb-3" style="color: #B31942;"></i>
-            <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-size: 1.25rem;">Other Chapters</h4>
-            <p style="color: #555; font-size: 0.9rem;">Connect with chapters nationwide</p>
-            <a href="/chapters" class="btn btn-outline-primary btn-sm">View All Chapters</a>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="resource-card p-4" style="border-radius: 10px; transition: all 0.3s ease; height: 100%;">
-            <i class="fas fa-globe fa-3x mb-3" style="color: #B31942;"></i>
-            <h4 style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-size: 1.25rem;">International</h4>
-            <p style="color: #555; font-size: 0.9rem;">See our global advocacy efforts</p>
-            <a href="/countries" class="btn btn-outline-primary btn-sm">View Countries</a>
-          </div>
-        </div>
-      </div>
+  <section class="doc-section file-section" aria-labelledby="xref-head">
+    <div class="section-head">
+      <p class="kicker">CROSS-REFERENCES · RECORDS RETENTION SCHEDULE 7</p>
+      <h2 id="xref-head">RELATED FILINGS</h2>
     </div>
+    <ul class="xref-list">
+      <li><a class="crossref" href="/resources">SEE: PUBLIC READING ROOM — /resources</a></li>
+      <li>
+        <a class="crossref" href="/join">SEE: FORM AAR-100 — APPLICATION FOR ENROLLMENT — /join</a>
+      </li>
+      <li><a class="crossref" href="/news">SEE: OFFICIAL RECORDS — MEMORANDA LOG — /news</a></li>
+    </ul>
   </section>
 </MainLayout>
 
 <style>
-  .featured-article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  .dossier-crossref {
+    margin: var(--s4) 0 var(--s3);
   }
 
-  .featured-article-card .btn:hover {
-    background-color: #8B1435;
-    transform: translateX(5px);
+  .tab-strip {
+    margin-bottom: var(--s3);
   }
 
-  .resource-card {
-    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
-    border: 2px solid transparent;
-  }
-
-  .resource-card:hover {
-    border-color: #B31942;
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  }
-
-  .leadership-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  }
-
-  /* New styles for enhanced content sections */
-  .accordion-button:not(.collapsed) {
-    background-color: #f8f9fa !important;
-    box-shadow: none;
-  }
-
-  .accordion-button:focus {
-    box-shadow: none;
-    border-color: #B31942;
-  }
-
-  .accordion-button::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230A3161'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-  }
-
-  .event-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  }
-
-  .victory-card {
-    border-top-color: #0A3161 !important;
-  }
-
-  .victory-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  }
-
-  .issue-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  }
-
-  .event-header {
+  .doc-section {
     position: relative;
+    padding: var(--s6) 0;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: var(--s6);
   }
 
-  .event-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  .doc-section:first-of-type {
+    border-top: 0;
   }
 
-  .victory-impact {
-    position: relative;
-    overflow: hidden;
+  .section-head {
+    margin-bottom: var(--s4);
   }
 
-  .victory-impact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, #B31942, #d91e52);
+  .sub-head {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin: var(--s5) 0 var(--s3);
   }
 
-  .proposed-solution {
-    position: relative;
-    transition: all 0.3s ease;
+  .figures-ledger {
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: var(--s2) var(--s4);
   }
 
-  .proposed-solution:hover {
-    background-color: rgba(10, 49, 97, 0.08) !important;
-  }
-
-  .issue-header {
-    position: relative;
-  }
-
-  .issue-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  }
-
-  /* Local Statistics Section Styles */
-  .stats-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  }
-
-  .stats-card .icon-wrapper {
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  .progress-bar {
-    transition: width 1s ease-in-out;
-    animation: progressAnimation 1s ease-in-out;
-  }
-
-  @keyframes progressAnimation {
-    from {
-      width: 0;
-    }
-  }
-
-  /* Photo Gallery Styles */
-  .gallery-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  }
-
-  .gallery-item:hover .gallery-hover-overlay {
-    opacity: 1 !important;
-  }
-
-  .gallery-hover-overlay {
-    pointer-events: none;
-  }
-
-  .modal-dialog-centered {
+  .figures-ledger__row {
     display: flex;
-    align-items: center;
-    min-height: calc(100% - 1rem);
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--s2);
+    padding: var(--s3) 0;
+    border-bottom: 1px solid var(--rule);
   }
 
-  .btn-close-white {
-    filter: brightness(0) invert(1);
+  .figures-ledger__row:last-child {
+    border-bottom: 0;
   }
 
-  /* Rating Display Styles */
-  .rating-card {
-    transition: all 0.3s ease;
+  .figures-ledger__label {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.04em;
   }
 
-  .rating-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border-color: #FFC700 !important;
+  .figures-ledger__value {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--fs-lg);
+    letter-spacing: 0.04em;
   }
 
-  .rating-card .fa-star {
-    transition: all 0.3s ease;
+  .satisfaction-line {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin-top: var(--s4);
   }
 
-  .rating-card:hover .fa-star {
-    transform: scale(1.1);
+  .personnel-card {
+    border: 2px solid var(--ink);
+    background: var(--paper-raised);
+    max-width: 760px;
+  }
+
+  .personnel-card__row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .personnel-card__row:last-child {
+    border-bottom: 0;
+  }
+
+  .personnel-card__label {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    padding: var(--s3);
+    border-right: 1px solid var(--rule);
+  }
+
+  .personnel-card__value {
+    padding: var(--s3);
+    overflow-wrap: anywhere;
+  }
+
+  .personnel-card__value a {
+    color: var(--glory-red);
+  }
+
+  .doc-note {
+    margin-top: var(--s4);
+    max-width: var(--measure);
+  }
+
+  .memo-abstract {
+    border: 1px solid var(--ink);
+    background: var(--paper-raised);
+    box-shadow: var(--shadow-sheet);
+    padding: var(--s5);
+    max-width: 760px;
+  }
+
+  .memo-abstract__tag {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.14em;
+    color: var(--glory-red);
+    margin-bottom: var(--s2);
+  }
+
+  .memo-abstract__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--fs-xl);
+    line-height: 1.15;
+    margin-bottom: var(--s3);
+  }
+
+  .memo-abstract__excerpt {
+    max-width: var(--measure);
+    margin-bottom: var(--s4);
+  }
+
+  .outcomes {
+    display: grid;
+    gap: var(--s4);
+  }
+
+  .outcome {
+    position: relative;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: var(--s5);
+    padding-right: calc(var(--s5) + 8rem);
+  }
+
+  .outcome__stamp {
+    position: absolute;
+    top: var(--s3);
+    right: var(--s3);
+  }
+
+  .outcome__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--s3);
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s3);
+  }
+
+  .outcome__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--fs-lg);
+    line-height: 1.15;
+    margin-bottom: var(--s3);
+  }
+
+  .outcome__desc {
+    max-width: var(--measure);
+    margin-bottom: var(--s4);
+  }
+
+  .outcome__impact {
+    border-left: 3px solid var(--glory-red);
+    padding: var(--s2) var(--s3);
+  }
+
+  .outcome__impact-label {
+    display: block;
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--glory-red);
+    margin-bottom: var(--s1);
+  }
+
+  .outcome__impact p {
+    font-size: var(--fs-sm);
+    max-width: var(--measure);
+  }
+
+  .doc-more {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.08em;
+    margin-top: var(--s4);
+  }
+
+  .proceedings {
+    display: grid;
+    gap: var(--s4);
+  }
+
+  .proceeding {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .proceeding__meta {
+    display: grid;
+    gap: var(--s3);
+    align-content: start;
+    padding: var(--s4);
+    border-right: 1px solid var(--rule);
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+  }
+
+  .proceeding__label {
+    display: block;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s1);
+  }
+
+  .proceeding__body {
+    padding: var(--s4);
+  }
+
+  .proceeding__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s3);
+    margin-bottom: var(--s3);
+  }
+
+  .proceeding__head h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--fs-lg);
+    line-height: 1.15;
+  }
+
+  .proceeding__desc {
+    max-width: var(--measure);
+  }
+
+  .proceeding__note {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.06em;
+    color: var(--glory-red);
+    border-top: 1px dashed var(--rule);
+    padding-top: var(--s3);
+    margin-top: var(--s3);
+  }
+
+  .case-files {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+    gap: var(--s4);
+  }
+
+  .case-file {
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: var(--s4);
+  }
+
+  .case-file__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s2);
+    margin-bottom: var(--s3);
+  }
+
+  .case-file__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--fs-lg);
+    line-height: 1.15;
+    margin-bottom: var(--s2);
+  }
+
+  .case-file__desc {
+    font-size: var(--fs-sm);
+  }
+
+  .case-file__details {
+    display: grid;
+    gap: var(--s3);
+    border-top: 1px solid var(--rule);
+    margin-top: var(--s3);
+    padding-top: var(--s3);
+  }
+
+  .case-file__details dt {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s1);
+  }
+
+  .case-file__details dd {
+    margin: 0;
+    font-size: var(--fs-sm);
+  }
+
+  .inquiries {
+    display: grid;
+    gap: var(--s2);
+    max-width: 860px;
+  }
+
+  .doc-copy {
+    max-width: var(--measure);
+    font-size: var(--fs-md);
+    line-height: 1.8;
+    margin-bottom: var(--s4);
+  }
+
+  .xref-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--s2);
+  }
+
+  @media (max-width: 760px) {
+    .doc-section {
+      padding: var(--s5) 0;
+    }
+
+    .personnel-card__row {
+      grid-template-columns: 1fr;
+    }
+
+    .personnel-card__label {
+      border-right: 0;
+      padding-bottom: 0;
+    }
+
+    .outcome {
+      padding: var(--s4);
+      padding-top: calc(var(--s5) + 3rem);
+    }
+
+    .proceeding {
+      grid-template-columns: 1fr;
+    }
+
+    .proceeding__meta {
+      border-right: 0;
+      border-bottom: 1px solid var(--rule);
+    }
   }
 </style>

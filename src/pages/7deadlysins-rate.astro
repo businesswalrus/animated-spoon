@@ -1,6 +1,14 @@
 ---
-// Interactive rating page for 7 Deadly Sins
-// This page allows users to submit their own ratings for each person
+// STANDARD FORM 7 (SINS) — QUARTERLY SIN ASSESSMENT
+// Interactive rating page for 7 Deadly Sins — Gentlemen of Tomorrow.
+// Standalone full HTML document (different fictional org); excluded from the sitemap.
+// Field names, csvData, and the submit webhook payload are load-bearing — do not alter.
+import '@fontsource/oswald/600.css';
+import '@fontsource/oswald/700.css';
+import '@fontsource/public-sans/400.css';
+import '@fontsource/public-sans/700.css';
+import '@fontsource/courier-prime/400.css';
+import '@fontsource/courier-prime/700.css';
 
 // Parse CSV data
 const csvData = [
@@ -43,252 +51,362 @@ const sins = ['Pride', 'Greed', 'Lust', 'Envy', 'Gluttony', 'Wrath', 'Sloth'];
 
     <!-- Standard Meta Description -->
     <meta name="description" content="participate in the greatest PR of all time">
+    <meta name="theme-color" content="#041E42">
 
-    <style>
+    <style is:global>
+        /* Self-contained Bureau token values — this page does not load the site's global.css. */
+        :root {
+            --paper: #F5F2E9;
+            --paper-raised: #FBF9F3;
+            --blotter: #E7E2D3;
+            --ink: #1C1B17;
+            --ink-soft: #4B4A42;
+            --glory-red: #B31942;
+            --glory-blue: #0A3161;
+            --navy-deep: #041E42;
+            --stamp-red: #C22B22;
+            --rule: #B9B29C;
+            --gold-foil: #A98600;
+            --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+            --font-body: 'Public Sans', 'Helvetica Neue', sans-serif;
+            --font-type: 'Courier Prime', 'Courier New', monospace;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
-            color: #e0e0e0;
-            line-height: 1.6;
-            padding: 20px;
+        html {
+            color-scheme: light;
         }
 
-        .container {
+        body {
+            font-family: var(--font-body);
+            background: var(--blotter);
+            color: var(--ink);
+            line-height: 1.6;
+            padding: 24px 16px 64px;
+        }
+
+        /* Paper grain */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            pointer-events: none;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        .sheet {
             max-width: 1000px;
             margin: 0 auto;
+            background: var(--paper-raised);
+            border: 1px solid var(--rule);
+            box-shadow: 6px 6px 0 rgba(28, 27, 23, 0.08);
+            padding: clamp(1.25rem, 4vw, 3rem);
+        }
+
+        /* Letterhead */
+        .letterhead {
+            border-bottom: 5px solid var(--glory-red);
+            background: var(--navy-deep);
+            color: var(--paper);
+            padding: 1.25rem 1.5rem;
+            margin: calc(-1 * clamp(1.25rem, 4vw, 3rem)) calc(-1 * clamp(1.25rem, 4vw, 3rem)) 2rem;
+        }
+
+        .letterhead__org {
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: 1.25rem;
+        }
+
+        .letterhead__office {
+            font-family: var(--font-type);
+            font-size: 0.75rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            opacity: 0.85;
+            margin-top: 0.25rem;
+        }
+
+        .form-strip {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-family: var(--font-type);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
         }
 
         h1 {
-            text-align: center;
-            color: #ff4444;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            margin-bottom: 10px;
-            border-bottom: 3px solid #ff4444;
-            padding-bottom: 15px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            line-height: 1.05;
         }
 
         .subtitle {
-            text-align: center;
-            color: #999;
-            font-style: italic;
-            margin-bottom: 30px;
-            font-size: 1.1em;
+            font-family: var(--font-type);
+            color: var(--ink-soft);
+            margin: 0.75rem 0 2rem;
+            font-size: 0.9375rem;
         }
 
         .intro {
-            background: rgba(40, 40, 40, 0.8);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            border-left: 5px solid #ff4444;
+            background: var(--paper);
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            border: 2px solid var(--glory-red);
+            border-left-width: 8px;
+            max-width: 68ch;
         }
 
         .intro h2 {
-            color: #ffaa44;
+            font-family: var(--font-display);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--glory-blue);
             margin-bottom: 10px;
         }
 
-        .form-section {
-            background: rgba(40, 40, 40, 0.8);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 5px solid #ff4444;
+        .intro .scale-line {
+            margin-top: 10px;
+            font-family: var(--font-type);
+            font-size: 0.9375rem;
+            color: var(--glory-blue);
+        }
+
+        .intro p:last-child {
+            margin-top: 10px;
         }
 
         .form-section h2 {
-            color: #ff4444;
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 2em;
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: 1.75rem;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .voter-info {
-            margin-bottom: 30px;
+            margin-bottom: 2.5rem;
+            max-width: 32rem;
         }
 
-        .voter-info label {
+        .voter-info label,
+        .sin-input label,
+        .comment-input label {
             display: block;
-            color: #ffaa44;
+            font-family: var(--font-type);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
             margin-bottom: 5px;
-            font-weight: bold;
         }
 
-        .voter-info input {
+        .voter-info input,
+        .sin-input input,
+        .comment-input textarea {
             width: 100%;
             padding: 10px;
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #555;
-            border-radius: 5px;
-            color: #e0e0e0;
+            background: var(--paper-raised);
+            border: 1px solid var(--ink);
+            border-radius: 0;
+            color: var(--ink);
             font-size: 1em;
+            font-family: var(--font-type);
         }
 
-        .voter-info input:focus {
-            outline: none;
-            border-color: #ff4444;
+        .voter-info input:focus,
+        .sin-input input:focus,
+        .comment-input textarea:focus {
+            outline: 2px solid var(--glory-red);
+            outline-offset: 1px;
         }
 
         .person-rating {
-            background: rgba(30, 30, 30, 0.6);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border-left: 3px solid #ffaa44;
+            background: var(--paper);
+            border: 1px solid var(--rule);
+            border-left: 4px solid var(--glory-blue);
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
         .person-rating h3 {
-            color: #ffaa44;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-family: var(--font-display);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: 1.25rem;
+            border-bottom: 1px dotted var(--rule);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .person-rating h3 .subject-no {
+            font-family: var(--font-type);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            color: var(--glory-red);
+            display: block;
+            margin-bottom: 0.25rem;
         }
 
         .sins-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 12px;
             margin-bottom: 15px;
-        }
-
-        .sin-input {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sin-input label {
-            color: #ccc;
-            margin-bottom: 5px;
-            font-size: 0.9em;
-        }
-
-        .sin-input input {
-            padding: 8px;
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #555;
-            border-radius: 5px;
-            color: #e0e0e0;
-            font-size: 1em;
-        }
-
-        .sin-input input:focus {
-            outline: none;
-            border-color: #ff4444;
         }
 
         .comment-input {
             margin-top: 10px;
         }
 
-        .comment-input label {
-            display: block;
-            color: #aaa;
-            margin-bottom: 5px;
-            font-size: 0.9em;
-        }
-
         .comment-input textarea {
-            width: 100%;
-            padding: 10px;
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #555;
-            border-radius: 5px;
-            color: #e0e0e0;
-            font-size: 0.9em;
             min-height: 60px;
             resize: vertical;
+            font-family: var(--font-body);
         }
 
-        .comment-input textarea:focus {
-            outline: none;
-            border-color: #ff4444;
+        .dead-zone {
+            border: 2px solid var(--ink);
+            padding: 1.5rem;
+            margin: 2.5rem 0 1.5rem;
+            font-family: var(--font-type);
+            font-size: 0.8125rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            text-align: center;
+            background:
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent 0 14px,
+                    rgba(28, 27, 23, 0.04) 14px 16px
+                );
         }
 
         .submit-section {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 1.5rem;
         }
 
         .submit-btn {
-            background: #ff4444;
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.2em;
-            font-weight: bold;
+            background: var(--glory-red);
+            color: var(--paper-raised);
+            padding: 14px 40px;
+            border: 1px solid var(--ink);
+            border-radius: 0;
+            font-size: 1.05rem;
+            font-family: var(--font-display);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Georgia', serif;
+            box-shadow: 3px 3px 0 rgba(28, 27, 23, 0.22);
         }
 
         .submit-btn:hover {
-            background: #ff6666;
-            transform: scale(1.05);
+            background: var(--stamp-red);
+        }
+
+        .submit-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 0 0 rgba(28, 27, 23, 0.22);
+        }
+
+        .submit-btn:focus-visible {
+            outline: 2px solid var(--glory-red);
+            outline-offset: 3px;
         }
 
         .submit-btn:disabled {
-            background: #666;
+            background: var(--ink-soft);
             cursor: not-allowed;
             transform: none;
         }
 
         .message {
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
             text-align: center;
             display: none;
-            font-size: 1.5em;
-            font-weight: bold;
+            font-family: var(--font-type);
+            font-weight: 700;
+            font-size: 1.125rem;
         }
 
         .message.success {
-            background: rgba(76, 175, 80, 0.3);
-            border: 3px solid #4caf50;
-            color: #4caf50;
+            background: var(--paper);
+            border: 3px double var(--glory-blue);
+            color: var(--glory-blue);
             display: block;
-            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
         }
 
         .message.error {
-            background: rgba(244, 67, 54, 0.2);
-            border: 1px solid #f44336;
-            color: #f44336;
+            background: var(--paper);
+            border: 3px double var(--stamp-red);
+            color: var(--stamp-red);
             display: block;
         }
 
         .progress {
             text-align: center;
-            color: #ffaa44;
-            font-size: 0.9em;
+            font-family: var(--font-type);
+            color: var(--ink-soft);
+            font-size: 0.875rem;
             margin-top: 10px;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
+        @media (max-width: 900px) {
             .sins-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 560px) {
+            .sins-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>⚠️ Rate the Seven Deadly Sins ⚠️</h1>
+    <div class="sheet">
+        <header class="letterhead">
+            <p class="letterhead__org">Gentlemen of Tomorrow</p>
+            <p class="letterhead__office">Bureau of Sin Assessment — Office of Quarterly Review</p>
+        </header>
+
+        <div class="form-strip">
+            <span>Standard Form 7 (Sins)</span>
+            <span>Quarterly Sin Assessment</span>
+            <span>Rev. 07/2026</span>
+        </div>
+
+        <h1>Rate the Seven Deadly Sins</h1>
         <div class="subtitle">Submit Your Own Rankings for the Gentlemen of Tomorrow</div>
 
         <div class="intro">
@@ -296,18 +414,18 @@ const sins = ['Pride', 'Greed', 'Lust', 'Envy', 'Gluttony', 'Wrath', 'Sloth'];
             <p>
                 Rate each person on each of the seven deadly sins using a scale of 1-5, where:
             </p>
-            <p style="margin-top: 10px; color: #ffaa44;">
+            <p class="scale-line">
                 <strong>1 = Saint-like restraint</strong> |
                 <strong>3 = Average mortal failing</strong> |
                 <strong>5 = Absolute corruption</strong>
             </p>
-            <p style="margin-top: 10px;">
+            <p>
                 You can also add comments about any person. Your ratings will be collected for analysis.
             </p>
         </div>
 
         <div class="form-section">
-            <h2>🔥 Submit Your Ratings 🔥</h2>
+            <h2>Submit Your Ratings</h2>
 
             <div id="message" class="message"></div>
 
@@ -322,9 +440,10 @@ const sins = ['Pride', 'Greed', 'Lust', 'Envy', 'Gluttony', 'Wrath', 'Sloth'];
                     >
                 </div>
 
-                {csvData.map(person => (
+                {csvData.map((person, index) => (
                     <div class="person-rating">
                         <h3>
+                            <span class="subject-no">SUBJECT {String(index + 1).padStart(2, '0')}</span>
                             {person.name}
                         </h3>
 
@@ -356,9 +475,13 @@ const sins = ['Pride', 'Greed', 'Lust', 'Envy', 'Gluttony', 'Wrath', 'Sloth'];
                     </div>
                 ))}
 
+                <div class="dead-zone" aria-hidden="true">
+                    Do not write in this space — office use only
+                </div>
+
                 <div class="submit-section">
                     <button type="submit" class="submit-btn" id="submitBtn">
-                        Submit All Ratings
+                        File Assessment
                     </button>
                     <div class="progress" id="progress"></div>
                 </div>
@@ -376,7 +499,7 @@ const sins = ['Pride', 'Greed', 'Lust', 'Envy', 'Gluttony', 'Wrath', 'Sloth'];
             e.preventDefault();
 
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
+            submitBtn.textContent = 'Filing...';
             message.style.display = 'none';
             progress.textContent = 'Sending your ratings to the void...';
 
@@ -424,7 +547,7 @@ const sins = ['Pride', 'Greed', 'Lust', 'Envy', 'Gluttony', 'Wrath', 'Sloth'];
                 progress.textContent = '';
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit All Ratings';
+                submitBtn.textContent = 'File Assessment';
             }
         });
 

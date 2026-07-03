@@ -1,0 +1,84 @@
+---
+/**
+ * StatLedger.astro — QUARTERLY FIGURES adding-machine ledger. The figures
+ * genuinely count up on scroll (~900ms, tabular-nums), preserving any
+ * non-numeric prefix/suffix ("15,000+" counts to 15,000 then re-appends "+";
+ * "73%" keeps its "%"). Reduced motion renders final values instantly.
+ */
+interface Props {
+  title?: string;
+  stats: { value: string; label: string }[];
+}
+
+const { title = 'QUARTERLY FIGURES', stats } = Astro.props;
+---
+
+<div class="ledger" data-stat-ledger>
+  <div class="ledger__title">{title}</div>
+  {
+    stats.map((stat) => (
+      <div class="ledger__row">
+        <span class="ledger__value" data-count={stat.value}>
+          {stat.value}
+        </span>
+        <span class="leaders" aria-hidden="true" />
+        <span class="ledger__label">{stat.label}</span>
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  const DURATION = 900;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const values = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-stat-ledger] .ledger__value[data-count]')
+  );
+
+  function runCount(el: HTMLElement): void {
+    const raw = el.dataset.count || '';
+    const match = raw.match(/^([^0-9]*)([\d.,]+)(.*)$/);
+    if (!match) return;
+    const [, prefix, numeric, suffix] = match;
+    const hasComma = numeric.includes(',');
+    const decimals = (numeric.split('.')[1] || '').length;
+    const target = parseFloat(numeric.replace(/,/g, ''));
+    if (!isFinite(target)) return;
+
+    const format = (v: number): string =>
+      hasComma
+        ? v.toLocaleString('en-US', {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals,
+          })
+        : v.toFixed(decimals);
+
+    const start = performance.now();
+    const tick = (now: number): void => {
+      const t = Math.min(1, (now - start) / DURATION);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = prefix + format(target * eased) + suffix;
+      if (t < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = raw; // land exactly on the filed figure
+      }
+    };
+    requestAnimationFrame(tick);
+  }
+
+  if (!reduce && 'IntersectionObserver' in window && values.length > 0) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          io.unobserve(entry.target);
+          if (entry.target instanceof HTMLElement) runCount(entry.target);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    values.forEach((el) => io.observe(el));
+  }
+  /* reduced motion / no IO: server-rendered final values are already in place */
+</script>

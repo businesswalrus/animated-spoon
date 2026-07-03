@@ -1,345 +1,260 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import PageHero from '../../components/PageHero.astro';
+import DocHero from '../../components/DocHero.astro';
+import StatLedger from '../../components/StatLedger.astro';
+import Stamp from '../../components/Stamp.astro';
 import { getAllCountries } from '../../data/countries';
 
-const pageTitle = 'AARBAA International - Global Presence';
-const pageDescription = 'AARBAA is a global movement advocating for balanced road safety policy. With chapters in 5 countries and growing, we represent motorists\' interests worldwide.';
+const pageTitle = 'International Liaison Offices — AARBAA';
+const pageDescription =
+  "AARBAA is a global movement advocating for balanced road safety policy. With chapters in 5 countries and growing, we represent motorists' interests worldwide.";
 
 const countries = getAllCountries();
-
-// Sort countries alphabetically
 const sortedCountries = [...countries].sort((a, b) => a.name.localeCompare(b.name));
 
-// Calculate total stats
+// Aggregate figures compiled from all liaison desks.
 const totalMembers = countries.reduce((sum, country) => sum + country.stats.members, 0);
 const totalChapters = countries.reduce((sum, country) => sum + country.stats.chapters, 0);
 const totalVictories = countries.reduce((sum, country) => sum + country.stats.victories, 0);
+
+const liaisonStats = [
+  { value: totalMembers.toLocaleString(), label: 'INTERNATIONAL MEMBERS' },
+  { value: totalChapters.toLocaleString(), label: 'REGIONAL CHAPTERS' },
+  { value: totalVictories.toLocaleString(), label: 'INTERNATIONAL VICTORIES' },
+];
+
+// Regional highlights — copy ported verbatim from the previous international index.
+const deskNotes = [
+  {
+    name: 'United Kingdom',
+    note: 'Fighting against excessive cycle lane expansion in London and major cities',
+  },
+  {
+    name: 'Canada',
+    note: 'Advocating for seasonal cycling infrastructure in harsh winter climates',
+  },
+  {
+    name: 'Australia',
+    note: 'Challenging unfair minimum passing distance laws on rural roads',
+  },
+  {
+    name: 'Germany',
+    note: 'Protecting Autobahn freedom and opposing Green Party speed limits',
+  },
+];
 ---
 
-<MainLayout title={pageTitle} description={pageDescription}>
-  <!-- Page Hero -->
-  <PageHero
-    title="AARBAA International"
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  docket="AAR-INTL · LIAISON DIVISION"
+  formNumber="DIRECTORY"
+>
+  <DocHero
+    image="/images/protest.webp"
+    imageAlt="AARBAA members assembled at a public demonstration for road fairness"
+    kicker="INTERNATIONAL LIAISON DIVISION"
+    title="INTERNATIONAL LIAISON OFFICES"
     subtitle="A Global Movement for Motorists' Rights and Balanced Transportation Policy"
-    backgroundImage="/images/protest.webp"
-    minHeight="400px"
+    classification={`${countries.length} DESKS REPORTING`}
   />
 
-  <!-- Global Stats Overview -->
-  <section class="py-5" style="background: linear-gradient(135deg, #0A3161 0%, #1a4b8c 100%);">
-    <div class="container">
-      <h2 class="text-center mb-4" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: white;">
-        Our Global Impact
-      </h2>
-      <div class="row text-center">
-        <div class="col-md-3 mb-3 mb-md-0">
-          <div class="stat-box p-3">
-            <i class="fas fa-globe fa-3x mb-3" style="color: #B31942;"></i>
-            <h3 style="color: white; font-size: 2.5rem; font-family: 'Roboto Condensed', sans-serif;">{countries.length}</h3>
-            <p style="color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Countries</p>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3 mb-md-0">
-          <div class="stat-box p-3">
-            <i class="fas fa-users fa-3x mb-3" style="color: #B31942;"></i>
-            <h3 style="color: white; font-size: 2.5rem; font-family: 'Roboto Condensed', sans-serif;">{totalMembers.toLocaleString()}</h3>
-            <p style="color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">International Members</p>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3 mb-md-0">
-          <div class="stat-box p-3">
-            <i class="fas fa-map-marker-alt fa-3x mb-3" style="color: #B31942;"></i>
-            <h3 style="color: white; font-size: 2.5rem; font-family: 'Roboto Condensed', sans-serif;">{totalChapters}</h3>
-            <p style="color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Regional Chapters</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="stat-box p-3">
-            <i class="fas fa-trophy fa-3x mb-3" style="color: #B31942;"></i>
-            <h3 style="color: white; font-size: 2.5rem; font-family: 'Roboto Condensed', sans-serif;">{totalVictories}</h3>
-            <p style="color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">International Victories</p>
-          </div>
-        </div>
-      </div>
+  <section class="doc-section file-section" aria-labelledby="impact-head">
+    <div class="section-head">
+      <p class="kicker">QUARTERLY FIGURES · CONSOLIDATED RETURNS</p>
+      <h2 id="impact-head">OUR GLOBAL IMPACT</h2>
+    </div>
+    <StatLedger stats={liaisonStats} />
+  </section>
+
+  <section class="doc-section file-section" aria-labelledby="mission-head">
+    <div class="section-head">
+      <p class="kicker">STATEMENT OF PURPOSE · ENTERED INTO THE RECORD</p>
+      <h2 id="mission-head">WHY AARBAA INTERNATIONAL?</h2>
+    </div>
+    <div class="charter-box">
+      <p>
+        From London to Sydney, Toronto to Berlin, the same pattern repeats: urban planners
+        prioritize cycling infrastructure at the expense of motorists who make up the vast majority
+        of road users. AARBAA International coordinates advocacy efforts across nations, sharing
+        strategies and amplifying our collective voice.
+      </p>
+      <p>
+        We're not anti-cycling—we're pro-balance. We advocate for transportation policy that serves
+        all citizens, not just the vocal minority.
+      </p>
     </div>
   </section>
 
-  <!-- Mission Statement -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="text-center">
-            <h2 class="mb-4" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-              Why AARBAA International?
-            </h2>
-            <p style="color: #555; font-size: 1.2rem; line-height: 1.8; margin-bottom: 1.5rem;">
-              From London to Sydney, Toronto to Berlin, the same pattern repeats: urban planners prioritize cycling infrastructure at the expense of motorists who make up the vast majority of road users. AARBAA International coordinates advocacy efforts across nations, sharing strategies and amplifying our collective voice.
-            </p>
-            <p style="color: #555; font-size: 1.1rem; line-height: 1.8;">
-              We're not anti-cycling—we're pro-balance. We advocate for transportation policy that serves all citizens, not just the vocal minority.
-            </p>
-          </div>
-        </div>
-      </div>
+  <section class="doc-section file-section" aria-labelledby="registry-head">
+    <div class="registry-stamp">
+      <Stamp text="RECEIVED" rotate={-6} />
+    </div>
+    <div class="section-head">
+      <p class="kicker">REGISTRY OF DESKS · ALPHABETICAL BY NATION</p>
+      <h2 id="registry-head">OUR INTERNATIONAL CHAPTERS</h2>
+    </div>
+    <div class="registry">
+      {
+        sortedCountries.map((country) => (
+          <a class="registry__row" href={`/countries/${country.slug}`}>
+            <span class="registry__no">{`AAR-INTL-${country.code}`}</span>
+            <span class="registry__subject">{country.name}</span>
+            <span class="leaders" aria-hidden="true"></span>
+            <span class="registry__abstract">
+              {country.stats.members.toLocaleString()} MEMBERS · {country.stats.chapters}{' '}
+              {country.stats.chapters === 1 ? 'CHAPTER' : 'CHAPTERS'}
+            </span>
+          </a>
+        ))
+      }
     </div>
   </section>
 
-  <!-- Countries Grid -->
-  <section class="py-5 bg-white">
-    <div class="container">
-      <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-        Our International Chapters
-      </h2>
-
-      <div class="row g-4">
-        {sortedCountries.map((country) => (
-          <div class="col-md-6 col-lg-4">
-            <a href={`/countries/${country.slug}`} class="country-card-link">
-              <div class="country-card h-100 p-4">
-                <div class="d-flex align-items-start mb-3">
-                  <div class="country-icon me-3">
-                    <i class="fas fa-flag fa-2x" style="color: #B31942;"></i>
-                  </div>
-                  <div class="flex-grow-1">
-                    <h3 class="country-name mb-1" style="color: #0A3161; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 1.5rem;">
-                      {country.name}
-                    </h3>
-                    <div class="d-flex gap-2 align-items-center">
-                      <span class="country-code badge" style="background-color: rgba(179, 25, 66, 0.1); color: #B31942; font-weight: 600;">
-                        {country.code}
-                      </span>
-                      <span class="text-muted small">{country.capital}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="country-stats">
-                  <div class="stat-item mb-2">
-                    <i class="fas fa-users me-2" style="color: #0A3161;"></i>
-                    <span style="color: #555; font-size: 0.95rem;">
-                      <strong>{country.stats.members.toLocaleString()}</strong> members
-                    </span>
-                  </div>
-                  <div class="stat-item mb-2">
-                    <i class="fas fa-map-marked-alt me-2" style="color: #0A3161;"></i>
-                    <span style="color: #555; font-size: 0.95rem;">
-                      <strong>{country.stats.chapters}</strong> {country.stats.chapters === 1 ? 'chapter' : 'chapters'}
-                    </span>
-                  </div>
-                  <div class="stat-item mb-2">
-                    <i class="fas fa-trophy me-2" style="color: #0A3161;"></i>
-                    <span style="color: #555; font-size: 0.95rem;">
-                      <strong>{country.stats.victories}</strong> victories
-                    </span>
-                  </div>
-                  <div class="stat-item">
-                    <i class="fas fa-language me-2" style="color: #0A3161;"></i>
-                    <span style="color: #555; font-size: 0.95rem;">
-                      {country.language}
-                    </span>
-                  </div>
-                </div>
-
-                {country.rating && (
-                  <div class="mt-3 pt-3" style="border-top: 1px solid rgba(179, 25, 66, 0.1);">
-                    <div class="d-flex align-items-center gap-2">
-                      <div>
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <i class={`bi bi-star${i < Math.round(country.rating.average) ? '-fill' : ''} text-warning`}></i>
-                        ))}
-                      </div>
-                      <span class="text-muted small">
-                        {country.rating.average.toFixed(1)} ({country.rating.count.toLocaleString()})
-                      </span>
-                    </div>
-                  </div>
-                )}
-
-                <div class="mt-3 pt-3" style="border-top: 2px solid rgba(179, 25, 66, 0.1);">
-                  <div class="d-flex align-items-center justify-content-between">
-                    <span style="color: #B31942; font-weight: 600; font-size: 0.9rem;">
-                      View Chapter
-                    </span>
-                    <i class="fas fa-arrow-right" style="color: #B31942;"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
+  <section class="doc-section file-section" aria-labelledby="highlights-head">
+    <div class="section-head">
+      <p class="kicker">DESK NOTES · SUMMARY OF ACTIVE MATTERS</p>
+      <h2 id="highlights-head">REGIONAL HIGHLIGHTS</h2>
+    </div>
+    <div class="desk-notes">
+      {
+        deskNotes.map((desk) => (
+          <div class="desk-notes__row">
+            <span class="desk-notes__name">{desk.name.toUpperCase()}</span>
+            <span class="leaders" aria-hidden="true"></span>
+            <span class="desk-notes__note">{desk.note}</span>
           </div>
-        ))}
-      </div>
+        ))
+      }
     </div>
   </section>
 
-  <!-- Regional Highlights -->
-  <section class="py-5" style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);">
-    <div class="container">
-      <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-        Regional Highlights
-      </h2>
-
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="highlight-card p-4 h-100 text-center">
-            <i class="fas fa-pound-sign fa-3x mb-3" style="color: #0A3161;"></i>
-            <h3 class="h5 mb-2">United Kingdom</h3>
-            <p class="text-muted mb-0">Fighting against excessive cycle lane expansion in London and major cities</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="highlight-card p-4 h-100 text-center">
-            <i class="fas fa-snowflake fa-3x mb-3" style="color: #0A3161;"></i>
-            <h3 class="h5 mb-2">Canada</h3>
-            <p class="text-muted mb-0">Advocating for seasonal cycling infrastructure in harsh winter climates</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="highlight-card p-4 h-100 text-center">
-            <i class="fas fa-sun fa-3x mb-3" style="color: #0A3161;"></i>
-            <h3 class="h5 mb-2">Australia</h3>
-            <p class="text-muted mb-0">Challenging unfair minimum passing distance laws on rural roads</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="highlight-card p-4 h-100 text-center">
-            <i class="fas fa-car fa-3x mb-3" style="color: #0A3161;"></i>
-            <h3 class="h5 mb-2">Germany</h3>
-            <p class="text-muted mb-0">Protecting Autobahn freedom and opposing Green Party speed limits</p>
-          </div>
-        </div>
-      </div>
+  <section class="doc-section file-section" aria-labelledby="us-head">
+    <div class="section-head">
+      <p class="kicker">DOMESTIC CROSS-REFERENCE · FIELD OPERATIONS DIVISION</p>
+      <h2 id="us-head">LOOKING FOR US CHAPTERS?</h2>
+    </div>
+    <p class="doc-copy">
+      AARBAA was founded in the United States and maintains active chapters in all 50 states. With
+      over 15,000 members nationwide, our US operations are the largest and most established part
+      of our organization.
+    </p>
+    <div class="doc-actions">
+      <a href="/chapters" class="btn btn--primary">VIEW US STATE CHAPTERS</a>
     </div>
   </section>
 
-  <!-- US Chapters Cross-Link -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="card shadow-lg border-0">
-            <div class="card-body p-5 text-center">
-              <i class="fas fa-flag-usa fa-4x mb-4" style="color: #B31942;"></i>
-              <h2 class="mb-4" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-                Looking for US Chapters?
-              </h2>
-              <p style="color: #555; font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
-                AARBAA was founded in the United States and maintains active chapters in all 50 states. With over 15,000 members nationwide, our US operations are the largest and most established part of our organization.
-              </p>
-              <a href="/chapters" class="btn btn-danger btn-lg px-5" style="border-radius: 50px;">
-                <i class="fas fa-map-marked-alt me-2"></i>
-                View US State Chapters
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section class="doc-section file-section" aria-labelledby="expand-head">
+    <div class="section-head">
+      <p class="kicker">NEW DESK REQUESTS · PUBLIC COUNTER</p>
+      <h2 id="expand-head">DON'T SEE YOUR COUNTRY?</h2>
     </div>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="py-5 bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mb-4" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: #0A3161;">
-            Don't See Your Country?
-          </h2>
-          <p style="color: #555; font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
-            AARBAA International is expanding globally. If your country isn't listed yet, help us bring balanced transportation advocacy to your nation. We provide resources, templates, and support for new international chapters.
-          </p>
-          <div class="d-flex gap-3 justify-content-center flex-wrap">
-            <a href="/contact" class="btn btn-danger btn-lg px-5" style="border-radius: 50px;">
-              Start an International Chapter
-            </a>
-            <a href="/about" class="btn btn-outline-primary btn-lg px-5" style="border-radius: 50px;">
-              Learn More About AARBAA
-            </a>
-          </div>
-        </div>
-      </div>
+    <p class="doc-copy">
+      AARBAA International is expanding globally. If your country isn't listed yet, help us bring
+      balanced transportation advocacy to your nation. We provide resources, templates, and support
+      for new international chapters.
+    </p>
+    <div class="doc-actions">
+      <a href="/contact" class="btn btn--primary">START AN INTERNATIONAL CHAPTER</a>
+      <a href="/about" class="btn">LEARN MORE ABOUT AARBAA</a>
     </div>
   </section>
 </MainLayout>
 
 <style>
-  .stat-box {
-    transition: all 0.3s ease;
+  .doc-section {
+    position: relative;
+    padding: var(--s6) 0;
+    border-top: 1px solid var(--rule);
   }
 
-  .stat-box:hover {
-    transform: scale(1.05);
+  .doc-section:first-of-type {
+    border-top: 0;
   }
 
-  .country-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
+  .section-head {
+    margin-bottom: var(--s5);
   }
 
-  .country-card {
-    background: white;
-    border-radius: 12px;
-    border: 2px solid #e8e8e8;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  .registry-stamp {
+    position: absolute;
+    top: var(--s4);
+    right: var(--s2);
+    z-index: 2;
   }
 
-  .country-card:hover {
-    transform: translateY(-8px);
-    border-color: #B31942;
-    box-shadow: 0 8px 20px rgba(179, 25, 66, 0.2);
+  .charter-box {
+    border: 1px solid var(--ink);
+    outline: 1px solid var(--rule);
+    outline-offset: 4px;
+    background: var(--paper-raised);
+    padding: var(--s5);
+    max-width: 820px;
   }
 
-  .country-card:hover .country-name {
-    color: #B31942;
+  .charter-box p {
+    max-width: var(--measure);
+    font-size: var(--fs-md);
+    line-height: 1.8;
   }
 
-  .country-card:hover .fas.fa-arrow-right {
-    transform: translateX(5px);
+  .charter-box p + p {
+    margin-top: var(--s4);
   }
 
-  .fas.fa-arrow-right {
-    transition: transform 0.3s ease;
+  .desk-notes {
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: var(--s2) var(--s4);
   }
 
-  .country-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(179, 25, 66, 0.1);
+  .desk-notes__row {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--s2);
+    padding: var(--s3) 0;
+    border-bottom: 1px solid var(--rule);
   }
 
-  .country-card:hover .country-icon {
-    background-color: #B31942;
+  .desk-notes__row:last-child {
+    border-bottom: 0;
   }
 
-  .country-card:hover .country-icon i {
-    color: white !important;
+  .desk-notes__name {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
   }
 
-  .highlight-card {
-    background: white;
-    border-radius: 12px;
-    border: 2px solid #e8e8e8;
-    transition: all 0.3s ease;
+  .desk-notes__note {
+    color: var(--ink-soft);
+    font-size: var(--fs-sm);
+    max-width: 44ch;
   }
 
-  .highlight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(10, 49, 97, 0.15);
-    border-color: #0A3161;
+  .doc-copy {
+    max-width: var(--measure);
+    font-size: var(--fs-md);
+    line-height: 1.8;
+    margin-bottom: var(--s4);
   }
 
-  @media (max-width: 768px) {
-    .stat-box h3 {
-      font-size: 2rem !important;
+  .doc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s3);
+  }
+
+  @media (max-width: 720px) {
+    .doc-section {
+      padding: var(--s5) 0;
+    }
+
+    .registry-stamp {
+      position: static;
+      margin-bottom: var(--s3);
     }
   }
 </style>

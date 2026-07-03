@@ -1,0 +1,74 @@
+---
+/**
+ * Figure.astro — the evidence-photo pipeline. Emits EXACTLY the global
+ * .evidence markup so Astro pages and raw-HTML markdown twins render
+ * identically (all visual styles live in global.css):
+ *
+ *   <figure class="evidence" data-tilt="…">
+ *     <div class="evidence__mount"><img …></div>
+ *     <figcaption class="evidence__plate">FIG. n — CAPTION. SOURCE: X.</figcaption>
+ *   </figure>
+ */
+interface Props {
+  src: string;
+  alt: string;
+  num?: string;
+  caption?: string;
+  source?: string;
+  tilt?: 'left' | 'right' | 'none';
+  bleed?: boolean;
+  eager?: boolean;
+  width?: number;
+  height?: number;
+}
+
+const {
+  src,
+  alt,
+  num,
+  caption,
+  source,
+  tilt = 'none',
+  bleed = false,
+  eager = false,
+  width,
+  height,
+} = Astro.props;
+
+let plate: string | null = null;
+if (caption) {
+  plate = num ? `FIG. ${num} — ${caption}.` : `${caption}.`;
+  if (source) plate += ` SOURCE: ${source}.`;
+}
+---
+
+<figure class:list={['evidence', { 'evidence--bleed': bleed }]} data-tilt={tilt}>
+  <div class="evidence__mount">
+    <img
+      src={src}
+      alt={alt}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      width={width}
+      height={height}
+    />
+  </div>
+  {
+    tilt !== 'none' && (
+      <svg
+        class="evidence__clip"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="square"
+        aria-hidden="true"
+      >
+        <path d="M8 12V6a4 4 0 0 1 8 0v11a3 3 0 0 1-6 0V8" />
+      </svg>
+    )
+  }
+  {plate && <figcaption class="evidence__plate">{plate}</figcaption>}
+</figure>

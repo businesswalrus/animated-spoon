@@ -1,680 +1,641 @@
 ---
-// src/pages/shop.astro
+// src/pages/shop.astro — GSA SURPLUS COMMISSARY — REQUISITION CATALOG
+// Filed as: REQUISITION FORM · AAR-COM · COMMISSARY
 import MainLayout from '../layouts/MainLayout.astro';
+import DocHero from '../components/DocHero.astro';
+import Stamp from '../components/Stamp.astro';
+import Icon from '../components/Icon.astro';
+
+interface Product {
+  stock: string;
+  name: string;
+  category: string;
+  price: number;
+  description?: string;
+  badge?: string;
+  satisfaction?: string;
+  responses?: string;
+  sizes?: string;
+  icon?: 'seal' | 'stamp' | 'folder' | 'gavel' | 'road-sign' | 'sedan' | 'document' | 'paperclip' | 'flag' | 'phone';
+  plate?: boolean; // wordmark-on-navy plate instead of a glyph
+}
+
+const featured: Product[] = [
+  {
+    stock: 'STOCK NO. 8405-AAR-0001',
+    name: '"ROADS ARE FOR CARS" T-SHIRT',
+    category: 'APPAREL',
+    badge: 'BESTSELLER',
+    price: 24.99,
+    description:
+      'Make a bold statement in our signature red tee. Perfect for city council meetings, protests, or just daily wear.',
+    satisfaction: '4.5 / 5',
+    responses: '126',
+    sizes: 'AVAILABLE SIZES: S · M · L · XL · XXL',
+    plate: true,
+  },
+  {
+    stock: 'STOCK NO. 8405-AAR-0002',
+    name: 'AARBAA EMBROIDERED CAP',
+    category: 'APPAREL',
+    price: 19.99,
+    description:
+      'Premium adjustable cap with embroidered AARBAA logo. High-quality construction, unisex design.',
+    satisfaction: '5 / 5',
+    responses: '89',
+    sizes: 'ONE SIZE FITS MOST',
+    plate: true,
+  },
+  {
+    stock: 'STOCK NO. 8405-AAR-0003',
+    name: '"MORNING COMMUTER" COFFEE MUG',
+    category: 'ACCESSORIES',
+    badge: 'NEW',
+    price: 15.99,
+    description:
+      'Start your morning right with a reminder of why you joined the cause. 15oz ceramic mug with AARBAA logo.',
+    satisfaction: '4 / 5',
+    responses: '42',
+    plate: true,
+  },
+];
+
+const apparel: Product[] = [
+  { stock: 'STOCK NO. 8405-AAR-0004', name: '"SEPARATE PATHS" T-SHIRT', category: 'APPAREL', price: 22.99, icon: 'folder' },
+  { stock: 'STOCK NO. 8405-AAR-0005', name: 'AARBAA POLO SHIRT', category: 'APPAREL', price: 32.99, icon: 'folder' },
+  { stock: 'STOCK NO. 8405-AAR-0006', name: 'AARBAA TRUCKER HAT', category: 'APPAREL', price: 17.99, icon: 'folder' },
+  { stock: 'STOCK NO. 8405-AAR-0007', name: 'WINTER BEANIE', category: 'APPAREL', price: 14.99, icon: 'folder' },
+];
+
+const accessories: Product[] = [
+  { stock: 'STOCK NO. 8405-AAR-0008', name: 'BUMPER STICKER 3-PACK', category: 'ACCESSORIES', price: 8.99, icon: 'sedan' },
+  { stock: 'STOCK NO. 8405-AAR-0009', name: 'INSULATED TRAVEL MUG', category: 'ACCESSORIES', price: 19.99, icon: 'folder' },
+  { stock: 'STOCK NO. 8405-AAR-0010', name: 'PHONE CASE', category: 'ACCESSORIES', price: 16.99, icon: 'phone' },
+  { stock: 'STOCK NO. 8405-AAR-0011', name: 'FOLDABLE WATER BOTTLE', category: 'ACCESSORIES', price: 12.99, icon: 'folder' },
+];
+
+const publications: Product[] = [
+  {
+    stock: 'STOCK NO. 8405-AAR-0012',
+    name: 'ADVOCACY TOOLKIT (DIGITAL DOWNLOAD)',
+    category: 'PUBLICATION',
+    price: 14.99,
+    description:
+      'A comprehensive guide with templates, talking points, statistics, and practical advice for advocating at your local city council.',
+    icon: 'document',
+  },
+  {
+    stock: 'STOCK NO. 8405-AAR-0013',
+    name: 'PRESENTATION PACKAGE (DIGITAL DOWNLOAD)',
+    category: 'PUBLICATION',
+    price: 19.99,
+    description:
+      'Ready-to-use presentation slides complete with speaker notes, data visualizations, and compelling arguments for separate bike paths.',
+    icon: 'document',
+  },
+];
+
+const schedules: { kicker: string; heading: string; lead: string; items: Product[] }[] = [
+  {
+    kicker: 'SCHEDULE A — FEATURED ITEMS',
+    heading: 'Featured Products',
+    lead: 'Our most popular items that make a statement',
+    items: featured,
+  },
+  {
+    kicker: 'SCHEDULE B — APPAREL',
+    heading: 'Apparel',
+    lead: 'Wear your support and spark conversations',
+    items: apparel,
+  },
+  {
+    kicker: 'SCHEDULE C — ACCESSORIES',
+    heading: 'Accessories',
+    lead: 'Show your support at home and on the road',
+    items: accessories,
+  },
+  {
+    kicker: 'PUBLICATIONS — NO COST',
+    heading: 'Educational Resources',
+    lead: 'Materials to help you advocate for better infrastructure',
+    items: publications,
+  },
+];
 ---
 
-<MainLayout title="AARBAA Shop - Official Merchandise">
-  <!-- Shop Hero Section -->
-  <section class="text-center" style="
-    padding-top: 130px;
-    background-color: #0A3161;
-    color: white;
-    margin-top: 200px;
-    padding-bottom: 4rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/protest.webp');
-    background-size: cover;
-    background-position: center;
-  ">
-    <div class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h1 class="display-4 fw-bold mb-4">AARBAA Official Shop</h1>
-          <p class="lead mb-4 text-white-50">Gear up to show your support for the cause</p>
-          <div class="d-flex justify-content-center gap-3">
-            <a href="#apparel" class="btn btn-outline-light btn-lg px-4">Apparel</a>
-            <a href="#accessories" class="btn btn-outline-light btn-lg px-4">Accessories</a>
-            <a href="#resources" class="btn btn-outline-light btn-lg px-4">Resources</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<MainLayout
+  title="Surplus Commissary — AARBAA"
+  description="Requisition catalog of the AARBAA GSA Surplus Commissary. All items pending budget appropriation."
+  docket="AAR-COM · COMMISSARY"
+  formNumber="REQUISITION FORM"
+>
+  <DocHero
+    kicker="GSA SURPLUS COMMISSARY"
+    title="REQUISITION CATALOG"
+    subtitle="Gear up to show your support for the cause"
+    classification="FISCAL YEAR 2026"
+  />
 
-  <!-- Featured Products Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center">
-          <h2 class="mb-4">Featured Products</h2>
-          <p class="lead">Our most popular items that make a statement</p>
-        </div>
-      </div>
-      
-      <div class="row g-4">
-        <!-- Featured Product 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 300px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
-              <span class="badge bg-danger position-absolute top-0 end-0 m-3 px-3 py-2 fs-6 fw-bold">BESTSELLER</span>
-              <img src="/images/aarbaa-new-logo (2).svg" alt="AARBAA T-Shirt" style="width: 150px; transform: rotate(-10deg);">
-            </div>
-            <div class="card-body p-4">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <span class="badge bg-secondary">Apparel</span>
-                <div class="product-rating">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star-half-alt text-warning"></i>
-                  <span class="text-muted ms-1">(126)</span>
-                </div>
-              </div>
-              <h3 class="card-title h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700;">"ROADS ARE FOR CARS" T-SHIRT</h3>
-              <p class="card-text mb-3">Make a bold statement in our signature red tee. Perfect for city council meetings, protests, or just daily wear.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="product-price">
-                  <span class="fw-bold fs-5" style="color: #0A3161;">$24.99</span>
-                </div>
-                <button class="btn btn-danger add-to-cart-btn">Add to Cart</button>
-              </div>
-              <div class="product-sizes mt-3">
-                <span class="text-muted small">Available sizes:</span>
-                <div class="d-flex gap-1 mt-1">
-                  <span class="size-badge">S</span>
-                  <span class="size-badge">M</span>
-                  <span class="size-badge">L</span>
-                  <span class="size-badge">XL</span>
-                  <span class="size-badge">XXL</span>
-                </div>
-              </div>
-            </div>
+  <div class="commissary">
+    <div class="commissary__catalog">
+      {schedules.map((schedule) => (
+        <section class="file-section" aria-label={schedule.kicker}>
+          <div class="section-head">
+            <p class="kicker">{schedule.kicker}</p>
+            <h2>{schedule.heading}</h2>
           </div>
-        </div>
-        
-        <!-- Featured Product 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 300px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-              <img src="/images/aarbaa-new-logo (2).svg" alt="AARBAA Cap" style="width: 120px;">
-            </div>
-            <div class="card-body p-4">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <span class="badge bg-secondary">Apparel</span>
-                <div class="product-rating">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <span class="text-muted ms-1">(89)</span>
-                </div>
-              </div>
-              <h3 class="card-title h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700;">AARBAA EMBROIDERED CAP</h3>
-              <p class="card-text mb-3">Premium adjustable cap with embroidered AARBAA logo. High-quality construction, unisex design.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="product-price">
-                  <span class="fw-bold fs-5" style="color: #0A3161;">$19.99</span>
-                </div>
-                <button class="btn btn-danger add-to-cart-btn">Add to Cart</button>
-              </div>
-              <div class="product-sizes mt-3">
-                <span class="text-muted small">One size fits most</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Featured Product 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 300px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
-              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 fs-6 fw-bold">NEW</span>
-              <img src="/images/aarbaa-new-logo (2).svg" alt="AARBAA Mug" style="width: 90px;">
-            </div>
-            <div class="card-body p-4">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <span class="badge bg-secondary">Accessories</span>
-                <div class="product-rating">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="far fa-star text-warning"></i>
-                  <span class="text-muted ms-1">(42)</span>
-                </div>
-              </div>
-              <h3 class="card-title h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700;">"MORNING COMMUTER" COFFEE MUG</h3>
-              <p class="card-text mb-3">Start your morning right with a reminder of why you joined the cause. 15oz ceramic mug with AARBAA logo.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="product-price">
-                  <span class="fw-bold fs-5" style="color: #0A3161;">$15.99</span>
-                </div>
-                <button class="btn btn-danger add-to-cart-btn">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <p class="schedule-lead">{schedule.lead}</p>
 
-  <!-- Apparel Section -->
-  <section id="apparel" class="py-5">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center">
-          <h2 class="mb-4">Apparel</h2>
-          <p class="lead">Wear your support and spark conversations</p>
-        </div>
-      </div>
-      
-      <div class="row g-4">
-        <!-- Apparel Item 1 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-              <div style="font-size: 5rem; color: #B31942;">
-                <i class="fas fa-tshirt"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title h6 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">"SEPARATE PATHS" T-SHIRT</h3>
-              <div class="product-price mb-2">
-                <span class="fw-bold" style="color: #0A3161;">$22.99</span>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Apparel Item 2 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-              <div style="font-size: 5rem; color: #B31942;">
-                <i class="fas fa-tshirt"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title h6 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">AARBAA POLO SHIRT</h3>
-              <div class="product-price mb-2">
-                <span class="fw-bold" style="color: #0A3161;">$32.99</span>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Apparel Item 3 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-              <div style="font-size: 5rem; color: #B31942;">
-                <i class="fas fa-hat-cowboy"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title h6 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">AARBAA TRUCKER HAT</h3>
-              <div class="product-price mb-2">
-                <span class="fw-bold" style="color: #0A3161;">$17.99</span>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Apparel Item 4 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-              <div style="font-size: 5rem; color: #B31942;">
-                <i class="fas fa-mitten"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title h6 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">WINTER BEANIE</h3>
-              <div class="product-price mb-2">
-                <span class="fw-bold" style="color: #0A3161;">$14.99</span>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center mt-4">
-        <a href="#" class="btn btn-outline-primary">View All Apparel</a>
-      </div>
-    </div>
-  </section>
+          <div class="req-list">
+            {schedule.items.map((item) => (
+              <article class="req-item" data-name={item.name} data-price={String(item.price)}>
+                {item.plate ? (
+                  <div class="req-item__plate req-item__plate--logo">
+                    {item.badge && <span class="req-item__badge">{item.badge}</span>}
+                    <img src="/images/aarbaa-logo.svg" alt="" loading="lazy" />
+                  </div>
+                ) : (
+                  <div class="req-item__plate">
+                    {item.badge && <span class="req-item__badge">{item.badge}</span>}
+                    <Icon name={item.icon ?? 'folder'} size={36} />
+                  </div>
+                )}
 
-  <!-- Accessories Section -->
-  <section id="accessories" class="py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center">
-          <h2 class="mb-4">Accessories</h2>
-          <p class="lead">Show your support at home and on the road</p>
-        </div>
-      </div>
-      
-      <div class="row g-4">
-        <!-- Accessory Item 1 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-              <div style="font-size: 5rem; color: #B31942;">
-                <i class="fas fa-car"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title h6 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">BUMPER STICKER 3-PACK</h3>
-              <div class="product-price mb-2">
-                <span class="fw-bold" style="color: #0A3161;">$8.99</span>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Accessory Item 2 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-              <div style="font-size: 5rem; color: #B31942;">
-                <i class="fas fa-mug-hot"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title h6 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">INSULATED TRAVEL MUG</h3>
-              <div class="product-price mb-2">
-                <span class="fw-bold" style="color: #0A3161;">$19.99</span>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Accessory Item 3 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-              <div style="font-size: 5rem; color: #B31942;">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title h6 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">PHONE CASE</h3>
-              <div class="product-price mb-2">
-                <span class="fw-bold" style="color: #0A3161;">$16.99</span>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Accessory Item 4 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-              <div style="font-size: 5rem; color: #B31942;">
-                <i class="fas fa-coffee"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title h6 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">FOLDABLE WATER BOTTLE</h3>
-              <div class="product-price mb-2">
-                <span class="fw-bold" style="color: #0A3161;">$12.99</span>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center mt-4">
-        <a href="#" class="btn btn-outline-primary">View All Accessories</a>
-      </div>
-    </div>
-  </section>
+                <div class="req-item__body">
+                  <p class="req-item__stock">{item.stock} · {item.category}</p>
+                  <h3 class="req-item__name">{item.name}</h3>
+                  {item.description && <p class="req-item__desc">{item.description}</p>}
+                  {item.satisfaction && (
+                    <p class="req-item__meta">
+                      PUBLIC SATISFACTION INDEX: {item.satisfaction} — {item.responses} RESPONSES ON FILE
+                    </p>
+                  )}
+                  {item.sizes && <p class="req-item__meta">{item.sizes}</p>}
 
-  <!-- Resources Section -->
-  <section id="resources" class="py-5">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center">
-          <h2 class="mb-4">Educational Resources</h2>
-          <p class="lead">Materials to help you advocate for better infrastructure</p>
-        </div>
-      </div>
-      
-      <div class="row g-4">
-        <!-- Resource Item 1 -->
-        <div class="col-md-6">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div class="row g-0">
-              <div class="col-md-4 d-flex align-items-center justify-content-center" style="background-color: #f8f9fa;">
-                <div style="font-size: 5rem; color: #B31942; padding: 2rem;">
-                  <i class="fas fa-file-pdf"></i>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h3 class="card-title h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif;">ADVOCACY TOOLKIT (DIGITAL DOWNLOAD)</h3>
-                  <p class="card-text">A comprehensive guide with templates, talking points, statistics, and practical advice for advocating at your local city council.</p>
-                  <div class="d-flex justify-content-between align-items-center mt-3">
-                    <div class="product-price">
-                      <span class="fw-bold" style="color: #0A3161;">$14.99</span>
-                    </div>
-                    <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
+                  <div class="req-item__fee">
+                    <span class="req-item__fee-label">UNIT FEE</span>
+                    <span class="req-item__leader" aria-hidden="true"></span>
+                    <span class="req-item__price">${item.price.toFixed(2)}</span>
+                    <button type="button" class="btn add-to-req">ADD TO REQUISITION</button>
                   </div>
                 </div>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
-        </div>
-        
-        <!-- Resource Item 2 -->
-        <div class="col-md-6">
-          <div class="card h-100 border-0 shadow-sm product-card">
-            <div class="row g-0">
-              <div class="col-md-4 d-flex align-items-center justify-content-center" style="background-color: #f8f9fa;">
-                <div style="font-size: 5rem; color: #B31942; padding: 2rem;">
-                  <i class="fas fa-file-powerpoint"></i>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h3 class="card-title h5 mb-3" style="font-family: 'Roboto Condensed', sans-serif;">PRESENTATION PACKAGE (DIGITAL DOWNLOAD)</h3>
-                  <p class="card-text">Ready-to-use presentation slides complete with speaker notes, data visualizations, and compelling arguments for separate bike paths.</p>
-                  <div class="d-flex justify-content-between align-items-center mt-3">
-                    <div class="product-price">
-                      <span class="fw-bold" style="color: #0A3161;">$19.99</span>
-                    </div>
-                    <button class="btn btn-sm btn-outline-danger">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center mt-4">
-        <a href="#" class="btn btn-outline-primary">View All Resources</a>
-      </div>
-    </div>
-  </section>
+        </section>
+      ))}
 
-  <!-- Shopping Cart Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center">
-          <h2 class="mb-4">Your Shopping Cart</h2>
-          <p class="lead">Items you've selected</p>
+      <!-- Shop updates — subscriptions handled by the footer mailing strip (Form AAR-102) -->
+      <section class="file-section shop-updates">
+        <div class="section-head">
+          <p class="kicker">MAILING LIST — FORM AAR-102</p>
+          <h2>Get Shop Updates</h2>
         </div>
-      </div>
-      
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="card border-0 shadow">
-            <div class="card-body p-0">
-              <div id="cart-items">
-                <!-- Empty cart message (hidden when items are added) -->
-                <div id="empty-cart" class="text-center py-5">
-                  <i class="fas fa-shopping-cart fa-3x mb-3 text-muted"></i>
-                  <h4>Your cart is empty</h4>
-                  <p class="text-muted">Add some items from our shop to get started</p>
-                </div>
-                
-                <!-- Cart items will be dynamically added here -->
-                <div id="cart-item-list" class="d-none">
-                  <!-- Sample item (will be created dynamically) -->
-                  <!-- <div class="cart-item p-3 border-bottom d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center">
-                      <div style="width: 50px; text-align: center;">
-                        <i class="fas fa-tshirt fa-2x text-secondary"></i>
-                      </div>
-                      <div class="ms-3">
-                        <h6 class="mb-0">"ROADS ARE FOR CARS" T-SHIRT</h6>
-                        <small class="text-muted">Size: L</small>
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <div class="me-3">
-                        <span class="fw-bold">$24.99</span>
-                      </div>
-                      <button class="btn btn-sm btn-outline-danger remove-item-btn">
-                        <i class="fas fa-trash"></i>
-                      </button>
-                    </div>
-                  </div> -->
-                </div>
-              </div>
-              
-              <!-- Cart totals (hidden when empty) -->
-              <div id="cart-totals" class="p-4 d-none">
-                <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
-                  <span>Subtotal:</span>
-                  <span id="cart-subtotal" class="fw-bold">$0.00</span>
-                </div>
-                <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
-                  <span>Shipping:</span>
-                  <span id="cart-shipping" class="fw-bold">$5.99</span>
-                </div>
-                <div class="d-flex justify-content-between mt-3">
-                  <span class="fs-5">Total:</span>
-                  <span id="cart-total" class="fs-5 fw-bold" style="color: #B31942;">$0.00</span>
-                </div>
-                <div class="d-grid gap-2 mt-4">
-                  <p><em>Note: This is a satirical shop. No items will actually be shipped.</em></p>
-                  <button id="checkout-btn" class="btn btn-danger">Proceed to Checkout</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <p class="schedule-lead">
+          Subscribe to our newsletter to receive updates on new merchandise and exclusive discounts
+        </p>
+        <p class="crossref">
+          SUBSCRIPTION REQUESTS ARE ACCEPTED VIA THE MAILING LIST STRIP IN THE DOCUMENT FOOTER, FORM AAR-102.
+        </p>
+      </section>
     </div>
-  </section>
 
-  <!-- Email Subscription Section -->
-  <section class="py-5" style="background-color: #B31942;">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 text-center text-white">
-          <h2 class="mb-4">Get Shop Updates</h2>
-          <p class="mb-4">Subscribe to our newsletter to receive updates on new merchandise and exclusive discounts</p>
-          <form class="d-flex gap-2">
-            <input type="email" class="form-control" placeholder="Your email address" required>
-            <button type="submit" class="btn btn-light">Subscribe</button>
-          </form>
+    <!-- REQUISITION FORM (cart) -->
+    <aside class="commissary__cart" aria-label="Requisition form">
+      <div class="cart-box">
+        <h2 class="cart-box__title">REQUISITION FORM</h2>
+        <p class="cart-box__sub">ITEMS YOU'VE SELECTED</p>
+
+        <div id="empty-cart" class="cart-empty">
+          <p class="cart-empty__head">Your cart is empty</p>
+          <p>Add some items from our shop to get started</p>
+        </div>
+
+        <ul id="cart-item-list" class="cart-lines" hidden></ul>
+
+        <div id="cart-totals" class="cart-totals" hidden>
+          <div class="cart-totals__row">
+            <span>Subtotal:</span>
+            <span class="cart-totals__leader" aria-hidden="true"></span>
+            <span id="cart-subtotal">$0.00</span>
+          </div>
+          <div class="cart-totals__row">
+            <span>Shipping:</span>
+            <span class="cart-totals__leader" aria-hidden="true"></span>
+            <span id="cart-shipping">$5.99</span>
+          </div>
+          <div class="cart-totals__row cart-totals__row--grand">
+            <span>Total:</span>
+            <span class="cart-totals__leader" aria-hidden="true"></span>
+            <span id="cart-total">$0.00</span>
+          </div>
+          <p class="cart-totals__note">
+            <em>Note: This is a satirical shop. No items will actually be shipped.</em>
+          </p>
+          <button type="button" id="checkout-btn" class="btn btn--primary cart-checkout">
+            PROCEED TO CHECKOUT
+          </button>
+        </div>
+
+        <div id="denial-notice" class="cart-denial" role="status" hidden>
+          <Stamp
+            text="DENIED — PENDING BUDGET APPROPRIATION"
+            rotate={-5}
+            label="Requisition denied, pending budget appropriation"
+          />
+          <p class="cart-denial__note">
+            NOTICE TO REQUISITIONER: This is a satirical shop. The listed products do not
+            exist, and no items will be shipped. This requisition is denied pending budget
+            appropriation. No further action is required on your part.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </aside>
+  </div>
 </MainLayout>
 
 <style>
-  /* Product card styling */
-  .product-card {
-    transition: all 0.3s ease;
-    overflow: hidden;
+  /* Page arrangement only — all pattern styling lives in global.css. */
+  .commissary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s5);
+    margin-block: var(--s5) var(--s6);
+    align-items: start;
   }
-  
-  .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.1) !important;
+
+  @media (min-width: 960px) {
+    .commissary {
+      grid-template-columns: minmax(0, 1fr) 18rem;
+    }
+
+    .commissary__cart {
+      position: sticky;
+      top: var(--s4);
+    }
   }
-  
-  /* Size badges */
-  .size-badge {
-    display: inline-flex;
+
+  .commissary__catalog > section + section {
+    margin-top: var(--s6);
+  }
+
+  .schedule-lead {
+    color: var(--ink-soft);
+    max-width: var(--measure);
+    margin-bottom: var(--s4);
+  }
+
+  /* — Requisition line items — */
+  .req-list {
+    border-top: 2px solid var(--ink);
+  }
+
+  .req-item {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: var(--s4);
+    border-bottom: 1px solid var(--rule);
+    padding-block: var(--s4);
+  }
+
+  @media (max-width: 540px) {
+    .req-item {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .req-item__plate {
+    position: relative;
+    display: grid;
+    place-items: center;
+    background: var(--navy-deep);
+    color: var(--paper);
+    min-height: 6.5rem;
+    border: 1px solid var(--rule);
+  }
+
+  .req-item__plate--logo img {
+    width: 4.5rem;
+    height: auto;
+    display: block;
+  }
+
+  .req-item__badge {
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    background: var(--stamp-red);
+    color: var(--paper-raised);
+    font-family: var(--font-type);
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .req-item__stock {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s1);
+  }
+
+  .req-item__name {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--s2);
+  }
+
+  .req-item__desc {
+    max-width: var(--measure);
+    margin-bottom: var(--s2);
+  }
+
+  .req-item__meta {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s1);
+  }
+
+  .req-item__fee {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #dee2e6;
-    border-radius: 50%;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #495057;
-    margin-right: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    gap: var(--s3);
+    margin-top: var(--s3);
+    flex-wrap: wrap;
   }
-  
-  .size-badge:hover {
-    background-color: #f8f9fa;
-    border-color: #adb5bd;
+
+  .req-item__fee-label {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+
+  .req-item__leader {
+    flex: 1 1 2rem;
+    border-bottom: 2px dotted var(--rule);
+    align-self: center;
+    min-width: 2rem;
+  }
+
+  .req-item__price {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--fs-md);
+  }
+
+  /* — Requisition form (cart) — */
+  .cart-box {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: var(--s4);
+  }
+
+  .cart-box__title {
+    font-size: var(--fs-lg);
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: var(--s2);
+  }
+
+  .cart-box__sub {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    margin-block: var(--s2) var(--s3);
+  }
+
+  .cart-empty {
+    border: 1px dashed var(--rule);
+    padding: var(--s4);
+    text-align: center;
+  }
+
+  .cart-empty__head {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--s1);
+  }
+
+  .cart-empty p:last-child {
+    font-size: var(--fs-sm);
+    color: var(--ink-soft);
+  }
+
+  .cart-lines {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--s3) 0;
+  }
+
+  .cart-lines :global(.cart-line) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: var(--s2);
+    align-items: baseline;
+    border-bottom: 1px dotted var(--rule);
+    padding-block: var(--s2);
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+  }
+
+  .cart-lines :global(.cart-line__name) {
+    grid-column: 1;
+  }
+
+  .cart-lines :global(.cart-line__qty) {
+    grid-column: 1;
+    font-size: var(--fs-xs);
+    color: var(--ink-soft);
+  }
+
+  .cart-lines :global(.cart-line__price) {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+
+  .cart-lines :global(.cart-line__remove) {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.08em;
+    color: var(--glory-red);
+    background: none;
+    border: 1px solid var(--glory-red);
+    padding: 0.1rem 0.4rem;
+    cursor: pointer;
+  }
+
+  .cart-totals__row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s2);
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    padding-block: var(--s1);
+  }
+
+  .cart-totals__leader {
+    flex: 1;
+    border-bottom: 2px dotted var(--rule);
+  }
+
+  .cart-totals__row span:last-child {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+
+  .cart-totals__row--grand {
+    border-top: 1px solid var(--ink);
+    margin-top: var(--s2);
+    padding-top: var(--s2);
+    font-size: var(--fs-base);
+  }
+
+  .cart-totals__note {
+    font-size: var(--fs-xs);
+    color: var(--ink-soft);
+    margin-block: var(--s3);
+  }
+
+  .cart-checkout {
+    width: 100%;
+  }
+
+  .cart-denial {
+    margin-top: var(--s4);
+    text-align: center;
+  }
+
+  .cart-denial__note {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    text-align: left;
+    border-top: 1px solid var(--rule);
+    margin-top: var(--s3);
+    padding-top: var(--s3);
+  }
+
+  .shop-updates .crossref {
+    margin-top: var(--s3);
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Shopping cart functionality
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn, .btn-outline-danger');
-    const emptyCart = document.getElementById('empty-cart');
-    const cartItemList = document.getElementById('cart-item-list');
-    const cartTotals = document.getElementById('cart-totals');
-    const cartSubtotal = document.getElementById('cart-subtotal');
-    const cartTotal = document.getElementById('cart-total');
-    const checkoutBtn = document.getElementById('checkout-btn');
-    
-    let cartItems = [];
-    
-    // Add to cart functionality
-    addToCartButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Get product information
-        const card = this.closest('.card');
-        let productName, productPrice;
-        
-        if (card) {
-          productName = card.querySelector('.card-title').textContent;
-          const priceText = card.querySelector('.product-price .fw-bold').textContent;
-          productPrice = parseFloat(priceText.replace('$', ''));
-        } else {
-          // Default values if card structure is different
-          productName = "AARBAA Product";
-          productPrice = 19.99;
-        }
-        
-        // Add item to cart
-        addItemToCart(productName, productPrice);
-        
-        // Change button text temporarily
-        const originalText = this.textContent;
-        this.textContent = 'Added!';
-        
-        // Reset button after 2 seconds
-        setTimeout(() => {
-          this.textContent = originalText;
-        }, 2000);
-        
-        // Alert user (for demo only)
-        alert(`Note: This is a satirical shop. "${productName}" isn't actually being added to a cart because these products don't exist!`);
-      });
+  // Requisition (cart) ledger — vanilla port of the old shop cart, alerts abolished.
+  interface CartItem {
+    id: number;
+    name: string;
+    price: number;
+  }
+
+  const addButtons = document.querySelectorAll<HTMLButtonElement>('.add-to-req');
+  const emptyCart = document.getElementById('empty-cart');
+  const cartItemList = document.getElementById('cart-item-list');
+  const cartTotals = document.getElementById('cart-totals');
+  const cartSubtotal = document.getElementById('cart-subtotal');
+  const cartShipping = document.getElementById('cart-shipping');
+  const cartTotal = document.getElementById('cart-total');
+  const checkoutBtn = document.getElementById('checkout-btn') as HTMLButtonElement | null;
+  const denialNotice = document.getElementById('denial-notice');
+
+  let cartItems: CartItem[] = [];
+  let nextId = 1;
+
+  addButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const card = button.closest<HTMLElement>('.req-item');
+      const name = card?.dataset.name ?? 'AARBAA Product';
+      const price = Number.parseFloat(card?.dataset.price ?? '19.99');
+
+      addItemToCart(name, price);
+
+      // Inline Courier confirmation replaces the old alert().
+      const originalText = button.textContent;
+      button.textContent = 'ITEM LOGGED';
+      button.disabled = true;
+      window.setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+      }, 1600);
     });
-    
-    // Function to add item to cart
-    function addItemToCart(name, price) {
-      // Create item object
-      const item = {
-        name: name,
-        price: price,
-        id: Date.now() // Simple unique ID
-      };
-      
-      // Add to items array
-      cartItems.push(item);
-      
-      // Show cart items section
-      emptyCart.classList.add('d-none');
-      cartItemList.classList.remove('d-none');
-      cartTotals.classList.remove('d-none');
-      
-      // Create cart item element
-      const itemElement = document.createElement('div');
-      itemElement.className = 'cart-item p-3 border-bottom d-flex align-items-center justify-content-between';
-      itemElement.dataset.id = item.id;
-      
-      itemElement.innerHTML = `
-        <div class="d-flex align-items-center">
-          <div style="width: 50px; text-align: center;">
-            <i class="fas fa-tshirt fa-2x text-secondary"></i>
-          </div>
-          <div class="ms-3">
-            <h6 class="mb-0">${name}</h6>
-            <small class="text-muted">Qty: 1</small>
-          </div>
-        </div>
-        <div class="d-flex align-items-center">
-          <div class="me-3">
-            <span class="fw-bold">$${price.toFixed(2)}</span>
-          </div>
-          <button class="btn btn-sm btn-outline-danger remove-item-btn">
-            <i class="fas fa-trash"></i>
-          </button>
-        </div>
-      `;
-      
-      // Add to cart list
-      cartItemList.appendChild(itemElement);
-      
-      // Add remove functionality
-      const removeButton = itemElement.querySelector('.remove-item-btn');
-      removeButton.addEventListener('click', function() {
-        removeItemFromCart(item.id);
-      });
-      
-      // Update totals
-      updateCartTotals();
+  });
+
+  function addItemToCart(name: string, price: number): void {
+    if (!emptyCart || !cartItemList || !cartTotals) return;
+
+    const item: CartItem = { id: nextId++, name, price };
+    cartItems.push(item);
+
+    emptyCart.hidden = true;
+    cartItemList.hidden = false;
+    cartTotals.hidden = false;
+
+    const li = document.createElement('li');
+    li.className = 'cart-line';
+    li.dataset.id = String(item.id);
+
+    const nameEl = document.createElement('span');
+    nameEl.className = 'cart-line__name';
+    nameEl.textContent = name;
+
+    const qtyEl = document.createElement('span');
+    qtyEl.className = 'cart-line__qty';
+    qtyEl.textContent = 'QTY: 1';
+
+    const priceEl = document.createElement('span');
+    priceEl.className = 'cart-line__price';
+    priceEl.textContent = `$${price.toFixed(2)}`;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.className = 'cart-line__remove';
+    removeBtn.textContent = 'STRIKE';
+    removeBtn.setAttribute('aria-label', `Remove ${name} from requisition`);
+    removeBtn.addEventListener('click', () => removeItemFromCart(item.id));
+
+    li.append(nameEl, priceEl, removeBtn, qtyEl);
+    cartItemList.appendChild(li);
+
+    updateCartTotals();
+  }
+
+  function removeItemFromCart(id: number): void {
+    if (!emptyCart || !cartItemList || !cartTotals) return;
+
+    cartItems = cartItems.filter((item) => item.id !== id);
+
+    const itemElement = cartItemList.querySelector(`.cart-line[data-id="${id}"]`);
+    if (itemElement) itemElement.remove();
+
+    if (cartItems.length === 0) {
+      emptyCart.hidden = false;
+      cartItemList.hidden = true;
+      cartTotals.hidden = true;
     }
-    
-    // Function to remove item from cart
-    function removeItemFromCart(id) {
-      // Remove from array
-      cartItems = cartItems.filter(item => item.id !== id);
-      
-      // Remove element
-      const itemElement = document.querySelector(`.cart-item[data-id="${id}"]`);
-      if (itemElement) {
-        itemElement.remove();
-      }
-      
-      // Check if cart is empty
-      if (cartItems.length === 0) {
-        emptyCart.classList.remove('d-none');
-        cartItemList.classList.add('d-none');
-        cartTotals.classList.add('d-none');
-      }
-      
-      // Update totals
-      updateCartTotals();
-    }
-    
-    // Function to update cart totals
-    function updateCartTotals() {
-      const subtotal = cartItems.reduce((total, item) => total + item.price, 0);
-      const shipping = cartItems.length > 0 ? 5.99 : 0;
-      const total = subtotal + shipping;
-      
-      cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
-      cartTotal.textContent = `$${total.toFixed(2)}`;
-    }
-    
-    // Checkout button functionality
-    checkoutBtn.addEventListener('click', function() {
-      alert("This is a satirical shop. No items will actually be shipped.");
-    });
+
+    updateCartTotals();
+  }
+
+  function updateCartTotals(): void {
+    const subtotal = cartItems.reduce((total, item) => total + item.price, 0);
+    const shipping = cartItems.length > 0 ? 5.99 : 0;
+    const total = subtotal + shipping;
+
+    if (cartSubtotal) cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+    if (cartShipping) cartShipping.textContent = `$${shipping.toFixed(2)}`;
+    if (cartTotal) cartTotal.textContent = `$${total.toFixed(2)}`;
+  }
+
+  // Checkout stamps the requisition DENIED — the page's one animated stamp
+  // thunks when the notice is revealed. Replaces the old alert().
+  checkoutBtn?.addEventListener('click', () => {
+    if (denialNotice) denialNotice.hidden = false;
+    checkoutBtn.disabled = true;
+    checkoutBtn.textContent = 'REQUISITION SUBMITTED';
   });
 </script>

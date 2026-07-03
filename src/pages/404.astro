@@ -1,0 +1,109 @@
+---
+// src/pages/404.astro — FORM AAR-404 — RECORD NOT LOCATED
+// Static build emits 404.html, which Vercel serves for unmatched routes.
+import MainLayout from '../layouts/MainLayout.astro';
+import Stamp from '../components/Stamp.astro';
+
+const crossReferences = [
+  { label: 'PUBLIC PORTAL', cite: 'AAR-000 · GENERAL FILE', href: '/' },
+  { label: 'OFFICIAL RECORDS — MEMORANDA LOG', cite: 'AAR-REC · RECORDS DIVISION', href: '/news' },
+  { label: 'DIRECTORY OF FIELD OFFICES', cite: 'AAR-DIR · FIELD OPERATIONS', href: '/chapters' },
+  { label: 'REQUEST FOR ASSISTANCE', cite: 'FORM AAR-101 · PUBLIC COUNTER', href: '/contact' },
+];
+---
+
+<MainLayout
+  title="Record Not Located — AARBAA"
+  description="Form AAR-404: the requested record could not be located."
+  docket="AAR-404 · RECORDS DIVISION"
+  formNumber="FORM AAR-404"
+>
+  <section class="notfound">
+    <span class="ghost notfound__ghost" aria-hidden="true">404</span>
+
+    <div class="notfound__body">
+      <p class="kicker">FORM AAR-404</p>
+      <h1 class="misregister">RECORD NOT&nbsp;LOCATED</h1>
+
+      <div class="notfound__stamp">
+        <Stamp text="MISFILED" rotate={-6} label="Misfiled" />
+      </div>
+
+      <p class="notfound__copy">
+        The requested record may have been misfiled or destroyed in accordance with Records
+        Retention Schedule 7. No further action is required on your part. If you believe this
+        record should exist, you may file a Request for Assistance (Form AAR-101).
+      </p>
+
+      <h2 class="notfound__refs-head">CROSS-REFERENCES</h2>
+      <ul class="notfound__refs">
+        {crossReferences.map((ref) => (
+          <li>
+            <a class="crossref" href={ref.href}>SEE: {ref.label} — {ref.cite}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  /* Page arrangement only — all pattern styling lives in global.css. */
+  .notfound {
+    position: relative;
+    padding-block: var(--s6) var(--s7);
+    overflow: hidden;
+  }
+
+  .notfound__ghost {
+    position: absolute;
+    top: -2rem;
+    right: -3rem;
+    font-size: clamp(12rem, 30vw, 24rem);
+    line-height: 1;
+    z-index: 0;
+  }
+
+  .notfound__body {
+    position: relative;
+    z-index: 1;
+    max-width: var(--measure);
+  }
+
+  .notfound__body h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--fs-title);
+    line-height: 1.05;
+    margin-block: var(--s2) var(--s4);
+  }
+
+  .notfound__stamp {
+    margin-bottom: var(--s4);
+  }
+
+  .notfound__copy {
+    font-size: var(--fs-md);
+    margin-bottom: var(--s5);
+  }
+
+  .notfound__refs-head {
+    font-size: var(--fs-md);
+    border-top: 2px solid var(--ink);
+    padding-top: var(--s3);
+    margin-bottom: var(--s3);
+  }
+
+  .notfound__refs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .notfound__refs li {
+    border-bottom: 1px dotted var(--rule);
+    padding-block: var(--s2);
+  }
+</style>

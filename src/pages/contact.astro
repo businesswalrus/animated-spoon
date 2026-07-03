@@ -1,191 +1,266 @@
 ---
-// src/pages/contact.astro
+// src/pages/contact.astro — FORM AAR-101 · REQUEST FOR ASSISTANCE
 import MainLayout from '../layouts/MainLayout.astro';
-import PageHero from '../components/PageHero.astro';
+import DocHero from '../components/DocHero.astro';
 import ContactForm from '../components/ContactForm.astro';
+import Icon from '../components/Icon.astro';
 
-const metaDescription = "Contact AARBAA to share your road biker concerns, join our movement, or start a local chapter. Get in touch with our team today.";
+const metaDescription =
+  'Contact AARBAA to share your road biker concerns, join our movement, or start a local chapter. Get in touch with our team today.';
+
+// Frequently Filed Inquiries — every question and answer ports verbatim.
+interface Faq {
+  q: string;
+  a: string;
+  list?: string[];
+}
+
+const faqs: Faq[] = [
+  {
+    q: 'Is AARBAA a real organization?',
+    a: "Yes, we're a real organization with a mission to advocate for safer, more sensible road-sharing policies. While we use satire to make our points, our concerns about cyclist safety and traffic efficiency are very real.",
+  },
+  {
+    q: 'Do you really hate cyclists?',
+    a: 'Not at all! We have nothing against cycling as an activity or cyclists as people. Our issue is specifically with the practice of riding bicycles on roads designed for motor vehicles when dedicated cycling infrastructure would be safer for everyone. Many of our members are cyclists themselves—they just prefer to ride on paths, not roads.',
+  },
+  {
+    q: "Isn't it legal for bikes to be on the road?",
+    a: "Yes, in most places it is legal. We're not arguing that cyclists are breaking the law (though some certainly do when they ignore traffic signals). We're arguing that the laws and infrastructure should be updated to reflect modern traffic realities. Just because something is legal doesn't mean it's the safest or most efficient solution.",
+  },
+  {
+    q: 'How can I start a local AARBAA chapter?',
+    a: 'We\'re excited about your interest! To start a local chapter, fill out the contact form above with the subject line "New Chapter Inquiry" and someone from our organizing team will reach out with resources and guidelines to help you get started in your community.',
+  },
+  {
+    q: 'What specific policies do you advocate for?',
+    a: 'Our policy priorities include:',
+    list: [
+      'Development of more dedicated bicycle infrastructure separated from vehicle traffic',
+      'Registration and identification requirements for road cyclists',
+      'Liability insurance requirements for cyclists using public roads',
+      'Stricter enforcement of traffic laws for cyclists',
+      'Transportation planning that prioritizes efficient flow for the majority of road users',
+    ],
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.list ? `${f.a} ${f.list.join('; ')}` : f.a,
+    },
+  })),
+};
 ---
 
 <MainLayout
-  title="Contact AARBAA - Get In Touch"
+  title="Request for Assistance — AARBAA"
   description={metaDescription}
+  docket="AAR-101 · PUBLIC COUNTER"
+  formNumber="FORM AAR-101"
 >
-  <PageHero
-    title="Contact Us"
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- ============ COVER SHEET ============ -->
+  <DocHero
+    title="REQUEST FOR ASSISTANCE"
+    kicker="FORM AAR-101 (REV. 07/2026)"
+    classification="PUBLIC COUNTER — OPEN"
     subtitle="Get in touch with AARBAA and join the fight for sane roads"
-    backgroundImage="/images/contact-hero.jpg"
-    minHeight="400px"
   />
 
-  <!-- Contact Content Section -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="content-card">
-            <div class="row">
-              <div class="col-lg-5 mb-5 mb-lg-0">
-                <h2 class="section-heading">GET IN TOUCH</h2>
+  <!-- ============ THE PUBLIC COUNTER ============ -->
+  <section class="file-section" aria-labelledby="counter-heading">
+    <header class="section-head">
+      <p class="kicker">SUBMIT ONE (1) COPY — RETAIN NO COPIES FOR YOUR RECORDS</p>
+      <h2 id="counter-heading">SEND US A MESSAGE</h2>
+    </header>
 
-                <p class="lead mb-4">Have a question, suggestion, or road biker horror story to share? Our team is standing by to hear from you!</p>
-
-                <div class="icon-list-item">
-                  <div class="icon-list-icon">
-                    <i class="fas fa-map-marker-alt fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h3 class="icon-list-title">Headquarters</h3>
-                    <p>1776 Freedom Drive<br>Patriot City, USA 12345</p>
-                  </div>
-                </div>
-
-                <div class="icon-list-item">
-                  <div class="icon-list-icon">
-                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h3 class="icon-list-title">Email</h3>
-                    <p>info@aarbaa.com</p>
-                  </div>
-                </div>
-
-                <div class="icon-list-item">
-                  <div class="icon-list-icon">
-                    <i class="fas fa-phone fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h3 class="icon-list-title">Phone</h3>
-                    <p>(555) ROAD-LAW</p>
-                  </div>
-                </div>
-
-                <div class="icon-list-item">
-                  <div class="icon-list-icon">
-                    <i class="fas fa-clock fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h3 class="icon-list-title">Hours</h3>
-                    <p>Monday - Friday: 9am - 5pm<br>Weekend: Closed (we're out enjoying roads free of cyclists)</p>
-                  </div>
-                </div>
-
-                <h3 class="h5 mb-3 fw-bold">Connect With Us</h3>
-                <div class="social-links">
-                  <a href="#" class="social-link social-link-facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" class="social-link social-link-twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                  <a href="#" class="social-link social-link-instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                  <a href="#" class="social-link social-link-youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-7">
-                <div class="feature-box">
-                  <h2 class="section-heading">SEND US A MESSAGE</h2>
-                  <ContactForm />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="counter-grid">
+      <!-- LEFT — THE FORM (60%) -->
+      <div class="counter-grid__form">
+        <ContactForm formNumber="AAR-101" heading="REQUEST FOR ASSISTANCE" />
       </div>
-    </div>
-  </section>
 
-  <!-- FAQ Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h2 class="text-center mb-5 section-heading-dark">FREQUENTLY ASKED QUESTIONS</h2>
+      <!-- RIGHT — STATION + INQUIRIES (40%) -->
+      <div class="counter-grid__aside">
+        <aside class="station" aria-labelledby="station-heading">
+          <h3 id="station-heading" class="station__title">OFFICIAL STATION</h3>
+          <p class="station__lead">
+            Have a question, suggestion, or road biker horror story to share? Our team is standing by to
+            hear from you!
+          </p>
 
-          <div class="accordion" id="faqAccordion">
-            <div class="accordion-item mb-3 border-0 shadow-sm">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Is AARBAA a real organization?
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  <p>Yes, we're a real organization with a mission to advocate for safer, more sensible road-sharing policies. While we use satire to make our points, our concerns about cyclist safety and traffic efficiency are very real.</p>
-                </div>
-              </div>
+          <dl class="station__rows">
+            <div class="station__row">
+              <dt><Icon name="flag" size={16} /> HEADQUARTERS</dt>
+              <dd>1776 Freedom Drive<br />Patriot City, USA 12345</dd>
             </div>
-
-            <div class="accordion-item mb-3 border-0 shadow-sm">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Do you really hate cyclists?
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  <p>Not at all! We have nothing against cycling as an activity or cyclists as people. Our issue is specifically with the practice of riding bicycles on roads designed for motor vehicles when dedicated cycling infrastructure would be safer for everyone. Many of our members are cyclists themselves—they just prefer to ride on paths, not roads.</p>
-                </div>
-              </div>
+            <div class="station__row">
+              <dt><Icon name="document" size={16} /> EMAIL</dt>
+              <dd><a href="mailto:info@aarbaa.com">info@aarbaa.com</a></dd>
             </div>
-
-            <div class="accordion-item mb-3 border-0 shadow-sm">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Isn't it legal for bikes to be on the road?
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  <p>Yes, in most places it is legal. We're not arguing that cyclists are breaking the law (though some certainly do when they ignore traffic signals). We're arguing that the laws and infrastructure should be updated to reflect modern traffic realities. Just because something is legal doesn't mean it's the safest or most efficient solution.</p>
-                </div>
-              </div>
+            <div class="station__row">
+              <dt><Icon name="phone" size={16} /> PHONE</dt>
+              <dd>(555) ROAD-LAW</dd>
             </div>
-
-            <div class="accordion-item mb-3 border-0 shadow-sm">
-              <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  How can I start a local AARBAA chapter?
-                </button>
-              </h2>
-              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  <p>We're excited about your interest! To start a local chapter, fill out the contact form above with the subject line "New Chapter Inquiry" and someone from our organizing team will reach out with resources and guidelines to help you get started in your community.</p>
-                </div>
-              </div>
+            <div class="station__row">
+              <dt><Icon name="stamp" size={16} /> HOURS</dt>
+              <dd>
+                Monday - Friday: 9am - 5pm<br />
+                Weekend: Closed (we're out enjoying roads free of cyclists)
+              </dd>
             </div>
+          </dl>
 
-            <div class="accordion-item border-0 shadow-sm">
-              <h2 class="accordion-header" id="headingFive">
-                <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  What specific policies do you advocate for?
-                </button>
-              </h2>
-              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  <p>Our policy priorities include:</p>
-                  <ul>
-                    <li>Development of more dedicated bicycle infrastructure separated from vehicle traffic</li>
-                    <li>Registration and identification requirements for road cyclists</li>
-                    <li>Liability insurance requirements for cyclists using public roads</li>
-                    <li>Stricter enforcement of traffic laws for cyclists</li>
-                    <li>Transportation planning that prioritizes efficient flow for the majority of road users</li>
-                  </ul>
+          <h4 class="station__connect">Connect With Us</h4>
+          <p class="station__channels">PUBLIC CHANNELS: PENDING CLEARANCE</p>
+        </aside>
+
+        <section class="inquiries" aria-labelledby="faq-heading">
+          <header class="section-head section-head--sub">
+            <p class="kicker">PUBLIC COUNTER — RESPONSES PREPARED IN ADVANCE</p>
+            <h3 id="faq-heading">FREQUENTLY FILED INQUIRIES</h3>
+          </header>
+
+          {
+            faqs.map((f, i) => (
+              <details class="details-folder" open={i === 0}>
+                <summary>{f.q}</summary>
+                <div class="inquiry-body">
+                  <p>{f.a}</p>
+                  {f.list && (
+                    <ul>
+                      {f.list.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              </details>
+            ))
+          }
+        </section>
       </div>
     </div>
   </section>
 </MainLayout>
 
 <style>
-  .faq-button {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
+  .file-section {
+    padding: var(--s6) 0;
   }
 
-  .faq-button:focus-visible {
-    outline: 3px solid #0A3161;
-    outline-offset: 2px;
+  .counter-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: var(--s5);
+    align-items: start;
+    margin-top: var(--s4);
+  }
+
+  /* ---- Official station card ---- */
+  .station {
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: var(--s4);
+    box-shadow: var(--shadow-sheet);
+  }
+
+  .station__title {
+    font-family: var(--font-type);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    letter-spacing: 0.12em;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: var(--s2);
+    margin: 0 0 var(--s3);
+  }
+
+  .station__lead {
+    color: var(--ink-soft);
+    margin: 0 0 var(--s4);
+  }
+
+  .station__rows {
+    margin: 0;
+  }
+
+  .station__row {
+    padding: var(--s3) 0;
+    border-top: 1px dotted var(--rule);
+  }
+
+  .station__row dt {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--glory-blue);
+    display: flex;
+    align-items: center;
+    gap: var(--s2);
+    margin-bottom: var(--s1);
+  }
+
+  .station__row dd {
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .station__connect {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-base);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: var(--s4) 0 var(--s1);
+  }
+
+  .station__channels {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ---- Inquiries ---- */
+  .inquiries {
+    margin-top: var(--s5);
+  }
+
+  .section-head--sub {
+    margin-bottom: var(--s3);
+  }
+
+  .inquiry-body p {
+    max-width: var(--measure);
+  }
+
+  .inquiry-body ul {
+    padding-left: 1.25rem;
+  }
+
+  .inquiry-body li {
+    margin-bottom: var(--s1);
+  }
+
+  @media (max-width: 820px) {
+    .file-section {
+      padding: var(--s5) 0;
+    }
+
+    .counter-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

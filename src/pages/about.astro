@@ -1,168 +1,506 @@
 ---
-// src/pages/about.astro
+// src/pages/about.astro — AGENCY CHARTER & ORGANIZATION
+// Filed as: CHARTER · AAR-CHR · OFFICE OF THE DIRECTOR
 import MainLayout from '../layouts/MainLayout.astro';
-import PageHero from '../components/PageHero.astro';
+import DocHero from '../components/DocHero.astro';
+import Seal from '../components/Seal.astro';
+import Stamp from '../components/Stamp.astro';
+import Figure from '../components/Figure.astro';
 
-const metaDescription = "Learn about AARBAA's mission to advocate for safer roads through separated cycling infrastructure. Founded in 2023, we fight for cyclist accountability and balanced transportation policy.";
+const metaDescription =
+  "Learn about AARBAA's mission to advocate for safer roads through separated cycling infrastructure. Founded in 2023, we fight for cyclist accountability and balanced transportation policy.";
+
+const articles = [
+  {
+    numeral: 'I',
+    title: 'Advocate for Separate Bike Paths',
+    body: "We work tirelessly to promote the development of dedicated cycling infrastructure separated from vehicle traffic. This isn't just for drivers—it's safer for cyclists too!",
+  },
+  {
+    numeral: 'II',
+    title: 'Push for Cyclist Accountability',
+    body: 'We believe cyclists using public roads should be held to similar standards as motorists: proper identification, adherence to traffic laws, and liability insurance for accidents they cause.',
+  },
+  {
+    numeral: 'III',
+    title: 'Restore Balance to Transportation Policy',
+    body: 'We fight against the disproportionate influence of cycling lobbies on local transportation decisions. The needs of the many should outweigh the preferences of the few.',
+  },
+  {
+    numeral: 'IV',
+    title: 'Educate and Raise Awareness',
+    body: 'We develop educational materials and campaigns to help the public understand the real costs and dangers of mixed vehicle-bicycle traffic on roads not designed for it.',
+  },
+];
+
+const values = [
+  {
+    title: 'Safety First',
+    body: 'We believe that road safety is non-negotiable, and mixing 20 mph bikes with 45 mph cars creates unnecessary danger for everyone.',
+  },
+  {
+    title: 'Fairness',
+    body: 'We advocate for transportation systems that serve the needs of the many, not just the vocal few with expensive hobby equipment.',
+  },
+  {
+    title: 'Open Dialogue',
+    body: 'We encourage honest conversations about road use that have been suppressed by politically correct transportation planning.',
+  },
+];
+
+const timeline = [
+  {
+    date: '2023 · Q1',
+    label: 'INCIDENT REPORT',
+    body: 'A 45-minute Sunday-morning delay behind a peloton of 30+ spandex-clad cyclists is recorded on a winding mountain road. One (1) child’s soccer game is missed. The matter is referred for further action.',
+  },
+  {
+    date: '2023 · Q2',
+    label: 'FOUNDING FILING',
+    body: 'The founding grievance is published to Facebook. Thousands of Americans respond in concurrence. The Association is duly constituted.',
+  },
+  {
+    date: '2023 · Q4',
+    label: 'FIELD EXPANSION',
+    body: 'Within months of founding, chapters are chartered in all 50 states. Field offices commence operations.',
+  },
+  {
+    date: '2026 · PRESENT',
+    label: 'ONGOING PROCEEDINGS',
+    body: 'The Bureau continues its work. Subsequent proceedings are entered in the official records.',
+  },
+];
 ---
 
 <MainLayout
-  title="About AARBAA - Our Mission and Vision"
+  title="Agency Charter & Organization — AARBAA"
   description={metaDescription}
+  docket="AAR-CHR · OFFICE OF THE DIRECTOR"
+  formNumber="CHARTER"
 >
-  <PageHero
-    title="About AARBAA"
-    subtitle="Defending America's Roads Since 2023"
-    backgroundImage="/images/Biking.jpg"
-    minHeight="500px"
+  <DocHero
+    image="/images/Biking.jpg"
+    imageAlt="Illustration of a cyclist riding along a road"
+    kicker="AGENCY CHARTER & ORGANIZATION"
+    title="DEFENDING AMERICA'S ROADS SINCE 2023"
+    classification="FOUNDING DOCUMENTS"
   />
 
-  <!-- About Content Section -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="content-card">
-            <h2 class="section-heading">OUR STORY</h2>
-
-            <p class="lead mb-4">It all started on a peaceful Sunday morning in 2023, when our founder, Michael Johnson, found himself trapped behind a peloton of 30+ spandex-clad cyclists blocking an entire lane on a winding mountain road. The 45-minute delay to his child's soccer game was the final straw.</p>
-
-            <div class="row mb-5">
-              <div class="col-md-6">
-                <div class="feature-box">
-                  <h3 class="icon-list-title">The Genesis</h3>
-                  <p>What began as a Facebook rant quickly evolved into a full-fledged movement as thousands of Americans realized they weren't alone in their frustration. Finally, someone was speaking the uncomfortable truth about road bikers and their disregard for everyone else on the road.</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="feature-box">
-                  <h3 class="icon-list-title">The Movement</h3>
-                  <p>Within months, AARBAA chapters sprouted in all 50 states. The message was clear: Americans want cyclists to have safe places to ride—just not on busy roads where they endanger themselves and frustrate everyone else.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="alert-mission">
-              <h3 class="h4 mb-3 fw-bold">LET'S BE CLEAR</h3>
-              <p class="mb-0">We're not anti-cycling. We're anti-entitlement. We're anti-chaos. We're anti-"rules apply to everyone except me." We fully support cycling—in appropriate, designated areas that don't compromise the safety and sanity of others.</p>
-            </div>
-
-            <h2 class="section-heading">OUR MISSION</h2>
-
-            <div class="icon-list-item">
-              <div class="icon-list-icon">
-                <i class="fas fa-bullseye fa-2x" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3 class="icon-list-title">Advocate for Separate Bike Paths</h3>
-                <p>We work tirelessly to promote the development of dedicated cycling infrastructure separated from vehicle traffic. This isn't just for drivers—it's safer for cyclists too!</p>
-              </div>
-            </div>
-
-            <div class="icon-list-item">
-              <div class="icon-list-icon">
-                <i class="fas fa-gavel fa-2x" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3 class="icon-list-title">Push for Cyclist Accountability</h3>
-                <p>We believe cyclists using public roads should be held to similar standards as motorists: proper identification, adherence to traffic laws, and liability insurance for accidents they cause.</p>
-              </div>
-            </div>
-
-            <div class="icon-list-item">
-              <div class="icon-list-icon">
-                <i class="fas fa-balance-scale fa-2x" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3 class="icon-list-title">Restore Balance to Transportation Policy</h3>
-                <p>We fight against the disproportionate influence of cycling lobbies on local transportation decisions. The needs of the many should outweigh the preferences of the few.</p>
-              </div>
-            </div>
-
-            <div class="icon-list-item">
-              <div class="icon-list-icon">
-                <i class="fas fa-lightbulb fa-2x" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3 class="icon-list-title">Educate and Raise Awareness</h3>
-                <p>We develop educational materials and campaigns to help the public understand the real costs and dangers of mixed vehicle-bicycle traffic on roads not designed for it.</p>
-              </div>
-            </div>
-
-            <h2 class="section-heading mt-5">OUR VALUES</h2>
-
-            <div class="row g-4 mb-5">
-              <div class="col-md-4">
-                <div class="card h-100 bg-light border-0">
-                  <div class="card-body text-center">
-                    <div class="mb-3">
-                      <i class="fas fa-shield-alt fa-3x text-primary" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="h5 mb-3 fw-bold">Safety First</h3>
-                    <p class="mb-0">We believe that road safety is non-negotiable, and mixing 20 mph bikes with 45 mph cars creates unnecessary danger for everyone.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 bg-light border-0">
-                  <div class="card-body text-center">
-                    <div class="mb-3">
-                      <i class="fas fa-handshake fa-3x text-primary" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="h5 mb-3 fw-bold">Fairness</h3>
-                    <p class="mb-0">We advocate for transportation systems that serve the needs of the many, not just the vocal few with expensive hobby equipment.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="card h-100 bg-light border-0">
-                  <div class="card-body text-center">
-                    <div class="mb-3">
-                      <i class="fas fa-comments fa-3x text-primary" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="h5 mb-3 fw-bold">Open Dialogue</h3>
-                    <p class="mb-0">We encourage honest conversations about road use that have been suppressed by politically correct transportation planning.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <h2 class="section-heading">IS THIS SATIRE?</h2>
-
-            <p class="lead mb-3">Well, yes... and no.</p>
-
-            <p class="mb-4">While we employ humor and satire to highlight the absurdity of current road-sharing situations, our core concerns are deadly serious. Each year, hundreds of cyclists are killed on roads, and thousands more are injured. Meanwhile, countless traffic delays and near-miss incidents erode public goodwill toward cycling.</p>
-
-            <p class="mb-5">Our approach may be tongue-in-cheek, but our mission is sincere: we want better infrastructure that keeps everyone safe and traffic flowing. Cyclists deserve dedicated paths where they can ride without fear of vehicles, and drivers deserve roads where they can operate at normal speeds without the anxiety of navigating around vulnerable road users.</p>
-
-            <div class="text-center">
-              <a href="/join" class="btn btn-danger btn-lg px-5 py-3 cta-button" style="font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px; font-size: 1.4rem;">JOIN OUR MOVEMENT</a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- SECTION 1 — FOUNDING CHARTER -->
+  <section class="file-section charter" aria-labelledby="charter-head">
+    <div class="charter__watermark seal-watermark" aria-hidden="true">
+      <Seal size="520px" tone="ink" />
     </div>
+
+    <div class="charter__stamp">
+      <Stamp text="CERTIFIED TRUE COPY" variant="blue" rotate={-5} />
+    </div>
+
+    <div class="section-head">
+      <p class="kicker">SECTION 1 — FOUNDING CHARTER</p>
+      <h2 id="charter-head">OUR STORY</h2>
+    </div>
+
+    <p class="charter__lead">
+      It all started on a peaceful Sunday morning in 2023, when our founder, Michael Johnson,
+      found himself trapped behind a peloton of 30+ spandex-clad cyclists blocking an entire
+      lane on a winding mountain road. The 45-minute delay to his child's soccer game was the
+      final straw.
+    </p>
+
+    <div class="charter__columns">
+      <article>
+        <h3>The Genesis</h3>
+        <p>
+          What began as a Facebook rant quickly evolved into a full-fledged movement as
+          thousands of Americans realized they weren't alone in their frustration. Finally,
+          someone was speaking the uncomfortable truth about road bikers and their disregard
+          for everyone else on the road.
+        </p>
+      </article>
+      <article>
+        <h3>The Movement</h3>
+        <p>
+          Within months, AARBAA chapters sprouted in all 50 states. The message was clear:
+          Americans want cyclists to have safe places to ride—just not on busy roads where
+          they endanger themselves and frustrate everyone else.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — ADVISORY -->
+  <section class="file-section" aria-labelledby="advisory-head">
+    <div class="advisory">
+      <p class="advisory__tag">ADVISORY — READ BEFORE PROCEEDING</p>
+      <h2 id="advisory-head" class="advisory__title">LET'S BE CLEAR</h2>
+      <p>
+        We're not anti-cycling. We're anti-entitlement. We're anti-chaos. We're anti-"rules
+        apply to everyone except me." We fully support cycling—in appropriate, designated
+        areas that don't compromise the safety and sanity of others.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — ARTICLES OF MISSION -->
+  <section class="file-section" aria-labelledby="mission-head">
+    <div class="section-head">
+      <p class="kicker">SECTION 2 — ARTICLES OF MISSION</p>
+      <h2 id="mission-head">OUR MISSION</h2>
+    </div>
+
+    <ol class="articles">
+      {articles.map((article) => (
+        <li class="article">
+          <span class="ghost article__ghost" aria-hidden="true">{article.numeral}</span>
+          <div class="article__body">
+            <p class="article__no">ARTICLE {article.numeral}</p>
+            <h3>{article.title}</h3>
+            <p>{article.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- SECTION 4 — ORGANIZATIONAL VALUES -->
+  <section class="file-section" aria-labelledby="values-head">
+    <div class="section-head">
+      <p class="kicker">SECTION 3 — ORGANIZATIONAL VALUES</p>
+      <h2 id="values-head">OUR VALUES</h2>
+    </div>
+
+    <ul class="values">
+      {values.map((value, i) => (
+        <li class="values__row">
+          <span class="values__no">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3>{value.title}</h3>
+            <p>{value.body}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- SECTION 5 — HISTORY -->
+  <section class="file-section" aria-labelledby="history-head">
+    <div class="section-head">
+      <p class="kicker">SECTION 4 — DOCKET OF PROCEEDINGS</p>
+      <h2 id="history-head">HISTORY</h2>
+    </div>
+
+    <ol class="timeline">
+      {timeline.map((entry) => (
+        <li class="timeline__row">
+          <p class="timeline__date">{entry.date}</p>
+          <div class="timeline__body">
+            <p class="timeline__label">{entry.label}</p>
+            <p>{entry.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="crossref">SEE ALSO: OFFICIAL RECORDS — MEMORANDA LOG, <a href="/news">/NEWS</a></p>
+  </section>
+
+  <!-- SECTION 6 — ADVISORY OPINION NO. 1 -->
+  <section class="file-section" aria-labelledby="satire-head">
+    <div class="section-head">
+      <p class="kicker">SECTION 5 — OFFICE OF THE GENERAL COUNSEL</p>
+      <h2 id="satire-head">IS THIS SATIRE?</h2>
+    </div>
+
+    <details class="details-folder">
+      <summary>ADVISORY OPINION NO. 1 — IN RE: THE QUESTION OF SATIRE</summary>
+      <div class="opinion">
+        <p class="opinion__lead">Well, yes... and no.</p>
+        <p>
+          While we employ humor and satire to highlight the absurdity of current road-sharing
+          situations, our core concerns are deadly serious. Each year, hundreds of cyclists
+          are killed on roads, and thousands more are injured. Meanwhile, countless traffic
+          delays and near-miss incidents erode public goodwill toward cycling.
+        </p>
+        <p>
+          Our approach may be tongue-in-cheek, but our mission is sincere: we want better
+          infrastructure that keeps everyone safe and traffic flowing. Cyclists deserve
+          dedicated paths where they can ride without fear of vehicles, and drivers deserve
+          roads where they can operate at normal speeds without the anxiety of navigating
+          around vulnerable road users.
+        </p>
+        <p class="opinion__cite">SO OPINED. FILED WITHOUT FURTHER COMMENT.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- SECTION 7 — ENROLLMENT CTA -->
+  <section class="file-section join-cta">
+    <p class="kicker">FORM AAR-100 — APPLICATION FOR ENROLLMENT</p>
+    <a href="/join" class="btn btn--primary">JOIN OUR MOVEMENT</a>
+  </section>
+
+  <!-- SECTION 8 — EXHIBIT W -->
+  <section class="file-section exhibit-w" aria-label="Exhibit W">
+    <Figure
+      src="/images/walrus-pennyfarthing.png"
+      alt="Illustration of a walrus riding a penny-farthing bicycle"
+      num="W"
+      caption="PUBLIC OUTREACH ILLUSTRATION"
+      source="OFFICE OF CIVIC ENGAGEMENT"
+      tilt="left"
+      width={588}
+      height={441}
+    />
   </section>
 </MainLayout>
 
 <style>
-  .text-primary {
-    color: #0A3161 !important;
+  /* Page arrangement only — all pattern styling lives in global.css. */
+  section {
+    margin-block: var(--s6);
   }
 
-  .cta-button {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* — Founding charter over the embossed seal — */
+  .charter {
+    position: relative;
   }
 
-  .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  .charter__watermark {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    pointer-events: none;
   }
 
-  .cta-button:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 4px;
+  .charter__stamp {
+    position: absolute;
+    top: calc(-1 * var(--s4));
+    right: 0;
+    z-index: 2;
+  }
+
+  .charter__lead {
+    position: relative;
+    font-size: var(--fs-md);
+    max-width: var(--measure);
+    margin-block: var(--s4);
+  }
+
+  .charter__columns {
+    position: relative;
+    display: grid;
+    gap: var(--s5);
+    border-top: 1px solid var(--rule);
+    padding-top: var(--s4);
+  }
+
+  .charter__columns h3 {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--s2);
+  }
+
+  @media (min-width: 720px) {
+    .charter__columns {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* — Red-ruled advisory box — */
+  .advisory {
+    border: 2px solid var(--glory-red);
+    border-left-width: 8px;
+    background: var(--paper);
+    padding: var(--s5);
+    max-width: var(--measure);
+  }
+
+  .advisory__tag {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.12em;
+    color: var(--glory-red);
+    margin-bottom: var(--s2);
+  }
+
+  .advisory__title {
+    font-size: var(--fs-xl);
+    margin-bottom: var(--s3);
+  }
+
+  /* — Articles of mission with ghost numerals — */
+  .articles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--s5);
+  }
+
+  .article {
+    position: relative;
+    border-top: 1px solid var(--rule);
+    padding: var(--s4) 0 var(--s3) 0;
+    overflow: hidden;
+  }
+
+  .article__ghost {
+    position: absolute;
+    top: -1.5rem;
+    right: var(--s3);
+    font-size: 10rem;
+    line-height: 1;
+    z-index: 0;
+  }
+
+  .article__body {
+    position: relative;
+    z-index: 1;
+    max-width: var(--measure);
+  }
+
+  .article__no {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.12em;
+    color: var(--glory-red);
+    margin-bottom: var(--s1);
+  }
+
+  .article__body h3 {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--s2);
+  }
+
+  /* — Ruled organizational list — */
+  .values {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .values__row {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    gap: var(--s4);
+    border-bottom: 1px solid var(--rule);
+    padding-block: var(--s4);
+  }
+
+  .values__row:first-child {
+    border-top: 2px solid var(--ink);
+  }
+
+  .values__no {
+    font-family: var(--font-type);
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+
+  .values__row h3 {
+    font-size: var(--fs-md);
+    margin-bottom: var(--s2);
+  }
+
+  .values__row p {
+    max-width: var(--measure);
+  }
+
+  /* — Docket timeline — */
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 2px solid var(--rule);
+  }
+
+  .timeline__row {
+    position: relative;
+    display: grid;
+    gap: var(--s2);
+    padding: var(--s3) 0 var(--s4) var(--s4);
+  }
+
+  .timeline__row::before {
+    content: '';
+    position: absolute;
+    left: -0.4rem;
+    top: 1.35rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    background: var(--glory-red);
+  }
+
+  .timeline__date {
+    font-family: var(--font-type);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    letter-spacing: 0.08em;
+  }
+
+  .timeline__label {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s1);
+  }
+
+  .timeline__body p:last-child {
+    max-width: var(--measure);
+  }
+
+  @media (min-width: 720px) {
+    .timeline__row {
+      grid-template-columns: 9rem 1fr;
+      gap: var(--s4);
+    }
+  }
+
+  .file-section > .crossref {
+    margin-top: var(--s4);
+  }
+
+  /* — Advisory opinion folder — */
+  .opinion {
+    max-width: var(--measure);
+  }
+
+  .opinion__lead {
+    font-size: var(--fs-md);
+    font-style: italic;
+    margin-bottom: var(--s3);
+  }
+
+  .opinion p + p {
+    margin-top: var(--s3);
+  }
+
+  .opinion__cite {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    border-top: 1px dotted var(--rule);
+    padding-top: var(--s3);
+  }
+
+  /* — Enrollment CTA — */
+  .join-cta {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding-block: var(--s5);
+  }
+
+  .join-cta .kicker {
+    margin-bottom: var(--s3);
+  }
+
+  /* — Exhibit W — */
+  .exhibit-w {
+    max-width: 34rem;
+    margin-inline: auto;
   }
 </style>

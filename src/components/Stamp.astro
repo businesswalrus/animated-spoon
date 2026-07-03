@@ -1,0 +1,31 @@
+---
+/**
+ * Stamp.astro — rubber-stamp impression. Markup only; all styling lives in
+ * global.css (.stamp and variants).
+ *
+ * RULE: maximum ONE animated stamp per page — it thunks once, 400ms after
+ * load, and never re-triggers. Additional stamps must pass animated={false}.
+ *
+ * Decorative by default (aria-hidden); pass `label` when the stamp carries
+ * unique status information, which switches it to role="img".
+ */
+interface Props {
+  text: string;
+  variant?: 'red' | 'blue' | 'gold';
+  rotate?: number;
+  animated?: boolean;
+  label?: string;
+}
+
+const { text, variant = 'red', rotate = -4, animated = true, label } = Astro.props;
+---
+
+<div
+  class:list={['stamp', `stamp--${variant}`, { 'stamp--thunk': animated }]}
+  style={`--stamp-rot:${rotate}deg`}
+  aria-hidden={label ? undefined : 'true'}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+>
+  {text}
+</div>

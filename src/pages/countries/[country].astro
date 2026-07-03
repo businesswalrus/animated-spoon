@@ -1,308 +1,46 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import PageHeroOptimized from '../../components/PageHeroOptimized.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import StatsCounter from '../../components/StatsCounter.astro';
-import TestimonialCard from '../../components/TestimonialCard.astro';
+import DocHero from '../../components/DocHero.astro';
+import StatLedger from '../../components/StatLedger.astro';
+import Stamp from '../../components/Stamp.astro';
+import CommentLedger from '../../components/CommentLedger.astro';
+import PendingRecords from '../../components/PendingRecords.astro';
 import ContactForm from '../../components/ContactForm.astro';
-import { getAllCountries, getCountryData } from '../../data/countries';
+import { getAllCountrySlugs, getCountryData, type CountryData } from '../../data/countries';
 
-// Enable prerendering for static generation of all country pages
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const countries = getAllCountries();
-  return countries.map((country) => ({
-    params: { country: country.slug },
-    props: { countryData: country },
+  return getAllCountrySlugs().map((slug) => ({
+    params: { country: slug },
+    props: { country: getCountryData(slug)! },
   }));
 }
 
-const { countryData } = Astro.props;
-
-const pageTitle = `AARBAA ${countryData.name} - International Chapter`;
-const pageDescription = `Join AARBAA's international chapter in ${countryData.name}. ${countryData.stats.members} members across ${countryData.stats.chapters} chapters advocating for balanced road safety policy and motorists' rights.`;
-const pageUrl = `https://aarbaa.com/countries/${countryData.slug}`;
-const pageImage = 'https://aarbaa.com/images/protest.webp';
-
-// Breadcrumb navigation data
-const breadcrumbs = [
-  { name: 'Home', url: '/' },
-  { name: 'International', url: '/countries' },
-  { name: countryData.name, url: pageUrl }
-];
-
-// Helper function to get approximate geo coordinates for country capitals
-const getCapitalCoordinates = (countrySlug: string) => {
-  const coords: Record<string, { lat: number; lng: number }> = {
-    'united-kingdom': { lat: 51.5074, lng: -0.1278 }, // London
-    'canada': { lat: 45.4215, lng: -75.6972 }, // Ottawa
-    'australia': { lat: -35.2809, lng: 149.1300 }, // Canberra
-    'netherlands': { lat: 52.3676, lng: 4.9041 }, // Amsterdam
-    'germany': { lat: 52.5200, lng: 13.4050 }, // Berlin
-  };
-  return coords[countrySlug] || { lat: 0, lng: 0 };
-};
-
-const coords = getCapitalCoordinates(countryData.slug);
-
-// Build comprehensive structured data
-const structuredDataGraph = [];
-
-// Enhanced Organization Schema with AggregateRating
-const organizationSchema: any = {
-  "@type": "Organization",
-  "@id": `${pageUrl}#organization`,
-  "name": `AARBAA ${countryData.name}`,
-  "url": pageUrl,
-  "description": pageDescription,
-  "logo": "https://aarbaa.com/images/aarbaa-new-logo (2).svg",
-  "image": pageImage,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": countryData.regionalDirector ? "Contact for address" : "",
-    "addressLocality": countryData.capital,
-    "addressCountry": countryData.code
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": coords.lat,
-    "longitude": coords.lng
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": countryData.regionalDirector.phone,
-    "email": countryData.regionalDirector.email,
-    "contactType": "Regional Director",
-    "areaServed": countryData.code,
-    "availableLanguage": countryData.language
-  },
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "Americans Against Road Bikers Association of America",
-    "url": "https://aarbaa.com"
-  },
-  "numberOfEmployees": {
-    "@type": "QuantitativeValue",
-    "value": countryData.stats.chapters
-  },
-  "memberOf": {
-    "@type": "Organization",
-    "name": "AARBAA International"
-  },
-  "sameAs": [
-    `https://twitter.com/aarbaa_${countryData.slug}`,
-    `https://facebook.com/aarbaa.${countryData.slug}`,
-    `https://linkedin.com/company/aarbaa-${countryData.slug}`
-  ],
-  "areaServed": {
-    "@type": "Country",
-    "name": countryData.name
-  }
-};
-
-// Add AggregateRating if rating data exists
-if (countryData.rating) {
-  organizationSchema.aggregateRating = {
-    "@type": "AggregateRating",
-    "ratingValue": countryData.rating.average,
-    "reviewCount": countryData.rating.count,
-    "bestRating": 5,
-    "worstRating": 1
-  };
+interface Props {
+  country: CountryData;
 }
 
-structuredDataGraph.push(organizationSchema);
+const { country } = Astro.props;
 
-// Person Schema for Regional Director
-if (countryData.regionalDirector) {
-  structuredDataGraph.push({
-    "@type": "Person",
-    "@id": `${pageUrl}#director`,
-    "name": countryData.regionalDirector.name,
-    "jobTitle": countryData.regionalDirector.title,
-    "email": countryData.regionalDirector.email,
-    "telephone": countryData.regionalDirector.phone,
-    "worksFor": {
-      "@id": `${pageUrl}#organization`
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": countryData.capital,
-      "addressCountry": countryData.code
-    }
-  });
-}
+const docket = `AAR-INTL-${country.code}`;
+const pageTitle = `AARBAA ${country.name} - International Chapter`;
+const pageDescription = `Join AARBAA's international chapter in ${country.name}. ${country.stats.members} members across ${country.stats.chapters} chapters advocating for balanced road safety policy and motorists' rights.`;
+const pageUrl = `https://aarbaa.com/countries/${country.slug}`;
 
-// Event Schema for Upcoming Events
-if (countryData.upcomingEvents && countryData.upcomingEvents.length > 0) {
-  countryData.upcomingEvents.forEach((event, index) => {
-    structuredDataGraph.push({
-      "@type": "Event",
-      "@id": `${pageUrl}#event-${index}`,
-      "name": event.name,
-      "description": event.description,
-      "startDate": event.date + "T" + "09:00:00",
-      "endDate": (event.endDate || event.date) + "T20:30:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": event.venue,
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": event.address,
-          "addressLocality": event.city,
-          "addressCountry": countryData.code
-        }
-      },
-      "organizer": {
-        "@id": `${pageUrl}#organization`
-      },
-      "isAccessibleForFree": !event.registrationRequired,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": countryData.currency,
-        "availability": "https://schema.org/InStock",
-        "validFrom": new Date().toISOString()
-      },
-      "image": pageImage,
-      "performer": {
-        "@id": `${pageUrl}#director`
-      }
-    });
-  });
-}
-
-// FAQPage Schema
-if (countryData.faqs && countryData.faqs.length > 0) {
-  structuredDataGraph.push({
-    "@type": "FAQPage",
-    "@id": `${pageUrl}#faq`,
-    "mainEntity": countryData.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  });
-}
-
-// Article Schema for Featured Article
-if (countryData.featuredArticle) {
-  structuredDataGraph.push({
-    "@type": "Article",
-    "@id": `${pageUrl}#featured-article`,
-    "headline": countryData.featuredArticle.title,
-    "description": countryData.featuredArticle.excerpt,
-    "url": countryData.featuredArticle.link,
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@id": `${pageUrl}#organization`
-    },
-    "publisher": {
-      "@id": `${pageUrl}#organization`
-    },
-    "image": pageImage,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": pageUrl
-    }
-  });
-}
-
-// ImageGallery Schema
-if (countryData.photoGallery && countryData.photoGallery.length > 0) {
-  countryData.photoGallery.forEach((photo, index) => {
-    structuredDataGraph.push({
-      "@type": "ImageObject",
-      "@id": `${pageUrl}#image-${index}`,
-      "contentUrl": `https://aarbaa.com${photo.url}`,
-      "name": photo.title,
-      "caption": photo.caption,
-      "description": photo.alt,
-      "uploadDate": new Date().toISOString(),
-      "copyrightHolder": {
-        "@id": `${pageUrl}#organization`
-      }
-    });
-  });
-}
-
-// BreadcrumbList Schema
-structuredDataGraph.push({
-  "@type": "BreadcrumbList",
-  "@id": `${pageUrl}#breadcrumb`,
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://aarbaa.com"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "International",
-      "item": "https://aarbaa.com/countries"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": countryData.name,
-      "item": pageUrl
-    }
-  ]
-});
-
-// WebPage Schema to tie everything together
-structuredDataGraph.push({
-  "@type": "WebPage",
-  "@id": pageUrl,
-  "url": pageUrl,
-  "name": pageTitle,
-  "description": pageDescription,
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "AARBAA",
-    "url": "https://aarbaa.com"
-  },
-  "about": {
-    "@id": `${pageUrl}#organization`
-  },
-  "breadcrumb": {
-    "@id": `${pageUrl}#breadcrumb`
-  },
-  "image": pageImage,
-  "primaryImageOfPage": {
-    "@type": "ImageObject",
-    "contentUrl": pageImage
-  }
-});
-
-// Final JSON-LD structure
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": structuredDataGraph
-};
-
-// Helper function to format currency
+// Ported helper: format funding in the desk's local currency.
 const formatCurrency = (amount: number, currency: string) => {
   const symbols: Record<string, string> = {
-    'USD': '$',
-    'GBP': '£',
-    'CAD': 'CA$',
-    'AUD': 'AU$',
-    'EUR': '€'
+    USD: '$',
+    GBP: '£',
+    CAD: 'CA$',
+    AUD: 'AU$',
+    EUR: '€',
   };
   return `${symbols[currency] || currency} ${(amount / 1000000).toFixed(1)}M`;
 };
 
-// Helper function to format date range
+// Ported helper: format a single date or a date range.
 const formatDateRange = (date: string, endDate?: string) => {
   const start = new Date(date);
   const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };
@@ -318,563 +56,821 @@ const formatDateRange = (date: string, endDate?: string) => {
   return start.toLocaleDateString('en-US', options);
 };
 
-// Helper function to get event type badge class
-const getEventTypeBadge = (type: string) => {
-  const badges: Record<string, string> = {
-    'meeting': 'bg-primary',
-    'rally': 'bg-danger',
-    'presentation': 'bg-info',
-    'community': 'bg-success',
-    'conference': 'bg-warning text-dark'
-  };
-  return badges[type] || 'bg-secondary';
-};
+const formatDate = (date: string) =>
+  new Date(date)
+    .toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC',
+    })
+    .toUpperCase();
 
-// Helper function to get category badge
-const getCategoryBadge = (category: string) => {
-  const badges: Record<string, string> = {
-    'infrastructure': 'bg-primary',
-    'legislation': 'bg-success',
-    'funding': 'bg-warning text-dark',
-    'awareness': 'bg-info'
-  };
-  return badges[category] || 'bg-secondary';
-};
+const now = new Date();
 
-// Helper function to get severity badge
-const getSeverityBadge = (severity: string) => {
-  const badges: Record<string, string> = {
-    'critical': 'bg-danger',
-    'high': 'bg-warning text-dark',
-    'medium': 'bg-info'
-  };
-  return badges[severity] || 'bg-secondary';
-};
+const deskStats = [
+  { value: country.stats.members.toLocaleString(), label: 'MEMBERS' },
+  { value: country.stats.chapters.toLocaleString(), label: 'LOCAL CHAPTERS' },
+  { value: country.stats.victories.toLocaleString(), label: 'VICTORIES' },
+];
 
-// Helper function to get status badge
-const getStatusBadge = (status: string) => {
-  const badges: Record<string, string> = {
-    'identified': 'bg-secondary',
-    'advocating': 'bg-primary',
-    'approved': 'bg-success',
-    'in-progress': 'bg-info',
-    'resolved': 'bg-success'
-  };
-  return badges[status] || 'bg-secondary';
+const extraOutcomes = country.victories.length - 3;
+
+// Structured data: BreadcrumbList + FAQPage only.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aarbaa.com' },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'International',
+          item: 'https://aarbaa.com/countries',
+        },
+        { '@type': 'ListItem', position: 3, name: country.name, item: pageUrl },
+      ],
+    },
+    ...(country.faqs && country.faqs.length > 0
+      ? [
+          {
+            '@type': 'FAQPage',
+            '@id': `${pageUrl}#faq`,
+            mainEntity: country.faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+            })),
+          },
+        ]
+      : []),
+  ],
 };
 ---
 
-<MainLayout
-  title={pageTitle}
-  description={pageDescription}
-  ogImage={pageImage}
->
-  <!-- Enhanced SEO meta tags -->
-  <meta slot="head" name="keywords" content={`AARBAA ${countryData.name}, road safety ${countryData.name}, cycling infrastructure ${countryData.name}, motorists rights ${countryData.name}, traffic advocacy`} />
-  <meta slot="head" name="author" content={`AARBAA ${countryData.name}`} />
-  <link slot="head" rel="canonical" href={pageUrl} />
+<MainLayout title={pageTitle} description={pageDescription} docket={docket} formNumber="DOSSIER">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </Fragment>
 
-  <!-- Geo tags for location targeting -->
-  <meta slot="head" name="geo.region" content={countryData.code} />
-  <meta slot="head" name="geo.placename" content={countryData.capital} />
-  <meta slot="head" name="geo.position" content={`${coords.lat};${coords.lng}`} />
-  <meta slot="head" name="ICBM" content={`${coords.lat}, ${coords.lng}`} />
-
-  <!-- Language tags -->
-  <meta slot="head" http-equiv="content-language" content={countryData.language.split('/')[0]} />
-
-  <!-- Structured Data -->
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-
-  <!-- Hero Section -->
-  <PageHeroOptimized
-    title={`AARBAA ${countryData.name}`}
-    subtitle={`International Chapter - ${countryData.capital}`}
+  <DocHero
+    image="/images/protest.webp"
+    imageAlt={`AARBAA ${country.name} international chapter road safety advocacy`}
+    eager={true}
+    ghost={country.code}
+    kicker={`INTERNATIONAL LIAISON OFFICE — ${country.name.toUpperCase()} DESK · DOCKET NO. ${docket}`}
+    title={`${country.name.toUpperCase()} LIAISON OFFICE`}
+    classification={`LIAISON ACTIVE — ${country.capital.toUpperCase()} STATION`}
   />
 
-  <!-- Breadcrumbs -->
-  <div class="container my-4">
-    <Breadcrumbs items={breadcrumbs} />
-  </div>
+  <nav class="crossref dossier-crossref" aria-label="Breadcrumb">
+    <a href="/">HOME</a>
+    <span aria-hidden="true">/</span>
+    <a href="/countries">INTERNATIONAL</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{country.name.toUpperCase()}</span>
+  </nav>
 
-  <!-- Main Content -->
-  <div class="container my-5">
-    <!-- Impact Stats -->
-    <section class="mb-5">
-      <div class="row g-4">
-        <div class="col-md-3 col-sm-6">
-          <div class="stat-card text-center p-4 h-100">
-            <i class="fas fa-users fa-3x mb-3" style="color: #0A3161;"></i>
-            <div class="display-4 fw-bold mb-2" style="color: #0A3161;">
-              <StatsCounter end={countryData.stats.members} />
-            </div>
-            <div class="text-muted fw-semibold">Active Members</div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="stat-card text-center p-4 h-100">
-            <i class="fas fa-map-marker-alt fa-3x mb-3" style="color: #198754;"></i>
-            <div class="display-4 fw-bold mb-2" style="color: #198754;">
-              <StatsCounter end={countryData.stats.chapters} />
-            </div>
-            <div class="text-muted fw-semibold">Local Chapters</div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="stat-card text-center p-4 h-100">
-            <i class="fas fa-trophy fa-3x mb-3" style="color: #FFC107;"></i>
-            <div class="display-4 fw-bold mb-2" style="color: #FFC107;">
-              <StatsCounter end={countryData.stats.victories} />
-            </div>
-            <div class="text-muted fw-semibold">Victories</div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="stat-card text-center p-4 h-100">
-            <i class="fas fa-flag fa-3x mb-3" style="color: #B31942;"></i>
-            <div class="display-4 fw-bold mb-2" style="color: #B31942;">{countryData.code}</div>
-            <div class="text-muted fw-semibold">Country Code</div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <nav class="tab-strip" aria-label="Dossier sections">
+    <a href="#figures">FIGURES</a>
+    <a href="#personnel">PERSONNEL</a>
+    <a href="#outcomes">OUTCOMES</a>
+    <a href="#proceedings">PROCEEDINGS</a>
+    <a href="#case-files">CASE FILES</a>
+    <a href="#inquiries">INQUIRIES</a>
+    <a href="#records">RECORDS</a>
+  </nav>
 
-    <!-- Regional Director Leadership Card -->
-    {countryData.regionalDirector && (
-      <section class="mb-5">
-        <h2 class="mb-4">Regional Leadership</h2>
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-md-8">
-                <h3 class="card-title h4">{countryData.regionalDirector.name}</h3>
-                <p class="text-muted mb-3">{countryData.regionalDirector.title}</p>
-                <p class="mb-0">
-                  Leading AARBAA's advocacy efforts across {countryData.name}, coordinating {countryData.stats.chapters} regional chapters and representing the interests of {countryData.stats.members.toLocaleString()} members.
-                </p>
-              </div>
-              <div class="col-md-4 mt-3 mt-md-0">
-                <div class="d-grid gap-2">
-                  <a href={`mailto:${countryData.regionalDirector.email}`} class="btn btn-primary">
-                    <i class="bi bi-envelope me-2"></i>Email
-                  </a>
-                  <a href={`tel:${countryData.regionalDirector.phone}`} class="btn btn-outline-primary">
-                    <i class="bi bi-telephone me-2"></i>{countryData.regionalDirector.phone}
-                  </a>
-                </div>
-              </div>
-            </div>
+  <section id="figures" class="doc-section file-section" aria-labelledby="figures-head">
+    <div class="section-head">
+      <p class="kicker">QUARTERLY FIGURES · DOCKET NO. {docket}</p>
+      <h2 id="figures-head">{country.name.toUpperCase()} ROAD SAFETY DATA</h2>
+    </div>
+    <StatLedger stats={deskStats} />
+
+    {
+      country.localStats && (
+        <div class="figures-ledger">
+          <div class="figures-ledger__row">
+            <span class="figures-ledger__label">
+              CYCLING FATALITIES ({country.localStats.cyclingFatalities.year})
+            </span>
+            <span class="leaders" aria-hidden="true" />
+            <span class="figures-ledger__value">
+              {country.localStats.cyclingFatalities.count.toLocaleString()}
+            </span>
+            <span class="badge-tag">{country.localStats.cyclingFatalities.change}</span>
+          </div>
+          <div class="figures-ledger__row">
+            <span class="figures-ledger__label">INFRASTRUCTURE MILES — PROTECTED</span>
+            <span class="leaders" aria-hidden="true" />
+            <span class="figures-ledger__value">
+              {country.localStats.infrastructureMiles.protected.toLocaleString()}
+            </span>
+          </div>
+          <div class="figures-ledger__row">
+            <span class="figures-ledger__label">INFRASTRUCTURE MILES — UNPROTECTED</span>
+            <span class="leaders" aria-hidden="true" />
+            <span class="figures-ledger__value">
+              {country.localStats.infrastructureMiles.unprotected.toLocaleString()}
+            </span>
+          </div>
+          <div class="figures-ledger__row">
+            <span class="figures-ledger__label">INFRASTRUCTURE MILES — PLANNED</span>
+            <span class="leaders" aria-hidden="true" />
+            <span class="figures-ledger__value">
+              {country.localStats.infrastructureMiles.planned.toLocaleString()}
+            </span>
+          </div>
+          <div class="figures-ledger__row">
+            <span class="figures-ledger__label">
+              ROAD FUNDING SECURED — FISCAL YEAR {country.localStats.fundingSecured.year}
+            </span>
+            <span class="leaders" aria-hidden="true" />
+            <span class="figures-ledger__value">
+              {formatCurrency(
+                country.localStats.fundingSecured.amount,
+                country.localStats.fundingSecured.currency
+              )}
+            </span>
           </div>
         </div>
+      )
+    }
+
+    {
+      country.rating && (
+        <p class="satisfaction-line">
+          PUBLIC SATISFACTION INDEX: {country.rating.average.toFixed(1)} / 5 —{' '}
+          {country.rating.count.toLocaleString()} RESPONSES ON FILE
+        </p>
+      )
+    }
+  </section>
+
+  {
+    country.regionalDirector && (
+      <section id="personnel" class="doc-section file-section" aria-labelledby="personnel-head">
+        <div class="section-head">
+          <p class="kicker">PERSONNEL FILE · INTERNATIONAL LIAISON DIVISION</p>
+          <h2 id="personnel-head">REGIONAL LEADERSHIP</h2>
+        </div>
+        <div class="personnel-card">
+          <div class="personnel-card__row">
+            <span class="personnel-card__label">OFFICER IN CHARGE</span>
+            <span class="personnel-card__value">{country.regionalDirector.name}</span>
+          </div>
+          <div class="personnel-card__row">
+            <span class="personnel-card__label">TITLE OF RECORD</span>
+            <span class="personnel-card__value">{country.regionalDirector.title}</span>
+          </div>
+          <div class="personnel-card__row">
+            <span class="personnel-card__label">ELECTRONIC MAIL</span>
+            <span class="personnel-card__value">
+              <a href={`mailto:${country.regionalDirector.email}`}>
+                {country.regionalDirector.email}
+              </a>
+            </span>
+          </div>
+          <div class="personnel-card__row">
+            <span class="personnel-card__label">TELEPHONE</span>
+            <span class="personnel-card__value">{country.regionalDirector.phone}</span>
+          </div>
+        </div>
+        <p class="doc-note">
+          Leading AARBAA's advocacy efforts across {country.name}, coordinating{' '}
+          {country.stats.chapters} regional chapters and representing the interests of{' '}
+          {country.stats.members.toLocaleString()} members.
+        </p>
       </section>
-    )}
+    )
+  }
 
-    <!-- Rating Display -->
-    {countryData.rating && (
-      <section class="mb-5">
-        <div class="card shadow-sm border-warning">
-          <div class="card-body text-center">
-            <h3 class="h5 mb-3">Member Rating</h3>
-            <div class="mb-2">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <i class={`bi bi-star${i < Math.round(countryData.rating.average) ? '-fill' : ''} text-warning fs-4`}></i>
-              ))}
-            </div>
-            <div class="text-muted">
-              {countryData.rating.average.toFixed(1)} out of 5 based on {countryData.rating.count.toLocaleString()} reviews
-            </div>
-          </div>
+  {
+    country.testimonials && country.testimonials.length > 0 && (
+      <section class="doc-section file-section" aria-labelledby="comments-head">
+        <div class="section-head">
+          <p class="kicker">PUBLIC COMMENT RECORD · ENTERED WITHOUT OBJECTION</p>
+          <h2 id="comments-head">VOICES FROM {country.name.toUpperCase()}</h2>
         </div>
+        <CommentLedger
+          entries={country.testimonials.map((t) => ({
+            quote: t.quote,
+            name: t.author,
+            location: t.city,
+          }))}
+        />
       </section>
-    )}
+    )
+  }
 
-    <!-- Testimonials Section -->
-    {countryData.testimonials && countryData.testimonials.length > 0 && (
-      <section class="mb-5">
-        <h2 class="mb-4">Voices from {countryData.name}</h2>
-        <div class="row">
-          {countryData.testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              quote={testimonial.quote}
-              name={testimonial.author}
-              location={testimonial.city}
-              color={index % 3 === 0 ? '#0A3161' : index % 3 === 1 ? '#198754' : '#FFC107'}
-            />
+  {
+    country.featuredArticle && (
+      <section class="doc-section file-section" aria-labelledby="memo-head">
+        <div class="section-head">
+          <p class="kicker">FEATURED MEMORANDUM · RECORDS DIVISION</p>
+          <h2 id="memo-head">LATEST FROM {country.name.toUpperCase()}</h2>
+        </div>
+        <article class="memo-abstract">
+          <p class="memo-abstract__tag">FEATURED STORY</p>
+          <h3 class="memo-abstract__title">{country.featuredArticle.title}</h3>
+          <p class="memo-abstract__excerpt">{country.featuredArticle.excerpt}</p>
+          <p class="memo-abstract__sep">FULL TEXT: FILED UNDER SEPARATE COVER</p>
+        </article>
+      </section>
+    )
+  }
+
+  {
+    country.victories && country.victories.length > 0 && (
+      <section id="outcomes" class="doc-section file-section" aria-labelledby="outcomes-head">
+        <div class="section-head">
+          <p class="kicker">CASE OUTCOMES · CLOSED FILES</p>
+          <h2 id="outcomes-head">OUR VICTORIES IN {country.name.toUpperCase()}</h2>
+        </div>
+        <div class="outcomes">
+          {country.victories.slice(0, 3).map((victory, i) => (
+            <article class="outcome">
+              <div class="outcome__stamp">
+                <Stamp text="RESOLVED" animated={i === 0} rotate={i === 0 ? -6 : i === 1 ? 3 : -3} />
+              </div>
+              <div class="outcome__meta">
+                <span class="badge-tag">{victory.category.toUpperCase()}</span>
+                <span class="outcome__date">{formatDate(victory.date)}</span>
+                <span class="outcome__location">{victory.location.toUpperCase()}</span>
+              </div>
+              <h3 class="outcome__title">{victory.title}</h3>
+              <p class="outcome__desc">{victory.description}</p>
+              <div class="outcome__impact">
+                <span class="outcome__impact-label">IMPACT:</span>
+                <p>{victory.impact}</p>
+              </div>
+            </article>
           ))}
         </div>
+        {extraOutcomes > 0 && <p class="doc-more">+{extraOutcomes} ADDITIONAL OUTCOMES ON FILE</p>}
       </section>
-    )}
+    )
+  }
 
-    <!-- Featured Article -->
-    {countryData.featuredArticle && (
-      <section class="mb-5">
-        <h2 class="mb-4">Latest from {countryData.name}</h2>
-        <div class="card shadow-sm border-primary">
-          <div class="card-body">
-            <span class="badge bg-primary mb-2">Featured Story</span>
-            <h3 class="card-title h4">{countryData.featuredArticle.title}</h3>
-            <p class="card-text">{countryData.featuredArticle.excerpt}</p>
-            <a href={countryData.featuredArticle.link} class="btn btn-primary">
-              Read Full Article <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-          </div>
+  {
+    country.upcomingEvents && country.upcomingEvents.length > 0 && (
+      <section
+        id="proceedings"
+        class="doc-section file-section"
+        aria-labelledby="proceedings-head"
+      >
+        <div class="section-head">
+          <p class="kicker">SCHEDULED PROCEEDINGS · PUBLIC NOTICE</p>
+          <h2 id="proceedings-head">UPCOMING EVENTS</h2>
+        </div>
+        <div class="proceedings">
+          {country.upcomingEvents.map((event) => {
+            const concluded = new Date(event.date) < now;
+            return (
+              <article class="proceeding">
+                <div class="proceeding__meta">
+                  <p>
+                    <span class="proceeding__label">DATE</span>
+                    {formatDateRange(event.date, event.endDate).toUpperCase()}
+                  </p>
+                  <p>
+                    <span class="proceeding__label">TIME</span>
+                    {event.time}
+                  </p>
+                  <p>
+                    <span class="proceeding__label">VENUE</span>
+                    {event.venue}
+                  </p>
+                  <p>
+                    <span class="proceeding__label">ADDRESS</span>
+                    {event.address}, {event.city}
+                  </p>
+                </div>
+                <div class="proceeding__body">
+                  <div class="proceeding__head">
+                    <h3>{event.name}</h3>
+                    <span class="badge-tag">{event.eventType.toUpperCase()}</span>
+                  </div>
+                  <p class="proceeding__desc">{event.description}</p>
+                  {concluded ? (
+                    <p class="proceeding__note">PROCEEDINGS CONCLUDED — MINUTES ON FILE</p>
+                  ) : event.registrationRequired ? (
+                    <p class="proceeding__note">REGISTRATION REQUIRED — FORM AAR-101</p>
+                  ) : null}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
-    )}
+    )
+  }
 
-    <!-- FAQs Section -->
-    {countryData.faqs && countryData.faqs.length > 0 && (
-      <section class="mb-5">
-        <h2 class="mb-4">Frequently Asked Questions</h2>
-        <div class="accordion" id="faqAccordion">
-          {countryData.faqs.map((faq, index) => (
-            <div class="accordion-item">
-              <h3 class="accordion-header" id={`heading${index}`}>
-                <button
-                  class={`accordion-button ${index !== 0 ? 'collapsed' : ''}`}
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target={`#collapse${index}`}
-                  aria-expanded={index === 0 ? 'true' : 'false'}
-                  aria-controls={`collapse${index}`}
-                >
-                  {faq.question}
-                </button>
-              </h3>
-              <div
-                id={`collapse${index}`}
-                class={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
-                aria-labelledby={`heading${index}`}
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body">
-                  {faq.answer}
-                </div>
-              </div>
-            </div>
-          ))}
+  {
+    country.infrastructureIssues && country.infrastructureIssues.length > 0 && (
+      <section id="case-files" class="doc-section file-section" aria-labelledby="cases-head">
+        <div class="section-head">
+          <p class="kicker">INFRASTRUCTURE CASE FILES · OPEN MATTERS</p>
+          <h2 id="cases-head">INFRASTRUCTURE ISSUES WE'RE ADDRESSING</h2>
         </div>
-      </section>
-    )}
-
-    <!-- Upcoming Events -->
-    {countryData.upcomingEvents && countryData.upcomingEvents.length > 0 && (
-      <section class="mb-5">
-        <h2 class="mb-4">Upcoming Events</h2>
-        <div class="row g-4">
-          {countryData.upcomingEvents.map((event) => (
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 shadow-sm">
-                <div class="card-header">
-                  <span class={`badge ${getEventTypeBadge(event.eventType)}`}>
-                    {event.eventType.charAt(0).toUpperCase() + event.eventType.slice(1)}
-                  </span>
-                  {event.registrationRequired && (
-                    <span class="badge bg-secondary ms-2">Registration Required</span>
-                  )}
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">{event.name}</h3>
-                  <div class="mb-3">
-                    <div class="text-muted mb-1">
-                      <i class="bi bi-calendar me-2"></i>
-                      {formatDateRange(event.date, event.endDate)}
-                    </div>
-                    <div class="text-muted mb-1">
-                      <i class="bi bi-clock me-2"></i>
-                      {event.time}
-                    </div>
-                    <div class="text-muted mb-1">
-                      <i class="bi bi-geo-alt me-2"></i>
-                      {event.venue}, {event.city}
-                    </div>
-                  </div>
-                  <p class="card-text small">{event.description}</p>
-                </div>
+        <div class="case-files">
+          {country.infrastructureIssues.map((issue) => (
+            <article class="case-file">
+              <div class="case-file__tags">
+                <span class="badge-tag">{issue.severity.toUpperCase()} PRIORITY</span>
+                <span class="badge-tag">{issue.status.replace('-', ' ').toUpperCase()}</span>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    )}
-
-    <!-- Victories Section -->
-    {countryData.victories && countryData.victories.length > 0 && (
-      <section class="mb-5">
-        <h2 class="mb-4">Our Victories in {countryData.name}</h2>
-        <div class="row g-4">
-          {countryData.victories.slice(0, 6).map((victory) => (
-            <div class="col-md-6">
-              <div class="card h-100 shadow-sm border-start border-success border-4">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-start mb-2">
-                    <span class={`badge ${getCategoryBadge(victory.category)}`}>
-                      {victory.category.charAt(0).toUpperCase() + victory.category.slice(1)}
-                    </span>
-                    <small class="text-muted">{new Date(victory.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</small>
-                  </div>
-                  <h3 class="card-title h5">{victory.title}</h3>
-                  <p class="card-text small">{victory.description}</p>
-                  <div class="mt-3">
-                    <strong class="text-success">Impact:</strong>
-                    <p class="mb-0 small">{victory.impact}</p>
-                  </div>
-                  <div class="mt-2">
-                    <i class="bi bi-geo-alt me-1 text-muted"></i>
-                    <small class="text-muted">{victory.location}</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    )}
-
-    <!-- Infrastructure Issues -->
-    {countryData.infrastructureIssues && countryData.infrastructureIssues.length > 0 && (
-      <section class="mb-5">
-        <h2 class="mb-4">Infrastructure Issues We're Addressing</h2>
-        <div class="row g-4">
-          {countryData.infrastructureIssues.map((issue) => (
-            <div class="col-lg-6">
-              <div class="card h-100 shadow-sm">
-                <div class="card-header">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <span class={`badge ${getSeverityBadge(issue.severity)}`}>
-                      {issue.severity.toUpperCase()}
-                    </span>
-                    <span class={`badge ${getStatusBadge(issue.status)}`}>
-                      {issue.status.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
-                    </span>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">{issue.title}</h3>
-                  <p class="card-text">{issue.description}</p>
-
-                  <div class="mt-3">
-                    <strong>Affected Areas:</strong>
-                    <p class="mb-2">{issue.affectedCities.join(', ')}</p>
-                  </div>
-
-                  <div class="alert alert-info mb-2">
-                    <strong>Proposed Solution:</strong>
-                    <p class="mb-0 small">{issue.proposedSolution}</p>
-                  </div>
-
-                  <small class="text-muted">
-                    <i class="bi bi-clock me-1"></i>
-                    Last updated: {new Date(issue.lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                  </small>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    )}
-
-    <!-- Local Statistics -->
-    {countryData.localStats && (
-      <section class="mb-5">
-        <h2 class="mb-4">{countryData.name} Road Safety Data</h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card shadow-sm h-100">
-              <div class="card-body text-center">
-                <i class="bi bi-exclamation-triangle text-danger fs-1 mb-3"></i>
-                <h3 class="h2 mb-2">{countryData.localStats.cyclingFatalities.count}</h3>
-                <p class="text-muted mb-2">Cycling Fatalities ({countryData.localStats.cyclingFatalities.year})</p>
-                <span class={`badge ${countryData.localStats.cyclingFatalities.change.includes('+') ? 'bg-danger' : 'bg-success'}`}>
-                  {countryData.localStats.cyclingFatalities.change}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card shadow-sm h-100">
-              <div class="card-body">
-                <i class="bi bi-signpost-split text-primary fs-1 mb-3 d-block text-center"></i>
-                <h3 class="h5 mb-3 text-center">Infrastructure Miles</h3>
-                <div class="mb-2">
-                  <div class="d-flex justify-content-between">
-                    <span>Protected:</span>
-                    <strong>{countryData.localStats.infrastructureMiles.protected.toLocaleString()}</strong>
-                  </div>
-                </div>
-                <div class="mb-2">
-                  <div class="d-flex justify-content-between">
-                    <span>Unprotected:</span>
-                    <strong>{countryData.localStats.infrastructureMiles.unprotected.toLocaleString()}</strong>
-                  </div>
+              <h3 class="case-file__title">{issue.title}</h3>
+              <p class="case-file__desc">{issue.description}</p>
+              <dl class="case-file__details">
+                <div>
+                  <dt>LOCATION</dt>
+                  <dd>{issue.location}</dd>
                 </div>
                 <div>
-                  <div class="d-flex justify-content-between">
-                    <span>Planned:</span>
-                    <strong>{countryData.localStats.infrastructureMiles.planned.toLocaleString()}</strong>
-                  </div>
+                  <dt>AFFECTED AREAS</dt>
+                  <dd>{issue.affectedCities.join(', ')}</dd>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card shadow-sm h-100">
-              <div class="card-body text-center">
-                <i class="bi bi-cash-coin text-success fs-1 mb-3"></i>
-                <h3 class="h2 mb-2">{formatCurrency(countryData.localStats.fundingSecured.amount, countryData.localStats.fundingSecured.currency)}</h3>
-                <p class="text-muted mb-0">Road Funding Secured</p>
-                <small class="text-muted">Fiscal Year {countryData.localStats.fundingSecured.year}</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    )}
-
-    <!-- Photo Gallery -->
-    {countryData.photoGallery && countryData.photoGallery.length > 0 && (
-      <section class="mb-5">
-        <h2 class="mb-4">Photo Gallery</h2>
-        <div class="row g-3">
-          {countryData.photoGallery.map((photo, index) => (
-            <div class="col-md-6 col-lg-3">
-              <div class="card h-100 shadow-sm">
-                <img
-                  src={photo.url}
-                  alt={photo.alt}
-                  class="card-img-top"
-                  style="height: 200px; object-fit: cover; cursor: pointer;"
-                  data-bs-toggle="modal"
-                  data-bs-target={`#photoModal${index}`}
-                  loading="lazy"
-                />
-                <div class="card-body p-2">
-                  <p class="card-text small mb-0"><strong>{photo.title}</strong></p>
-                  <p class="card-text small text-muted">{photo.caption}</p>
-                  <span class={`badge ${photo.category === 'victory' ? 'bg-success' : photo.category === 'event' ? 'bg-primary' : 'bg-secondary'}`}>
-                    {photo.category}
-                  </span>
+                <div>
+                  <dt>PROPOSED SOLUTION</dt>
+                  <dd>{issue.proposedSolution}</dd>
                 </div>
-              </div>
-
-              <!-- Photo Modal -->
-              <div class="modal fade" id={`photoModal${index}`} tabindex="-1">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">{photo.title}</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <img src={photo.url} alt={photo.alt} class="img-fluid" />
-                      <p class="mt-3">{photo.caption}</p>
-                    </div>
-                  </div>
+                <div>
+                  <dt>LAST UPDATED</dt>
+                  <dd>{formatDate(issue.lastUpdated)}</dd>
                 </div>
-              </div>
-            </div>
+              </dl>
+            </article>
           ))}
         </div>
       </section>
-    )}
+    )
+  }
 
-    <!-- Join/Contact Section -->
-    <section class="mb-5">
-      <div class="card shadow-lg">
-        <div class="card-body p-5">
-          <h2 class="text-center mb-4">Join AARBAA {countryData.name}</h2>
-          <p class="text-center mb-4">
-            Be part of our growing movement of {countryData.stats.members.toLocaleString()} members across {countryData.stats.chapters} chapters in {countryData.name}. Together, we're advocating for balanced transportation policy and motorists' rights.
-          </p>
-          <ContactForm prefilledLocation={`${countryData.name} - International`} />
+  {
+    country.faqs && country.faqs.length > 0 && (
+      <section id="inquiries" class="doc-section file-section" aria-labelledby="inquiries-head">
+        <div class="section-head">
+          <p class="kicker">PUBLIC COUNTER · RESPONSES PREPARED IN ADVANCE</p>
+          <h2 id="inquiries-head">FREQUENTLY FILED INQUIRIES</h2>
         </div>
-      </div>
-    </section>
+        <div class="inquiries">
+          {country.faqs.map((faq, i) => (
+            <details class="details-folder" open={i === 0}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )
+  }
 
-    <!-- Additional Resources -->
-    <section class="mb-5">
-      <h2 class="mb-4">Additional Resources</h2>
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h3 class="h5 card-title">
-                <i class="bi bi-newspaper me-2 text-primary"></i>
-                News & Updates
-              </h3>
-              <p class="card-text">Stay informed about our latest advocacy efforts and victories.</p>
-              <a href="/news" class="btn btn-sm btn-outline-primary">View All News</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h3 class="h5 card-title">
-                <i class="bi bi-flag me-2 text-success"></i>
-                US State Chapters
-              </h3>
-              <p class="card-text">Explore our network of state chapters across the United States.</p>
-              <a href="/chapters" class="btn btn-sm btn-outline-success">View State Chapters</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h3 class="h5 card-title">
-                <i class="bi bi-globe me-2 text-info"></i>
-                Other Countries
-              </h3>
-              <p class="card-text">See our international presence and advocacy work worldwide.</p>
-              <a href="/countries" class="btn btn-sm btn-outline-info">View All Countries</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+  <section id="records" class="doc-section file-section" aria-labelledby="records-head">
+    <div class="section-head">
+      <p class="kicker">PHOTOGRAPHIC RECORDS · EVIDENCE LOCKER</p>
+      <h2 id="records-head">PHOTO GALLERY</h2>
+    </div>
+    <PendingRecords docket={docket} count={4} />
+  </section>
+
+  <section class="doc-section file-section" aria-labelledby="join-head">
+    <div class="section-head">
+      <p class="kicker">FILE A REQUEST · FORM AAR-101</p>
+      <h2 id="join-head">JOIN AARBAA {country.name.toUpperCase()}</h2>
+    </div>
+    <p class="doc-copy">
+      Be part of our growing movement of {country.stats.members.toLocaleString()} members across
+      {country.stats.chapters} chapters in {country.name}. Together, we're advocating for balanced
+      transportation policy and motorists' rights.
+    </p>
+    <p class="routing-hint">
+      INTERNATIONAL CORRESPONDENCE IS ROUTED VIA THE NEAREST U.S. FIELD OFFICE
+    </p>
+    <ContactForm formNumber="AAR-101" />
+  </section>
+
+  <section class="doc-section file-section" aria-labelledby="xref-head">
+    <div class="section-head">
+      <p class="kicker">CROSS-REFERENCES · RECORDS RETENTION SCHEDULE 7</p>
+      <h2 id="xref-head">ADDITIONAL RESOURCES</h2>
+    </div>
+    <ul class="xref-list">
+      <li><a class="crossref" href="/news">SEE: OFFICIAL RECORDS — MEMORANDA LOG — /news</a></li>
+      <li>
+        <a class="crossref" href="/chapters">
+          SEE: DIRECTORY OF FIELD OFFICES (US) — /chapters
+        </a>
+      </li>
+      <li>
+        <a class="crossref" href="/countries">
+          SEE: INTERNATIONAL LIAISON OFFICES — /countries
+        </a>
+      </li>
+    </ul>
+  </section>
 </MainLayout>
 
 <style>
-  .stat-card {
-    background: white;
-    border: 2px solid #e8e8e8;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  .dossier-crossref {
+    margin: var(--s4) 0 var(--s3);
   }
 
-  .stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(10, 49, 97, 0.15);
-    border-color: #0A3161;
+  .tab-strip {
+    margin-bottom: var(--s3);
   }
 
-  .stat-card i {
-    transition: transform 0.3s ease;
+  .doc-section {
+    position: relative;
+    padding: var(--s6) 0;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: var(--s6);
   }
 
-  .stat-card:hover i {
-    transform: scale(1.1);
+  .doc-section:first-of-type {
+    border-top: 0;
   }
 
-  .card {
-    transition: transform 0.2s ease;
+  .section-head {
+    margin-bottom: var(--s4);
   }
 
-  .card:hover {
-    transform: translateY(-2px);
+  .figures-ledger {
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: var(--s2) var(--s4);
+    margin-top: var(--s4);
   }
 
-  .accordion-button:not(.collapsed) {
-    background-color: #e7f1ff;
-    color: #0a58ca;
+  .figures-ledger__row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--s2);
+    padding: var(--s3) 0;
+    border-bottom: 1px solid var(--rule);
   }
 
-  .modal-body img {
-    max-width: 100%;
-    height: auto;
+  .figures-ledger__row:last-child {
+    border-bottom: 0;
+  }
+
+  .figures-ledger__label {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.04em;
+  }
+
+  .figures-ledger__value {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--fs-lg);
+    letter-spacing: 0.04em;
+  }
+
+  .satisfaction-line {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin-top: var(--s4);
+  }
+
+  .personnel-card {
+    border: 2px solid var(--ink);
+    background: var(--paper-raised);
+    max-width: 760px;
+  }
+
+  .personnel-card__row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .personnel-card__row:last-child {
+    border-bottom: 0;
+  }
+
+  .personnel-card__label {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    padding: var(--s3);
+    border-right: 1px solid var(--rule);
+  }
+
+  .personnel-card__value {
+    padding: var(--s3);
+    overflow-wrap: anywhere;
+  }
+
+  .personnel-card__value a {
+    color: var(--glory-red);
+  }
+
+  .doc-note {
+    margin-top: var(--s4);
+    max-width: var(--measure);
+  }
+
+  .memo-abstract {
+    border: 1px solid var(--ink);
+    background: var(--paper-raised);
+    box-shadow: var(--shadow-sheet);
+    padding: var(--s5);
+    max-width: 760px;
+  }
+
+  .memo-abstract__tag {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.14em;
+    color: var(--glory-red);
+    margin-bottom: var(--s2);
+  }
+
+  .memo-abstract__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--fs-xl);
+    line-height: 1.15;
+    margin-bottom: var(--s3);
+  }
+
+  .memo-abstract__excerpt {
+    max-width: var(--measure);
+    margin-bottom: var(--s4);
+  }
+
+  .memo-abstract__sep {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    border-top: 1px dashed var(--rule);
+    padding-top: var(--s3);
+  }
+
+  .outcomes {
+    display: grid;
+    gap: var(--s4);
+  }
+
+  .outcome {
+    position: relative;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: var(--s5);
+    padding-right: calc(var(--s5) + 8rem);
+  }
+
+  .outcome__stamp {
+    position: absolute;
+    top: var(--s3);
+    right: var(--s3);
+  }
+
+  .outcome__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--s3);
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s3);
+  }
+
+  .outcome__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--fs-lg);
+    line-height: 1.15;
+    margin-bottom: var(--s3);
+  }
+
+  .outcome__desc {
+    max-width: var(--measure);
+    margin-bottom: var(--s4);
+  }
+
+  .outcome__impact {
+    border-left: 3px solid var(--glory-red);
+    padding: var(--s2) var(--s3);
+  }
+
+  .outcome__impact-label {
+    display: block;
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--glory-red);
+    margin-bottom: var(--s1);
+  }
+
+  .outcome__impact p {
+    font-size: var(--fs-sm);
+    max-width: var(--measure);
+  }
+
+  .doc-more {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.08em;
+    margin-top: var(--s4);
+  }
+
+  .proceedings {
+    display: grid;
+    gap: var(--s4);
+  }
+
+  .proceeding {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .proceeding__meta {
+    display: grid;
+    gap: var(--s3);
+    align-content: start;
+    padding: var(--s4);
+    border-right: 1px solid var(--rule);
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+  }
+
+  .proceeding__label {
+    display: block;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s1);
+  }
+
+  .proceeding__body {
+    padding: var(--s4);
+  }
+
+  .proceeding__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s3);
+    margin-bottom: var(--s3);
+  }
+
+  .proceeding__head h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--fs-lg);
+    line-height: 1.15;
+  }
+
+  .proceeding__desc {
+    max-width: var(--measure);
+  }
+
+  .proceeding__note {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.06em;
+    color: var(--glory-red);
+    border-top: 1px dashed var(--rule);
+    padding-top: var(--s3);
+    margin-top: var(--s3);
+  }
+
+  .case-files {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+    gap: var(--s4);
+  }
+
+  .case-file {
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: var(--s4);
+  }
+
+  .case-file__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s2);
+    margin-bottom: var(--s3);
+  }
+
+  .case-file__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--fs-lg);
+    line-height: 1.15;
+    margin-bottom: var(--s2);
+  }
+
+  .case-file__desc {
+    font-size: var(--fs-sm);
+  }
+
+  .case-file__details {
+    display: grid;
+    gap: var(--s3);
+    border-top: 1px solid var(--rule);
+    margin-top: var(--s3);
+    padding-top: var(--s3);
+  }
+
+  .case-file__details dt {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s1);
+  }
+
+  .case-file__details dd {
+    margin: 0;
+    font-size: var(--fs-sm);
+  }
+
+  .inquiries {
+    display: grid;
+    gap: var(--s2);
+    max-width: 860px;
+  }
+
+  .doc-copy {
+    max-width: var(--measure);
+    font-size: var(--fs-md);
+    line-height: 1.8;
+    margin-bottom: var(--s3);
+  }
+
+  .routing-hint {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    border: 1px dashed var(--rule);
+    padding: var(--s3);
+    margin-bottom: var(--s4);
+    max-width: 760px;
+  }
+
+  .xref-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--s2);
+  }
+
+  @media (max-width: 760px) {
+    .doc-section {
+      padding: var(--s5) 0;
+    }
+
+    .personnel-card__row {
+      grid-template-columns: 1fr;
+    }
+
+    .personnel-card__label {
+      border-right: 0;
+      padding-bottom: 0;
+    }
+
+    .outcome {
+      padding: var(--s4);
+      padding-top: calc(var(--s5) + 3rem);
+    }
+
+    .proceeding {
+      grid-template-columns: 1fr;
+    }
+
+    .proceeding__meta {
+      border-right: 0;
+      border-bottom: 1px solid var(--rule);
+    }
   }
 </style>

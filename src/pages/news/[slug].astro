@@ -1,0 +1,255 @@
+---
+// src/pages/news/[slug].astro
+// INTEROFFICE MEMORANDUM — one template renders all ten records at their original URLs.
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import Stamp from '../../components/Stamp.astro';
+import Figure from '../../components/Figure.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('news');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'news'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+// Date-sorted register (newest first) for adjacent-record cross-references.
+const filed = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const position = filed.findIndex((e) => e.id === entry.id);
+const newer = position > 0 ? filed[position - 1] : null;
+const older = position < filed.length - 1 ? filed[position + 1] : null;
+
+const dateLine = entry.data.date
+  .toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  })
+  .toUpperCase();
+
+// victory.jpg is an undersized frame; the Bureau attributes it honestly.
+const heroSource = entry.data.image.includes('victory.jpg')
+  ? 'FIELD CAMERA STILL — QUALITY DEGRADED'
+  : 'BUREAU ARCHIVES';
+
+const site = Astro.site ?? new URL('https://aarbaa.com');
+const articleLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: entry.data.title,
+  datePublished: entry.data.date.toISOString(),
+  image: new URL(entry.data.image, site).toString(),
+  publisher: {
+    '@type': 'Organization',
+    name: 'AARBAA',
+    logo: 'https://aarbaa.com/images/aarbaa-logo.svg',
+  },
+});
+---
+
+<MainLayout
+  title={`${entry.data.title} — AARBAA`}
+  description={entry.data.excerpt}
+  docket={entry.data.memoNo}
+  formNumber="MEMORANDUM"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={articleLd} />
+  </Fragment>
+
+  <nav class="crossref" aria-label="Records cross-reference">
+    <a href="/news">OFFICIAL RECORDS</a> / {entry.data.memoNo}
+  </nav>
+
+  <header class="memo-head file-section">
+    <p class="memo-kicker">BUREAU OF ROAD FAIRNESS — INTEROFFICE MEMORANDUM</p>
+    <dl class="memo-block">
+      <div class="memo-row">
+        <dt>TO:</dt>
+        <dd>{entry.data.to}</dd>
+      </div>
+      <div class="memo-row">
+        <dt>FROM:</dt>
+        <dd>{entry.data.from}</dd>
+      </div>
+      <div class="memo-row">
+        <dt>DATE:</dt>
+        <dd>{dateLine}</dd>
+      </div>
+      <div class="memo-row">
+        <dt>RE:</dt>
+        <dd>{entry.data.title.toUpperCase()}</dd>
+      </div>
+    </dl>
+    {
+      entry.data.stamp && (
+        <div class="memo-stamp">
+          <Stamp text={entry.data.stamp} rotate={-6} />
+        </div>
+      )
+    }
+  </header>
+
+  <h1 class="memo-title misregister">{entry.data.title}</h1>
+
+  <div class="file-section">
+    <Figure
+      src={entry.data.image}
+      alt={entry.data.imageAlt}
+      num="1"
+      eager
+      caption={entry.data.imageAlt.toUpperCase()}
+      source={heroSource}
+    />
+  </div>
+
+  <div class="prose file-section">
+    <Content />
+  </div>
+
+  <footer class="memo-end file-section">
+    <p class="memo-end__line">
+      END OF MEMORANDUM · {entry.data.memoNo} · DISTRIBUTION: ALL FIELD OFFICES
+    </p>
+    <nav class="memo-adjacent" aria-label="Adjacent records">
+      {
+        older && (
+          <a class="memo-adjacent__link" href={`/news/${older.id}`} rel="prev">
+            &larr; PREVIOUS ON FILE: {older.data.title}
+          </a>
+        )
+      }
+      {
+        newer && (
+          <a class="memo-adjacent__link memo-adjacent__link--next" href={`/news/${newer.id}`} rel="next">
+            NEXT ON FILE: {newer.data.title} &rarr;
+          </a>
+        )
+      }
+    </nav>
+  </footer>
+</MainLayout>
+
+<style>
+  /* Arrangement only — all pattern styling lives in global.css tokens. */
+  .memo-head {
+    position: relative;
+    margin: var(--s4) 0 var(--s5);
+    padding: var(--s4) 0;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .memo-kicker {
+    margin: 0 0 var(--s3);
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+  }
+
+  .memo-block {
+    margin: 0;
+    display: grid;
+    gap: var(--s2);
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    /* Clear the stamp that overlaps the header rule on wide screens. */
+    max-width: calc(100% - 10rem);
+  }
+
+  .memo-row {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: var(--s2);
+    padding-bottom: var(--s1);
+    border-bottom: 1px dotted var(--rule);
+  }
+
+  .memo-row dt {
+    font-weight: 700;
+  }
+
+  .memo-row dd {
+    margin: 0;
+  }
+
+  /* Grid-breaker: the stamp lands across the header's bottom rule. */
+  .memo-stamp {
+    position: absolute;
+    right: var(--s3);
+    bottom: calc(-1 * var(--s4));
+    z-index: 2;
+  }
+
+  .memo-title {
+    margin: 0 0 var(--s5);
+    font-family: var(--font-display);
+    font-size: var(--fs-title);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .memo-end {
+    margin-top: var(--s6);
+    border-top: 3px double var(--ink);
+    padding-top: var(--s3);
+  }
+
+  .memo-end__line {
+    margin: 0 0 var(--s4);
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+
+  .memo-adjacent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--s3);
+  }
+
+  .memo-adjacent__link {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    max-width: 32ch;
+  }
+
+  .memo-adjacent__link--next {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  @media (max-width: 720px) {
+    .memo-block {
+      max-width: 100%;
+    }
+
+    .memo-stamp {
+      position: static;
+      margin-top: var(--s3);
+      display: inline-block;
+    }
+
+    .memo-row {
+      grid-template-columns: 4.5rem 1fr;
+    }
+  }
+</style>

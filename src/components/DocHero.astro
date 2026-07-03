@@ -1,0 +1,146 @@
+---
+/**
+ * DocHero.astro — the document-title band. Consolidates and replaces
+ * PageHero + PageHeroOptimized. Navy-deep field inside the sheet; optional
+ * duotone image under the navy wash; optional red classification strip
+ * overlapping the top rule (grid-breaker); optional ghost text bleeding off
+ * the right edge (clipped on the band, never the page). H1 always carries the
+ * misregistration shadow. NO default background image — omitting `image`
+ * renders a solid navy field.
+ */
+interface Props {
+  title: string;
+  kicker?: string;
+  subtitle?: string;
+  classification?: string;
+  image?: string;
+  imageAlt?: string;
+  ghost?: string;
+  eager?: boolean;
+  /** Poster-scale H1 (home hero only) — --fs-poster, line-height .95. */
+  poster?: boolean;
+}
+
+const {
+  title,
+  kicker,
+  subtitle,
+  classification,
+  image,
+  imageAlt = '',
+  ghost,
+  eager = true,
+  poster = false,
+} = Astro.props;
+---
+
+<section class="doc-hero">
+  <div class="doc-hero__clip" aria-hidden="true">
+    {
+      image && (
+        <div class="doc-hero__media">
+          <img
+            src={image}
+            alt={imageAlt}
+            loading={eager ? 'eager' : 'lazy'}
+            fetchpriority={eager ? 'high' : undefined}
+            decoding="async"
+          />
+          <div class="doc-hero__wash" />
+        </div>
+      )
+    }
+    {ghost && <span class="ghost doc-hero__ghost">{ghost}</span>}
+  </div>
+
+  {classification && <span class="classification-strip doc-hero__strip">{classification}</span>}
+
+  <div class="doc-hero__content">
+    {kicker && <p class="kicker doc-hero__kicker">{kicker}</p>}
+    <h1 class:list={['misregister', { 'doc-hero__title--poster': poster }]}>{title}</h1>
+    {subtitle && <p class="doc-hero__subtitle">{subtitle}</p>}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .doc-hero {
+    position: relative;
+    background: var(--navy-deep);
+    color: var(--paper);
+    margin-bottom: var(--s5);
+  }
+
+  .doc-hero__clip {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .doc-hero__media {
+    position: absolute;
+    inset: 0;
+    background: var(--glory-blue);
+  }
+
+  .doc-hero__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.15) brightness(1.05);
+    mix-blend-mode: screen;
+  }
+
+  .doc-hero__wash {
+    position: absolute;
+    inset: 0;
+    background: var(--navy-wash);
+  }
+
+  .doc-hero__ghost {
+    position: absolute;
+    right: -0.08em;
+    bottom: -0.16em;
+    font-size: clamp(6rem, 20vw, 15rem);
+    -webkit-text-stroke-color: var(--paper);
+    opacity: 0.14;
+  }
+
+  .doc-hero__strip {
+    position: absolute;
+    top: 0;
+    left: clamp(var(--s4), 5vw, var(--s6));
+    transform: translateY(-45%) rotate(-2deg);
+    z-index: 3;
+  }
+
+  .doc-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: clamp(var(--s5), 7vw, var(--s7)) clamp(var(--s4), 5vw, var(--s6));
+  }
+
+  .doc-hero__content h1 {
+    font-size: var(--fs-title);
+    font-weight: 700;
+    margin: 0 0 var(--s3);
+    max-width: 18ch;
+  }
+
+  .doc-hero__content h1.doc-hero__title--poster {
+    font-size: var(--fs-poster);
+    line-height: 0.95;
+  }
+
+  .doc-hero__kicker {
+    color: var(--paper);
+  }
+
+  .doc-hero__subtitle {
+    max-width: var(--measure);
+    font-size: var(--fs-md);
+    margin: 0;
+    color: var(--paper);
+  }
+</style>

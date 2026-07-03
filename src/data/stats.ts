@@ -2,28 +2,23 @@
 export interface Stat {
   number: string;
   label: string;
-  icon: string;
 }
 
 export const stats: Stat[] = [
   {
     number: "15,000+",
-    label: "Members Nationwide",
-    icon: "fa-users"
+    label: "Members Nationwide"
   },
   {
     number: "47",
-    label: "Active Local Chapters",
-    icon: "fa-map-marker-alt"
+    label: "Active Local Chapters"
   },
   {
     number: "73%",
-    label: "Support Separate Bike Paths",
-    icon: "fa-thumbs-up"
+    label: "Support Separate Bike Paths"
   },
   {
     number: "124",
-    label: "Local Victories",
-    icon: "fa-trophy"
+    label: "Local Victories"
   }
 ];

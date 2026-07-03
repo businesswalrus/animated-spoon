@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Bureau of Road Fairness — simplified seal. Hexes are intentional: favicons cannot read CSS custom properties. -->
+  <circle cx="32" cy="32" r="32" fill="#041E42"/>
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#F5F2E9" stroke-width="2"/>
+  <!-- crossed road bars -->
+  <g fill="#F5F2E9">
+    <rect x="9" y="28.5" width="46" height="7" transform="rotate(45 32 32)"/>
+    <rect x="9" y="28.5" width="46" height="7" transform="rotate(-45 32 32)"/>
+  </g>
+  <!-- sedan silhouette -->
+  <g fill="#B31942" stroke="#F5F2E9" stroke-width="1">
+    <path d="M14 38v-7l7-2 5-7h12l5 7 7 2v7z"/>
+    <circle cx="23" cy="40" r="4"/>
+    <circle cx="41" cy="40" r="4"/>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+---
+/**
+ * CommentLedger.astro — PUBLIC COMMENT RECORD. Horizontal scroll-snap ledger
+ * of testimonials with red Courier case numbers. Ink on paper only; no JS
+ * carousel. Replaces TestimonialCard and its twelve rainbow hex accents.
+ */
+interface Props {
+  title?: string;
+  entries: { quote: string; name: string; location: string }[];
+}
+
+const { title = 'PUBLIC COMMENT RECORD', entries } = Astro.props;
+---
+
+<div class="comment-record">
+  <p class="comment-record__title">
+    {title} · {entries.length} {entries.length === 1 ? 'ENTRY' : 'ENTRIES'} ON FILE
+  </p>
+  <div class="comment-ledger">
+    {
+      entries.map((entry, i) => (
+        <article class="comment-card">
+          <p class="comment-card__case">CASE NO. AAR-C-{String(i + 1).padStart(4, '0')}</p>
+          <blockquote class="comment-card__quote">
+            <p>&ldquo;{entry.quote}&rdquo;</p>
+          </blockquote>
+          <p class="comment-card__attrib">
+            {entry.name} — {entry.location}
+          </p>
+        </article>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .comment-record__title {
+    font-family: var(--font-type);
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: var(--s2);
+    margin: 0 0 var(--s3);
+  }
+</style>

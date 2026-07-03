@@ -1,0 +1,27 @@
+---
+/**
+ * PendingRecords.astro — the designed empty state for every missing gallery
+ * image. Renders no <img>, so nothing can 404.
+ *
+ * RUNNING GAG: the three-line wording below is identical everywhere on the
+ * site and must never vary.
+ */
+interface Props {
+  docket: string;
+  count?: number;
+}
+
+const { docket, count = 4 } = Astro.props;
+---
+
+<div class="pending-records">
+  {
+    Array.from({ length: count }).map(() => (
+      <div class="pending-slot">
+        <span>PHOTOGRAPHIC RECORDS</span>
+        <span>PENDING DECLASSIFICATION</span>
+        <span class="pending-slot__ref">REF: {docket}</span>
+      </div>
+    ))
+  }
+</div>

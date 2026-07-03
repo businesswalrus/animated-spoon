@@ -1,274 +1,371 @@
 ---
-// src/pages/resources.astro
+// src/pages/resources.astro — PUBLIC READING ROOM
+// Filed as: READING ROOM INDEX · AAR-LIB · PUBLIC READING ROOM
 import MainLayout from '../layouts/MainLayout.astro';
-import SolutionCard from '../components/SolutionCard.astro';
+import DocHero from '../components/DocHero.astro';
+import Stamp from '../components/Stamp.astro';
+import Figure from '../components/Figure.astro';
+
+const circulars = [
+  {
+    no: 'CIRCULAR NO. AAR-C1',
+    title: 'DEDICATED BIKE PATHS',
+    description:
+      'The gold standard solution: physically separated paths that keep cyclists safe and traffic flowing.',
+    benefits: [
+      'Completely separates bikes from vehicle traffic',
+      'Provides safer experience for cyclists',
+      'Allows vehicles to maintain normal speed',
+      'Lower risk of accidents and road rage incidents',
+    ],
+  },
+  {
+    no: 'CIRCULAR NO. AAR-C2',
+    title: 'PROTECTED BIKE LANES',
+    description: "When separate paths aren't possible, protected lanes offer a compromise solution.",
+    benefits: [
+      'Physical barriers between bikes and cars',
+      'Clear delineation of space',
+      'Reduced risk of side-swipe accidents',
+      'Suitable for urban areas with space constraints',
+    ],
+  },
+  {
+    no: 'CIRCULAR NO. AAR-C3',
+    title: 'REGISTRATION SYSTEM',
+    description: 'Accountability on both sides of the road equation.',
+    benefits: [
+      'Identifiable information for cyclists',
+      'Revenue generation for bike infrastructure',
+      'Accountability for traffic violations',
+      'Insurance requirements for road use',
+    ],
+  },
+];
+
+const policyPublications = [
+  {
+    no: 'PUBLICATION AAR-P1',
+    format: 'PDF',
+    title: 'Model Cyclist Registration Ordinance',
+    description:
+      'A comprehensive template for local governments to implement bicycle registration and accountability systems.',
+  },
+  {
+    no: 'PUBLICATION AAR-P2',
+    format: 'PDF',
+    title: 'Traffic Flow Impact Report',
+    description:
+      'Data-driven analysis of how cyclists affect traffic speeds, congestion, and accident rates on shared roadways.',
+  },
+  {
+    no: 'PUBLICATION AAR-P3',
+    format: 'SPREADSHEET',
+    title: 'Cost-Benefit Analysis Tool',
+    description:
+      'Calculate the economic benefit of separating bicycle and vehicle traffic in your community with our spreadsheet tool.',
+  },
+];
+
+const merchandise = [
+  {
+    no: 'ITEM AAR-M1',
+    title: '"ROADS ARE FOR CARS" T-SHIRT',
+    price: '$19.99',
+    description: 'Our bold statement shirt, perfect for city council meetings and casual Fridays.',
+  },
+  {
+    no: 'ITEM AAR-M2',
+    title: 'BUMPER STICKER 3-PACK',
+    price: '$7.99',
+    description:
+      'Let the cyclist ahead know exactly how you feel with these weatherproof, removable stickers.',
+  },
+  {
+    no: 'ITEM AAR-M3',
+    title: 'AARBAA COFFEE MUG',
+    price: '$12.99',
+    description: 'Start your day with a reminder of the cause. 15oz ceramic mug with our slogan and logo.',
+  },
+];
+
+const instructional = [
+  {
+    no: 'MATERIAL AAR-E1',
+    format: 'VIDEO PRESENTATION — 12:34',
+    title: 'The Real Cost of Road Cycling',
+    description:
+      'Our most popular presentation breaks down the hidden costs of allowing bicycles on roads not designed for them.',
+  },
+  {
+    no: 'MATERIAL AAR-E2',
+    format: 'POWERPOINT & SPEAKER NOTES',
+    title: 'City Council Presentation Kit',
+    description:
+      'Everything you need to make your case at your next city council meeting. Includes data slides, talking points, and Q&A preparation.',
+  },
+];
 ---
 
-<MainLayout title="AARBAA Resources - Solutions & Merchandise">
-  <!-- Hero Section -->
-  <section class="text-center mt-5 pt-5" 
-    style="
-      padding-top: 100px !important;
-      background-color: #0A3161;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/protest.webp');
-      background-size: cover !important; 
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-      min-height: 500px;
-      color: white;
-      margin-top: 200px;
-      display: flex;
-      align-items: center;
-    ">
-    <div class="container py-5 my-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h1 class="display-4 fw-bold mb-4">Resources & Shop</h1>
-          <p class="lead mb-4">Solutions, merchandise, and tools for the anti-road-biker movement</p>
-        </div>
+<MainLayout
+  title="Public Reading Room — AARBAA"
+  description="Document index of the AARBAA Public Reading Room: circulars, policy publications, merchandise cross-references, and instructional materials on file with the Bureau of Road Fairness."
+  docket="AAR-LIB · PUBLIC READING ROOM"
+  formNumber="READING ROOM INDEX"
+>
+  <DocHero
+    image="/images/protest.webp"
+    imageAlt="Demonstrators holding signs at a road safety protest"
+    kicker="PUBLIC READING ROOM"
+    title="RESOURCES & PUBLICATIONS"
+    subtitle="Solutions, merchandise, and tools for the anti-road-biker movement"
+    classification="APPROVED FOR PUBLIC RELEASE"
+  />
+
+  <!-- INDEX HEADER -->
+  <section class="file-section index-head">
+    <div class="index-head__row">
+      <div class="section-head">
+        <p class="kicker">DOCUMENT INDEX — REV. 07/2026</p>
+        <h2>INFRASTRUCTURE SOLUTIONS</h2>
       </div>
+      <div class="index-head__stamp">
+        <Stamp text="PUBLIC COPY" variant="blue" rotate={-4} animated={false} />
+      </div>
+    </div>
+    <p class="index-lead">
+      At AARBAA, we're not just complaining—we're proposing real solutions that benefit everyone
+    </p>
+
+    <!-- SERIES 1 — CIRCULARS -->
+    <div class="reading-registry">
+      {circulars.map((circular) => (
+        <article class="rr-row">
+          <div class="rr-row__id">
+            <p class="rr-row__no">{circular.no}</p>
+            <p class="rr-row__rev">REV. 07/2026</p>
+          </div>
+          <div class="rr-row__body">
+            <h3>{circular.title}</h3>
+            <p>{circular.description}</p>
+            <ul class="rr-checklist">
+              {circular.benefits.map((benefit) => (
+                <li>{benefit}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
-  <!-- Solutions Section -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; color: #0A3161;">INFRASTRUCTURE SOLUTIONS</h2>
-          
-          <p class="lead text-center mb-5">At AARBAA, we're not just complaining—we're proposing real solutions that benefit everyone</p>
-          
-          <div class="row g-4">
-            <!-- Solution Card 1 -->
-            <SolutionCard 
-              title="DEDICATED BIKE PATHS" 
-              description="The gold standard solution: physically separated paths that keep cyclists safe and traffic flowing."
-              icon="road"
-              benefits={["Completely separates bikes from vehicle traffic", "Provides safer experience for cyclists", "Allows vehicles to maintain normal speed", "Lower risk of accidents and road rage incidents"]}
-              image="/images/Biking.jpg"
-              color="#0A3161"
-            />
-            
-            <!-- Solution Card 2 -->
-            <SolutionCard 
-              title="PROTECTED BIKE LANES" 
-              description="When separate paths aren't possible, protected lanes offer a compromise solution."
-              icon="shield-alt"
-              benefits={["Physical barriers between bikes and cars", "Clear delineation of space", "Reduced risk of side-swipe accidents", "Suitable for urban areas with space constraints"]}
-              image="/images/sternteacher.jpg"
-              color="#B31942"
-            />
-            
-            <!-- Solution Card 3 -->
-            <SolutionCard 
-              title="REGISTRATION SYSTEM" 
-              description="Accountability on both sides of the road equation."
-              icon="id-card"
-              benefits={["Identifiable information for cyclists", "Revenue generation for bike infrastructure", "Accountability for traffic violations", "Insurance requirements for road use"]}
-              image="/images/victory.jpg"
-              color="#0A3161"
-            />
+  <!-- SERIES 2 — POLICY PUBLICATIONS -->
+  <section class="file-section" aria-labelledby="policy-head">
+    <div class="section-head">
+      <p class="kicker">SERIES 2 — POLICY PUBLICATIONS</p>
+      <h2 id="policy-head">POLICY RESOURCES</h2>
+    </div>
+
+    <div class="reading-registry">
+      {policyPublications.map((publication) => (
+        <article class="rr-row">
+          <div class="rr-row__id">
+            <p class="rr-row__no">{publication.no}</p>
+            <p class="rr-row__rev">{publication.format}</p>
           </div>
-        </div>
-      </div>
+          <div class="rr-row__body">
+            <h3>{publication.title}</h3>
+            <p>{publication.description}</p>
+            <p class="rr-row__status">PENDING DECLASSIFICATION — NOT AVAILABLE FOR DOWNLOAD AT THIS TIME</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
-  <!-- Policy Resources Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; color: #B31942;">POLICY RESOURCES</h2>
-          
-          <div class="row g-4">
-            <!-- Resource Card 1 -->
-            <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm resource-card">
-                <div class="card-body">
-                  <div class="text-center mb-3">
-                    <i class="fas fa-file-pdf fa-3x" style="color: #B31942;"></i>
-                  </div>
-                  <h3 class="h5 text-center mb-3" style="font-family: 'Roboto Condensed', sans-serif;">Model Cyclist Registration Ordinance</h3>
-                  <p class="mb-4">A comprehensive template for local governments to implement bicycle registration and accountability systems.</p>
-                  <div class="text-center mt-auto">
-                    <a href="#" class="btn btn-outline-danger">Download PDF</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Resource Card 2 -->
-            <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm resource-card">
-                <div class="card-body">
-                  <div class="text-center mb-3">
-                    <i class="fas fa-chart-bar fa-3x" style="color: #B31942;"></i>
-                  </div>
-                  <h3 class="h5 text-center mb-3" style="font-family: 'Roboto Condensed', sans-serif;">Traffic Flow Impact Report</h3>
-                  <p class="mb-4">Data-driven analysis of how cyclists affect traffic speeds, congestion, and accident rates on shared roadways.</p>
-                  <div class="text-center mt-auto">
-                    <a href="#" class="btn btn-outline-danger">Download PDF</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Resource Card 3 -->
-            <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm resource-card">
-                <div class="card-body">
-                  <div class="text-center mb-3">
-                    <i class="fas fa-clipboard-list fa-3x" style="color: #B31942;"></i>
-                  </div>
-                  <h3 class="h5 text-center mb-3" style="font-family: 'Roboto Condensed', sans-serif;">Cost-Benefit Analysis Tool</h3>
-                  <p class="mb-4">Calculate the economic benefit of separating bicycle and vehicle traffic in your community with our spreadsheet tool.</p>
-                  <div class="text-center mt-auto">
-                    <a href="#" class="btn btn-outline-danger">Download Excel</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <!-- SERIES 3 — MERCHANDISE CROSS-REFERENCE -->
+  <section class="file-section" aria-labelledby="merch-head">
+    <div class="section-head">
+      <p class="kicker">SERIES 3 — MERCHANDISE CROSS-REFERENCE</p>
+      <h2 id="merch-head">AARBAA OFFICIAL MERCHANDISE</h2>
+    </div>
+
+    <div class="reading-registry">
+      {merchandise.map((item) => (
+        <article class="rr-row">
+          <div class="rr-row__id">
+            <p class="rr-row__no">{item.no}</p>
+            <p class="rr-row__rev">FEE: {item.price}</p>
           </div>
-        </div>
-      </div>
+          <div class="rr-row__body">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+            <a class="crossref" href="/shop">AVAILABLE VIA REQUISITION — SEE COMMISSARY</a>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
-  <!-- Merchandise Section -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; color: #0A3161;">AARBAA OFFICIAL MERCHANDISE</h2>
-          
-          <div class="row g-4">
-            <!-- Product Card 1 -->
-            <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm product-card">
-                <div style="height: 250px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-                  <div style="font-size: 8rem; color: #B31942; text-align: center;">
-                    <i class="fas fa-tshirt"></i>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="h5 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">"ROADS ARE FOR CARS" T-SHIRT</h3>
-                  <p class="card-text mb-3">Our bold statement shirt, perfect for city council meetings and casual Fridays.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <span class="fw-bold" style="font-size: 1.25rem; color: #0A3161;">$19.99</span>
-                    <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                  </div>
-                </div>
-              </div>
+  <!-- SERIES 4 — INSTRUCTIONAL MATERIALS -->
+  <section class="file-section" aria-labelledby="edu-head">
+    <div class="section-head">
+      <p class="kicker">SERIES 4 — INSTRUCTIONAL MATERIALS</p>
+      <h2 id="edu-head">EDUCATIONAL RESOURCES</h2>
+    </div>
+
+    <div class="edu-grid">
+      <div class="reading-registry">
+        {instructional.map((material) => (
+          <article class="rr-row">
+            <div class="rr-row__id">
+              <p class="rr-row__no">{material.no}</p>
+              <p class="rr-row__rev">{material.format}</p>
             </div>
-            
-            <!-- Product Card 2 -->
-            <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm product-card">
-                <div style="height: 250px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-                  <div style="font-size: 8rem; color: #B31942; text-align: center;">
-                    <i class="fas fa-car"></i>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="h5 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">BUMPER STICKER 3-PACK</h3>
-                  <p class="card-text mb-3">Let the cyclist ahead know exactly how you feel with these weatherproof, removable stickers.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <span class="fw-bold" style="font-size: 1.25rem; color: #0A3161;">$7.99</span>
-                    <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                  </div>
-                </div>
-              </div>
+            <div class="rr-row__body">
+              <h3>{material.title}</h3>
+              <p>{material.description}</p>
+              <a class="crossref" href="/contact">AVAILABLE ON REQUEST — FILE FORM AAR-101</a>
             </div>
-            
-            <!-- Product Card 3 -->
-            <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm product-card">
-                <div style="height: 250px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
-                  <div style="font-size: 8rem; color: #B31942; text-align: center;">
-                    <i class="fas fa-mug-hot"></i>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="h5 mb-2" style="font-family: 'Roboto Condensed', sans-serif;">AARBAA COFFEE MUG</h3>
-                  <p class="card-text mb-3">Start your day with a reminder of the cause. 15oz ceramic mug with our slogan and logo.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <span class="fw-bold" style="font-size: 1.25rem; color: #0A3161;">$12.99</span>
-                    <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="text-center mt-5">
-            <a href="#" class="btn btn-danger btn-lg px-5">View Full Shop</a>
-          </div>
-        </div>
+          </article>
+        ))}
       </div>
+
+      <Figure
+        src="/images/sternteacher.webp"
+        alt="A stern instructor standing before a chalkboard"
+        num="1"
+        caption="BUREAU-CERTIFIED INSTRUCTOR, PUBLIC EDUCATION DIVISION"
+        source="OFFICE OF PUBLIC AWARENESS"
+        tilt="right"
+        width={636}
+        height={900}
+      />
     </div>
   </section>
-
-  <!-- Educational Resources Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h2 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif; color: #B31942;">EDUCATIONAL RESOURCES</h2>
-          
-          <div class="row g-4">
-            <!-- Video Resource -->
-            <div class="col-md-6">
-              <div class="card h-100 border-0 shadow-sm">
-                <div style="height: 300px; background-color: #0A3161; display: flex; align-items: center; justify-content: center; color: white;">
-                  <div class="text-center">
-                    <i class="fas fa-play-circle fa-5x mb-3"></i>
-                    <h3 class="h5" style="font-family: 'Roboto Condensed', sans-serif;">The Real Cost of Road Cycling</h3>
-                    <p class="mb-0">Video Presentation - 12:34</p>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <p>Our most popular presentation breaks down the hidden costs of allowing bicycles on roads not designed for them.</p>
-                  <div class="text-center">
-                    <a href="#" class="btn btn-outline-danger">Watch Video</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Presentation Resource -->
-            <div class="col-md-6">
-              <div class="card h-100 border-0 shadow-sm">
-                <div style="height: 300px; background-color: #B31942; display: flex; align-items: center; justify-content: center; color: white;">
-                  <div class="text-center">
-                    <i class="fas fa-file-powerpoint fa-5x mb-3"></i>
-                    <h3 class="h5" style="font-family: 'Roboto Condensed', sans-serif;">City Council Presentation Kit</h3>
-                    <p class="mb-0">PowerPoint & Speaker Notes</p>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <p>Everything you need to make your case at your next city council meeting. Includes data slides, talking points, and Q&A preparation.</p>
-                  <div class="text-center">
-                    <a href="#" class="btn btn-outline-danger">Download Kit</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .resource-card, .product-card {
-      transition: all 0.3s ease;
-    }
-    
-    .resource-card:hover, .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
-    }
-  </style>
 </MainLayout>
+
+<style>
+  /* Page arrangement only — all pattern styling lives in global.css. */
+  section {
+    margin-block: var(--s6);
+  }
+
+  .index-head__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--s4);
+    flex-wrap: wrap;
+  }
+
+  .index-lead {
+    font-size: var(--fs-md);
+    color: var(--ink-soft);
+    max-width: var(--measure);
+    margin-block: var(--s3) var(--s4);
+  }
+
+  /* — Registry rows — */
+  .reading-registry {
+    border-top: 2px solid var(--ink);
+  }
+
+  .rr-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s3);
+    border-bottom: 1px solid var(--rule);
+    padding-block: var(--s4);
+  }
+
+  @media (min-width: 720px) {
+    .rr-row {
+      grid-template-columns: 13rem minmax(0, 1fr);
+      gap: var(--s5);
+    }
+  }
+
+  .rr-row__no {
+    font-family: var(--font-type);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    letter-spacing: 0.08em;
+  }
+
+  .rr-row__rev {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-top: var(--s1);
+  }
+
+  .rr-row__body h3 {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--s2);
+  }
+
+  .rr-row__body > p {
+    max-width: var(--measure);
+  }
+
+  .rr-row__status {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    border: 1px dashed var(--rule);
+    display: inline-block;
+    padding: var(--s1) var(--s2);
+    margin-top: var(--s3);
+  }
+
+  .rr-row__body .crossref {
+    display: inline-block;
+    margin-top: var(--s3);
+  }
+
+  /* — Courier checklist — */
+  .rr-checklist {
+    list-style: none;
+    padding: 0;
+    margin: var(--s3) 0 0 0;
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+  }
+
+  .rr-checklist li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: var(--s2);
+  }
+
+  .rr-checklist li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    top: 0.05rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 1px solid var(--ink-soft);
+    font-size: var(--fs-xs);
+    line-height: 1.1rem;
+    text-align: center;
+    color: var(--glory-blue);
+  }
+
+  /* — Educational materials + instructor evidence plate — */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s5);
+    align-items: start;
+  }
+
+  @media (min-width: 880px) {
+    .edu-grid {
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    }
+  }
+</style>

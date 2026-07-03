@@ -1,235 +1,336 @@
 ---
+// src/pages/thank-you.astro — FORM AAR-101-R · RECEIPT OF FILING
 import MainLayout from '../layouts/MainLayout.astro';
+import Stamp from '../components/Stamp.astro';
+import Figure from '../components/Figure.astro';
 
-const metaDescription = "Thank you for contacting AARBAA. We'll respond to your message within 24-48 hours.";
+const metaDescription =
+  'Receipt of filing issued by the Bureau of Road Fairness. Your correspondence has been received and assigned to the processing queue.';
 ---
 
 <MainLayout
-  title="Thank You - AARBAA"
+  title="Receipt of Filing — AARBAA"
   description={metaDescription}
+  docket="AAR-101-R · RECEIPTS"
+  formNumber="FORM AAR-101-R"
 >
-  <section class="thank-you-section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <div class="thank-you-card">
-            <!-- Success Icon -->
-            <div class="mb-4">
-              <div class="success-icon">
-                <i class="fas fa-check text-white" aria-hidden="true"></i>
-              </div>
-            </div>
+  <section class="file-section" aria-labelledby="receipt-heading">
+    <article class="receipt">
+      <!-- THE STAMP — one animated stamp per page; this is it -->
+      <div class="receipt__stamp">
+        <Stamp text="RECEIVED" variant="red" rotate={-5} label="Received" />
+      </div>
 
-            <!-- Thank You Message -->
-            <h1 class="display-4 fw-bold mb-4 text-primary-aarbaa">Thank You!</h1>
-            <p class="lead mb-4 text-dark">Your message has been received. We appreciate you taking the time to contact AARBAA.</p>
-            <p class="mb-5 text-muted">A member of our team will review your submission and get back to you within 24-48 hours.</p>
+      <header class="receipt__head">
+        <p class="kicker">FORM AAR-101-R — RECEIPT OF FILING</p>
+        <h1 id="receipt-heading" class="receipt__title">Thank You!</h1>
+        <p class="receipt__date">DATE OF RECEIPT: <span id="receiptDate">PENDING ENTRY</span></p>
+      </header>
 
-            <!-- Personal Message -->
-            <div id="personalMessage" class="personal-message">
-              <p class="mb-0"><strong>Thank you, <span id="userName"></span>!</strong> We've received your message and will respond to <span id="userEmail"></span> soon.</p>
-            </div>
+      <div class="receipt__body">
+        <p class="receipt__lead">
+          Your message has been received. We appreciate you taking the time to contact AARBAA.
+        </p>
+        <p class="receipt__note">
+          A member of our team will review your submission and get back to you within 24-48 hours.
+        </p>
 
-            <!-- Action Buttons -->
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-              <a href="/" class="btn btn-primary btn-lg px-5 btn-aarbaa-primary">
-                <i class="fas fa-home me-2" aria-hidden="true"></i>Return to Home
-              </a>
-              <a href="/news" class="btn btn-outline-danger btn-lg px-5">
-                <i class="fas fa-newspaper me-2" aria-hidden="true"></i>Read Latest News
-              </a>
-            </div>
+        <!-- PERSONALIZED RECEIPT SUMMARY — ids and behavior preserved verbatim -->
+        <div id="personalMessage" class="personal-message">
+          <p>
+            <strong>Thank you, <span id="userName"></span>!</strong> We've received your message and will
+            respond to <span id="userEmail"></span> soon.
+          </p>
+        </div>
 
-            <!-- Additional Resources -->
-            <div class="mt-5 pt-5 border-top">
-              <h2 class="h5 mb-4 text-primary-aarbaa">While You're Here...</h2>
-              <div class="row g-4">
-                <div class="col-md-4">
-                  <div class="resource-card text-center p-3">
-                    <i class="fas fa-users fa-3x mb-3 icon-red" aria-hidden="true"></i>
-                    <h3 class="h6">Join AARBAA</h3>
-                    <p class="small text-muted">Become part of our 15,000+ member community</p>
-                    <a href="/join" class="btn btn-sm btn-outline-danger">Join Now</a>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="resource-card text-center p-3">
-                    <i class="fas fa-share-alt fa-3x mb-3 icon-red" aria-hidden="true"></i>
-                    <h3 class="h6">Share Our Mission</h3>
-                    <p class="small text-muted">Help spread the word about road safety</p>
-                    <div class="social-share">
-                      <a href="#" class="social-link social-link-facebook" aria-label="Share on Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-                      <a href="#" class="social-link social-link-twitter" aria-label="Share on Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-                      <a href="#" class="social-link social-link-linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="resource-card text-center p-3">
-                    <i class="fas fa-envelope fa-3x mb-3 icon-red" aria-hidden="true"></i>
-                    <h3 class="h6">Newsletter</h3>
-                    <p class="small text-muted">Get updates on our latest campaigns</p>
-                    <a href="#" class="btn btn-sm btn-outline-danger">Subscribe</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- DOCKET ASSIGNMENT — entered by the clerk (client-side) on issuance -->
+        <p class="receipt__docket" id="docketLine" hidden></p>
+
+        <div class="receipt__actions">
+          <a class="btn btn--primary" href="/">Return to Home</a>
+          <a class="btn" href="/news">Read Latest News</a>
         </div>
       </div>
+
+      <!-- CROSS-REFERENCE CITATIONS -->
+      <footer class="receipt__more">
+        <h2 class="receipt__more-title">While You're Here...</h2>
+
+        <ul class="citations">
+          <li class="citation">
+            <h3 class="citation__title">Join AARBAA</h3>
+            <p class="citation__body">Become part of our 15,000+ member community</p>
+            <a class="crossref" href="/join">Join Now</a>
+          </li>
+          <li class="citation">
+            <h3 class="citation__title">Share Our Mission</h3>
+            <p class="citation__body">Help spread the word about road safety</p>
+            <button class="crossref citation__btn" id="shareBtn" type="button">Copy Citation</button>
+            <span class="citation__confirm" id="shareConfirm" hidden aria-live="polite"
+              >CITATION COPIED TO CLIPBOARD</span
+            >
+          </li>
+          <li class="citation">
+            <h3 class="citation__title">Newsletter</h3>
+            <p class="citation__body">Get updates on our latest campaigns</p>
+            <button class="crossref citation__btn" id="newsletterBtn" type="button">Subscribe</button>
+          </li>
+        </ul>
+      </footer>
+    </article>
+
+    <!-- EXHIBIT W — PUBLIC OUTREACH ILLUSTRATION -->
+    <div class="exhibit-w">
+      <Figure
+        src="/images/walrus-pennyfarthing.png"
+        alt="Illustration of a walrus in a pinstripe suit riding a penny-farthing bicycle"
+        num="W"
+        caption="PUBLIC OUTREACH ILLUSTRATION"
+        source="OFFICE OF CIVIC ENGAGEMENT"
+        tilt="right"
+        width={588}
+        height={441}
+      />
     </div>
   </section>
-
-  <style>
-    .thank-you-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background-color: #f8f9fa;
-      padding: 2rem 0;
-    }
-
-    .thank-you-card {
-      padding: 3rem;
-      background-color: white;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .success-icon {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: #28a745;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-      animation: scaleIn 0.5s ease-out;
-    }
-
-    .success-icon i {
-      font-size: 3rem;
-    }
-
-    @keyframes scaleIn {
-      0% {
-        transform: scale(0);
-        opacity: 0;
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    .text-primary-aarbaa {
-      color: #0A3161;
-    }
-
-    .btn-aarbaa-primary {
-      background-color: #0A3161;
-      border-color: #0A3161;
-    }
-
-    .btn-aarbaa-primary:hover {
-      background-color: #072040;
-      border-color: #072040;
-    }
-
-    .btn-aarbaa-primary:focus-visible {
-      outline: 3px solid #0A3161;
-      outline-offset: 3px;
-    }
-
-    .personal-message {
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      background-color: #f8f9fa;
-      border-left: 4px solid #B31942;
-      display: none;
-    }
-
-    .personal-message p {
-      color: #333;
-    }
-
-    .icon-red {
-      color: #B31942;
-    }
-
-    .resource-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 0.5rem;
-    }
-
-    .resource-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .social-share {
-      margin-top: 0.5rem;
-    }
-
-    .social-share .social-link {
-      transition: transform 0.2s ease;
-      display: inline-block;
-      margin: 0 0.5rem;
-      font-size: 1.25rem;
-    }
-
-    .social-share .social-link:hover {
-      transform: scale(1.2);
-    }
-
-    .social-link-linkedin {
-      color: #0e76a8;
-    }
-
-    @media (max-width: 768px) {
-      .thank-you-card {
-        padding: 2rem 1.5rem;
-      }
-
-      .success-icon {
-        width: 80px;
-        height: 80px;
-      }
-
-      .success-icon i {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
-
-  <script>
-    // Check if we have form data from the contact form
-    document.addEventListener('DOMContentLoaded', () => {
-      const formData = sessionStorage.getItem('contactFormData');
-
-      if (formData) {
-        try {
-          const data = JSON.parse(formData);
-          const personalMessage = document.getElementById('personalMessage');
-          const userName = document.getElementById('userName');
-          const userEmail = document.getElementById('userEmail');
-
-          if (data.name && data.email && personalMessage && userName && userEmail) {
-            userName.textContent = data.name;
-            userEmail.textContent = data.email;
-            personalMessage.style.display = 'block';
-          }
-
-          // Clear the data after displaying
-          sessionStorage.removeItem('contactFormData');
-        } catch (e) {
-          console.error('Error parsing form data:', e);
-        }
-      }
-    });
-  </script>
 </MainLayout>
+
+<style>
+  .file-section {
+    padding: var(--s6) 0;
+  }
+
+  .receipt {
+    position: relative;
+    max-width: 46rem;
+    margin: 0 auto;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    box-shadow: var(--shadow-sheet);
+    padding: var(--s5) var(--s5) var(--s4);
+  }
+
+  .receipt__stamp {
+    position: absolute;
+    top: var(--s3);
+    right: var(--s4);
+    z-index: 2;
+  }
+
+  .receipt__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-2xl);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: var(--s2) 0;
+  }
+
+  .receipt__date {
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: var(--s3);
+    margin: 0 0 var(--s4);
+  }
+
+  .receipt__lead {
+    font-size: var(--fs-md);
+    max-width: var(--measure);
+    margin: 0 0 var(--s2);
+  }
+
+  .receipt__note {
+    color: var(--ink-soft);
+    margin: 0 0 var(--s4);
+  }
+
+  .personal-message {
+    display: none;
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    line-height: 1.7;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 5px solid var(--glory-red);
+    padding: var(--s3) var(--s4);
+    margin: 0 0 var(--s3);
+  }
+
+  .personal-message p {
+    margin: 0;
+  }
+
+  .receipt__docket {
+    font-family: var(--font-type);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.04em;
+    color: var(--glory-blue);
+    border: 1px dotted var(--rule);
+    padding: var(--s2) var(--s3);
+    margin: 0 0 var(--s4);
+  }
+
+  .receipt__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s3);
+    margin: var(--s4) 0;
+  }
+
+  /* ---- While You're Here — cross-reference citations ---- */
+  .receipt__more {
+    border-top: 1px solid var(--rule);
+    padding-top: var(--s4);
+  }
+
+  .receipt__more-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-lg);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0 0 var(--s4);
+  }
+
+  .citations {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s4);
+    margin: 0;
+    padding: 0;
+  }
+
+  .citation__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-base);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0 0 var(--s1);
+  }
+
+  .citation__body {
+    color: var(--ink-soft);
+    font-size: var(--fs-sm);
+    margin: 0 0 var(--s2);
+  }
+
+  .citation__btn {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+  }
+
+  .citation__confirm {
+    display: block;
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.08em;
+    color: var(--glory-blue);
+    margin-top: var(--s2);
+  }
+
+  .exhibit-w {
+    max-width: 30rem;
+    margin: var(--s6) auto 0;
+  }
+
+  @media (max-width: 720px) {
+    .file-section {
+      padding: var(--s5) 0;
+    }
+
+    .receipt {
+      padding: var(--s4) var(--s3);
+    }
+
+    .receipt__stamp {
+      position: static;
+      margin-bottom: var(--s3);
+    }
+
+    .citations {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Check if we have form data from the contact form
+  document.addEventListener('DOMContentLoaded', () => {
+    const formData = sessionStorage.getItem('contactFormData');
+
+    if (formData) {
+      try {
+        const data = JSON.parse(formData);
+        const personalMessage = document.getElementById('personalMessage');
+        const userName = document.getElementById('userName');
+        const userEmail = document.getElementById('userEmail');
+
+        if (data.name && data.email && personalMessage && userName && userEmail) {
+          userName.textContent = data.name;
+          userEmail.textContent = data.email;
+          personalMessage.style.display = 'block';
+        }
+
+        // Clear the data after displaying
+        sessionStorage.removeItem('contactFormData');
+      } catch (e) {
+        console.error('Error parsing form data:', e);
+      }
+    }
+  });
+</script>
+
+<script>
+  // Clerk duties: date of receipt, docket assignment, citation copying,
+  // and routing to the FORM AAR-102 mailing strip in the document footer.
+  document.addEventListener('DOMContentLoaded', () => {
+    const receiptDate = document.getElementById('receiptDate');
+    if (receiptDate) {
+      receiptDate.textContent = new Date()
+        .toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+        .toUpperCase();
+    }
+
+    const docketLine = document.getElementById('docketLine');
+    if (docketLine) {
+      docketLine.textContent =
+        'Your correspondence has been assigned Docket No. AAR-C-' + String(Date.now()).slice(-6);
+      docketLine.hidden = false;
+    }
+
+    const shareBtn = document.getElementById('shareBtn');
+    const shareConfirm = document.getElementById('shareConfirm');
+    if (shareBtn && shareConfirm) {
+      shareBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.origin);
+          shareConfirm.textContent = 'CITATION COPIED TO CLIPBOARD';
+        } catch {
+          shareConfirm.textContent = 'CLIPBOARD UNAVAILABLE — CITE ' + window.location.origin;
+        }
+        shareConfirm.hidden = false;
+      });
+    }
+
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    if (newsletterBtn) {
+      newsletterBtn.addEventListener('click', () => {
+        const footer = document.querySelector('.doc-footer');
+        if (footer) {
+          const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          footer.scrollIntoView(reduce ? undefined : { behavior: 'smooth' });
+          const emailInput = footer.querySelector('input[type="email"]');
+          if (emailInput instanceof HTMLInputElement) emailInput.focus({ preventScroll: true });
+        }
+      });
+    }
+  });
+</script>
